@@ -1,0 +1,612 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+    --paper: #EEF1EF;
+    --card: #FFFFFF;
+    --ink: #16233B;
+    --ink-soft: #4B5768;
+    --ink-faint: #7C8798;
+    --stamp: #A63A34;
+    --stamp-dark: #832D28;
+    --verified: #2F5D45;
+    --line: #D7DCD8;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+    --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg{ display:block; max-width:100%; }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  h1,h2,h3{
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  p{ margin: 0 0 1em; color: var(--ink-soft); max-width: 62ch; }
+
+  :focus-visible{
+    outline: 2px solid var(--stamp);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(238,241,239,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content: space-between;
+    padding-top: 16px; padding-bottom: 16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:9px;
+    font-family: var(--font-mono);
+    font-weight: 600; font-size: 1.05rem;
+    text-decoration:none; color: var(--ink);
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background: var(--stamp);
+    box-shadow: 0 0 0 3px rgba(166,58,52,0.15);
+  }
+  .nav-links{
+    display:none;
+    align-items:center; gap: 28px;
+    list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    text-decoration:none; color: var(--ink-soft); font-size: 0.94rem;
+  }
+  .nav-links a:hover{ color: var(--ink); }
+  @media (min-width: 760px){ .nav-links{ display:flex; } }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family: var(--font-sans); font-weight:600; font-size: 0.94rem;
+    padding: 11px 20px; border-radius: 3px;
+    text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+    white-space: nowrap;
+  }
+  .btn-primary{ background: var(--stamp); color: #fff; }
+  .btn-primary:hover{ background: var(--stamp-dark); }
+  .btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+  .nav-cta{ padding: 9px 14px; font-size: 0.86rem; }
+  @media (min-width: 760px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding: 76px 0 88px; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1fr; gap: 52px; align-items:center;
+  }
+  @media (min-width: 900px){
+    .hero-grid{ grid-template-columns: 1.05fr 0.95fr; gap: 40px; }
+  }
+  .eyebrow{
+    font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .hero h1{
+    font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+    line-height: 1.28;
+    max-width: 16ch;
+    margin-bottom: 22px;
+  }
+  .hero p.lede{
+    font-size: 1.05rem; max-width: 46ch; color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 10px; }
+  .hero-note{ font-size: 0.85rem; color: var(--ink-faint); }
+
+  /* ---------- REPORT CARD ---------- */
+  .report{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 22px 22px 24px;
+    box-shadow: 0 24px 48px -28px rgba(22,35,59,0.35);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .report-head{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 12px; margin-bottom: 14px;
+  }
+  .report-head .label{
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .report-head .addr{
+    font-family: var(--font-mono); font-size: 0.98rem; color: var(--ink);
+  }
+  .report-id{ font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint); text-align:right; }
+
+  .photo-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .photo{
+    aspect-ratio: 4/3; border-radius: 3px; background: linear-gradient(150deg,#DDE4E0,#C9D3CC);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border: 1px solid var(--line);
+  }
+  .photo svg{ width: 46%; height: 46%; opacity: 0.55; }
+
+  .checklist{ list-style:none; margin:0 0 4px; padding:0; }
+  .checklist li{
+    display:flex; align-items:flex-start; gap: 9px;
+    font-size: 0.88rem; color: var(--ink); padding: 6px 0;
+    border-bottom: 1px solid #F0F2F0;
+  }
+  .checklist li:last-child{ border-bottom:none; }
+  .checklist .tick{
+    flex: none; width: 16px; height:16px; border-radius:50%;
+    background: var(--verified); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 10px; margin-top:2px;
+  }
+
+  .stamp{
+    position:absolute; top: 74px; right: -14px;
+    width: 128px; height: 128px;
+    border: 3px solid var(--stamp);
+    border-radius: 50%;
+    color: var(--stamp);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    transform: rotate(-11deg) scale(1);
+    font-family: var(--font-mono); font-weight:600; font-size: 0.8rem;
+    line-height:1.25;
+    background: rgba(255,255,255,0.6);
+    animation: stampIn .55s cubic-bezier(.2,1.4,.4,1) .3s both;
+  }
+  .stamp::before, .stamp::after{
+    content:""; position:absolute; border-radius:50%; border: 1px solid var(--stamp);
+  }
+  .stamp::before{ inset: 6px; }
+  @media (max-width: 460px){ .stamp{ right: 6px; top: 66px; width:108px; height:108px; font-size:0.68rem; } }
+
+  @keyframes stampIn{
+    0%{ opacity:0; transform: rotate(-11deg) scale(1.7); }
+    100%{ opacity:1; transform: rotate(-11deg) scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stamp{ animation: none; }
+  }
+
+  /* ---------- SECTION SCAFFOLDING ---------- */
+  section{ padding: 72px 0; border-top: 1px solid var(--line); }
+  .section-head{ max-width: 640px; margin-bottom: 40px; }
+  .section-head h2{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 14px; line-height:1.3; }
+
+  /* ---------- PROBLEM ---------- */
+  .problem-grid{ display:grid; grid-template-columns: 1fr; gap: 36px; }
+  @media (min-width: 860px){ .problem-grid{ grid-template-columns: 1fr 1fr; gap: 56px; } }
+  .problem-grid p{ max-width: 54ch; font-size: 1.01rem; }
+  .problem-grid .callout{
+    font-family: var(--font-mono); font-size: 1.35rem; line-height: 1.4; font-weight: 700; color: var(--ink);
+    border-left: 3px solid var(--stamp); padding-left: 18px;
+  }
+
+  /* ---------- STEPS ---------- */
+  .steps{ display:grid; grid-template-columns: 1fr; gap: 0; }
+  @media (min-width: 860px){ .steps{ grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+  .step{
+    padding: 22px 0; border-top: 1px solid var(--line);
+  }
+  @media (min-width: 860px){ .step{ border-top:none; padding: 0; } }
+  .step .num{
+    font-family: var(--font-mono); color: var(--ink-faint); font-size: 0.85rem; margin-bottom: 10px;
+  }
+  .step h3{ font-size: 1.02rem; margin-bottom: 8px; font-weight: 600; }
+  .step p{ font-size: 0.92rem; margin-bottom:0; }
+
+  /* ---------- CHECK LIST SECTION ---------- */
+  .check-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; max-width: 640px; }
+  @media (min-width: 700px){ .check-grid{ grid-template-columns: 1fr 1fr; } }
+  .check-item{
+    display:flex; gap: 12px; align-items:flex-start;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .check-item .tick{
+    flex:none; width:20px; height:20px; border-radius:50%;
+    background: var(--verified); color:#fff; font-size:12px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .check-item span.txt{ font-size: 0.95rem; color: var(--ink); }
+
+  /* ---------- PRICING ---------- */
+  .price-grid{ display:grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 760px){ .price-grid{ grid-template-columns: 1fr 1fr; } }
+  .price-card{
+    background: var(--card); border: 1px solid var(--line); border-radius: 4px;
+    padding: 28px 26px;
+  }
+  .price-card.featured{ border-color: var(--stamp); box-shadow: 0 20px 40px -28px rgba(166,58,52,0.4); }
+  .price-card .tag{ font-family: var(--font-mono); font-size:0.78rem; color: var(--ink-faint); margin-bottom: 10px; }
+  .price-card .amount{ font-family: var(--font-mono); font-size: 2rem; color: var(--ink); margin-bottom: 4px; }
+  .price-card .turnaround{ font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 18px; }
+  .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
+  .price-card li{ margin-bottom: 6px; }
+  .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quotes{ display:grid; grid-template-columns: 1fr; gap: 26px; }
+  @media (min-width: 760px){ .quotes{ grid-template-columns: 1fr 1fr; } }
+  .quote{ padding: 4px 0 4px 20px; border-left: 2px solid var(--verified); }
+  .quote p{ font-size: 1.02rem; color: var(--ink); margin-bottom: 10px; }
+  .quote cite{ font-style: normal; font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width: 720px; }
+  details{ border-bottom: 1px solid var(--line); padding: 18px 0; }
+  details summary{
+    cursor:pointer; list-style:none; font-weight:600; font-size: 1rem; color: var(--ink);
+    display:flex; justify-content:space-between; align-items:center; gap: 16px;
+  }
+  details summary::-webkit-details-marker{ display:none; }
+  details summary .ind{
+    flex:none; width:22px; height:22px; border-radius:50%; border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-size: 0.9rem;
+  }
+  details[open] summary .ind::before{ content:"–"; }
+  details:not([open]) summary .ind::before{ content:"+"; }
+  details p{ margin-top: 12px; font-size: 0.95rem; }
+
+  /* ---------- CTA FORM ---------- */
+  .cta-section{
+    background: var(--ink); color: var(--paper); border-top:none;
+  }
+  .cta-section .section-head h2{ color: #fff; }
+  .cta-section p{ color: #C7CFD8; }
+  .cta-grid{ display:grid; grid-template-columns: 1fr; gap: 40px; }
+  @media (min-width: 900px){ .cta-grid{ grid-template-columns: 1fr 1fr; gap: 60px; } }
+  form{ display:flex; flex-direction:column; gap: 14px; }
+  .field{ display:flex; flex-direction:column; gap:6px; }
+  .field label{ font-size: 0.82rem; color: #AEB8C4; font-family: var(--font-mono); }
+  .field input, .field textarea{
+    background: #1F2E48; border: 1px solid #34435F; color: #fff;
+    padding: 11px 13px; border-radius: 3px; font-family: var(--font-sans); font-size: 0.95rem;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color: #7C8AA1; }
+  .field textarea{ resize: vertical; min-height: 84px; }
+  form .btn-primary{ align-self:flex-start; margin-top: 4px; }
+  .form-success{
+    display:none; background: #1F2E48; border: 1px solid var(--verified);
+    padding: 18px 20px; border-radius: 4px; font-size: 0.95rem;
+  }
+  .form-success strong{ font-family: var(--font-mono); color: #fff; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
+  footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap: 14px; font-size: 0.85rem; }
+  footer a{ color: #C7CFD8; text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+</style>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="#top" class="brand"><span class="dot"></span>Confirmado</a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#request" class="btn btn-primary nav-cta">Request a visit</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">In-person rental checks · Madrid</div>
+        <h1>Someone will actually go look at the apartment. Before you send any money.</h1>
+        <p class="lede">You're moving to Madrid for a semester, a job, or a few months, and the listing looks fine — but you can't see it yourself. We can. Give us the address and we'll visit in person, confirm it's real, and send you the proof.</p>
+        <div class="hero-ctas">
+          <a href="#request" class="btn btn-primary">Request a visit</a>
+          <a href="#report-sample" class="btn btn-ghost">See a sample report</a>
+        </div>
+        <div class="hero-note">Based in Madrid. Express checks in 24–48 hours, Standard in 3–4 days.</div>
+      </div>
+
+      <div id="report-sample">
+        <div class="report">
+          <div class="report-head">
+            <div>
+              <div class="label">Address checked</div>
+              <div class="addr">C/ Fuencarral 45, 3ºB</div>
+            </div>
+            <div class="report-id">Case #MAD-1042<br>14 min walk from Gran Vía</div>
+          </div>
+          <div class="photo-row">
+            <div class="photo">
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+                <rect x="0" y="0" width="400" height="210" fill="#E7EAE7"/>
+                <rect x="0" y="210" width="400" height="90" fill="#DCD3C4"/>
+                <line x1="0" y1="210" x2="400" y2="210" stroke="#16233B" stroke-width="1.5" opacity="0.25"/>
+                <rect x="34" y="26" width="118" height="150" rx="4" fill="#C9D9DD" stroke="#16233B" stroke-width="2.5"/>
+                <line x1="93" y1="26" x2="93" y2="176" stroke="#16233B" stroke-width="2.5"/>
+                <line x1="34" y1="101" x2="152" y2="101" stroke="#16233B" stroke-width="2.5"/>
+                <rect x="235" y="48" width="66" height="46" rx="2" fill="#F4F1EA" stroke="#16233B" stroke-width="2"/>
+                <line x1="245" y1="82" x2="291" y2="60" stroke="#A63A34" stroke-width="2"/>
+                <ellipse cx="290" cy="248" rx="112" ry="17" fill="#C7CDC6" opacity="0.7"/>
+                <rect x="188" y="150" width="28" height="82" rx="8" fill="#16233B"/>
+                <rect x="356" y="150" width="28" height="82" rx="8" fill="#16233B"/>
+                <rect x="196" y="152" width="188" height="48" rx="10" fill="#16233B"/>
+                <rect x="192" y="188" width="196" height="46" rx="10" fill="#1D3050"/>
+                <rect x="212" y="160" width="58" height="38" rx="8" fill="#2F5D45"/>
+                <rect x="284" y="160" width="58" height="38" rx="8" fill="#A63A34" opacity="0.88"/>
+                <rect x="200" y="228" width="10" height="14" fill="#16233B"/>
+                <rect x="370" y="228" width="10" height="14" fill="#16233B"/>
+                <path d="M52 232 Q40 205 55 190 Q68 205 58 232 Z" fill="#2F5D45"/>
+                <path d="M52 232 Q62 200 78 195 Q72 218 58 232 Z" fill="#3D7259"/>
+                <rect x="40" y="232" width="32" height="26" rx="3" fill="#8A7A63"/>
+              </svg>
+            </div>
+            <div class="photo">
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+                <rect x="0" y="0" width="400" height="210" fill="#E7EAE7"/>
+                <rect x="0" y="210" width="400" height="90" fill="#DCD3C4"/>
+                <line x1="0" y1="210" x2="400" y2="210" stroke="#16233B" stroke-width="1.5" opacity="0.25"/>
+                <rect x="278" y="28" width="92" height="128" rx="4" fill="#C9D9DD" stroke="#16233B" stroke-width="2.5"/>
+                <line x1="324" y1="28" x2="324" y2="156" stroke="#16233B" stroke-width="2.5"/>
+                <line x1="278" y1="92" x2="370" y2="92" stroke="#16233B" stroke-width="2.5"/>
+                <ellipse cx="150" cy="252" rx="110" ry="16" fill="#C7CDC6" opacity="0.7"/>
+                <rect x="44" y="96" width="232" height="40" rx="6" fill="#16233B"/>
+                <rect x="58" y="120" width="70" height="40" rx="12" fill="#F4F1EA" stroke="#16233B" stroke-width="1.5"/>
+                <rect x="138" y="120" width="70" height="40" rx="12" fill="#F4F1EA" stroke="#16233B" stroke-width="1.5"/>
+                <rect x="44" y="150" width="232" height="42" rx="6" fill="#1D3050"/>
+                <rect x="44" y="176" width="232" height="56" rx="10" fill="#2F5D45"/>
+                <rect x="44" y="222" width="232" height="14" fill="#16233B"/>
+                <rect x="290" y="188" width="50" height="44" rx="3" fill="#8A7A63"/>
+                <line x1="315" y1="188" x2="315" y2="168" stroke="#16233B" stroke-width="2.5"/>
+                <path d="M300 168 L330 168 L324 150 L306 150 Z" fill="#A63A34"/>
+              </svg>
+            </div>
+          </div>
+          <ul class="checklist">
+            <li><span class="tick">✓</span> Address exists and matches the listing</li>
+            <li><span class="tick">✓</span> Rooms match the photos</li>
+            <li><span class="tick">✓</span> Landlord present, ID matched name on listing</li>
+            <li><span class="tick">✓</span> No full payment requested before viewing</li>
+          </ul>
+          <div class="stamp">CONFIRMADO<br>04 · 09 · 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap problem-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:20px;">
+          <h2>It's a familiar story, and it's not your fault.</h2>
+        </div>
+        <p>A nice two-bedroom near Sol. Real-looking photos, a reasonable price for the area, and a landlord who's "traveling" and can't show it in person right now — but needs the deposit and first month by transfer to hold it for you. Then the money is gone, and so is he.</p>
+        <p>It happens constantly to people who don't yet know Madrid: exchange students arriving for a semester, people relocating for a few months, visitors booking a longer stay. They're the easiest targets, because they can't just walk over and check.</p>
+      </div>
+      <div>
+        <p class="callout">We're the person who walks over and checks — before you wire anything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How a check works</h2>
+        <p>Four steps, start to finish. No account needed, no long forms.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Send us the listing</h3>
+          <p>The link, address, and photos, plus whatever contact details you have for the landlord.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>We go in person</h3>
+          <p>Someone visits the address and checks it against the listing — in 24–48 hours with Express, or 3–4 days with Standard.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>You get the report</h3>
+          <p>A written report that lays out exactly why the apartment checks out — or why it doesn't.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h3>You decide</h3>
+          <p>Send the deposit with confidence, ask follow-up questions, or walk away before you lose anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CHECK -->
+  <section id="check">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we actually check</h2>
+        <p>The things that are easy to fake in photos and a chat message, but hard to fake in person.</p>
+      </div>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick">✓</span><span class="txt">The address exists and matches the listing</span></div>
+        <div class="check-item"><span class="tick">✓</span><span class="txt">The rooms match the photos you were sent</span></div>
+        <div class="check-item"><span class="tick">✓</span><span class="txt">Someone is actually present to show the apartment</span></div>
+        <div class="check-item"><span class="tick">✓</span><span class="txt">The landlord's identity matches what they've told you</span></div>
+        <div class="check-item"><span class="tick">✓</span><span class="txt">No full payment is being demanded before a viewing</span></div>
+        <div class="check-item"><span class="tick">✓</span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pricing</h2>
+        <p>One flat fee, paid after you get your report — not before.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="tag">Standard check</div>
+          <div class="amount">€35</div>
+          <div class="turnaround">Report within 3–4 days</div>
+          <ul>
+            <li>In-person visit to the address</li>
+            <li>Full checklist review</li>
+            <li>Written report explaining the verdict</li>
+          </ul>
+          <a href="#request" class="btn btn-ghost">Request this</a>
+        </div>
+        <div class="price-card featured">
+          <div class="tag">Express check</div>
+          <div class="amount">€60</div>
+          <div class="turnaround">Report within 24–48 hours</div>
+          <ul>
+            <li>Everything in Standard</li>
+            <li>Priority scheduling, same or next day</li>
+            <li>Direct WhatsApp update as soon as it's done</li>
+          </ul>
+          <a href="#request" class="btn btn-primary">Request this</a>
+        </div>
+      </div>
+      <p class="price-foot">If the listing doesn't check out, we tell you exactly why — and that's usually worth a lot more than the fee.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="stories">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What people found out in time</h2>
+      </div>
+      <div class="quotes">
+        <div class="quote">
+          <p>I was about to transfer 900€ for a room I'd only seen in four photos. Confirmado went the next morning — the building didn't even have that street number.</p>
+          <cite>Exchange student, arriving from Berlin</cite>
+        </div>
+        <div class="quote">
+          <p>The apartment was real, the landlord was legitimate, and I paid the deposit without the knot in my stomach I'd had all week.</p>
+          <cite>Master's student, arriving from São Paulo</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Questions people ask before booking</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>What if I've already sent a deposit?<span class="ind"></span></summary>
+          <p>We can still visit and tell you whether the apartment matches what you paid for, but we can't recover money that's already been sent. It's always better to book a check before paying anything.</p>
+        </details>
+        <details>
+          <summary>Do you check apartments outside Madrid?<span class="ind"></span></summary>
+          <p>Not yet — right now we only visit properties within the city of Madrid.</p>
+        </details>
+        <details>
+          <summary>What if the landlord won't let you in?<span class="ind"></span></summary>
+          <p>That goes straight into your report as a red flag. A landlord with a real apartment and nothing to hide rarely refuses a short visit.</p>
+        </details>
+        <details>
+          <summary>Is this legal advice, or a lease review?<span class="ind"></span></summary>
+          <p>No. We confirm that a listing is genuine and matches what you've been shown. We're not lawyers, and we don't review contracts for legal validity.</p>
+        </details>
+        <details>
+          <summary>How fast can you actually go?<span class="ind"></span></summary>
+          <p>Express checks are typically completed within 24–48 hours. Standard checks usually take 3–4 days, depending on availability that week.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FORM -->
+  <section id="request" class="cta-section">
+    <div class="wrap cta-grid">
+      <div>
+        <div class="section-head">
+          <h2>Tell us what you're about to rent</h2>
+          <p>Send the listing and we'll get back to you with a time frame before you commit to anything.</p>
+        </div>
+        <p style="color:#8B96A8; font-size:0.88rem;">No payment is taken here — we'll confirm details and pricing over email or WhatsApp first.</p>
+      </div>
+      <div>
+        <form id="checkForm">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="Jane Smith" required>
+          </div>
+          <div class="field">
+            <label for="contact">Email or WhatsApp</label>
+            <input id="contact" type="text" placeholder="jane@email.com" required>
+          </div>
+          <div class="field">
+            <label for="listing">Listing link or address</label>
+            <input id="listing" type="text" placeholder="Idealista link, or the address" required>
+          </div>
+          <div class="field">
+            <label for="notes">Anything else we should know</label>
+            <textarea id="notes" placeholder="Move-in date, questions, landlord contact details..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send request</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <strong>Request received.</strong> We'll reply within a few hours with next steps and a price confirmation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Confirmado · Madrid, Spain</div>
+    <div><a href="mailto:hola@confirmado-madrid.example">hola@confirmado-madrid.example</a> · WhatsApp on request</div>
+    <div>Not a law firm. We verify listings, not contracts.</div>
+  </div>
+</footer>
+
+<script>
+const form = document.getElementById('checkForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+</script>
