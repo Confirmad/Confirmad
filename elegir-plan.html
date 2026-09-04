@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose your check · ConfirMad</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #7C8798;
+  --stamp: #2C5F8A;
+  --stamp-dark: #1F435F;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --max: 760px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+a{ color: inherit; }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+h1,h2,h3{ font-family: var(--font); font-weight: 700; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+p{ margin: 0 0 1em; color: var(--ink-soft); }
+
+header.site{
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  position: sticky; top:0;
+}
+.brand{
+  display:flex; align-items:center; gap:9px; text-decoration:none; color: var(--ink);
+  font-weight: 700; font-size: 1.05rem;
+}
+.brand .dot{ width:9px; height:9px; border-radius:50%; background: var(--stamp); box-shadow: 0 0 0 3px rgba(44,95,138,0.15); }
+.back{ font-size: 0.85rem; color: var(--ink-faint); text-decoration:none; }
+.back:hover{ color: var(--ink); }
+
+main{ padding: 48px 0 80px; }
+
+.confirm-box{
+  background: rgba(47,93,69,0.08); border: 1px solid var(--verified); border-radius: 14px;
+  padding: 16px 18px; margin-bottom: 28px; font-size: 0.9rem;
+}
+.confirm-box strong{ color: var(--verified); }
+
+h1.title{ font-size: 1.7rem; margin-bottom: 10px; line-height:1.3; }
+p.lede{ font-size: 0.98rem; margin-bottom: 32px; max-width: 56ch; }
+
+.plan-grid{ display:grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 640px){ .plan-grid{ grid-template-columns: 1fr 1fr; } }
+
+.plan-choice{
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 28px 24px; position:relative; overflow:hidden; text-align:left;
+  text-decoration:none; color: var(--ink); display:block;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.plan-choice:hover{ transform: translateY(-4px); box-shadow: 0 20px 36px -22px rgba(22,35,59,0.32); }
+.plan-choice.featured{ border-color: var(--stamp); box-shadow: 0 20px 40px -28px rgba(44,95,138,0.4); }
+.plan-choice.featured:hover{ box-shadow: 0 26px 44px -20px rgba(44,95,138,0.5); }
+.plan-choice .ribbon{
+  position:absolute; top:14px; right:-36px; transform:rotate(35deg);
+  background: var(--stamp); color:#fff; font-size:0.68rem; font-weight:700;
+  padding: 4px 40px; letter-spacing:0.04em;
+}
+.plan-choice .tag{ font-size:0.8rem; color: var(--ink-faint); margin-bottom: 8px; }
+.plan-choice .amount{ font-size: 2rem; font-weight:800; color: var(--ink); margin-bottom: 4px; }
+.plan-choice .turnaround{ font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 16px; }
+.plan-choice ul{ margin:0 0 20px; padding-left: 18px; color: var(--ink-soft); font-size:0.9rem; }
+.plan-choice li{ margin-bottom: 6px; }
+.plan-choice .go{
+  display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size: 0.92rem; color: var(--stamp);
+}
+.plan-choice.featured .go{ color: var(--stamp-dark); }
+
+.pay-note{ font-size: 0.82rem; color: var(--ink-faint); margin-top: 28px; text-align:center; }
+
+footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+    <a href="index.html#top" class="brand"><span class="dot"></span>ConfirMad</a>
+    <a href="index.html#top" class="back">← Back to home</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="confirm-box" id="confirmBox" style="display:none;">
+      <strong>Got it.</strong> Your email/WhatsApp app should have opened with your details ready to send us. If it didn't, just message us the same info directly.
+    </div>
+
+    <h1 class="title">Choose your check</h1>
+    <p class="lede">Pick the option that fits your timeline. You'll pay securely on Stripe's page, and we start the visit as soon as payment goes through.</p>
+
+    <div class="plan-grid">
+      <a class="plan-choice" href="https://buy.stripe.com/test_cNi4gt7yabbb7d3bcTfMA01" target="_top">
+        <div class="tag">Standard check</div>
+        <div class="amount">€35</div>
+        <div class="turnaround">Report within 3–4 days</div>
+        <ul>
+          <li>In-person visit to the address</li>
+          <li>Full checklist review</li>
+          <li>Written report explaining the verdict</li>
+        </ul>
+        <span class="go">Pay €35 now →</span>
+      </a>
+
+      <a class="plan-choice featured" href="https://buy.stripe.com/test_bJeeV76u60wxbtj6WDfMA00" target="_top">
+        <span class="ribbon">Most popular</span>
+        <div class="tag">Express check</div>
+        <div class="amount">€59</div>
+        <div class="turnaround">Report within 24–48 hours</div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Priority scheduling, same or next day</li>
+          <li>Direct WhatsApp update as soon as it's done</li>
+        </ul>
+        <span class="go">Pay €59 now →</span>
+      </a>
+    </div>
+
+    <p class="pay-note">Not sure yet? <a href="index.html#pricing" style="color:var(--stamp); font-weight:600;">Compare both plans</a> before choosing.</p>
+  </div>
+</main>
+
+<footer>ConfirMad · Madrid, Spain · Not a law firm.</footer>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === '1'){
+    document.getElementById('confirmBox').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

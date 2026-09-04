@@ -633,7 +633,7 @@
           <h2>Tell us what you're about to rent</h2>
           <p>Send the listing and we'll get back to you with a time frame before you commit to anything.</p>
         </div>
-        <p style="color:#8B96A8; font-size:0.88rem;">No payment is taken here — we'll confirm details and pricing over email or WhatsApp first.</p>
+        <p style="color:#8B96A8; font-size:0.88rem;">Next, you'll choose Standard or Express and pay securely — nothing is charged until then.</p>
       </div>
       <div>
         <form id="checkForm">
@@ -655,9 +655,6 @@
           </div>
           <button type="submit" class="btn btn-primary">Send request</button>
         </form>
-        <div class="form-success" id="formSuccess">
-          <strong>Request received.</strong> We'll reply within a few hours with next steps and a price confirmation.
-        </div>
       </div>
     </div>
   </section>
@@ -674,11 +671,29 @@
 
 <script>
 const form = document.getElementById('checkForm');
-  const success = document.getElementById('formSuccess');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    form.style.display = 'none';
-    success.classList.add('show');
+
+    var name = document.getElementById('name').value;
+    var contact = document.getElementById('contact').value;
+    var listing = document.getElementById('listing').value;
+    var notes = document.getElementById('notes').value;
+
+    var subject = 'Check request — ' + name;
+    var body =
+      'Name: ' + name + '\n' +
+      'Email/WhatsApp: ' + contact + '\n' +
+      'Listing: ' + listing + '\n' +
+      'Notes: ' + notes;
+
+    var mailto = 'mailto:hola@ConfirMad-madrid.example'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+    window.setTimeout(function(){
+      window.location.href = 'elegir-plan.html?sent=1';
+    }, 300);
   });
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
