@@ -173,9 +173,9 @@
   .stamp{
     position:absolute; top: 74px; right: -14px;
     width: 128px; height: 128px;
-    border: 3px solid var(--stamp);
+    border: 3px solid var(--verified);
     border-radius: 50%;
-    color: var(--stamp);
+    color: var(--verified);
     display:flex; align-items:center; justify-content:center;
     text-align:center;
     transform: rotate(-11deg) scale(1);
@@ -185,7 +185,7 @@
     animation: stampIn .55s cubic-bezier(.2,1.4,.4,1) .3s both;
   }
   .stamp::before, .stamp::after{
-    content:""; position:absolute; border-radius:50%; border: 1px solid var(--stamp);
+    content:""; position:absolute; border-radius:50%; border: 1px solid var(--verified);
   }
   .stamp::before{ inset: 6px; }
   @media (max-width: 460px){ .stamp{ right: 6px; top: 66px; width:108px; height:108px; font-size:0.68rem; } }
