@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a check · ConfirMad</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #7C8798;
+  --stamp: #2C5F8A;
+  --stamp-dark: #1F435F;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --max: 640px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+a{ color: inherit; }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+h1,h2,h3{ font-family: var(--font); font-weight: 700; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+p{ margin: 0 0 1em; color: var(--ink-soft); }
+
+header.site{
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  position: sticky; top:0;
+}
+.brand{
+  display:flex; align-items:center; gap:9px; text-decoration:none; color: var(--ink);
+  font-weight: 700; font-size: 1.05rem;
+}
+.brand .dot{ width:9px; height:9px; border-radius:50%; background: var(--stamp); box-shadow: 0 0 0 3px rgba(44,95,138,0.15); }
+.back{ font-size: 0.85rem; color: var(--ink-faint); text-decoration:none; }
+.back:hover{ color: var(--ink); }
+
+main{ padding: 40px 0 80px; }
+
+.steps-tag{
+  display:flex; gap:8px; align-items:center; font-size: 0.8rem; color: var(--ink-faint);
+  font-weight:600; margin-bottom: 18px;
+}
+.steps-tag .on{ color: var(--stamp); }
+
+.plan-card{
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px 22px; margin-bottom: 28px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  box-shadow: 0 14px 28px -22px rgba(22,35,59,0.28);
+}
+.plan-card .tag{ font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 4px; }
+.plan-card .amount{ font-size: 1.6rem; font-weight:800; color: var(--ink); }
+.plan-card .turnaround{ font-size: 0.85rem; color: var(--ink-soft); }
+
+h1.title{ font-size: 1.6rem; margin-bottom: 10px; line-height:1.3; }
+p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
+
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.field label{ font-size: 0.85rem; font-weight:600; color: var(--ink); }
+.field .hint{ font-size: 0.78rem; color: var(--ink-faint); margin-top:-2px; }
+.field input, .field textarea{
+  background: #fff; border: 1px solid var(--line); color: var(--ink);
+  padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size: 0.95rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.field input:focus, .field textarea:focus{
+  outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(44,95,138,0.18);
+}
+.field textarea{ resize: vertical; min-height: 80px; }
+
+.photo-note{
+  background: rgba(47,93,69,0.08); border: 1px dashed var(--verified); border-radius: 12px;
+  padding: 14px 16px; font-size: 0.88rem; color: var(--ink); margin-bottom: 24px;
+}
+.photo-note strong{ color: var(--verified); }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family: var(--font); font-weight:700; font-size: 0.98rem;
+  padding: 13px 22px; border-radius: 10px;
+  text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  white-space: nowrap; width:100%;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn:active{ transform: translateY(0) scale(0.97); }
+.btn-primary{ background: var(--stamp); color:#fff; box-shadow: 0 10px 20px -10px rgba(44,95,138,0.6); }
+.btn-primary:hover{ background: var(--stamp-dark); box-shadow: 0 14px 24px -8px rgba(44,95,138,0.7); }
+
+#payStep{ display:none; }
+#payStep.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
+@keyframes popIn{
+  0%{ opacity:0; transform: scale(0.96) translateY(8px); }
+  100%{ opacity:1; transform: scale(1) translateY(0); }
+}
+.confirm-box{
+  background: rgba(47,93,69,0.08); border: 1px solid var(--verified); border-radius: 14px;
+  padding: 18px 20px; margin-bottom: 20px; font-size: 0.92rem;
+}
+.confirm-box strong{ color: var(--verified); }
+.pay-amount{ font-size: 2.2rem; font-weight:800; margin: 4px 0 2px; }
+.pay-note{ font-size: 0.8rem; color: var(--ink-faint); text-align:center; margin-top: 10px; }
+
+footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+    <a href="index.html#top" class="brand"><span class="dot"></span>ConfirMad</a>
+    <a href="index.html#pricing" class="back">← Back to pricing</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div id="formStep">
+      <div class="steps-tag"><span class="on">1. Details</span> · <span>2. Pay</span></div>
+
+      <div class="plan-card">
+        <div>
+          <div class="tag" id="planTag">Standard check</div>
+          <div class="amount" id="planAmount">€35</div>
+        </div>
+        <div class="turnaround" id="planTurnaround">Report within 3–4 days</div>
+      </div>
+
+      <h1 class="title">Tell us about the listing</h1>
+      <p class="lede">Fill this in and you'll go straight to payment. We start the visit as soon as payment and the listing details come through.</p>
+
+      <form id="detailsForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" type="text" placeholder="Jane Smith" required>
+        </div>
+        <div class="field">
+          <label for="contact">Email or WhatsApp</label>
+          <input id="contact" type="text" placeholder="jane@email.com or +34 600 000 000" required>
+        </div>
+        <div class="field">
+          <label for="listing">Listing link or address</label>
+          <input id="listing" type="text" placeholder="Idealista link, or the address" required>
+        </div>
+        <div class="field">
+          <label for="landlord">Landlord's name and contact</label>
+          <input id="landlord" type="text" placeholder="Name, phone or email you have for them">
+        </div>
+        <div class="field">
+          <label for="notes">Anything else we should know</label>
+          <textarea id="notes" placeholder="Move-in date, questions..."></textarea>
+        </div>
+
+        <div class="photo-note">
+          <strong>About photos:</strong> once you submit this form, send the listing photos to us on WhatsApp or by replying to the confirmation email — we can't accept file uploads directly on this page yet.
+        </div>
+
+        <button type="submit" class="btn btn-primary">Continue to payment →</button>
+      </form>
+    </div>
+
+    <div id="payStep">
+      <div class="steps-tag"><span>1. Details</span> · <span class="on">2. Pay</span></div>
+
+      <div class="confirm-box">
+        <strong>Got it.</strong> Your email/WhatsApp app should have opened with your details ready to send to us. If it didn't, just message us the same info directly — then come back here and pay to confirm the check.
+      </div>
+
+      <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
+        <div class="tag" id="payPlanTag">Standard check</div>
+        <div class="pay-amount" id="payAmount">€35</div>
+        <div class="turnaround" id="payTurnaround">Report within 3–4 days</div>
+      </div>
+
+      <a id="payButton" class="btn btn-primary" href="#" target="_top">Pay now →</a>
+      <p class="pay-note">You'll pay securely on Stripe's page. We start the check as soon as payment goes through.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>ConfirMad · Madrid, Spain · Not a law firm.</footer>
+
+<script>
+  var PLANS = {
+    standard: {
+      tag: 'Standard check', amount: '€35', turnaround: 'Report within 3–4 days',
+      stripe: 'https://buy.stripe.com/test_cNi4gt7yabbb7d3bcTfMA01'
+    },
+    express: {
+      tag: 'Express check', amount: '€59', turnaround: 'Report within 24–48 hours',
+      stripe: 'https://buy.stripe.com/test_bJeeV76u60wxbtj6WDfMA00'
+    }
+  };
+
+  var params = new URLSearchParams(window.location.search);
+  var planKey = params.get('plan') === 'express' ? 'express' : 'standard';
+  var plan = PLANS[planKey];
+
+  document.getElementById('planTag').textContent = plan.tag;
+  document.getElementById('planAmount').textContent = plan.amount;
+  document.getElementById('planTurnaround').textContent = plan.turnaround;
+  document.getElementById('payPlanTag').textContent = plan.tag;
+  document.getElementById('payAmount').textContent = plan.amount;
+  document.getElementById('payTurnaround').textContent = plan.turnaround;
+  document.getElementById('payButton').href = plan.stripe;
+  document.getElementById('payButton').textContent = 'Pay ' + plan.amount + ' now →';
+
+  var form = document.getElementById('detailsForm');
+  var formStep = document.getElementById('formStep');
+  var payStep = document.getElementById('payStep');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var contact = document.getElementById('contact').value;
+    var listing = document.getElementById('listing').value;
+    var landlord = document.getElementById('landlord').value;
+    var notes = document.getElementById('notes').value;
+
+    var subject = plan.tag + ' request — ' + name;
+    var body =
+      'Plan: ' + plan.tag + ' (' + plan.amount + ')\n' +
+      'Name: ' + name + '\n' +
+      'Email/WhatsApp: ' + contact + '\n' +
+      'Listing: ' + listing + '\n' +
+      'Landlord contact: ' + landlord + '\n' +
+      'Notes: ' + notes + '\n\n' +
+      '(Photos to follow separately by WhatsApp/email.)';
+
+    var mailto = 'mailto:hola@ConfirMad-madrid.example'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+
+    formStep.style.display = 'none';
+    payStep.classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
