@@ -202,7 +202,20 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
 <footer>ConfirMad · Madrid, Spain · Not a law firm.</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+
+  function isValidEmail(value){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function sendAutoReply(templateId, toEmail, toName){
+    if (!isValidEmail(toEmail)) return;
+    emailjs.send('service_wa43yg8', templateId, { to_email: toEmail, to_name: toName })
+      .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+  }
+
   var PLANS = {
     standard: {
       tag: 'Standard check', amount: '€35', turnaround: 'Report within 3–4 days',
@@ -269,6 +282,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     .then(function(res){ return res.json(); })
     .then(function(data){
       if (!data.success){ throw new Error(data.message || 'Web3Forms error'); }
+      sendAutoReply('template_ykjy3pj', contact, name);
       formStep.style.display = 'none';
       payStep.classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });

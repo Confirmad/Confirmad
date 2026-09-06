@@ -671,12 +671,25 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+
 const form = document.getElementById('checkForm');
   const success = document.getElementById('formSuccess');
   const errorMsg = document.getElementById('formError');
   const sendBtn = document.getElementById('sendBtn');
   const WEB3FORMS_KEY = 'e1ec2b34-f6bc-42d3-9f90-834f6ab579bc';
+
+  function isValidEmail(value){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function sendAutoReply(templateId, toEmail, toName){
+    if (!isValidEmail(toEmail)) return;
+    emailjs.send('service_wa43yg8', templateId, { to_email: toEmail, to_name: toName })
+      .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+  }
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -704,6 +717,7 @@ const form = document.getElementById('checkForm');
     .then(function(res){ return res.json(); })
     .then(function(data){
       if (data.success){
+        sendAutoReply('template_0i7xoyv', contact, name);
         form.style.display = 'none';
         success.classList.add('show');
       } else {
