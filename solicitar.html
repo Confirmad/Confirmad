@@ -299,10 +299,10 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       payStep.classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     })
-    .catch(function(){
+    .catch(function(err){
       sendBtn.disabled = false;
       sendBtn.textContent = 'Continue to payment →';
-      formError.textContent = 'Something went wrong sending your details. Please try again, or email us directly at contacto@confirmad.es.';
+      formError.textContent = 'Something went wrong sending your details (' + err.message + '). Please try again, or email us directly at contacto@confirmad.es.';
       formError.classList.add('show');
     });
   });
