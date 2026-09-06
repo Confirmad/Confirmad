@@ -216,7 +216,10 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
   function sendAutoReply(templateId, toEmail, toName){
     if (!isValidEmail(toEmail)) return;
-    emailjs.send('service_wa43yg8', templateId, { to_email: toEmail, to_name: toName })
+    emailjs.send('service_wa43yg8', templateId, {
+      to_email: toEmail, email: toEmail, reply_to: toEmail,
+      to_name: toName, name: toName
+    })
       .catch(function(err){ console.warn('Auto-reply email failed:', err); });
   }
 

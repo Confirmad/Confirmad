@@ -691,7 +691,10 @@ const form = document.getElementById('checkForm');
 
   function sendAutoReply(templateId, toEmail, toName){
     if (!isValidEmail(toEmail)) return;
-    emailjs.send('service_wa43yg8', templateId, { to_email: toEmail, to_name: toName })
+    emailjs.send('service_wa43yg8', templateId, {
+      to_email: toEmail, email: toEmail, reply_to: toEmail,
+      to_name: toName, name: toName
+    })
       .catch(function(err){ console.warn('Auto-reply email failed:', err); });
   }
 
