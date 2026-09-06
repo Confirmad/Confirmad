@@ -649,10 +649,13 @@
             <label for="notes">Your question</label>
             <textarea id="notes" placeholder="Ask us anything about how a check works, timing, an address you're considering..." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
+          <button type="submit" class="btn btn-primary" id="sendBtn">Send message</button>
         </form>
         <div class="form-success" id="formSuccess">
-          <strong>Message ready to send.</strong> Your email or WhatsApp app should have opened — send it and we'll reply within a few hours.
+          <strong>Message sent.</strong> We'll reply within a few hours.
+        </div>
+        <div class="form-success" id="formError" style="border-color:#A63A34;">
+          <strong>Something went wrong.</strong> Please email us directly at <a href="mailto:contacto@confirmad.es" style="color:#fff; text-decoration:underline;">contacto@confirmad.es</a> instead.
         </div>
       </div>
     </div>
@@ -671,6 +674,10 @@
 <script>
 const form = document.getElementById('checkForm');
   const success = document.getElementById('formSuccess');
+  const errorMsg = document.getElementById('formError');
+  const sendBtn = document.getElementById('sendBtn');
+  const WEB3FORMS_KEY = 'e1ec2b34-f6bc-42d3-9f90-834f6ab579bc';
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
 
@@ -678,19 +685,36 @@ const form = document.getElementById('checkForm');
     var contact = document.getElementById('contact').value;
     var notes = document.getElementById('notes').value;
 
-    var subject = 'Question from ' + name;
-    var body =
-      'Name: ' + name + '\n' +
-      'Email/WhatsApp: ' + contact + '\n\n' +
-      'Question:\n' + notes;
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending…';
+    errorMsg.classList.remove('show');
 
-    var mailto = 'mailto:contacto@confirmad.es'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailto;
-    form.style.display = 'none';
-    success.classList.add('show');
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'Question from ' + name,
+        from_name: name,
+        name: name,
+        email: contact,
+        message: notes
+      })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (data.success){
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        throw new Error(data.message || 'Web3Forms error');
+      }
+    })
+    .catch(function(){
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Send message';
+      errorMsg.classList.add('show');
+    });
   });
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
