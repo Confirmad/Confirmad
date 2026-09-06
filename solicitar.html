@@ -80,13 +80,9 @@ p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
 
 .photo-field{
   background: rgba(47,93,69,0.06); border: 1.5px dashed var(--verified); border-radius: 12px;
-  padding: 16px; margin-bottom: 24px;
+  padding: 14px 16px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink);
 }
-.photo-field label{ font-size: 0.85rem; font-weight:600; color: var(--verified); display:block; margin-bottom: 8px; }
-.photo-field input[type="file"]{
-  width:100%; font-family: var(--font); font-size: 0.88rem; color: var(--ink-soft);
-}
-.photo-field .hint{ font-size: 0.78rem; color: var(--ink-faint); margin-top: 8px; }
+.photo-field strong{ color: var(--verified); }
 .form-error{
   display:none; background: rgba(166,58,52,0.08); border: 1px solid #A63A34; border-radius: 12px;
   padding: 14px 16px; font-size: 0.9rem; color: var(--ink); margin-bottom: 20px;
@@ -173,9 +169,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
         </div>
 
         <div class="photo-field">
-          <label for="photos">Attach listing photos (optional)</label>
-          <input id="photos" type="file" accept="image/*" multiple>
-          <div class="hint">Up to 5 photos, 4MB each. You can also just send them by WhatsApp if that's easier.</div>
+          <strong>About photos:</strong> once you submit this form, send the listing photos to us on WhatsApp or by replying to the confirmation email.
         </div>
 
         <div class="form-error" id="formError">
@@ -190,7 +184,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       <div class="steps-tag"><span>1. Details</span> · <span class="on">2. Pay</span></div>
 
       <div class="confirm-box">
-        <strong>Got it.</strong> Your details (and photos, if you attached any) have been sent to us. Now just pay to confirm the check.
+        <strong>Got it.</strong> Your details have been sent to us — don't forget to send the listing photos by WhatsApp or email too. Now just pay to confirm the check.
       </div>
 
       <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
@@ -239,8 +233,6 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
   var sendBtn = document.getElementById('sendBtn');
   var formError = document.getElementById('formError');
   var WEB3FORMS_KEY = 'a066c66c-8b2b-4320-893c-7fd55cf355e6';
-  var MAX_PHOTOS = 5;
-  var MAX_PHOTO_MB = 4;
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -250,22 +242,8 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     var listing = document.getElementById('listing').value;
     var landlord = document.getElementById('landlord').value;
     var notes = document.getElementById('notes').value;
-    var photos = document.getElementById('photos').files;
 
     formError.classList.remove('show');
-
-    if (photos.length > MAX_PHOTOS){
-      formError.textContent = 'Please attach at most ' + MAX_PHOTOS + ' photos.';
-      formError.classList.add('show');
-      return;
-    }
-    for (var i = 0; i < photos.length; i++){
-      if (photos[i].size > MAX_PHOTO_MB * 1024 * 1024){
-        formError.textContent = '"' + photos[i].name + '" is over ' + MAX_PHOTO_MB + 'MB — please use a smaller photo.';
-        formError.classList.add('show');
-        return;
-      }
-    }
 
     var message =
       'Plan: ' + plan.tag + ' (' + plan.amount + ')\n' +
@@ -273,24 +251,20 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       'Landlord contact: ' + landlord + '\n' +
       'Notes: ' + notes;
 
-    var fd = new FormData();
-    fd.append('access_key', WEB3FORMS_KEY);
-    fd.append('subject', plan.tag + ' request — ' + name);
-    fd.append('from_name', name);
-    fd.append('name', name);
-    fd.append('email', contact);
-    fd.append('message', message);
-    for (var j = 0; j < photos.length; j++){
-      fd.append('attachment', photos[j]);
-    }
-
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending…';
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: fd
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: plan.tag + ' request — ' + name,
+        from_name: name,
+        name: name,
+        email: contact,
+        message: message
+      })
     })
     .then(function(res){ return res.json(); })
     .then(function(data){
