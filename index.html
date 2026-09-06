@@ -642,8 +642,12 @@
             <input id="name" type="text" placeholder="Jane Smith" required>
           </div>
           <div class="field">
-            <label for="contact">Email or WhatsApp</label>
-            <input id="contact" type="text" placeholder="jane@email.com" required>
+            <label for="email">Your email</label>
+            <input id="email" type="email" placeholder="jane@email.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone or WhatsApp (optional)</label>
+            <input id="phone" type="tel" placeholder="+34 600 000 000">
           </div>
           <div class="field">
             <label for="notes">Your question</label>
@@ -695,7 +699,8 @@ const form = document.getElementById('checkForm');
     e.preventDefault();
 
     var name = document.getElementById('name').value;
-    var contact = document.getElementById('contact').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
     var notes = document.getElementById('notes').value;
 
     sendBtn.disabled = true;
@@ -710,14 +715,15 @@ const form = document.getElementById('checkForm');
         subject: 'Question from ' + name,
         from_name: name,
         name: name,
-        email: contact,
+        email: email,
+        phone: phone,
         message: notes
       })
     })
     .then(function(res){ return res.json(); })
     .then(function(data){
       if (data.success){
-        sendAutoReply('template_0i7xoyv', contact, name);
+        sendAutoReply('template_0i7xoyv', email, name);
         form.style.display = 'none';
         success.classList.add('show');
       } else {

@@ -152,8 +152,12 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
           <input id="name" type="text" placeholder="Jane Smith" required>
         </div>
         <div class="field">
-          <label for="contact">Email or WhatsApp</label>
-          <input id="contact" type="text" placeholder="jane@email.com or +34 600 000 000" required>
+          <label for="email">Your email</label>
+          <input id="email" type="email" placeholder="jane@email.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone or WhatsApp (optional)</label>
+          <input id="phone" type="tel" placeholder="+34 600 000 000">
         </div>
         <div class="field">
           <label for="listing">Listing link or address</label>
@@ -251,7 +255,8 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     e.preventDefault();
 
     var name = document.getElementById('name').value;
-    var contact = document.getElementById('contact').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
     var listing = document.getElementById('listing').value;
     var landlord = document.getElementById('landlord').value;
     var notes = document.getElementById('notes').value;
@@ -260,6 +265,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
     var message =
       'Plan: ' + plan.tag + ' (' + plan.amount + ')\n' +
+      'Phone/WhatsApp: ' + phone + '\n' +
       'Listing: ' + listing + '\n' +
       'Landlord contact: ' + landlord + '\n' +
       'Notes: ' + notes;
@@ -275,14 +281,15 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
         subject: plan.tag + ' request — ' + name,
         from_name: name,
         name: name,
-        email: contact,
+        email: email,
+        phone: phone,
         message: message
       })
     })
     .then(function(res){ return res.json(); })
     .then(function(data){
       if (!data.success){ throw new Error(data.message || 'Web3Forms error'); }
-      sendAutoReply('template_ykjy3pj', contact, name);
+      sendAutoReply('template_ykjy3pj', email, name);
       formStep.style.display = 'none';
       payStep.classList.add('show');
       window.scrollTo({ top: 0, behavior: 'smooth' });
