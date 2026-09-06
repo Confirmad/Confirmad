@@ -78,11 +78,21 @@ p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
 }
 .field textarea{ resize: vertical; min-height: 80px; }
 
-.photo-note{
-  background: rgba(47,93,69,0.08); border: 1px dashed var(--verified); border-radius: 12px;
-  padding: 14px 16px; font-size: 0.88rem; color: var(--ink); margin-bottom: 24px;
+.photo-field{
+  background: rgba(47,93,69,0.06); border: 1.5px dashed var(--verified); border-radius: 12px;
+  padding: 16px; margin-bottom: 24px;
 }
-.photo-note strong{ color: var(--verified); }
+.photo-field label{ font-size: 0.85rem; font-weight:600; color: var(--verified); display:block; margin-bottom: 8px; }
+.photo-field input[type="file"]{
+  width:100%; font-family: var(--font); font-size: 0.88rem; color: var(--ink-soft);
+}
+.photo-field .hint{ font-size: 0.78rem; color: var(--ink-faint); margin-top: 8px; }
+.form-error{
+  display:none; background: rgba(166,58,52,0.08); border: 1px solid #A63A34; border-radius: 12px;
+  padding: 14px 16px; font-size: 0.9rem; color: var(--ink); margin-bottom: 20px;
+}
+.form-error.show{ display:block; }
+.form-error a{ color: #A63A34; font-weight:600; }
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -162,11 +172,17 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
           <textarea id="notes" placeholder="Move-in date, questions..."></textarea>
         </div>
 
-        <div class="photo-note">
-          <strong>About photos:</strong> once you submit this form, send the listing photos to us on WhatsApp or by replying to the confirmation email — we can't accept file uploads directly on this page yet.
+        <div class="photo-field">
+          <label for="photos">Attach listing photos (optional)</label>
+          <input id="photos" type="file" accept="image/*" multiple>
+          <div class="hint">Up to 5 photos, 4MB each. You can also just send them by WhatsApp if that's easier.</div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Continue to payment →</button>
+        <div class="form-error" id="formError">
+          Something went wrong sending your details. Please try again, or email us directly at <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a>.
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="sendBtn">Continue to payment →</button>
       </form>
     </div>
 
@@ -174,7 +190,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       <div class="steps-tag"><span>1. Details</span> · <span class="on">2. Pay</span></div>
 
       <div class="confirm-box">
-        <strong>Got it.</strong> Your email/WhatsApp app should have opened with your details ready to send to us. If it didn't, just message us the same info directly — then come back here and pay to confirm the check.
+        <strong>Got it.</strong> Your details (and photos, if you attached any) have been sent to us. Now just pay to confirm the check.
       </div>
 
       <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
@@ -220,6 +236,11 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
   var form = document.getElementById('detailsForm');
   var formStep = document.getElementById('formStep');
   var payStep = document.getElementById('payStep');
+  var sendBtn = document.getElementById('sendBtn');
+  var formError = document.getElementById('formError');
+  var WEB3FORMS_KEY = 'e1ec2b34-f6bc-42d3-9f90-834f6ab579bc';
+  var MAX_PHOTOS = 5;
+  var MAX_PHOTO_MB = 4;
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -229,26 +250,61 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     var listing = document.getElementById('listing').value;
     var landlord = document.getElementById('landlord').value;
     var notes = document.getElementById('notes').value;
+    var photos = document.getElementById('photos').files;
 
-    var subject = plan.tag + ' request — ' + name;
-    var body =
+    formError.classList.remove('show');
+
+    if (photos.length > MAX_PHOTOS){
+      formError.textContent = 'Please attach at most ' + MAX_PHOTOS + ' photos.';
+      formError.classList.add('show');
+      return;
+    }
+    for (var i = 0; i < photos.length; i++){
+      if (photos[i].size > MAX_PHOTO_MB * 1024 * 1024){
+        formError.textContent = '"' + photos[i].name + '" is over ' + MAX_PHOTO_MB + 'MB — please use a smaller photo.';
+        formError.classList.add('show');
+        return;
+      }
+    }
+
+    var message =
       'Plan: ' + plan.tag + ' (' + plan.amount + ')\n' +
-      'Name: ' + name + '\n' +
-      'Email/WhatsApp: ' + contact + '\n' +
       'Listing: ' + listing + '\n' +
       'Landlord contact: ' + landlord + '\n' +
-      'Notes: ' + notes + '\n\n' +
-      '(Photos to follow separately by WhatsApp/email.)';
+      'Notes: ' + notes;
 
-    var mailto = 'mailto:contacto@confirmad.es'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(body);
+    var fd = new FormData();
+    fd.append('access_key', WEB3FORMS_KEY);
+    fd.append('subject', plan.tag + ' request — ' + name);
+    fd.append('from_name', name);
+    fd.append('name', name);
+    fd.append('email', contact);
+    fd.append('message', message);
+    for (var j = 0; j < photos.length; j++){
+      fd.append('attachment', photos[j]);
+    }
 
-    window.location.href = mailto;
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending…';
 
-    formStep.style.display = 'none';
-    payStep.classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: fd
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (!data.success){ throw new Error(data.message || 'Web3Forms error'); }
+      formStep.style.display = 'none';
+      payStep.classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+    .catch(function(){
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Continue to payment →';
+      formError.textContent = 'Something went wrong sending your details. Please try again, or email us directly at contacto@confirmad.es.';
+      formError.classList.add('show');
+    });
   });
 </script>
 
