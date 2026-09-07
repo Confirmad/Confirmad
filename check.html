@@ -17,6 +17,26 @@
 <meta name="twitter:description" content="Free, instant check for common Madrid rental scam warning signs.">
 <meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
 <link rel="icon" href="confirmad-favicon-16.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ConfirMad",
+  "url": "https://confirmad.es/",
+  "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "image": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "email": "contacto@confirmad.es",
+  "areaServed": { "@type": "City", "name": "Madrid" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+  "priceRange": "€49–€99",
+  "makesOffer": [
+    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+  ]
+}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -25,13 +45,13 @@
   --card: #FFFFFF;
   --ink: #16233B;
   --ink-soft: #4B5768;
-  --ink-faint: #7C8798;
+  --ink-faint: #636C79;
   --stamp: #2F5D45;
   --stamp-dark: #234634;
   --verified: #2F5D45;
   --line: #D7DCD8;
   --red: #A63A34;
-  --amber: #A9720A;
+  --amber: #986609;
   --font: 'Figtree', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
   --max: 760px;
@@ -48,6 +68,7 @@ a:hover{ color: var(--stamp-dark); }
 .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
 h1,h2,h3{ font-family: var(--font); font-weight:700; letter-spacing:-0.02em; margin:0; color: var(--ink); }
 p{ margin:0 0 1em; color: var(--ink-soft); }
+:focus-visible{ outline: 2px solid var(--stamp); outline-offset: 3px; }
 
 header.site{
   position: sticky; top:0; z-index: 50;
@@ -159,7 +180,7 @@ legend{
 }
 .risk-badge svg{ width:15px; height:15px; }
 .risk-green .risk-badge{ background: rgba(47,93,69,0.1); color: var(--stamp); }
-.risk-amber .risk-badge{ background: rgba(169,114,10,0.1); color: var(--amber); }
+.risk-amber .risk-badge{ background: rgba(152,102,9,0.1); color: var(--amber); }
 .risk-red .risk-badge{ background: rgba(166,58,52,0.1); color: var(--red); }
 
 .result-headline{ font-size:1.25rem; margin-bottom:6px; }
@@ -171,7 +192,7 @@ legend{
   padding:12px 13px; border-radius:10px; border:1px solid var(--line);
 }
 .flag-item.sev-high{ border-color: rgba(166,58,52,0.35); background: rgba(166,58,52,0.05); }
-.flag-item.sev-med{ border-color: rgba(169,114,10,0.35); background: rgba(169,114,10,0.05); }
+.flag-item.sev-med{ border-color: rgba(152,102,9,0.35); background: rgba(152,102,9,0.05); }
 .flag-item.sev-low{ border-color: var(--line); background: rgba(22,35,59,0.02); }
 .flag-item.sev-ok{ border-color: rgba(47,93,69,0.3); background: rgba(47,93,69,0.05); }
 .flag-item svg{ flex:none; width:17px; height:17px; margin-top:1px; }
@@ -241,7 +262,7 @@ footer a:hover{ text-decoration:underline; }
       <h1>Is that listing a red flag?</h1>
       <p>Answer a few quick questions about a listing you're looking at and get an instant read on common Madrid rental-scam warning signs — unrealistic price for the area, payment requested before a viewing, no video call, and more.</p>
       <div class="privacy-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
         <span>This runs entirely in your browser. Nothing you type here is sent to us or stored anywhere.</span>
       </div>
     </div>
@@ -417,10 +438,10 @@ footer a:hover{ text-decoration:underline; }
   var flagList = document.getElementById('flagList');
 
   var ICONS = {
-    high: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
-    med:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
-    low:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
-    ok:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+    high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
+    med:  '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
+    low:  '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+    ok:   '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
   };
 
   var DISTRICT_LABELS = {};

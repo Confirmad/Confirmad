@@ -29,7 +29,12 @@
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99"
+  "priceRange": "€49–€99",
+  "makesOffer": [
+    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+  ]
 }
 </script>
 <style>
@@ -40,7 +45,7 @@
     --card: #FFFFFF;
     --ink: #16233B;
     --ink-soft: #4B5768;
-    --ink-faint: #7C8798;
+    --ink-faint: #636C79;
     --stamp: #2F5D45;
     --stamp-dark: #234634;
     --verified: #2F5D45;
@@ -591,10 +596,10 @@
           </div>
           <div class="photo-row">
             <div class="photo">
-              <img src="image1.jpg" alt="Fachada del edificio en C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="image1.jpg" alt="Building façade at C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
             <div class="photo">
-              <img src="image2.jpg" alt="Entrada del edificio en C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <img src="image2.jpg" alt="Building entrance at C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
           </div>
           <ul class="checklist">
@@ -603,7 +608,7 @@
             <li><span class="tick">✓</span> Landlord present, name visually confirmed (no ID stored)</li>
             <li><span class="tick">✓</span> No full payment requested before viewing</li>
           </ul>
-          <div class="stamp" role="img" aria-label="Sello ConfirMad — Comprobado, Madrid">
+          <div class="stamp" role="img" aria-label="ConfirMad stamp — Verified, Madrid">
             <img src="confirmad-simbolo-sello.png" alt="" class="stamp-icon">
             <div class="stamp-word">Confir<span>Mad</span></div>
             <div class="stamp-city">MADRID</div>
@@ -638,22 +643,22 @@
       </div>
       <div class="who-grid">
         <div class="who-card">
-          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
           <h3>Exchange students</h3>
           <p>Coming for a semester and can't fly in early just to see a room.</p>
         </div>
         <div class="who-card">
-          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
           <h3>People relocating for work</h3>
           <p>Moving for a new job on a tight timeline, no time to gamble on a bad address.</p>
         </div>
         <div class="who-card">
-          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="10" rx="1"/><path d="M2 18h20"/></svg></div>
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="10" rx="1"/><path d="M2 18h20"/></svg></div>
           <h3>Digital nomads on a visa</h3>
           <p>Signing a lease from another country before the paperwork even clears.</p>
         </div>
         <div class="who-card">
-          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
           <h3>Au pairs & long-stay visitors</h3>
           <p>Committing to months in someone else's home before ever meeting them.</p>
         </div>
@@ -701,12 +706,12 @@
         <p>The things that are easy to fake in photos and a chat message, but hard to fake in person.</p>
       </div>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">The address exists and matches the listing</span></div>
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">The rooms match the photos you were sent</span></div>
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Someone is actually present to show the apartment</span></div>
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">We visually confirm the landlord's name matches the listing — no ID is photographed or stored</span></div>
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">No full payment is being demanded before a viewing</span></div>
-        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">The address exists and matches the listing</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">The rooms match the photos you were sent</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Someone is actually present to show the apartment</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">We visually confirm the landlord's name matches the listing — no ID is photographed or stored</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">No full payment is being demanded before a viewing</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
       </div>
     </div>
   </section>
@@ -800,23 +805,23 @@
       </div>
       <div class="faq-list">
         <details>
-          <summary>What if I've already sent a deposit?<span class="ind"></span></summary>
+          <summary aria-expanded="false">What if I've already sent a deposit?<span class="ind"></span></summary>
           <p>We can still visit and tell you whether the apartment matches what you paid for, but we can't recover money that's already been sent. It's always better to book a check before paying anything.</p>
         </details>
         <details>
-          <summary>Do you check apartments outside Madrid?<span class="ind"></span></summary>
+          <summary aria-expanded="false">Do you check apartments outside Madrid?<span class="ind"></span></summary>
           <p>Not yet — right now we only visit properties within the city of Madrid.</p>
         </details>
         <details>
-          <summary>What if the landlord won't let you in?<span class="ind"></span></summary>
+          <summary aria-expanded="false">What if the landlord won't let you in?<span class="ind"></span></summary>
           <p>That goes straight into your report as a red flag. A landlord with a real apartment and nothing to hide rarely refuses a short visit.</p>
         </details>
         <details>
-          <summary>Is this legal advice, or a lease review?<span class="ind"></span></summary>
+          <summary aria-expanded="false">Is this legal advice, or a lease review?<span class="ind"></span></summary>
           <p>No. We confirm that a listing is genuine and matches what you've been shown. We're not lawyers, and we don't review contracts for legal validity.</p>
         </details>
         <details>
-          <summary>How fast can you actually go?<span class="ind"></span></summary>
+          <summary aria-expanded="false">How fast can you actually go?<span class="ind"></span></summary>
           <p>Express and Live checks are typically completed within 24–48 hours. Basic checks usually take 3–4 days, depending on availability that week.</p>
         </details>
       </div>
@@ -958,6 +963,12 @@ const form = document.getElementById('checkForm');
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealTargets.forEach(function(el){ revealObserver.observe(el); });
   }
+
+  document.querySelectorAll('.faq-list details').forEach(function(el){
+    el.addEventListener('toggle', function(){
+      el.querySelector('summary').setAttribute('aria-expanded', el.open ? 'true' : 'false');
+    });
+  });
 </script>
 </body>
 </html>
