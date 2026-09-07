@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of service · ConfirMad</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://confirmad.es/terminos.html">
+<link rel="icon" href="confirmad-favicon-16.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #7C8798;
+  --stamp: #2F5D45;
+  --stamp-dark: #234634;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --font: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --max: 1120px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+img, svg{ display:block; max-width:100%; }
+a{ color: var(--stamp); }
+a:hover{ color: var(--stamp-dark); }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+h1,h2,h3{ font-family: var(--font); font-weight:700; letter-spacing:-0.02em; margin:0; color: var(--ink); }
+p{ margin:0 0 1em; color: var(--ink-soft); }
+
+header.site{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+nav.wrap{ display:flex; align-items:center; justify-content: space-between; padding: 16px 28px; }
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand-logo{ height:30px; width:auto; display:block; }
+.nav-links{ display:none; align-items:center; gap:28px; list-style:none; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
+.nav-links a:hover{ color: var(--ink); }
+@media (min-width:760px){ .nav-links{ display:flex; } }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family: var(--font); font-weight:700; font-size:0.94rem;
+  padding: 11px 22px; border-radius:999px;
+  text-decoration:none; cursor:pointer; border:1.5px solid transparent;
+  transition: background-color .15s ease, transform .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{ background: var(--stamp); color:#fff; }
+.btn-primary:hover{ background: var(--stamp-dark); color:#fff; }
+.nav-cta{ padding: 9px 14px; font-size:0.86rem; }
+@media (min-width:760px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
+
+main{ padding: 56px 0 80px; }
+.legal-content{ max-width: 72ch; }
+.legal-content h1{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 8px; }
+.legal-content .updated{ font-family: var(--font-mono); font-size:0.8rem; color: var(--ink-faint); margin-bottom: 36px; }
+.legal-content h2{ font-size: 1.2rem; margin: 40px 0 12px; }
+.legal-content h2:first-of-type{ margin-top: 0; }
+.legal-content p, .legal-content li{ font-size:0.96rem; color: var(--ink-soft); }
+.legal-content ul, .legal-content ol{ padding-left: 20px; margin: 0 0 1em; }
+.legal-content li{ margin-bottom: 6px; }
+.legal-content strong{ color: var(--ink); }
+.todo{ background: rgba(166,58,52,0.08); border:1px dashed #A63A34; border-radius:6px; padding:1px 7px; color:#A63A34; font-family: var(--font-mono); font-size:0.82em; white-space:normal; }
+
+.legal-links{ margin-top: 56px; padding-top: 24px; border-top:1px solid var(--line); font-size:0.9rem; }
+.legal-links a{ margin-right: 16px; }
+
+footer{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
+footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:0.85rem; }
+footer a{ color:#C7CFD8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+
+.whatsapp-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--stamp); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+}
+.whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+.whatsapp-float:active{ transform: scale(0.95); }
+.whatsapp-float svg{ width:28px; height:28px; }
+@keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+@media (max-width:480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html#top" class="brand"><img src="confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#pricing" class="btn btn-primary nav-cta">Request a visit</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap legal-content">
+    <h1>Terms of service</h1>
+    <div class="updated">Last updated: 7 September 2026</div>
+
+    <h2>1. What you're agreeing to</h2>
+    <p>These terms cover your use of confirmad.es and any check you book through it. By booking a check, you agree to them.</p>
+
+    <h2>2. What ConfirMad does</h2>
+    <p>ConfirMad sends someone in person to a Madrid rental listing you're considering, and gives you a written report on what they found, based on the plan you booked:</p>
+    <ul>
+      <li><strong>Basic check (€49)</strong> — in-person visit, full checklist review, written report with photos.</li>
+      <li><strong>Express check (€69)</strong> — everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done.</li>
+      <li><strong>Live check (€99)</strong> — everything in Express, plus a live video call from inside the apartment so you can see the rooms yourself and ask the landlord questions in real time.</li>
+    </ul>
+    <p>Prices are in euros and may change; the price shown when you book is the one that applies to your booking.</p>
+
+    <h2>3. Not a law firm, not a rental agent</h2>
+    <p>ConfirMad is not a law firm and doesn't give legal advice. We don't review tenancy contracts or leases for legal validity, and our report is not a substitute for legal counsel.</p>
+    <p>We're not a party to your tenancy and we don't act as a rental agent. We don't negotiate the rental on your behalf, and we don't guarantee the landlord will rent to you or that the terms won't change after our visit.</p>
+
+    <h2>4. We never touch your rental money</h2>
+    <p>ConfirMad never receives, holds, or transfers your deposit or rent. Those payments happen directly between you and the landlord, entirely outside this site. The only payment you make to ConfirMad is the fee for the check itself, charged through Stripe when you book.</p>
+
+    <h2>5. What a check can and can't tell you</h2>
+    <p>Our report reflects what our visitor could observe and verify in person, on the date and at the time of the visit, against the checklist for your plan. It's a strong, honest signal — but it isn't a guarantee. A listing can look legitimate at the time of a visit and still turn out to have problems later, and no in-person check can catch every possible form of fraud.</p>
+    <p>For the Live check specifically, the video call depends on the landlord's cooperation and on having a usable internet connection at the property at the time of the visit; if either isn't available, we'll do our best with what's possible and note it in the report.</p>
+
+    <h2>6. If the landlord won't cooperate</h2>
+    <p>If, despite reasonable coordination, the landlord refuses to let our visitor in or isn't present at the agreed time, that itself becomes a finding in your report — a landlord who won't allow a short visit is worth knowing about. <!-- TODO: confirm whether you want to offer a free re-attempt or partial refund in this specific case; see the proposed default in section 7 --><span class="todo">[TODO: confirm policy for landlord no-shows/refusals]</span></p>
+
+    <h2>7. Refunds</h2>
+    <ul>
+      <li>If we're unable to carry out any part of the visit because of something on our end, you get a full refund.</li>
+      <li>Once the visit has been carried out and the report delivered, the fee is non-refundable — the service was performed, whatever the report finds. A report telling you not to send the deposit is still a successful check.</li>
+      <li>If the landlord refuses access or is a no-show for reasons outside our control, <!-- TODO: confirm the exact policy: e.g. one free rescheduling attempt, or a partial refund --><span class="todo">[TODO: confirm refund/rebooking policy for this case]</span>.</li>
+    </ul>
+    <p>If something feels wrong about a check you booked, email us first at <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> before opening a dispute with your bank or card provider — we'd rather sort it out directly.</p>
+
+    <h2>8. Your responsibilities</h2>
+    <p>You agree to give us accurate contact and listing information, and to only book a check for a listing you're genuinely considering renting — not to send someone to an address as a prank or to harass a landlord you have no real interest in renting from.</p>
+
+    <h2>9. Liability</h2>
+    <p>To the extent allowed by law, ConfirMad's total liability for any check is limited to the fee you paid for that check. We're not liable for your decision to proceed with (or walk away from) a rental after reading our report, or for anything that happens after the report is delivered.</p>
+
+    <h2>10. Changes</h2>
+    <p>We may update these terms as the service evolves. Continuing to use the site after an update means you accept the new version; we'll update the date at the top whenever we make a change.</p>
+
+    <h2>11. Governing law</h2>
+    <p>These terms are governed by Spanish law. <!-- TODO: confirm exact jurisdiction once the business is registered --><span class="todo">[TODO: confirm jurisdiction — courts of Madrid, or as required by consumer law]</span>, without prejudice to any mandatory consumer-protection rules that apply to you.</p>
+
+    <div class="legal-links">
+      <a href="aviso-legal.html">Legal Notice</a>
+      <a href="privacidad.html">Privacy Policy</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>ConfirMad · Madrid, Spain</div>
+    <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
+    <div><a href="aviso-legal.html">Legal notice</a> · <a href="privacidad.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <a href="terminos.html">Terms</a></div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
+</body>
+</html>
