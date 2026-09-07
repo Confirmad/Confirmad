@@ -246,24 +246,18 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     } catch (e) { console.warn('Auto-reply email failed:', e); }
   }
 
-  // TODO: the basic/express Stripe Payment Links below still charge the OLD
-  // amounts (€35/€59) from before the pricing restructure — create new Payment
-  // Links in Stripe at €49/€69 and swap the URLs in, or customers will be
-  // charged the wrong amount. "live" has no Payment Link yet at all (€99) —
-  // create one and paste it in below; until then its "Pay now" button opens
-  // WhatsApp instead of Stripe.
   var PLANS = {
     basic: {
       tag: 'Basic check', amount: '€49', turnaround: 'Report within 3–4 days',
-      stripe: 'https://buy.stripe.com/5kQdR3d8c6sF8NjcjUaZi02'
+      stripe: 'https://buy.stripe.com/28EaERc4804hbZves2aZi06'
     },
     express: {
       tag: 'Express check', amount: '€69', turnaround: 'Report within 24–48 hours',
-      stripe: 'https://buy.stripe.com/fZufZb5FK5oBd3z6ZAaZi03'
+      stripe: 'https://buy.stripe.com/dRm3cpecg04h1kR0BcaZi05'
     },
     live: {
       tag: 'Live check', amount: '€99', turnaround: 'Report within 24–48 hours',
-      stripe: null
+      stripe: 'https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04'
     }
   };
 
