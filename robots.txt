@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://confirmad.es/sitemap.xml
