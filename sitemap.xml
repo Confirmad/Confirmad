@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://confirmad.es/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/es/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/it/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/fr/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/"/>
   </url>
   <url>
     <loc>https://confirmad.es/check.html</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/check.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/es/check.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/check.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/it/check.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/check.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html"/>
+  </url>
+  <url>
+    <loc>https://confirmad.es/fr/check.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://confirmad.es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://confirmad.es/es/check.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://confirmad.es/it/check.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html"/>
   </url>
 </urlset>

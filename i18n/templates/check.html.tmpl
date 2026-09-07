@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="[[HTML_LANG]]">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free listing red-flag check · ConfirMad</title>
-<meta name="description" content="Paste in the details of a Madrid rental listing and get an instant, free check for common scam warning signs — unrealistic price, payment before viewing, no video call, and more.">
-<link rel="canonical" href="https://confirmad.es/check.html">
-<link rel="alternate" hreflang="en" href="https://confirmad.es/check.html">
-<link rel="alternate" hreflang="es" href="https://confirmad.es/es/check.html">
-<link rel="alternate" hreflang="it" href="https://confirmad.es/it/check.html">
-<link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html">
-<link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html">
+<title>[[meta.check_title]]</title>
+<meta name="description" content="[[meta.check_description]]">
+<link rel="canonical" href="[[CANONICAL_URL]]">
+[[HREFLANG_LINKS]]
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConfirMad">
-<meta property="og:title" content="Free listing red-flag check · ConfirMad">
-<meta property="og:description" content="Free, instant check for common Madrid rental scam warning signs. No sign-up, nothing sent anywhere — runs entirely in your browser.">
-<meta property="og:url" content="https://confirmad.es/check.html">
+<meta property="og:title" content="[[meta.check_title]]">
+<meta property="og:description" content="[[meta.check_og_description]]">
+<meta property="og:url" content="[[OG_URL]]">
 <meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free listing red-flag check · ConfirMad">
-<meta name="twitter:description" content="Free, instant check for common Madrid rental scam warning signs.">
+<meta name="twitter:title" content="[[meta.check_title]]">
+<meta name="twitter:description" content="[[meta.check_twitter_description]]">
 <meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
@@ -30,15 +26,15 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "description": "[[meta.jsonld_description]]",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€49–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "[[meta.jsonld_offer_basic]]" } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "[[meta.jsonld_offer_express]]" } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "[[meta.jsonld_offer_live]]" } }
   ]
 }
 </script>
@@ -259,14 +255,14 @@ footer a:hover{ text-decoration:underline; }
   <nav class="wrap">
     <a href="index.html#top" class="brand"><img src="/confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
     <ul class="nav-links">
-      <li><a href="index.html#how">How it works</a></li>
-      <li><a href="index.html#pricing">Pricing</a></li>
-      <li><a href="check.html" class="current">Free check</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#how">[[nav.how]]</a></li>
+      <li><a href="index.html#pricing">[[nav.pricing]]</a></li>
+      <li><a href="check.html" class="current">[[nav.free_check]]</a></li>
+      <li><a href="index.html#faq">[[nav.faq]]</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-switch"><a href="https://confirmad.es/check.html" class="lang-current">EN</a> · <a href="https://confirmad.es/es/check.html">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html">FR</a></div>
-      <a href="index.html#pricing" class="btn btn-primary nav-cta">Request a visit</a>
+      [[LANG_SELECTOR]]
+      <a href="index.html#pricing" class="btn btn-primary nav-cta">[[nav.request_cta]]</a>
     </div>
   </nav>
 </header>
@@ -275,85 +271,85 @@ footer a:hover{ text-decoration:underline; }
   <div class="wrap">
 
     <div class="tool-head">
-      <span class="eyebrow">Free tool</span>
-      <h1>Is that listing a red flag?</h1>
-      <p>Answer a few quick questions about a listing you're looking at and get an instant read on common Madrid rental-scam warning signs — unrealistic price for the area, payment requested before a viewing, no video call, and more.</p>
+      <span class="eyebrow">[[check_tool.eyebrow]]</span>
+      <h1>[[check_tool.h1]]</h1>
+      <p>[[check_tool.lede]]</p>
       <div class="privacy-note">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-        <span>This runs entirely in your browser. Nothing you type here is sent to us or stored anywhere.</span>
+        <span>[[check_tool.privacy_note]]</span>
       </div>
     </div>
 
     <form id="checkForm" class="tool-card" novalidate>
       <fieldset>
-        <legend>The listing</legend>
+        <legend>[[check_tool.legend_listing]]</legend>
         <div class="grid-2">
           <div class="field field-prefix">
-            <label for="price">Monthly rent</label>
+            <label for="price">[[check_tool.price_label]]</label>
             <span>€</span>
-            <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="650">
+            <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.price_placeholder]]">
           </div>
           <div class="field field-prefix">
-            <label for="size">Approx. size</label>
-            <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="45">
+            <label for="size">[[check_tool.size_label]]</label>
+            <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.size_placeholder]]">
             <span style="left:auto; right:13px;">m²</span>
           </div>
         </div>
         <div class="grid-2">
           <div class="field">
-            <label for="district">Madrid district</label>
+            <label for="district">[[check_tool.district_label]]</label>
             <select id="district" name="district">
-              <option value="">Not sure / not listed</option>
-              <option value="centro">Centro</option>
-              <option value="arganzuela">Arganzuela</option>
-              <option value="retiro">Retiro</option>
-              <option value="salamanca">Salamanca</option>
-              <option value="chamartin">Chamartín</option>
-              <option value="tetuan">Tetuán</option>
-              <option value="chamberi">Chamberí</option>
-              <option value="fuencarral-el-pardo">Fuencarral-El Pardo</option>
-              <option value="moncloa-aravaca">Moncloa-Aravaca</option>
-              <option value="latina">Latina</option>
-              <option value="carabanchel">Carabanchel</option>
-              <option value="usera">Usera</option>
-              <option value="puente-de-vallecas">Puente de Vallecas</option>
-              <option value="villa-de-vallecas">Villa de Vallecas</option>
-              <option value="vicalvaro">Vicálvaro</option>
-              <option value="ciudad-lineal">Ciudad Lineal</option>
-              <option value="hortaleza">Hortaleza</option>
-              <option value="villaverde">Villaverde</option>
-              <option value="san-blas-canillejas">San Blas-Canillejas</option>
-              <option value="barajas">Barajas</option>
+              <option value="">[[check_tool.district_not_sure]]</option>
+              <option value="centro">[[check_js.district_labels.centro]]</option>
+              <option value="arganzuela">[[check_js.district_labels.arganzuela]]</option>
+              <option value="retiro">[[check_js.district_labels.retiro]]</option>
+              <option value="salamanca">[[check_js.district_labels.salamanca]]</option>
+              <option value="chamartin">[[check_js.district_labels.chamartin]]</option>
+              <option value="tetuan">[[check_js.district_labels.tetuan]]</option>
+              <option value="chamberi">[[check_js.district_labels.chamberi]]</option>
+              <option value="fuencarral-el-pardo">[[check_js.district_labels.fuencarral-el-pardo]]</option>
+              <option value="moncloa-aravaca">[[check_js.district_labels.moncloa-aravaca]]</option>
+              <option value="latina">[[check_js.district_labels.latina]]</option>
+              <option value="carabanchel">[[check_js.district_labels.carabanchel]]</option>
+              <option value="usera">[[check_js.district_labels.usera]]</option>
+              <option value="puente-de-vallecas">[[check_js.district_labels.puente-de-vallecas]]</option>
+              <option value="villa-de-vallecas">[[check_js.district_labels.villa-de-vallecas]]</option>
+              <option value="vicalvaro">[[check_js.district_labels.vicalvaro]]</option>
+              <option value="ciudad-lineal">[[check_js.district_labels.ciudad-lineal]]</option>
+              <option value="hortaleza">[[check_js.district_labels.hortaleza]]</option>
+              <option value="villaverde">[[check_js.district_labels.villaverde]]</option>
+              <option value="san-blas-canillejas">[[check_js.district_labels.san-blas-canillejas]]</option>
+              <option value="barajas">[[check_js.district_labels.barajas]]</option>
             </select>
           </div>
           <div class="field">
-            <label for="platform">Where is it listed?</label>
+            <label for="platform">[[check_tool.platform_label]]</label>
             <select id="platform" name="platform">
-              <option value="idealista">Idealista</option>
-              <option value="fotocasa">Fotocasa</option>
-              <option value="airbnb">Airbnb / Booking</option>
-              <option value="badi">Badi / SpareRoom / roommate site</option>
-              <option value="facebook">Facebook group / Marketplace</option>
-              <option value="direct">Sent directly, no public listing</option>
-              <option value="other">Other</option>
+              <option value="idealista">[[check_tool.platform_idealista]]</option>
+              <option value="fotocasa">[[check_tool.platform_fotocasa]]</option>
+              <option value="airbnb">[[check_tool.platform_airbnb]]</option>
+              <option value="badi">[[check_tool.platform_badi]]</option>
+              <option value="facebook">[[check_tool.platform_facebook]]</option>
+              <option value="direct">[[check_tool.platform_direct]]</option>
+              <option value="other">[[check_tool.platform_other]]</option>
             </select>
           </div>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>What the landlord has said or done</legend>
+        <legend>[[check_tool.legend_landlord]]</legend>
         <ul class="check-list">
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_abroad" name="f_abroad"><span>Says they're currently abroad and can't show the apartment in person</span></label></li>
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_transfer" name="f_transfer"><span>Asked for a deposit or transfer before you've seen the apartment</span></label></li>
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_wu" name="f_wu"><span>Asked to be paid via Western Union, crypto, or gift cards</span></label></li>
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_novideo" name="f_novideo"><span>Refused or dodged a video call when you asked for one</span></label></li>
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_rush" name="f_rush"><span>Pressured you to decide fast ("someone else is interested")</span></label></li>
-          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_lang" name="f_lang"><span>Listing or messages have odd spelling or grammar</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_abroad" name="f_abroad"><span>[[check_tool.f_abroad]]</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_transfer" name="f_transfer"><span>[[check_tool.f_transfer]]</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_wu" name="f_wu"><span>[[check_tool.f_wu]]</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_novideo" name="f_novideo"><span>[[check_tool.f_novideo]]</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_rush" name="f_rush"><span>[[check_tool.f_rush]]</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_lang" name="f_lang"><span>[[check_tool.f_lang]]</span></label></li>
         </ul>
       </fieldset>
 
-      <button type="submit" class="btn btn-primary btn-block">Check this listing</button>
+      <button type="submit" class="btn btn-primary btn-block">[[check_tool.submit]]</button>
     </form>
 
     <section id="result">
@@ -364,17 +360,17 @@ footer a:hover{ text-decoration:underline; }
 
         <ul class="flag-list" id="flagList"></ul>
 
-        <p class="disclaimer">This is a quick self-check based on common scam patterns — it looks at what you told it, nothing more. It isn't proof of anything, and it can't replace someone actually standing in the apartment and confirming it's real.</p>
+        <p class="disclaimer">[[check_tool.disclaimer]]</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Get a real check from €49</a>
-          <a href="index.html#faq" class="btn btn-outline">Why an in-person check?</a>
+          <a href="index.html#pricing" class="btn btn-primary">[[check_tool.cta_primary]]</a>
+          <a href="index.html#faq" class="btn btn-outline">[[check_tool.cta_secondary]]</a>
         </div>
       </div>
 
       <div class="share-row">
-        <button type="button" class="btn btn-outline" id="copyTextBtn">Copy result as text</button>
-        <button type="button" class="btn btn-outline" id="copyLinkBtn">Copy shareable link</button>
+        <button type="button" class="btn btn-outline" id="copyTextBtn">[[check_tool.copy_text_btn]]</button>
+        <button type="button" class="btn btn-outline" id="copyLinkBtn">[[check_tool.copy_link_btn]]</button>
         <span class="copy-feedback" id="copyFeedback">Copied</span>
       </div>
     </section>
@@ -386,11 +382,11 @@ footer a:hover{ text-decoration:underline; }
   <div class="wrap">
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
-    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a></div>
+    <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a></div>
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=[[WA_FLOAT_TEXT]]" target="_blank" rel="noopener" aria-label="[[whatsapp.aria_label]]">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
 </a>
 
@@ -398,7 +394,7 @@ footer a:hover{ text-decoration:underline; }
 (function(){
   'use strict';
 
-  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "Price looks unusually low for {district}", "price_severe_detail": "That works out to about €{perM2}/m², well under the typical €{low}–€{high}/m² for this area. Unrealistically cheap listings are one of the most common lures in rental scams.", "price_moderate_title": "Price is a bit low for {district}", "price_moderate_detail": "About €{perM2}/m², somewhat below the typical €{low}–€{high}/m² for this area. Not alarming on its own, but worth a second look together with anything else here.", "price_ok_title": "Price looks realistic for {district}", "price_ok_detail": "About €{perM2}/m², in line with the typical €{low}–€{high}/m² for this area.", "abroad_title": "Landlord says they're abroad", "abroad_detail": "Can't show the apartment in person because they say they're currently out of the country. Legitimate landlords with a local contact or agency can usually still arrange a visit.", "transfer_title": "Payment requested before a viewing", "transfer_detail": "Being asked to transfer a deposit or rent before you've actually seen the apartment is one of the clearest signs of a rental scam.", "wu_title": "Asked to pay via Western Union, crypto, or gift cards", "wu_detail": "No legitimate landlord in Spain asks for these. They exist because they are close to impossible to trace or reverse.", "novideo_title": "Refused a video call", "novideo_detail": "A real landlord showing a real, currently-empty or currently-let apartment usually has no problem doing a quick video call to prove it.", "rush_title": "Pressured you to decide fast", "rush_detail": "\"Someone else is interested\" urgency is a classic tactic to stop you from checking things properly before paying.", "lang_title": "Odd spelling or grammar in the listing", "lang_detail": "Sometimes a sign of a copy-pasted or auto-translated scam listing — though plenty of genuine listings have typos too, so this alone proves nothing.", "platform_title": "Shared outside a verified listing platform", "platform_detail_direct": "Sent directly with no public listing to check against.", "platform_detail_facebook": "Facebook groups and Marketplace have little to no listing verification.", "platform_detail_suffix": "Easier to fake than a listing on a platform like Idealista or Fotocasa.", "no_flags": "No details entered yet that match common warning signs.", "badge_green": "Low risk", "head_green": "No major red flags found", "sub_green": "Nothing here matches the usual scam patterns. That's a good sign — it doesn't guarantee the listing is genuine, but there's nothing obvious to worry about yet.", "badge_amber": "Some concerns", "head_amber": "A few things worth double-checking", "sub_amber": "Nothing here is definitive on its own, but a couple of details are worth confirming before you send any money.", "badge_red": "High risk", "head_red": "Several common scam warning signs", "sub_red": "This combination of details matches patterns we see in rental scams often. We'd strongly recommend not sending any money until someone has actually verified this in person.", "copy_text_title": "ConfirMad free listing check —", "copy_text_checked_at": "Checked at", "copied_to_clipboard": "Copied to clipboard", "link_copied": "Link copied"};
+  var I18N = [[JSON_I18N_CHECKJS]];
 
   function t(str, vars){
     return str.replace(/\{(\w+)\}/g, function(_, k){ return (vars && (k in vars)) ? vars[k] : ''; });
