@@ -90,7 +90,7 @@
   html.has-reveal .step,
   html.has-reveal .check-item,
   html.has-reveal .price-card,
-  html.has-reveal .quote,
+  html.has-reveal .about-photo,
   html.has-reveal .faq-list details{
     opacity:0; transform: translateY(16px);
     transition: opacity .6s ease, transform .6s ease;
@@ -99,7 +99,7 @@
   html.has-reveal .step.is-visible,
   html.has-reveal .check-item.is-visible,
   html.has-reveal .price-card.is-visible,
-  html.has-reveal .quote.is-visible,
+  html.has-reveal .about-photo.is-visible,
   html.has-reveal .faq-list details.is-visible{
     opacity:1; transform: translateY(0);
   }
@@ -214,6 +214,13 @@
     max-width: 400px;
     margin: 0 auto;
   }
+  .sample-tag{
+    position:absolute; top:-11px; left:20px;
+    background: var(--card); border: 1px solid var(--line); border-radius:999px;
+    padding: 3px 12px;
+    font-family: var(--font-mono); font-size:0.66rem; font-weight:600; letter-spacing:0.09em;
+    color: var(--ink-faint);
+  }
   .report-head{
     display:flex; justify-content:space-between; align-items:flex-start;
     border-bottom: 1px dashed var(--line);
@@ -289,9 +296,38 @@
   .section-head{ max-width: 640px; margin-bottom: 40px; }
   .section-head h2{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 14px; line-height:1.3; }
   #check{ background: #E6ECE8; }
-  #stories{ background: var(--stamp); }
-  #stories .section-head h2{ color: #fff; }
-  #stories .section-head p{ color: #D6E6DC; }
+
+  /* ---------- EARLY ACCESS ---------- */
+  #early{ background: var(--stamp); }
+  #early .section-head h2{ color: #fff; }
+  #early .section-head p{ color: #D6E6DC; }
+  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  .btn-invert{ background:#fff; color: var(--stamp); }
+  .btn-invert:hover{ background: var(--paper); }
+  .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
+  .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
+
+  /* ---------- ABOUT / FOUNDER ---------- */
+  #about{ background: #E6ECE8; }
+  .about-card{
+    display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 40px 32px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
+  }
+  @media (min-width: 760px){ .about-card{ grid-template-columns: auto 1fr; gap: 44px; padding: 44px; } }
+  .about-avatar{
+    width:172px; height:172px; border-radius:50%; flex:none;
+    background: rgba(47,93,69,0.1); color: var(--stamp);
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto;
+  }
+  .about-avatar svg{ width:72px; height:72px; }
+  .about-quote{
+    font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
+    margin-bottom: 18px;
+  }
+  .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
+  .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
 
   /* ---------- DECORATIVE RING (used sparingly) ---------- */
   .ring-deco{ position:relative; overflow:hidden; }
@@ -410,21 +446,6 @@
   .price-card li{ margin-bottom: 6px; }
   .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
 
-  /* ---------- TESTIMONIALS ---------- */
-  .quotes{ display:grid; grid-template-columns: 1fr; gap: 26px; }
-  @media (min-width: 760px){ .quotes{ grid-template-columns: 1fr 1fr; } }
-  .quote{
-    position:relative; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 30px 24px 24px; overflow:hidden;
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .quote:hover{ transform: translateY(-3px); box-shadow: 0 18px 32px -24px rgba(22,35,59,0.3); }
-  .quote::before{
-    content:"\201C"; position:absolute; top:0px; left:16px; font-size:3.6rem; line-height:1;
-    font-family: Georgia, serif; color: var(--verified); opacity:0.2;
-  }
-  .quote p{ position:relative; font-size: 1.02rem; color: var(--ink); margin-bottom: 10px; }
-  .quote cite{ position:relative; display:block; font-style: normal; font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); }
 
   /* ---------- FAQ ---------- */
   .faq-list{ max-width: 720px; }
@@ -512,18 +533,20 @@
         <p class="lede">You're moving to Madrid for a semester, a job, or a few months, and the listing looks fine — but you can't see it yourself. We can. Give us the address and we'll visit in person, confirm it's real, and send you the proof.</p>
         <div class="hero-ctas">
            <a href="#pricing" class="btn btn-primary nav-cta">Request a visit</a>
-          </div>  
+           <a href="sample-report.pdf" class="btn btn-ghost">See a sample report (PDF)</a>
+          </div>
         <div class="hero-note">Based in Madrid. Express checks in 24–48 hours, Standard in 3–4 days.</div>
       </div>
 
       <div id="report-sample">
         <div class="report">
+          <div class="sample-tag">SAMPLE REPORT</div>
           <div class="report-head">
             <div>
               <div class="label">Address checked</div>
               <div class="addr">C/ Fuencarral 45 </div>
             </div>
-            <div class="report-id">Case #MAD-1042<br>14 min walk from Gran Vía</div>
+            <div class="report-id">14 min walk from Gran Vía</div>
           </div>
           <div class="photo-row">
             <div class="photo">
@@ -651,22 +674,38 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="stories">
+  <!-- EARLY ACCESS -->
+  <section id="early">
     <div class="wrap">
       <div class="section-head">
-        <h2>What people found out in time</h2>
+        <h2>We're just getting started</h2>
+        <p>ConfirMad is brand new — there's no long list of past cases yet, and we'd rather say that than fake one. The first 10 checks are free. In exchange, we ask permission to publish what we found (we can leave your name out of it if you'd rather).</p>
       </div>
-      <div class="quotes">
-        <div class="quote">
-          <p>I was about to transfer 900€ for a room I'd only seen in four photos. ConfirMad went the next morning — the building didn't even have that street number.</p>
-          <cite>Exchange student, arriving from Berlin</cite>
-        </div>
-        <div class="quote">
-          <p>The apartment was real, the landlord was legitimate, and I paid the deposit without the knot in my stomach I'd had all week.</p>
-          <cite>Master's student, arriving from São Paulo</cite>
+      <div class="early-ctas">
+        <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20one%20of%20the%20first%2010%20free%20checks" class="btn btn-invert">Message us on WhatsApp</a>
+        <a href="#request" class="btn btn-outline-invert">Send us the listing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / FOUNDER -->
+  <section id="about">
+    <div class="wrap">
+    <div class="about-card">
+      <div class="about-photo">
+        <!-- TODO: replace this placeholder with a real photo of the founder (square image, ~400x400px works best) -->
+        <div class="about-avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
         </div>
       </div>
+      <div>
+        <div class="section-head" style="margin-bottom:16px;">
+          <h2>Who's behind this</h2>
+        </div>
+        <p class="about-quote">"I moved to Madrid myself and saw how easy it is to get scammed on a rental you can't see in person. ConfirMad exists because someone should be able to just go look — no agency, no middleman, just a real person on the ground you can trust."</p>
+        <div class="about-name"><!-- TODO: your real name -->[Founder name]<span>Founder, ConfirMad</span></div>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -818,7 +857,7 @@ const form = document.getElementById('checkForm');
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
     document.documentElement.classList.add('has-reveal');
-    var revealTargets = document.querySelectorAll('.section-head, .step, .check-item, .price-card, .quote, .faq-list details');
+    var revealTargets = document.querySelectorAll('.section-head, .step, .check-item, .price-card, .about-photo, .faq-list details');
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if (entry.isIntersecting){
