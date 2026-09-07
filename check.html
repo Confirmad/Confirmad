@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free listing red-flag check · ConfirMad</title>
+<meta name="description" content="Paste in the details of a Madrid rental listing and get an instant, free check for common scam warning signs — unrealistic price, payment before viewing, no video call, and more.">
+<link rel="canonical" href="https://confirmad.es/check.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConfirMad">
+<meta property="og:title" content="Free listing red-flag check · ConfirMad">
+<meta property="og:description" content="Free, instant check for common Madrid rental scam warning signs. No sign-up, nothing sent anywhere — runs entirely in your browser.">
+<meta property="og:url" content="https://confirmad.es/check.html">
+<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free listing red-flag check · ConfirMad">
+<meta name="twitter:description" content="Free, instant check for common Madrid rental scam warning signs.">
+<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<link rel="icon" href="confirmad-favicon-16.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #7C8798;
+  --stamp: #2F5D45;
+  --stamp-dark: #234634;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --red: #A63A34;
+  --amber: #A9720A;
+  --font: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --max: 760px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+img, svg{ display:block; max-width:100%; }
+a{ color: var(--stamp); }
+a:hover{ color: var(--stamp-dark); }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+h1,h2,h3{ font-family: var(--font); font-weight:700; letter-spacing:-0.02em; margin:0; color: var(--ink); }
+p{ margin:0 0 1em; color: var(--ink-soft); }
+
+header.site{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: space-between; padding: 16px 28px; }
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand-logo{ height:30px; width:auto; display:block; }
+.nav-links{ display:none; align-items:center; gap:28px; list-style:none; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
+.nav-links a:hover{ color: var(--ink); }
+.nav-links a.current{ color: var(--stamp); }
+@media (min-width:760px){ .nav-links{ display:flex; } }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family: var(--font); font-weight:700; font-size:0.94rem;
+  padding: 12px 22px; border-radius:999px;
+  text-decoration:none; cursor:pointer; border:1.5px solid transparent;
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{ background: var(--stamp); color:#fff; }
+.btn-primary:hover{ background: var(--stamp-dark); color:#fff; }
+.btn-outline{ background: transparent; border-color: var(--line); color: var(--ink); }
+.btn-outline:hover{ border-color: var(--ink-faint); background: rgba(22,35,59,0.03); }
+.btn-block{ width:100%; }
+.nav-cta{ padding: 9px 14px; font-size:0.86rem; }
+@media (min-width:760px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
+
+main{ padding: 40px 0 80px; }
+
+.tool-head{ max-width: 62ch; margin-bottom: 32px; }
+.tool-head .eyebrow{
+  display:inline-block; font-family: var(--font-mono); font-size:0.78rem; font-weight:600;
+  color: var(--stamp); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:10px;
+}
+.tool-head h1{ font-size: clamp(1.6rem, 3.4vw, 2.1rem); margin-bottom:12px; line-height:1.25; }
+.tool-head p{ font-size:0.98rem; }
+.privacy-note{
+  display:flex; gap:8px; align-items:flex-start; font-size:0.82rem; color: var(--ink-faint);
+  background: rgba(47,93,69,0.06); border:1px solid rgba(47,93,69,0.18); border-radius:10px;
+  padding:10px 12px; margin-top:16px;
+}
+.privacy-note svg{ flex:none; width:16px; height:16px; margin-top:2px; color: var(--stamp); }
+
+/* ---------- form ---------- */
+.tool-card{
+  background: var(--card); border:1px solid var(--line); border-radius:18px;
+  padding: 26px 24px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
+  margin-bottom: 28px;
+}
+fieldset{ border:0; margin:0; padding:0; }
+legend{
+  font-family: var(--font-mono); font-size:0.78rem; font-weight:600; color: var(--ink-faint);
+  text-transform: uppercase; letter-spacing:0.04em; padding:0 0 14px; width:100%;
+  border-bottom:1px solid var(--line); margin-bottom:18px;
+}
+.grid-2{ display:grid; grid-template-columns:1fr; gap:16px; }
+@media (min-width:560px){ .grid-2{ grid-template-columns:1fr 1fr; } }
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.field label{ font-size:0.85rem; font-weight:600; color: var(--ink); }
+.field input, .field select{
+  background:#fff; border:1px solid var(--line); color: var(--ink);
+  padding:12px 13px; border-radius:10px; font-family: var(--font); font-size:0.95rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.field input:focus, .field select:focus{
+  outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
+}
+.field-prefix{ position:relative; }
+.field-prefix span{
+  position:absolute; left:13px; top:50%; transform:translateY(-50%);
+  color: var(--ink-faint); font-size:0.95rem; pointer-events:none;
+}
+.field-prefix input{ padding-left:28px; }
+
+.check-list{ list-style:none; margin:0 0 6px; padding:0; display:flex; flex-direction:column; gap:10px; }
+.check-row{
+  display:flex; align-items:flex-start; gap:12px; cursor:pointer;
+  background:#fff; border:1px solid var(--line); border-radius:12px; padding:13px 14px;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.check-row:hover{ border-color: var(--ink-faint); }
+.check-row input{
+  flex:none; width:18px; height:18px; margin-top:2px; accent-color: var(--stamp); cursor:pointer;
+}
+.check-row span{ font-size:0.92rem; color: var(--ink); line-height:1.45; }
+.check-row input:checked ~ span{ color: var(--ink); }
+.check-row:has(input:checked){ border-color: var(--stamp); background: rgba(47,93,69,0.05); }
+
+/* ---------- result ---------- */
+#result{ display:none; }
+#result.show{ display:block; }
+.result-card{
+  background: var(--card); border:1px solid var(--line); border-radius:18px;
+  padding: 26px 24px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
+  margin-bottom: 20px; border-top-width:5px; border-top-style:solid;
+}
+.result-card.risk-green{ border-top-color: var(--stamp); }
+.result-card.risk-amber{ border-top-color: var(--amber); }
+.result-card.risk-red{ border-top-color: var(--red); }
+
+.risk-badge{
+  display:inline-flex; align-items:center; gap:8px; font-family: var(--font-mono);
+  font-weight:600; font-size:0.82rem; letter-spacing:0.03em; text-transform:uppercase;
+  padding:7px 14px; border-radius:999px; margin-bottom:14px;
+}
+.risk-badge svg{ width:15px; height:15px; }
+.risk-green .risk-badge{ background: rgba(47,93,69,0.1); color: var(--stamp); }
+.risk-amber .risk-badge{ background: rgba(169,114,10,0.1); color: var(--amber); }
+.risk-red .risk-badge{ background: rgba(166,58,52,0.1); color: var(--red); }
+
+.result-headline{ font-size:1.25rem; margin-bottom:6px; }
+.result-sub{ font-size:0.92rem; margin-bottom:18px; }
+
+.flag-list{ list-style:none; margin:0 0 18px; padding:0; display:flex; flex-direction:column; gap:10px; }
+.flag-item{
+  display:flex; gap:11px; align-items:flex-start; font-size:0.9rem; color: var(--ink-soft);
+  padding:12px 13px; border-radius:10px; border:1px solid var(--line);
+}
+.flag-item.sev-high{ border-color: rgba(166,58,52,0.35); background: rgba(166,58,52,0.05); }
+.flag-item.sev-med{ border-color: rgba(169,114,10,0.35); background: rgba(169,114,10,0.05); }
+.flag-item.sev-low{ border-color: var(--line); background: rgba(22,35,59,0.02); }
+.flag-item.sev-ok{ border-color: rgba(47,93,69,0.3); background: rgba(47,93,69,0.05); }
+.flag-item svg{ flex:none; width:17px; height:17px; margin-top:1px; }
+.flag-item.sev-high svg{ color: var(--red); }
+.flag-item.sev-med svg{ color: var(--amber); }
+.flag-item.sev-low svg{ color: var(--ink-faint); }
+.flag-item.sev-ok svg{ color: var(--stamp); }
+.flag-item strong{ color: var(--ink); }
+
+.disclaimer{
+  font-size:0.82rem; color: var(--ink-faint); border-top:1px solid var(--line);
+  padding-top:14px; margin-bottom:18px;
+}
+.result-ctas{ display:flex; flex-wrap:wrap; gap:10px; }
+.result-ctas .btn{ flex:1 1 auto; }
+
+.share-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
+.share-row .btn{ font-size:0.85rem; padding:9px 16px; }
+.copy-feedback{
+  font-size:0.8rem; color: var(--stamp); font-weight:600; align-self:center;
+  opacity:0; transition: opacity .2s ease;
+}
+.copy-feedback.show{ opacity:1; }
+
+footer{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
+footer .wrap{ max-width:1120px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:0.85rem; }
+footer a{ color:#C7CFD8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+
+.whatsapp-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--stamp); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+}
+.whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+.whatsapp-float:active{ transform: scale(0.95); }
+.whatsapp-float svg{ width:28px; height:28px; }
+@keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+@media (max-width:480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html#top" class="brand"><img src="confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="check.html" class="current">Free check</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#pricing" class="btn btn-primary nav-cta">Request a visit</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="tool-head">
+      <span class="eyebrow">Free tool</span>
+      <h1>Is that listing a red flag?</h1>
+      <p>Answer a few quick questions about a listing you're looking at and get an instant read on common Madrid rental-scam warning signs — unrealistic price for the area, payment requested before a viewing, no video call, and more.</p>
+      <div class="privacy-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span>This runs entirely in your browser. Nothing you type here is sent to us or stored anywhere.</span>
+      </div>
+    </div>
+
+    <form id="checkForm" class="tool-card" novalidate>
+      <fieldset>
+        <legend>The listing</legend>
+        <div class="grid-2">
+          <div class="field field-prefix">
+            <label for="price">Monthly rent</label>
+            <span>€</span>
+            <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="650">
+          </div>
+          <div class="field field-prefix">
+            <label for="size">Approx. size</label>
+            <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="45">
+            <span style="left:auto; right:13px;">m²</span>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="district">Madrid district</label>
+            <select id="district" name="district">
+              <option value="">Not sure / not listed</option>
+              <option value="centro">Centro</option>
+              <option value="arganzuela">Arganzuela</option>
+              <option value="retiro">Retiro</option>
+              <option value="salamanca">Salamanca</option>
+              <option value="chamartin">Chamartín</option>
+              <option value="tetuan">Tetuán</option>
+              <option value="chamberi">Chamberí</option>
+              <option value="fuencarral-el-pardo">Fuencarral-El Pardo</option>
+              <option value="moncloa-aravaca">Moncloa-Aravaca</option>
+              <option value="latina">Latina</option>
+              <option value="carabanchel">Carabanchel</option>
+              <option value="usera">Usera</option>
+              <option value="puente-de-vallecas">Puente de Vallecas</option>
+              <option value="villa-de-vallecas">Villa de Vallecas</option>
+              <option value="vicalvaro">Vicálvaro</option>
+              <option value="ciudad-lineal">Ciudad Lineal</option>
+              <option value="hortaleza">Hortaleza</option>
+              <option value="villaverde">Villaverde</option>
+              <option value="san-blas-canillejas">San Blas-Canillejas</option>
+              <option value="barajas">Barajas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="platform">Where is it listed?</label>
+            <select id="platform" name="platform">
+              <option value="idealista">Idealista</option>
+              <option value="fotocasa">Fotocasa</option>
+              <option value="airbnb">Airbnb / Booking</option>
+              <option value="badi">Badi / SpareRoom / roommate site</option>
+              <option value="facebook">Facebook group / Marketplace</option>
+              <option value="direct">Sent directly, no public listing</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>What the landlord has said or done</legend>
+        <ul class="check-list">
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_abroad" name="f_abroad"><span>Says they're currently abroad and can't show the apartment in person</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_transfer" name="f_transfer"><span>Asked for a deposit or transfer before you've seen the apartment</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_wu" name="f_wu"><span>Asked to be paid via Western Union, crypto, or gift cards</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_novideo" name="f_novideo"><span>Refused or dodged a video call when you asked for one</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_rush" name="f_rush"><span>Pressured you to decide fast ("someone else is interested")</span></label></li>
+          <li class="check-row"><label style="display:flex; gap:12px; width:100%; cursor:pointer;"><input type="checkbox" id="f_lang" name="f_lang"><span>Listing or messages have odd spelling or grammar</span></label></li>
+        </ul>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary btn-block">Check this listing</button>
+    </form>
+
+    <section id="result">
+      <div class="result-card" id="resultCard">
+        <span class="risk-badge" id="riskBadge"></span>
+        <h2 class="result-headline" id="resultHeadline"></h2>
+        <p class="result-sub" id="resultSub"></p>
+
+        <ul class="flag-list" id="flagList"></ul>
+
+        <p class="disclaimer">This is a quick self-check based on common scam patterns — it looks at what you told it, nothing more. It isn't proof of anything, and it can't replace someone actually standing in the apartment and confirming it's real.</p>
+
+        <div class="result-ctas">
+          <a href="index.html#pricing" class="btn btn-primary">Get a real check from €49</a>
+          <a href="index.html#faq" class="btn btn-outline">Why an in-person check?</a>
+        </div>
+      </div>
+
+      <div class="share-row">
+        <button type="button" class="btn btn-outline" id="copyTextBtn">Copy result as text</button>
+        <button type="button" class="btn btn-outline" id="copyLinkBtn">Copy shareable link</button>
+        <span class="copy-feedback" id="copyFeedback">Copied</span>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>ConfirMad · Madrid, Spain</div>
+    <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
+    <div><a href="aviso-legal.html">Legal notice</a> · <a href="privacidad.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <a href="terminos.html">Terms</a></div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
+<script>
+(function(){
+  'use strict';
+
+  // ---------------------------------------------------------------
+  // Reference rent per m² (EUR/month) by Madrid district.
+  // Rough, order-of-magnitude ranges for a typical small flat —
+  // not an official source. Update these numbers as the market
+  // moves; that's all this tool uses to judge "is this price
+  // realistic for the area".
+  // ---------------------------------------------------------------
+  var DISTRICT_PRICE_PER_M2 = {
+    'centro':               { low: 18, high: 30 },
+    'salamanca':            { low: 20, high: 32 },
+    'chamberi':             { low: 18, high: 28 },
+    'chamartin':            { low: 16, high: 26 },
+    'retiro':               { low: 15, high: 24 },
+    'arganzuela':           { low: 14, high: 22 },
+    'moncloa-aravaca':      { low: 13, high: 23 },
+    'tetuan':               { low: 12, high: 19 },
+    'ciudad-lineal':        { low: 11, high: 17 },
+    'hortaleza':            { low: 11, high: 18 },
+    'fuencarral-el-pardo':  { low: 11, high: 18 },
+    'san-blas-canillejas':  { low: 9,  high: 14 },
+    'barajas':              { low: 10, high: 16 },
+    'latina':               { low: 9,  high: 14 },
+    'carabanchel':          { low: 8,  high: 13 },
+    'usera':                { low: 8,  high: 13 },
+    'puente-de-vallecas':   { low: 8,  high: 12 },
+    'villa-de-vallecas':    { low: 7,  high: 12 },
+    'vicalvaro':            { low: 7,  high: 11 },
+    'villaverde':           { low: 7,  high: 11 }
+  };
+
+  // ---------------------------------------------------------------
+  // Scoring. Each triggered flag adds points; thresholds decide the
+  // green / amber / red result. Tune weights or thresholds here.
+  // ---------------------------------------------------------------
+  var WEIGHTS = {
+    priceSevere: 4,   // price/m² under 60% of the district's low end
+    priceModerate: 2, // price/m² under 85% of the district's low end
+    abroad: 2,
+    transfer: 3,
+    wu: 4,
+    novideo: 2,
+    rush: 2,
+    lang: 1,
+    platform: 1       // no public listing, or an unmoderated group/marketplace
+  };
+  var THRESHOLD_AMBER = 3; // score >= this => amber
+  var THRESHOLD_RED = 8;   // score >= this => red
+
+  var form = document.getElementById('checkForm');
+  var resultSection = document.getElementById('result');
+  var resultCard = document.getElementById('resultCard');
+  var riskBadge = document.getElementById('riskBadge');
+  var resultHeadline = document.getElementById('resultHeadline');
+  var resultSub = document.getElementById('resultSub');
+  var flagList = document.getElementById('flagList');
+
+  var ICONS = {
+    high: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
+    med:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
+    low:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+    ok:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
+  };
+
+  var DISTRICT_LABELS = {};
+  Array.prototype.forEach.call(document.querySelectorAll('#district option'), function(opt){
+    if (opt.value) DISTRICT_LABELS[opt.value] = opt.textContent;
+  });
+
+  function computeResult(data){
+    var score = 0;
+    var flags = []; // { severity: 'high'|'med'|'low'|'ok', title, detail }
+
+    var price = parseFloat(data.price);
+    var size = parseFloat(data.size);
+    var district = data.district;
+
+    if (price > 0 && size > 0) {
+      var perM2 = price / size;
+      if (district && DISTRICT_PRICE_PER_M2[district]) {
+        var ref = DISTRICT_PRICE_PER_M2[district];
+        var label = DISTRICT_LABELS[district] || district;
+        if (perM2 < ref.low * 0.6) {
+          score += WEIGHTS.priceSevere;
+          flags.push({
+            severity: 'high',
+            title: 'Price looks unusually low for ' + label,
+            detail: 'That works out to about €' + perM2.toFixed(1) + '/m², well under the typical €' + ref.low + '–€' + ref.high + '/m² for this area. Unrealistically cheap listings are one of the most common lures in rental scams.'
+          });
+        } else if (perM2 < ref.low * 0.85) {
+          score += WEIGHTS.priceModerate;
+          flags.push({
+            severity: 'med',
+            title: 'Price is a bit low for ' + label,
+            detail: 'About €' + perM2.toFixed(1) + '/m², somewhat below the typical €' + ref.low + '–€' + ref.high + '/m² for this area. Not alarming on its own, but worth a second look together with anything else here.'
+          });
+        } else {
+          flags.push({
+            severity: 'ok',
+            title: 'Price looks realistic for ' + label,
+            detail: 'About €' + perM2.toFixed(1) + '/m², in line with the typical €' + ref.low + '–€' + ref.high + '/m² for this area.'
+          });
+        }
+      }
+    }
+
+    if (data.f_abroad) {
+      score += WEIGHTS.abroad;
+      flags.push({ severity: 'med', title: "Landlord says they're abroad", detail: "Can't show the apartment in person because they say they're currently out of the country. Legitimate landlords with a local contact or agency can usually still arrange a visit." });
+    }
+    if (data.f_transfer) {
+      score += WEIGHTS.transfer;
+      flags.push({ severity: 'high', title: 'Payment requested before a viewing', detail: "Being asked to transfer a deposit or rent before you've actually seen the apartment is one of the clearest signs of a rental scam." });
+    }
+    if (data.f_wu) {
+      score += WEIGHTS.wu;
+      flags.push({ severity: 'high', title: 'Asked to pay via Western Union, crypto, or gift cards', detail: 'No legitimate landlord in Spain asks for these. They exist because they are close to impossible to trace or reverse.' });
+    }
+    if (data.f_novideo) {
+      score += WEIGHTS.novideo;
+      flags.push({ severity: 'med', title: 'Refused a video call', detail: 'A real landlord showing a real, currently-empty or currently-let apartment usually has no problem doing a quick video call to prove it.' });
+    }
+    if (data.f_rush) {
+      score += WEIGHTS.rush;
+      flags.push({ severity: 'med', title: "Pressured you to decide fast", detail: '"Someone else is interested" urgency is a classic tactic to stop you from checking things properly before paying.' });
+    }
+    if (data.f_lang) {
+      score += WEIGHTS.lang;
+      flags.push({ severity: 'low', title: 'Odd spelling or grammar in the listing', detail: 'Sometimes a sign of a copy-pasted or auto-translated scam listing — though plenty of genuine listings have typos too, so this alone proves nothing.' });
+    }
+    if (data.platform === 'facebook' || data.platform === 'direct') {
+      score += WEIGHTS.platform;
+      flags.push({ severity: 'low', title: 'Shared outside a verified listing platform', detail: (data.platform === 'direct' ? "Sent directly with no public listing to check against." : 'Facebook groups and Marketplace have little to no listing verification.') + ' Easier to fake than a listing on a platform like Idealista or Fotocasa.' });
+    }
+
+    var level = score >= THRESHOLD_RED ? 'red' : (score >= THRESHOLD_AMBER ? 'amber' : 'green');
+
+    // Show the worst flags first.
+    var order = { high: 0, med: 1, low: 2, ok: 3 };
+    flags.sort(function(a, b){ return order[a.severity] - order[b.severity]; });
+
+    return { score: score, level: level, flags: flags };
+  }
+
+  var COPY = {
+    green: { badge: 'Low risk', head: 'No major red flags found', sub: "Nothing here matches the usual scam patterns. That's a good sign — it doesn't guarantee the listing is genuine, but there's nothing obvious to worry about yet." },
+    amber: { badge: 'Some concerns', head: 'A few things worth double-checking', sub: "Nothing here is definitive on its own, but a couple of details are worth confirming before you send any money." },
+    red:   { badge: 'High risk', head: 'Several common scam warning signs', sub: "This combination of details matches patterns we see in rental scams often. We'd strongly recommend not sending any money until someone has actually verified this in person." }
+  };
+
+  function severityClass(sev){
+    return sev === 'high' ? 'sev-high' : sev === 'med' ? 'sev-med' : sev === 'ok' ? 'sev-ok' : 'sev-low';
+  }
+  function severityIcon(sev){
+    return sev === 'high' ? ICONS.high : sev === 'med' ? ICONS.med : sev === 'ok' ? ICONS.ok : ICONS.low;
+  }
+
+  function renderResult(result){
+    var copy = COPY[result.level];
+
+    resultCard.className = 'result-card risk-' + result.level;
+    riskBadge.innerHTML = severityIcon(result.level === 'red' ? 'high' : result.level === 'amber' ? 'med' : 'ok') + copy.badge;
+    resultHeadline.textContent = copy.head;
+    resultSub.textContent = copy.sub;
+
+    flagList.innerHTML = '';
+    result.flags.forEach(function(f){
+      var li = document.createElement('li');
+      li.className = 'flag-item ' + severityClass(f.severity);
+      li.innerHTML = severityIcon(f.severity) + '<span><strong>' + f.title + '.</strong> ' + f.detail + '</span>';
+      flagList.appendChild(li);
+    });
+    if (result.flags.length === 0) {
+      var li = document.createElement('li');
+      li.className = 'flag-item sev-ok';
+      li.innerHTML = severityIcon('ok') + '<span>No details entered yet that match common warning signs.</span>';
+      flagList.appendChild(li);
+    }
+
+    resultSection.classList.add('show');
+  }
+
+  function getFormData(){
+    return {
+      price: form.price.value,
+      size: form.size.value,
+      district: form.district.value,
+      platform: form.platform.value,
+      f_abroad: form.f_abroad.checked,
+      f_transfer: form.f_transfer.checked,
+      f_wu: form.f_wu.checked,
+      f_novideo: form.f_novideo.checked,
+      f_rush: form.f_rush.checked,
+      f_lang: form.f_lang.checked
+    };
+  }
+
+  function buildShareUrl(data){
+    var params = new URLSearchParams();
+    if (data.price) params.set('price', data.price);
+    if (data.size) params.set('size', data.size);
+    if (data.district) params.set('district', data.district);
+    if (data.platform) params.set('platform', data.platform);
+    ['f_abroad','f_transfer','f_wu','f_novideo','f_rush','f_lang'].forEach(function(k){
+      if (data[k]) params.set(k, '1');
+    });
+    return window.location.origin + window.location.pathname + '?' + params.toString();
+  }
+
+  var lastResult = null, lastData = null;
+
+  function runCheck(pushState){
+    var data = getFormData();
+    lastData = data;
+    lastResult = computeResult(data);
+    renderResult(lastResult);
+    if (pushState !== false) {
+      try { window.history.replaceState(null, '', buildShareUrl(data).replace(window.location.origin + window.location.pathname, '') || window.location.pathname); } catch (e) {}
+    }
+    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    runCheck(true);
+  });
+
+  function copyToClipboard(text, cb){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(cb, function(){ fallbackCopy(text, cb); });
+    } else {
+      fallbackCopy(text, cb);
+    }
+  }
+  function fallbackCopy(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    if (cb) cb();
+  }
+
+  var copyFeedback = document.getElementById('copyFeedback');
+  var feedbackTimer;
+  function showFeedback(msg){
+    copyFeedback.textContent = msg;
+    copyFeedback.classList.add('show');
+    clearTimeout(feedbackTimer);
+    feedbackTimer = setTimeout(function(){ copyFeedback.classList.remove('show'); }, 2200);
+  }
+
+  document.getElementById('copyTextBtn').addEventListener('click', function(){
+    if (!lastResult) return;
+    var copy = COPY[lastResult.level];
+    var lines = [];
+    lines.push('ConfirMad free listing check — ' + copy.badge.toUpperCase());
+    lines.push(copy.head + '.');
+    lines.push('');
+    lastResult.flags.forEach(function(f){ lines.push('- ' + f.title + ': ' + f.detail); });
+    lines.push('');
+    lines.push('Checked at ' + buildShareUrl(lastData));
+    copyToClipboard(lines.join('\n'), function(){ showFeedback('Copied to clipboard'); });
+  });
+
+  document.getElementById('copyLinkBtn').addEventListener('click', function(){
+    var data = lastData || getFormData();
+    copyToClipboard(buildShareUrl(data), function(){ showFeedback('Link copied'); });
+  });
+
+  // Prefill from a shared URL and auto-run.
+  (function initFromQuery(){
+    var params = new URLSearchParams(window.location.search);
+    if (![...params.keys()].length) return;
+    if (params.has('price')) form.price.value = params.get('price');
+    if (params.has('size')) form.size.value = params.get('size');
+    if (params.has('district')) form.district.value = params.get('district');
+    if (params.has('platform')) form.platform.value = params.get('platform');
+    ['f_abroad','f_transfer','f_wu','f_novideo','f_rush','f_lang'].forEach(function(k){
+      if (params.get(k) === '1') form[k].checked = true;
+    });
+    runCheck(false);
+  })();
+
+})();
+</script>
+
+</body>
+</html>
