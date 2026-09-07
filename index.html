@@ -29,7 +29,7 @@
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€35–€59"
+  "priceRange": "€49–€99"
 }
 </script>
 <style>
@@ -88,6 +88,7 @@
   /* ---------- SCROLL REVEAL ---------- */
   html.has-reveal .section-head,
   html.has-reveal .step,
+  html.has-reveal .who-card,
   html.has-reveal .check-item,
   html.has-reveal .price-card,
   html.has-reveal .about-photo,
@@ -97,6 +98,7 @@
   }
   html.has-reveal .section-head.is-visible,
   html.has-reveal .step.is-visible,
+  html.has-reveal .who-card.is-visible,
   html.has-reveal .check-item.is-visible,
   html.has-reveal .price-card.is-visible,
   html.has-reveal .about-photo.is-visible,
@@ -378,6 +380,26 @@
     background: rgba(47,93,69,0.06); border-radius: 0 14px 14px 0;
   }
 
+  /* ---------- WHO THIS IS FOR ---------- */
+  .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px){ .who-grid{ grid-template-columns: repeat(4, 1fr); } }
+  .who-card{
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px 20px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .who-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
+  .who-icon{
+    width:44px; height:44px; border-radius:12px;
+    background: rgba(47,93,69,0.1); color: var(--stamp);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 14px;
+  }
+  .who-icon svg{ width:23px; height:23px; }
+  .who-card h3{ font-size: 1rem; margin-bottom: 6px; font-weight: 600; }
+  .who-card p{ font-size: 0.88rem; margin-bottom:0; }
+
   /* ---------- STEPS ---------- */
   .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; }
   @media (min-width: 860px){ .steps{ grid-template-columns: repeat(4, 1fr); gap: 20px; } }
@@ -425,7 +447,7 @@
 
   /* ---------- PRICING ---------- */
   .price-grid{ display:grid; grid-template-columns: 1fr; gap: 20px; }
-  @media (min-width: 760px){ .price-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px){ .price-grid{ grid-template-columns: repeat(3, 1fr); } }
   .price-card{
     background: var(--card); border: 1px solid var(--line); border-radius: 14px;
     padding: 28px 26px; position:relative; overflow:hidden;
@@ -506,6 +528,23 @@
   footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap: 14px; font-size: 0.85rem; }
   footer a{ color: #C7CFD8; text-decoration:none; }
   footer a:hover{ text-decoration:underline; }
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .whatsapp-float{
+    position:fixed; right:20px; bottom:20px; z-index:60;
+    width:56px; height:56px; border-radius:50%;
+    background: var(--stamp); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+    transition: transform .15s ease, box-shadow .15s ease;
+    animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+  }
+  .whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+  .whatsapp-float:active{ transform: scale(0.95); }
+  .whatsapp-float svg{ width:28px; height:28px; }
+  @keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+  @media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
 </style>
 </head>
 <body>
@@ -535,7 +574,7 @@
            <a href="#pricing" class="btn btn-primary nav-cta">Request a visit</a>
            <a href="sample-report.pdf" class="btn btn-ghost">See a sample report (PDF)</a>
           </div>
-        <div class="hero-note">Based in Madrid. Express checks in 24–48 hours, Standard in 3–4 days.</div>
+        <div class="hero-note">Based in Madrid. Express checks in 24–48 hours, Basic in 3–4 days.</div>
       </div>
 
       <div id="report-sample">
@@ -584,6 +623,38 @@
       </div>
       <div>
         <p class="callout">We're the person who walks over and checks — before you wire anything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Who this is for</h2>
+        <p>Anyone signing a lease on a place they haven't seen with their own eyes.</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
+          <h3>Exchange students</h3>
+          <p>Coming for a semester and can't fly in early just to see a room.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+          <h3>People relocating for work</h3>
+          <p>Moving for a new job on a tight timeline, no time to gamble on a bad address.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="10" rx="1"/><path d="M2 18h20"/></svg></div>
+          <h3>Digital nomads on a visa</h3>
+          <p>Signing a lease from another country before the paperwork even clears.</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
+          <h3>Au pairs & long-stay visitors</h3>
+          <p>Committing to months in someone else's home before ever meeting them.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -643,31 +714,42 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Pricing</h2>
-        <p>One flat fee, paid after you get your report — not before.</p>
+        <p>One flat fee, paid securely by card when you book.</p>
       </div>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">Standard check</div>
-          <div class="amount">€35</div>
+          <div class="tag">Basic check</div>
+          <div class="amount">€49</div>
           <div class="turnaround">Report within 3–4 days</div>
           <ul>
             <li>In-person visit to the address</li>
             <li>Full checklist review</li>
-            <li>Written report explaining the verdict</li>
+            <li>Written report with photos</li>
           </ul>
-          <a href="solicitar.html?plan=standard" class="btn btn-ghost">Request this</a>
+          <a href="solicitar.html?plan=basic" class="btn btn-ghost">Request this</a>
         </div>
         <div class="price-card featured">
           <span class="ribbon">Most popular</span>
           <div class="tag">Express check</div>
-          <div class="amount">€59</div>
+          <div class="amount">€69</div>
           <div class="turnaround">Report within 24–48 hours</div>
           <ul>
-            <li>Everything in Standard</li>
+            <li>Everything in Basic</li>
             <li>Priority scheduling, same or next day</li>
-            <li>Direct WhatsApp update as soon as it's done</li>
+            <li>WhatsApp update as soon as it's done</li>
           </ul>
           <a href="solicitar.html?plan=express" class="btn btn-primary">Request this</a>
+        </div>
+        <div class="price-card">
+          <div class="tag">Live check</div>
+          <div class="amount">€99</div>
+          <div class="turnaround">Report within 24–48 hours</div>
+          <ul>
+            <li>Everything in Express</li>
+            <li>Live video call from inside the apartment</li>
+            <li>See the rooms yourself, ask the landlord questions in real time</li>
+          </ul>
+          <a href="solicitar.html?plan=live" class="btn btn-ghost">Request this</a>
         </div>
       </div>
       <p class="price-foot">If the listing doesn't check out, we tell you exactly why — and that's usually worth a lot more than the fee.</p>
@@ -734,7 +816,7 @@
         </details>
         <details>
           <summary>How fast can you actually go?<span class="ind"></span></summary>
-          <p>Express checks are typically completed within 24–48 hours. Standard checks usually take 3–4 days, depending on availability that week.</p>
+          <p>Express and Live checks are typically completed within 24–48 hours. Basic checks usually take 3–4 days, depending on availability that week.</p>
         </details>
       </div>
     </div>
@@ -785,14 +867,18 @@
 <footer>
   <div class="wrap">
     <div>ConfirMad · Madrid, Spain</div>
-    <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · WhatsApp on request</div>
+    <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>Not a law firm. We verify listings, not contracts.</div>
   </div>
 </footer>
 
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+try { emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' }); } catch (e) { console.warn('EmailJS failed to load:', e); }
 
 const form = document.getElementById('checkForm');
   const success = document.getElementById('formSuccess');
@@ -806,11 +892,13 @@ const form = document.getElementById('checkForm');
 
   function sendAutoReply(templateId, toEmail, toName){
     if (!isValidEmail(toEmail)) return;
-    emailjs.send('service_wa43yg8', templateId, {
-      to_email: toEmail, email: toEmail, reply_to: toEmail,
-      to_name: toName, name: toName
-    })
-      .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+    try {
+      emailjs.send('service_wa43yg8', templateId, {
+        to_email: toEmail, email: toEmail, reply_to: toEmail,
+        to_name: toName, name: toName
+      })
+        .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+    } catch (e) { console.warn('Auto-reply email failed:', e); }
   }
 
   form.addEventListener('submit', function(e){
@@ -857,7 +945,7 @@ const form = document.getElementById('checkForm');
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
     document.documentElement.classList.add('has-reveal');
-    var revealTargets = document.querySelectorAll('.section-head, .step, .check-item, .price-card, .about-photo, .faq-list details');
+    var revealTargets = document.querySelectorAll('.section-head, .step, .who-card, .check-item, .price-card, .about-photo, .faq-list details');
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if (entry.isIntersecting){

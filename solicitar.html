@@ -119,6 +119,22 @@ p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
 .pay-note{ font-size: 0.8rem; color: var(--ink-faint); text-align:center; margin-top: 10px; }
 
 footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+
+.whatsapp-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--stamp); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+}
+.whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+.whatsapp-float:active{ transform: scale(0.95); }
+.whatsapp-float svg{ width:28px; height:28px; }
+@keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+@media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
 </style>
 </head>
 <body>
@@ -138,8 +154,8 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
       <div class="plan-card">
         <div>
-          <div class="tag" id="planTag">Standard check</div>
-          <div class="amount" id="planAmount">€35</div>
+          <div class="tag" id="planTag">Basic check</div>
+          <div class="amount" id="planAmount">€49</div>
         </div>
         <div class="turnaround" id="planTurnaround">Report within 3–4 days</div>
       </div>
@@ -193,13 +209,13 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       </div>
 
       <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
-        <div class="tag" id="payPlanTag">Standard check</div>
-        <div class="pay-amount" id="payAmount">€35</div>
+        <div class="tag" id="payPlanTag">Basic check</div>
+        <div class="pay-amount" id="payAmount">€49</div>
         <div class="turnaround" id="payTurnaround">Report within 3–4 days</div>
       </div>
 
       <a id="payButton" class="btn btn-primary" href="#" target="_top">Pay now →</a>
-      <p class="pay-note">You'll pay securely on Stripe's page. We start the check as soon as payment goes through.</p>
+      <p class="pay-note" id="payNote">You'll pay securely on Stripe's page. We start the check as soon as payment goes through.</p>
     </div>
 
   </div>
@@ -207,9 +223,13 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
 <footer>ConfirMad · Madrid, Spain · Not a law firm.</footer>
 
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+  try { emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' }); } catch (e) { console.warn('EmailJS failed to load:', e); }
 
   function isValidEmail(value){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -217,26 +237,38 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
   function sendAutoReply(templateId, toEmail, toName){
     if (!isValidEmail(toEmail)) return;
-    emailjs.send('service_wa43yg8', templateId, {
-      to_email: toEmail, email: toEmail, reply_to: toEmail,
-      to_name: toName, name: toName
-    })
-      .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+    try {
+      emailjs.send('service_wa43yg8', templateId, {
+        to_email: toEmail, email: toEmail, reply_to: toEmail,
+        to_name: toName, name: toName
+      })
+        .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+    } catch (e) { console.warn('Auto-reply email failed:', e); }
   }
 
+  // TODO: the basic/express Stripe Payment Links below still charge the OLD
+  // amounts (€35/€59) from before the pricing restructure — create new Payment
+  // Links in Stripe at €49/€69 and swap the URLs in, or customers will be
+  // charged the wrong amount. "live" has no Payment Link yet at all (€99) —
+  // create one and paste it in below; until then its "Pay now" button opens
+  // WhatsApp instead of Stripe.
   var PLANS = {
-    standard: {
-      tag: 'Standard check', amount: '€35', turnaround: 'Report within 3–4 days',
+    basic: {
+      tag: 'Basic check', amount: '€49', turnaround: 'Report within 3–4 days',
       stripe: 'https://buy.stripe.com/5kQdR3d8c6sF8NjcjUaZi02'
     },
     express: {
-      tag: 'Express check', amount: '€59', turnaround: 'Report within 24–48 hours',
+      tag: 'Express check', amount: '€69', turnaround: 'Report within 24–48 hours',
       stripe: 'https://buy.stripe.com/fZufZb5FK5oBd3z6ZAaZi03'
+    },
+    live: {
+      tag: 'Live check', amount: '€99', turnaround: 'Report within 24–48 hours',
+      stripe: null
     }
   };
 
   var params = new URLSearchParams(window.location.search);
-  var planKey = params.get('plan') === 'express' ? 'express' : 'standard';
+  var planKey = PLANS[params.get('plan')] ? params.get('plan') : 'basic';
   var plan = PLANS[planKey];
 
   document.getElementById('planTag').textContent = plan.tag;
@@ -245,8 +277,19 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
   document.getElementById('payPlanTag').textContent = plan.tag;
   document.getElementById('payAmount').textContent = plan.amount;
   document.getElementById('payTurnaround').textContent = plan.turnaround;
-  document.getElementById('payButton').href = plan.stripe;
-  document.getElementById('payButton').textContent = 'Pay ' + plan.amount + ' now →';
+
+  var payButton = document.getElementById('payButton');
+  if (plan.stripe){
+    payButton.href = plan.stripe;
+    payButton.target = '_top';
+    payButton.textContent = 'Pay ' + plan.amount + ' now →';
+  } else {
+    payButton.href = 'https://wa.me/34639589180?text=' + encodeURIComponent('Hi, I\'d like to book a Live check (' + plan.amount + ') for a Madrid listing.');
+    payButton.target = '_blank';
+    payButton.rel = 'noopener';
+    payButton.textContent = 'Message us to pay →';
+    document.getElementById('payNote').textContent = 'Live check isn\'t set up for card payment yet — message us on WhatsApp and we\'ll arrange it directly.';
+  }
 
   var form = document.getElementById('detailsForm');
   var formStep = document.getElementById('formStep');
