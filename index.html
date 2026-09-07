@@ -266,24 +266,43 @@
   #stories .section-head h2{ color: #fff; }
   #stories .section-head p{ color: #D6E6DC; }
 
-  /* ---------- DECORATIVE RINGS ---------- */
+  /* ---------- DECORATIVE RING (used sparingly) ---------- */
   .ring-deco{ position:relative; overflow:hidden; }
-  .ring-deco::before, .ring-deco::after{
+  .ring-deco::before{
     content:""; position:absolute; border-radius:50%; pointer-events:none;
+    width:300px; height:300px; border:26px solid var(--stamp); opacity:0.07;
   }
-  .ring-deco::before{ width:300px; height:300px; border:26px solid var(--stamp); opacity:0.07; }
-  .ring-deco::after{ width:150px; height:150px; border:2px solid var(--ink); opacity:0.09; }
   #problem.ring-deco::before{ top:-120px; right:-110px; }
-  #problem.ring-deco::after{ bottom:20px; left:-60px; }
   #check.ring-deco::before{ bottom:-140px; left:-100px; }
-  #check.ring-deco::after{ top:-40px; right:8%; }
-  #how.ring-deco::before{ top:-100px; left:-130px; }
-  #how.ring-deco::after{ bottom:-60px; right:6%; }
-  #pricing.ring-deco::before{ top:-90px; right:-140px; }
-  #pricing.ring-deco::after{ bottom:-80px; left:8%; }
-  #faq.ring-deco::before{ bottom:-130px; right:-110px; }
-  #faq.ring-deco::after{ top:12%; left:-70px; }
   .ring-deco > .wrap{ position:relative; z-index:1; }
+
+  /* ---------- STEPS TIMELINE ---------- */
+  #how{ position:relative; }
+  .steps{ position:relative; }
+  .steps::before{
+    content:""; position:absolute; left:0; right:0; top:41px;
+    border-top: 2px dashed var(--line); z-index:0;
+    display:none;
+  }
+  @media (min-width: 860px){ .steps::before{ display:block; } }
+
+  /* ---------- PRICING WATERMARK ---------- */
+  #pricing{ position:relative; overflow:hidden; }
+  #pricing::before{
+    content:""; position:absolute; top:-30px; right:-40px; width:260px; height:260px;
+    background: url('confirmad-simbolo-sello.png') center/contain no-repeat;
+    opacity:0.05; pointer-events:none;
+  }
+  #pricing > .wrap{ position:relative; z-index:1; }
+
+  /* ---------- FAQ WATERMARK ---------- */
+  #faq{ position:relative; overflow:hidden; }
+  #faq::before{
+    content:"?"; position:absolute; top:-10px; right:-6px; line-height:1;
+    font-family: Georgia, serif; font-weight:700; font-size:9rem; color: var(--ink);
+    opacity:0.07; pointer-events:none;
+  }
+  #faq > .wrap{ position:relative; z-index:1; }
 
   /* ---------- PROBLEM ---------- */
   .problem-grid{ display:grid; grid-template-columns: 1fr; gap: 36px; }
@@ -305,6 +324,7 @@
   .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; }
   @media (min-width: 860px){ .steps{ grid-template-columns: repeat(4, 1fr); gap: 20px; } }
   .step{
+    position:relative; z-index:1;
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 10px;
@@ -524,7 +544,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how" class="ring-deco">
+  <section id="how">
     <div class="wrap">
       <div class="section-head">
         <h2>How a check works</h2>
@@ -574,7 +594,7 @@
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="ring-deco">
+  <section id="pricing">
     <div class="wrap">
       <div class="section-head">
         <h2>Pricing</h2>
@@ -629,7 +649,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="ring-deco">
+  <section id="faq">
     <div class="wrap">
       <div class="section-head">
         <h2>Questions people ask before booking</h2>
