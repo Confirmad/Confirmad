@@ -226,10 +226,28 @@
   .stamp{
     position:absolute; top: 66px; right: -12px;
     width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: 2.5px solid var(--stamp);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
     filter: drop-shadow(0 10px 16px rgba(22,35,59,0.22));
     animation: stampIn .5s cubic-bezier(.2,1.4,.4,1) .3s both;
   }
-  @media (max-width: 460px){ .stamp{ right: 2px; top: 60px; width:116px; height:116px; } }
+  .stamp::before{
+    content:""; position:absolute; inset:7px; border-radius:50%;
+    border: 1px solid var(--stamp); opacity:0.45;
+  }
+  .stamp-icon{ width:38px; height:38px; position:relative; }
+  .stamp-word{
+    position:relative; font-family: var(--font-sans); font-weight:800; font-size:1rem;
+    letter-spacing:-0.03em; color: var(--ink);
+  }
+  .stamp-word span{ color: var(--stamp); }
+  .stamp-city{
+    position:relative; font-family: var(--font-mono); font-size:0.6rem; font-weight:600;
+    letter-spacing:0.14em; color: var(--ink-faint);
+  }
+  @media (max-width: 460px){ .stamp{ right: 2px; top: 60px; width:116px; height:116px; gap:3px; } .stamp-icon{ width:30px; height:30px; } .stamp-word{ font-size:0.86rem; } .stamp-city{ font-size:0.52rem; } }
 
   @keyframes stampIn{
     0%{ opacity:0; transform: scale(1.4); }
@@ -479,7 +497,11 @@
             <li><span class="tick">✓</span> Landlord present, ID matched name on listing</li>
             <li><span class="tick">✓</span> No full payment requested before viewing</li>
           </ul>
-          <img src="confirmad-sello-comprobado.png" alt="Sello ConfirMad — Comprobado" class="stamp">
+          <div class="stamp" role="img" aria-label="Sello ConfirMad — Comprobado, Madrid">
+            <img src="confirmad-simbolo-sello.png" alt="" class="stamp-icon">
+            <div class="stamp-word">Confir<span>Mad</span></div>
+            <div class="stamp-city">MADRID</div>
+          </div>
         </div>
       </div>
     </div>
