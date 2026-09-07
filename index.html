@@ -321,9 +321,10 @@
     width:172px; height:172px; border-radius:50%; flex:none;
     background: rgba(47,93,69,0.1); color: var(--stamp);
     display:flex; align-items:center; justify-content:center;
-    margin: 0 auto;
+    margin: 0 auto; overflow:hidden;
   }
   .about-avatar svg{ width:72px; height:72px; }
+  .about-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
   .about-quote{
     font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
     margin-bottom: 18px;
@@ -775,9 +776,8 @@
     <div class="wrap">
     <div class="about-card">
       <div class="about-photo">
-        <!-- TODO: replace this placeholder with a real photo of the founder (square image, ~400x400px works best) -->
-        <div class="about-avatar" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+        <div class="about-avatar">
+          <img src="confirmad-founder-santiago.jpg" alt="Santiago, founder of ConfirMad" loading="lazy" width="172" height="172">
         </div>
       </div>
       <div>
