@@ -224,16 +224,16 @@
   }
 
   .stamp{
-    position:absolute; top: 74px; right: -14px;
-    width: 128px; height: 128px;
-    transform: rotate(-11deg) scale(1);
-    animation: stampIn .55s cubic-bezier(.2,1.4,.4,1) .3s both;
+    position:absolute; top: 66px; right: -12px;
+    width: 140px; height: 140px;
+    filter: drop-shadow(0 10px 16px rgba(22,35,59,0.22));
+    animation: stampIn .5s cubic-bezier(.2,1.4,.4,1) .3s both;
   }
-  @media (max-width: 460px){ .stamp{ right: 6px; top: 66px; width:108px; height:108px; } }
+  @media (max-width: 460px){ .stamp{ right: 2px; top: 60px; width:116px; height:116px; } }
 
   @keyframes stampIn{
-    0%{ opacity:0; transform: rotate(-11deg) scale(1.7); }
-    100%{ opacity:1; transform: rotate(-11deg) scale(1); }
+    0%{ opacity:0; transform: scale(1.4); }
+    100%{ opacity:1; transform: scale(1); }
   }
   @media (prefers-reduced-motion: reduce){
     .stamp{ animation: none; }
@@ -248,14 +248,39 @@
   #stories .section-head h2{ color: #fff; }
   #stories .section-head p{ color: #D6E6DC; }
 
+  /* ---------- DECORATIVE RINGS ---------- */
+  .ring-deco{ position:relative; overflow:hidden; }
+  .ring-deco::before, .ring-deco::after{
+    content:""; position:absolute; border-radius:50%; pointer-events:none;
+  }
+  .ring-deco::before{ width:300px; height:300px; border:26px solid var(--stamp); opacity:0.07; }
+  .ring-deco::after{ width:150px; height:150px; border:2px solid var(--ink); opacity:0.09; }
+  #problem.ring-deco::before{ top:-120px; right:-110px; }
+  #problem.ring-deco::after{ bottom:20px; left:-60px; }
+  #check.ring-deco::before{ bottom:-140px; left:-100px; }
+  #check.ring-deco::after{ top:-40px; right:8%; }
+  #how.ring-deco::before{ top:-100px; left:-130px; }
+  #how.ring-deco::after{ bottom:-60px; right:6%; }
+  #pricing.ring-deco::before{ top:-90px; right:-140px; }
+  #pricing.ring-deco::after{ bottom:-80px; left:8%; }
+  #faq.ring-deco::before{ bottom:-130px; right:-110px; }
+  #faq.ring-deco::after{ top:12%; left:-70px; }
+  .ring-deco > .wrap{ position:relative; z-index:1; }
+
   /* ---------- PROBLEM ---------- */
   .problem-grid{ display:grid; grid-template-columns: 1fr; gap: 36px; }
   @media (min-width: 860px){ .problem-grid{ grid-template-columns: 1fr 1fr; gap: 56px; } }
   .problem-grid p{ max-width: 54ch; font-size: 1.01rem; }
   .problem-grid .callout{
+    position:relative;
     font-family: var(--font-mono); font-size: 1.35rem; line-height: 1.4; font-weight: 700; color: var(--ink);
-    border-left: 3px solid var(--stamp); padding: 18px 20px;
+    border-left: 3px solid var(--stamp); padding: 40px 22px 22px;
     background: rgba(47,93,69,0.06); border-radius: 0 14px 14px 0;
+  }
+  .problem-grid .callout::before{
+    content:""; position:absolute; top:16px; left:22px;
+    width:20px; height:20px; border-radius:50%; border:4px solid var(--stamp); border-right-color:transparent;
+    opacity:0.6;
   }
 
   /* ---------- STEPS ---------- */
@@ -295,10 +320,11 @@
   }
   .check-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
   .check-item .tick{
-    flex:none; width:20px; height:20px; border-radius:50%;
+    flex:none; width:28px; height:28px; border-radius:50%;
     background: var(--verified); color:#fff; font-size:12px;
     display:flex; align-items:center; justify-content:center; margin-top:1px;
   }
+  .check-item .tick svg{ width:15px; height:15px; }
   .check-item span.txt{ font-size: 0.95rem; color: var(--ink); }
 
   /* ---------- PRICING ---------- */
@@ -460,7 +486,7 @@
   </section>
 
   <!-- PROBLEM -->
-  <section id="problem">
+  <section id="problem" class="ring-deco">
     <div class="wrap problem-grid">
       <div>
         <div class="section-head" style="margin-bottom:20px;">
@@ -476,7 +502,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how">
+  <section id="how" class="ring-deco">
     <div class="wrap">
       <div class="section-head">
         <h2>How a check works</h2>
@@ -508,25 +534,25 @@
   </section>
 
   <!-- WHAT WE CHECK -->
-  <section id="check">
+  <section id="check" class="ring-deco">
     <div class="wrap">
       <div class="section-head">
         <h2>What we actually check</h2>
         <p>The things that are easy to fake in photos and a chat message, but hard to fake in person.</p>
       </div>
       <div class="check-grid">
-        <div class="check-item"><span class="tick">✓</span><span class="txt">The address exists and matches the listing</span></div>
-        <div class="check-item"><span class="tick">✓</span><span class="txt">The rooms match the photos you were sent</span></div>
-        <div class="check-item"><span class="tick">✓</span><span class="txt">Someone is actually present to show the apartment</span></div>
-        <div class="check-item"><span class="tick">✓</span><span class="txt">The landlord's identity matches what they've told you</span></div>
-        <div class="check-item"><span class="tick">✓</span><span class="txt">No full payment is being demanded before a viewing</span></div>
-        <div class="check-item"><span class="tick">✓</span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">The address exists and matches the listing</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">The rooms match the photos you were sent</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Someone is actually present to show the apartment</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">The landlord's identity matches what they've told you</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">No full payment is being demanded before a viewing</span></div>
+        <div class="check-item"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section id="pricing">
+  <section id="pricing" class="ring-deco">
     <div class="wrap">
       <div class="section-head">
         <h2>Pricing</h2>
@@ -581,7 +607,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq">
+  <section id="faq" class="ring-deco">
     <div class="wrap">
       <div class="section-head">
         <h2>Questions people ask before booking</h2>
