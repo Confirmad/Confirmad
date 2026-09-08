@@ -135,8 +135,9 @@
   .brand{
     display:flex; align-items:center;
     text-decoration:none;
+    flex: none;
   }
-  .brand-logo{ height: 30px; width:auto; display:block; }
+  .brand-logo{ height: 30px; width:auto; max-width:none; display:block; }
   .nav-links{
     display:none;
     align-items:center; gap: 28px;
@@ -161,7 +162,7 @@
   .lang-switch a{ text-decoration:none; color: var(--ink-faint); }
   .lang-switch a:hover{ color: var(--ink); }
   .lang-switch a.lang-current{ color: var(--stamp); }
-  @media (max-width: 340px){ .lang-switch{ display:none; } }
+  @media (max-width: 520px){ .lang-switch{ display:none; } }
   .btn{
     display:inline-flex; align-items:center; justify-content:center;
     font-family: var(--font-sans); font-weight:700; font-size: 0.94rem;
@@ -178,6 +179,11 @@
   .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
   .nav-cta{ padding: 9px 14px; font-size: 0.86rem; }
   @media (min-width: 760px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
+  @media (max-width: 400px){
+    .brand-logo{ height: 24px; }
+    .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }
+    nav.wrap{ gap: 10px; }
+  }
 
   /* ---------- HERO ---------- */
   .hero{ padding: 76px 0 88px; position:relative; overflow:hidden; }
@@ -545,6 +551,10 @@
   footer .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap: 14px; font-size: 0.85rem; }
   footer a{ color: #C7CFD8; text-decoration:none; }
   footer a:hover{ text-decoration:underline; }
+  footer .lang-switch{ display:flex; }
+  footer .lang-switch a{ color:#8B96A8; }
+  footer .lang-switch a:hover{ color:#fff; }
+  footer .lang-switch a.lang-current{ color:#fff; }
 
   /* ---------- WHATSAPP FLOAT ---------- */
   .whatsapp-float{
@@ -890,6 +900,7 @@
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>[[footer.tagline]]</div>
     <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a></div>
+    [[LANG_SELECTOR]]
   </div>
 </footer>
 
