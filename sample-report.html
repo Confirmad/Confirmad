@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample report · ConfirMad</title>
+<meta name="description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
+<link rel="canonical" href="https://confirmad.es/sample-report.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConfirMad">
+<meta property="og:title" content="Sample report · ConfirMad">
+<meta property="og:description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
+<meta property="og:url" content="https://confirmad.es/sample-report.html">
+<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample report · ConfirMad">
+<meta name="twitter:description" content="See exactly what a ConfirMad verification report looks like before you book a check.">
+<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<link rel="icon" href="/confirmad-favicon-16.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ConfirMad",
+  "url": "https://confirmad.es/",
+  "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "image": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "email": "contacto@confirmad.es",
+  "areaServed": { "@type": "City", "name": "Madrid" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+  "priceRange": "€49–€99",
+  "makesOffer": [
+    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+  ]
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #636C79;
+  --stamp: #2F5D45;
+  --stamp-dark: #234634;
+  --verified: #2F5D45;
+  --note: #986609;
+  --line: #D7DCD8;
+  --font: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --sheet: 880px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img{ display:block; max-width:100%; }
+a{ color: inherit; }
+:focus-visible{ outline: 2px solid var(--stamp); outline-offset: 3px; }
+
+.wrap{ max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+h1,h2,h3{ font-family: var(--font); font-weight: 700; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+p{ margin: 0 0 1em; color: var(--ink-soft); max-width: 68ch; }
+p:last-child{ margin-bottom: 0; }
+
+/* ---------- NAV ---------- */
+header.site{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(238,241,239,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+header.site nav{
+  display:flex; align-items:center; justify-content: space-between;
+  padding-top: 16px; padding-bottom: 16px;
+}
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand-logo{ height: 30px; width:auto; display:block; }
+.nav-links{ display:none; align-items:center; gap:28px; list-style:none; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
+.nav-links a:hover{ color: var(--ink); }
+@media (min-width: 760px){ .nav-links{ display:flex; } }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-weight:700; font-size: 0.94rem;
+  padding: 11px 22px; border-radius: 999px;
+  text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
+  font-family: var(--font);
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
+  white-space: nowrap;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{ background: var(--stamp); color: #fff; box-shadow: 0 10px 20px -10px rgba(47,93,69,0.6); }
+.btn-primary:hover{ background: var(--stamp-dark); }
+.btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+.nav-cta{ padding: 9px 14px; font-size: 0.86rem; }
+@media (min-width: 760px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
+
+/* ---------- SAMPLE NOTICE ---------- */
+.notice{
+  background: rgba(47,93,69,0.08);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.notice .wrap{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
+}
+.notice p{ margin:0; font-size: 0.9rem; color: var(--ink-soft); }
+.notice strong{ color: var(--ink); font-weight: 600; }
+
+/* ---------- SHEET ---------- */
+.page{ padding: 44px 0 72px; }
+.sheet{
+  max-width: var(--sheet);
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -34px rgba(22,35,59,0.4);
+  overflow: hidden;
+}
+
+.sheet-head{
+  position: relative;
+  padding: 30px 34px 26px;
+  border-bottom: 1px solid var(--line);
+}
+.sheet-head .kicker{
+  display:flex; align-items:center; gap:9px;
+  font-weight:700; font-size:1rem; margin-bottom: 20px;
+}
+.sheet-head .kicker .dot{
+  width:9px; height:9px; border-radius:50%; background: var(--stamp);
+  box-shadow: 0 0 0 3px rgba(47,93,69,0.15);
+}
+.sheet-head h1{
+  font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+  line-height: 1.25;
+  max-width: 22ch;
+  margin-bottom: 6px;
+}
+.sheet-head .sub{ font-size: 0.95rem; color: var(--ink-faint); }
+
+.meta{
+  display:grid; grid-template-columns: 1fr; gap: 0;
+  margin-top: 24px;
+  border-top: 1px dashed var(--line);
+}
+@media (min-width: 620px){ .meta{ grid-template-columns: 1fr 1fr; column-gap: 34px; } }
+.meta div{
+  display:flex; justify-content:space-between; gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.9rem;
+}
+.meta dt{ color: var(--ink-faint); margin:0; font-family: var(--font-mono); font-size: 0.82rem; }
+.meta dd{ margin:0; color: var(--ink); font-weight: 500; text-align:right; font-family: var(--font-mono); }
+
+.print-link{
+  position:absolute; top: 28px; right: 30px;
+  font-size: 0.82rem; color: var(--ink-faint);
+  background: none; border:none; padding: 6px 8px; cursor:pointer;
+  font-family: var(--font); border-radius: 6px;
+}
+.print-link:hover{ color: var(--stamp); background: rgba(47,93,69,0.08); }
+@media (max-width: 560px){ .print-link{ display:none; } }
+
+/* ---------- VERDICT ---------- */
+.verdict{
+  position: relative;
+  padding: 30px 34px 32px;
+  background: #F4F7F5;
+  border-bottom: 1px solid var(--line);
+}
+.verdict h2{
+  font-size: 1.28rem;
+  line-height: 1.35;
+  max-width: 20ch;
+  color: var(--verified);
+  margin-bottom: 12px;
+}
+.verdict p{ font-size: 0.98rem; max-width: 54ch; }
+.stamp{
+  position:absolute; top: 30px; right: 34px;
+  width: 132px; height: 132px;
+  border: 3px solid var(--verified);
+  border-radius: 50%;
+  color: var(--verified);
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  transform: rotate(-11deg);
+  font-weight:700; font-size: 0.78rem; line-height:1.3;
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.6);
+  animation: stampIn .5s cubic-bezier(.2,1.4,.4,1) .25s both;
+}
+.stamp::before{ content:""; position:absolute; inset:6px; border-radius:50%; border:1px solid var(--verified); }
+@keyframes stampIn{
+  0%{ opacity:0; transform: rotate(-11deg) scale(1.7); }
+  100%{ opacity:1; transform: rotate(-11deg) scale(1); }
+}
+@media (prefers-reduced-motion: reduce){ .stamp{ animation:none; } }
+@media (max-width: 780px){
+  .stamp{ position:static; margin: 0 0 20px; transform: rotate(-4deg); }
+  .verdict h2{ max-width: none; }
+}
+
+/* ---------- BLOCKS ---------- */
+.block{ padding: 30px 34px; border-bottom: 1px solid var(--line); }
+.block:last-of-type{ border-bottom: none; }
+.block h3{ font-size: 1.05rem; margin-bottom: 4px; }
+.block .hint{ font-size: 0.88rem; color: var(--ink-faint); margin-bottom: 20px; }
+@media (max-width: 560px){
+  .sheet-head, .verdict, .block{ padding-left: 20px; padding-right: 20px; }
+}
+
+/* ---------- VISIT LOG ---------- */
+.log{ list-style:none; margin:0; padding:0; }
+.log li{
+  display:grid; grid-template-columns: 62px 1fr; gap: 16px;
+  padding: 0 0 16px 0;
+  position: relative;
+}
+.log li:last-child{ padding-bottom:0; }
+.log time{
+  font-size: 0.84rem; color: var(--stamp); font-weight: 600;
+  font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+}
+.log .what{ font-size: 0.93rem; color: var(--ink-soft); border-left: 2px solid var(--line); padding-left: 18px; }
+.log li:first-child .what{ border-left-color: var(--stamp); }
+
+/* ---------- FINDINGS ---------- */
+.findings{ list-style:none; margin:0; padding:0; }
+.findings li{ padding: 16px 0; border-bottom: 1px solid #EEF1EF; }
+.findings li:first-child{ padding-top:0; }
+.findings li:last-child{ border-bottom:none; padding-bottom:0; }
+.finding-top{
+  display:flex; align-items:flex-start; justify-content:space-between; gap: 16px;
+  margin-bottom: 5px;
+}
+.finding-top span.q{ font-size: 0.97rem; font-weight: 600; color: var(--ink); }
+.pill{
+  flex:none; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.01em;
+  padding: 3px 10px; border-radius: 999px; margin-top: 3px;
+  font-family: var(--font-mono);
+}
+.pill.ok{ background: rgba(47,93,69,0.12); color: var(--verified); }
+.pill.note{ background: rgba(152,102,9,0.14); color: var(--note); }
+.findings p{ font-size: 0.92rem; margin:0; }
+
+/* ---------- PHOTOS ---------- */
+.photo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (min-width: 700px){ .photo-grid{ grid-template-columns: repeat(4, 1fr); } }
+.shot figure{ margin:0; }
+.frame{
+  aspect-ratio: 4/3; border-radius: 10px; overflow:hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(150deg,#DDE4E0,#C9D3CC);
+  display:flex; align-items:center; justify-content:center;
+  position: relative;
+}
+.frame img{ position:absolute; inset:0; width:100%; height:100%; object-fit: cover; }
+.frame .ph{ width: 38%; opacity: .45; position:relative; z-index:0; }
+.shot figcaption{ font-size: 0.8rem; color: var(--ink-faint); margin-top: 8px; line-height:1.4; }
+
+/* ---------- LIMITS ---------- */
+.limits{ list-style:none; margin:0; padding:0; }
+.limits li{
+  display:flex; gap: 11px; align-items:flex-start;
+  font-size: 0.92rem; color: var(--ink-soft); padding: 7px 0;
+}
+.limits li::before{
+  content:""; flex:none; width: 14px; height: 2px; background: var(--ink-faint);
+  border-radius: 2px; margin-top: 11px; opacity:.7;
+}
+
+/* ---------- NEXT STEPS ---------- */
+.steps-next{ margin:0; padding-left: 20px; }
+.steps-next li{ font-size: 0.94rem; color: var(--ink-soft); margin-bottom: 10px; padding-left: 4px; }
+.steps-next li:last-child{ margin-bottom:0; }
+.steps-next strong{ color: var(--ink); font-weight: 600; }
+
+.sheet-foot{
+  padding: 22px 34px 26px;
+  background: #F7F9F8;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem; color: var(--ink-faint);
+}
+.sheet-foot p{ font-size: 0.82rem; color: var(--ink-faint); max-width: 74ch; margin-bottom: 8px; }
+@media (max-width: 560px){ .sheet-foot{ padding-left:20px; padding-right:20px; } }
+
+/* ---------- CTA ---------- */
+.page-cta{
+  max-width: var(--sheet); margin: 34px auto 0;
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap: 18px;
+  padding: 26px 30px;
+  border: 1px solid var(--line); border-radius: 14px;
+  background: rgba(255,255,255,0.55);
+}
+.page-cta h2{ font-size: 1.1rem; margin-bottom: 4px; }
+.page-cta p{ font-size: 0.9rem; margin:0; }
+
+footer.site{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
+footer.site .wrap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; font-size:0.85rem; }
+footer.site a{ color: #C7CFD8; text-decoration:none; }
+footer.site a:hover{ text-decoration:underline; }
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.whatsapp-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--stamp); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+}
+.whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+.whatsapp-float:active{ transform: scale(0.95); }
+.whatsapp-float svg{ width:28px; height:28px; }
+@keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+@media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+
+/* ---------- PRINT ---------- */
+@media print{
+  body{ background:#fff; }
+  header.site, .notice, .page-cta, footer.site, .print-link, .whatsapp-float{ display:none !important; }
+  .page{ padding:0; }
+  .sheet{ box-shadow:none; border:none; border-radius:0; max-width:none; }
+  .stamp{ animation:none; }
+  .block, .verdict, .sheet-head{ break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html#top" class="brand"><img src="/confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#how">How it works</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="check.html">Free check</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <a href="index.html#pricing" class="btn btn-primary nav-cta">Request a visit</a>
+  </nav>
+</header>
+
+<div class="notice">
+  <div class="wrap">
+    <p><strong>This is a sample.</strong> The address, names and case number are made up, so you can see the format before you book.</p>
+    <a href="index.html#pricing" class="btn btn-ghost nav-cta">See pricing</a>
+  </div>
+</div>
+
+<main class="page">
+  <article class="sheet">
+
+    <!-- HEAD -->
+    <header class="sheet-head">
+      <div class="kicker"><span class="dot"></span>ConfirMad</div>
+      <button class="print-link" type="button" onclick="window.print()">Print or save as PDF</button>
+      <h1>Verification report — C/ Fuencarral 45, 4.º izq.</h1>
+      <div class="sub">Malasaña, Madrid · 14 min walk from Gran Vía</div>
+
+      <dl class="meta">
+        <div><dt>Case</dt><dd>MAD-1042</dd></div>
+        <div><dt>Requested by</dt><dd>J. Weber (Berlin)</dd></div>
+        <div><dt>Visited</dt><dd>3 Sept 2026, 11:32</dd></div>
+        <div><dt>Report sent</dt><dd>4 Sept 2026, 09:10</dd></div>
+        <div><dt>Check type</dt><dd>Express (24–48 h)</dd></div>
+        <div><dt>Listing</dt><dd>Idealista · ref. 108845213</dd></div>
+      </dl>
+    </header>
+
+    <!-- VERDICT -->
+    <section class="verdict">
+      <div class="stamp">ConfirMad<br>04·09·2026</div>
+      <h2>The apartment is real and matches the listing.</h2>
+      <p>Our visitor was let in, walked through every room, and met the person advertising it. The flat exists at the address given, the price and the terms he described match what you were told, and nobody asked for money to hold it.</p>
+      <p>Two things came up that are worth settling in writing before you sign. They are in findings 2 and 6 below.</p>
+    </section>
+
+    <!-- VISIT LOG -->
+    <section class="block">
+      <h3>What happened during the visit</h3>
+      <div class="hint">Recorded on site by Marta R., ConfirMad Madrid.</div>
+      <ul class="log">
+        <li>
+          <time>11:32</time>
+          <div class="what">Arrived on C/ Fuencarral. Street number 45 exists; photographed the façade and the portal from the pavement.</div>
+        </li>
+        <li>
+          <time>11:38</time>
+          <div class="what">Buzzer panel checked. The surname you were given appears next to 4.º izq., which matches the flat advertised.</div>
+        </li>
+        <li>
+          <time>11:41</time>
+          <div class="what">The landlord came down to the portal and let our visitor in. He was told in advance this was a check requested by a prospective tenant abroad, and agreed to it.</div>
+        </li>
+        <li>
+          <time>11:44</time>
+          <div class="what">Walkthrough of all rooms, roughly 20 minutes: entrance, living room, kitchen, bathroom, both bedrooms, and the interior courtyard window.</div>
+        </li>
+        <li>
+          <time>12:06</time>
+          <div class="what">Questions about price, deposit, contract length and bills. Answers noted below.</div>
+        </li>
+        <li>
+          <time>12:19</time>
+          <div class="what">Left the building. Report written and sent the following morning.</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="block">
+      <h3>Findings</h3>
+      <div class="hint">The six things we check on every visit, and what we found on this one.</div>
+      <ul class="findings">
+        <li>
+          <div class="finding-top">
+            <span class="q">1. The address exists and matches the listing</span>
+            <span class="pill ok">Confirmed</span>
+          </div>
+          <p>C/ Fuencarral 45 is a residential building with a portal on the street, not an office or a shop. The flat shown to us was 4.º izq., the same one described in the listing.</p>
+        </li>
+        <li>
+          <div class="finding-top">
+            <span class="q">2. The rooms match the photos you were sent</span>
+            <span class="pill note">Confirmed, with a note</span>
+          </div>
+          <p>The living room, kitchen, bathroom and main bedroom match the listing photos, including the furniture. The second bedroom does not: in the listing it has a window onto the street, and in the flat it faces the interior courtyard and is noticeably darker and smaller. The landlord said that photo was taken in another unit in the same building. Ask him to send you a photo of the actual room before you commit.</p>
+        </li>
+        <li>
+          <div class="finding-top">
+            <span class="q">3. Someone was there to show the apartment</span>
+            <span class="pill ok">Confirmed</span>
+          </div>
+          <p>He was at the portal within a few minutes of the agreed time, had keys to the flat, and gave a full unhurried walkthrough with no rooms kept shut.</p>
+        </li>
+        <li>
+          <div class="finding-top">
+            <span class="q">4. The landlord's name matches what he told you</span>
+            <span class="pill ok">Confirmed</span>
+          </div>
+          <p>He showed a Spanish ID card. The name on it is the same one used on the listing and in your WhatsApp messages. We only checked that the names match — we did not copy, photograph or keep the document number.</p>
+        </li>
+        <li>
+          <div class="finding-top">
+            <span class="q">5. No full payment was demanded before a viewing</span>
+            <span class="pill ok">Confirmed</span>
+          </div>
+          <p>He asks for one month's deposit plus the first month, paid when the contract is signed, and said he is happy to sign in person once you arrive. Nothing was requested to reserve or hold the flat in the meantime.</p>
+        </li>
+        <li>
+          <div class="finding-top">
+            <span class="q">6. Red flags in the terms you were offered</span>
+            <span class="pill note">One thing to clarify</span>
+          </div>
+          <p>The advertised €1,150 does not include the community fee, which he put at about €45 a month, or heating in winter. That was not stated in the listing. It is a normal arrangement in Madrid, but get the full monthly figure written into the contract so there is no argument later.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PHOTOS -->
+    <section class="block">
+      <h3>Photos from the visit</h3>
+      <div class="hint">Taken by our visitor on 3 September, not from the listing.</div>
+      <div class="photo-grid">
+        <div class="shot">
+          <figure>
+            <div class="frame">
+              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
+              <img src="/image1.jpg" alt="Building façade at C/ Fuencarral 45" onerror="this.remove()">
+            </div>
+            <figcaption>Façade and street number, from the pavement.</figcaption>
+          </figure>
+        </div>
+        <div class="shot">
+          <figure>
+            <div class="frame">
+              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+              <img src="/image2.jpg" alt="Entrance and buzzer panel of the building" onerror="this.remove()">
+            </div>
+            <figcaption>Portal and buzzer panel, with 4.º izq. listed.</figcaption>
+          </figure>
+        </div>
+        <div class="shot">
+          <figure>
+            <div class="frame">
+              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 12v7h18v-7"/><path d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M6 19v2M18 19v2"/></svg>
+            </div>
+            <figcaption>Living room, matching the listing photos.</figcaption>
+          </figure>
+        </div>
+        <div class="shot">
+          <figure>
+            <div class="frame">
+              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M12 4v16M4 12h16"/></svg>
+            </div>
+            <figcaption>Second bedroom — window faces the courtyard, not the street.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIMITS -->
+    <section class="block">
+      <h3>What this report does not tell you</h3>
+      <div class="hint">So you know exactly where our check stops.</div>
+      <ul class="limits">
+        <li>Whether he legally owns the flat. We match names and documents on the day; we do not search the Land Registry.</li>
+        <li>Whether the contract he offers is fair or valid. We are not lawyers and we do not review clauses.</li>
+        <li>Anything that changes after the visit — a different flat being offered, a new price, or a new payment method.</li>
+        <li>Hidden defects: damp behind furniture, noise at night, heating that only fails in January.</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section class="block">
+      <h3>What we would do next, in your position</h3>
+      <ol class="steps-next">
+        <li><strong>Ask for a photo of the real second bedroom</strong> before you send anything, and keep it in the same chat as the rest of the conversation.</li>
+        <li><strong>Get the total monthly figure in writing</strong> — rent, community fee and bills — and check it against the €1,150 you were quoted.</li>
+        <li><strong>Pay by bank transfer to an account in his name,</strong> once the contract is signed. Not to a third party, and not by an instant transfer app.</li>
+      </ol>
+    </section>
+
+    <footer class="sheet-foot">
+      <p>This report describes what our visitor observed at the address on 3 September 2026. It is a factual account of a single visit, not legal advice, an appraisal, or a review of any contract. ConfirMad verifies listings, not contracts.</p>
+      <p>Case MAD-1042 · Questions about this report? Reply to the email it came with, or write to contacto@confirmad.es.</p>
+    </footer>
+
+  </article>
+
+  <div class="page-cta">
+    <div>
+      <h2>Have an address you want checked?</h2>
+      <p>One flat fee, paid securely by card when you book. We go this week.</p>
+    </div>
+    <a href="index.html#pricing" class="btn btn-primary">Request a visit</a>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>ConfirMad · Madrid, Spain</div>
+    <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
+    <div>Not a law firm. We verify listings, not contracts.</div>
+    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a></div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
+</body>
+</html>

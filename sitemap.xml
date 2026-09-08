@@ -88,4 +88,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/check.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://confirmad.es/check.html"/>
   </url>
+  <url>
+    <loc>https://confirmad.es/sample-report.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
