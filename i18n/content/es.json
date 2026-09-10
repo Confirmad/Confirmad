@@ -106,8 +106,9 @@
     "foot": "Si el anuncio no es fiable, te decimos exactamente por qué — y eso suele valer mucho más que la tarifa."
   },
   "early": {
+    "badge": "Las primeras 10, gratis",
     "h2": "Acabamos de empezar",
-    "p": "ConfirMad es totalmente nuevo — todavía no hay una larga lista de casos anteriores, y preferimos decírtelo así antes que inventarnos uno. Las primeras 10 comprobaciones son gratis. A cambio, te pedimos permiso para publicar lo que encontremos (podemos omitir tu nombre si lo prefieres).",
+    "p": "ConfirMad es totalmente nuevo — todavía no hay una larga lista de casos anteriores, y preferimos decírtelo así antes que inventarnos uno. Las primeras 10 comprobaciones son gratis, por orden de llegada. A cambio, te pedimos permiso para publicar lo que encontremos (podemos omitir tu nombre si lo prefieres).",
     "whatsapp_cta": "Escríbenos por WhatsApp",
     "form_cta": "Envíanos el anuncio"
   },

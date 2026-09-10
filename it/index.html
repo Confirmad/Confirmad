@@ -330,6 +330,12 @@
   #early .section-head h2{ color: #fff; }
   #early .section-head p{ color: #D6E6DC; }
   #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  .early-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
+    background:#fff; color: var(--stamp-dark);
+    padding: 7px 14px; border-radius: 999px; margin-bottom: 16px;
+  }
   .btn-invert{ background:#fff; color: var(--stamp); }
   .btn-invert:hover{ background: var(--paper); }
   .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
@@ -795,8 +801,9 @@
   <section id="early">
     <div class="wrap">
       <div class="section-head">
+        <div class="early-badge">Prime 10 verifiche gratis</div>
         <h2>Siamo appena partiti</h2>
-        <p>ConfirMad è nuovissimo — non c'è ancora una lunga lista di casi passati, e preferiamo dirlo apertamente piuttosto che inventarne una. Le prime 10 verifiche sono gratuite. In cambio, chiediamo il permesso di pubblicare quello che troviamo (possiamo omettere il tuo nome, se preferisci).</p>
+        <p>ConfirMad è nuovissimo — non c'è ancora una lunga lista di casi passati, e preferiamo dirlo apertamente piuttosto che inventarne una. Le prime 10 verifiche sono gratuite, in ordine di arrivo. In cambio, chiediamo il permesso di pubblicare quello che troviamo (possiamo omettere il tuo nome, se preferisci).</p>
       </div>
       <div class="early-ctas">
         <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20delle%20prime%2010%20verifiche%20gratuite" class="btn btn-invert">Scrivici su WhatsApp</a>

@@ -106,8 +106,9 @@
     "foot": "If the listing doesn't check out, we tell you exactly why — and that's usually worth a lot more than the fee."
   },
   "early": {
+    "badge": "First 10 checks free",
     "h2": "We're just getting started",
-    "p": "ConfirMad is brand new — there's no long list of past cases yet, and we'd rather say that than fake one. The first 10 checks are free. In exchange, we ask permission to publish what we found (we can leave your name out of it if you'd rather).",
+    "p": "ConfirMad is brand new — there's no long list of past cases yet, and we'd rather say that than fake one. The first 10 checks are free, first come, first served. In exchange, we ask permission to publish what we found (we can leave your name out of it if you'd rather).",
     "whatsapp_cta": "Message us on WhatsApp",
     "form_cta": "Send us the listing"
   },

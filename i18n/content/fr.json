@@ -106,8 +106,9 @@
     "foot": "Si l'annonce ne tient pas la route, nous vous disons exactement pourquoi — et cela vaut généralement bien plus que le tarif."
   },
   "early": {
+    "badge": "Les 10 premières offertes",
     "h2": "Nous ne faisons que commencer",
-    "p": "ConfirMad est tout nouveau — il n'y a pas encore de longue liste de cas passés, et nous préférons le dire plutôt que d'en inventer un. Les 10 premières vérifications sont gratuites. En échange, nous demandons la permission de publier ce que nous trouvons (nous pouvons ne pas mentionner votre nom si vous préférez).",
+    "p": "ConfirMad est tout nouveau — il n'y a pas encore de longue liste de cas passés, et nous préférons le dire plutôt que d'en inventer un. Les 10 premières vérifications sont gratuites, dans l'ordre d'arrivée. En échange, nous demandons la permission de publier ce que nous trouvons (nous pouvons ne pas mentionner votre nom si vous préférez).",
     "whatsapp_cta": "Écrivez-nous sur WhatsApp",
     "form_cta": "Envoyez-nous l'annonce"
   },
