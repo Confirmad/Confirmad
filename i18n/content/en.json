@@ -105,10 +105,13 @@
     "live_cta": "Request this",
     "foot": "If the listing doesn't check out, we tell you exactly why — and that's usually worth a lot more than the fee."
   },
-  "early": {
-    "badge": "First 10 checks free",
-    "h2": "We're just getting started",
-    "p": "ConfirMad is brand new — there's no long list of past cases yet, and we'd rather say that than fake one. The first 10 checks are free, first come, first served. In exchange, we ask permission to publish what we found (we can leave your name out of it if you'd rather).",
+  "risk": {
+    "badge": "The risk is real",
+    "h2": "Nearly 1 in 4 exchange students gets scammed on housing",
+    "p1": "A Europe-wide survey of almost 9,000 exchange students found close to a quarter had been scammed looking for a place to live before they even arrived.",
+    "p2": "It's not just abroad, either. Spain logged 488,426 cybercrime cases in 2025, and Madrid alone accounted for over 72,000 of them — more than almost anywhere else in the country.",
+    "p3": "One trick keeps working: a landlord does the viewing over video call — through an apartment that isn't actually for rent. Spanish police have made arrests over exactly this. A screen can be staged. Someone walking in and knocking on the door cannot.",
+    "highlight": "A deposit plus first month in Madrid easily runs €900–2,000. A ConfirMad check costs less than dinner for two — from €49.",
     "whatsapp_cta": "Message us on WhatsApp",
     "form_cta": "Send us the listing"
   },
@@ -160,7 +163,7 @@
   "whatsapp": {
     "aria_label": "Chat with us on WhatsApp",
     "float_message": "Hi, I have a question about verifying a listing in Madrid",
-    "early_message": "Hi, I'd like to book one of the first 10 free checks"
+    "early_message": "Hi, I'd like to book a check before I send a deposit"
   },
   "check_tool": {
     "eyebrow": "Free tool",

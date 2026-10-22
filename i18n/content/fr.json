@@ -105,10 +105,13 @@
     "live_cta": "Demander cette formule",
     "foot": "Si l'annonce ne tient pas la route, nous vous disons exactement pourquoi — et cela vaut généralement bien plus que le tarif."
   },
-  "early": {
-    "badge": "Les 10 premières offertes",
-    "h2": "Nous ne faisons que commencer",
-    "p": "ConfirMad est tout nouveau — il n'y a pas encore de longue liste de cas passés, et nous préférons le dire plutôt que d'en inventer un. Les 10 premières vérifications sont gratuites, dans l'ordre d'arrivée. En échange, nous demandons la permission de publier ce que nous trouvons (nous pouvons ne pas mentionner votre nom si vous préférez).",
+  "risk": {
+    "badge": "Le risque est réel",
+    "h2": "Près d'un étudiant Erasmus sur 4 se fait arnaquer sur son logement",
+    "p1": "Une enquête européenne menée auprès de près de 9 000 étudiants Erasmus a révélé que près d'un quart d'entre eux avait été arnaqué en cherchant un logement avant même d'arriver.",
+    "p2": "Et ce n'est pas qu'à l'étranger. L'Espagne a enregistré 488 426 cas de cybercriminalité en 2025, dont plus de 72 000 rien que pour Madrid — plus que presque toute autre région du pays.",
+    "p3": "Une technique continue de fonctionner : le propriétaire fait visiter par appel vidéo — en montrant un appartement qui n'est en réalité pas celui qu'il va vous louer. La police espagnole a procédé à des arrestations pour exactement cela. Un écran, ça se prépare. Quelqu'un qui entre et frappe à la porte, non.",
+    "highlight": "Une caution plus le premier mois à Madrid atteint facilement 900–2 000 €. Une vérification ConfirMad coûte moins cher qu'un dîner pour deux — à partir de 49 €.",
     "whatsapp_cta": "Écrivez-nous sur WhatsApp",
     "form_cta": "Envoyez-nous l'annonce"
   },
@@ -160,7 +163,7 @@
   "whatsapp": {
     "aria_label": "Écrivez-nous sur WhatsApp",
     "float_message": "Bonjour, j'ai une question sur la vérification d'une annonce à Madrid",
-    "early_message": "Bonjour, je voudrais réserver l'une des 10 premières vérifications gratuites"
+    "early_message": "Bonjour, je voudrais réserver une vérification avant d'envoyer la caution"
   },
   "check_tool": {
     "eyebrow": "Outil gratuit",

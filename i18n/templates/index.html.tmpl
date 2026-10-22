@@ -322,10 +322,15 @@
   #check{ background: #E6ECE8; }
 
   /* ---------- EARLY ACCESS ---------- */
-  #early{ background: var(--stamp); }
-  #early .section-head h2{ color: #fff; }
-  #early .section-head p{ color: #D6E6DC; }
-  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk{ background: var(--stamp); }
+  #risk .section-head h2{ color: #fff; }
+  #risk .section-head p{ color: #D6E6DC; }
+  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .stat-highlight{
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
+  }
+  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
   .early-badge{
     display:inline-flex; align-items:center; gap:6px;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
@@ -794,16 +799,19 @@
   </section>
 
   <!-- EARLY ACCESS -->
-  <section id="early">
+  <section id="risk">
     <div class="wrap">
       <div class="section-head">
-        <div class="early-badge">[[early.badge]]</div>
-        <h2>[[early.h2]]</h2>
-        <p>[[early.p]]</p>
+        <div class="early-badge">[[risk.badge]]</div>
+        <h2>[[risk.h2]]</h2>
+        <p>[[risk.p1]]</p>
+        <p>[[risk.p2]]</p>
+        <p>[[risk.p3]]</p>
       </div>
+      <div class="stat-highlight"><p>[[risk.highlight]]</p></div>
       <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=[[WA_EARLY_TEXT]]" class="btn btn-invert">[[early.whatsapp_cta]]</a>
-        <a href="#request" class="btn btn-outline-invert">[[early.form_cta]]</a>
+        <a href="https://wa.me/34639589180?text=[[WA_EARLY_TEXT]]" class="btn btn-invert">[[risk.whatsapp_cta]]</a>
+        <a href="#request" class="btn btn-outline-invert">[[risk.form_cta]]</a>
       </div>
     </div>
   </section>

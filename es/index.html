@@ -326,10 +326,15 @@
   #check{ background: #E6ECE8; }
 
   /* ---------- EARLY ACCESS ---------- */
-  #early{ background: var(--stamp); }
-  #early .section-head h2{ color: #fff; }
-  #early .section-head p{ color: #D6E6DC; }
-  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk{ background: var(--stamp); }
+  #risk .section-head h2{ color: #fff; }
+  #risk .section-head p{ color: #D6E6DC; }
+  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .stat-highlight{
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
+  }
+  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
   .early-badge{
     display:inline-flex; align-items:center; gap:6px;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
@@ -798,15 +803,18 @@
   </section>
 
   <!-- EARLY ACCESS -->
-  <section id="early">
+  <section id="risk">
     <div class="wrap">
       <div class="section-head">
-        <div class="early-badge">Las primeras 10, gratis</div>
-        <h2>Acabamos de empezar</h2>
-        <p>ConfirMad es totalmente nuevo — todavía no hay una larga lista de casos anteriores, y preferimos decírtelo así antes que inventarnos uno. Las primeras 10 comprobaciones son gratis, por orden de llegada. A cambio, te pedimos permiso para publicar lo que encontremos (podemos omitir tu nombre si lo prefieres).</p>
+        <div class="early-badge">El riesgo es real</div>
+        <h2>Casi 1 de cada 4 estudiantes de intercambio sufre una estafa con la vivienda</h2>
+        <p>Una encuesta europea a casi 9.000 estudiantes de intercambio encontró que casi uno de cada cuatro había sufrido una estafa buscando dónde vivir antes incluso de llegar.</p>
+        <p>Y no es solo fuera de España. En 2025 se registraron 488.426 ciberdelitos en el país, y solo Madrid acumuló más de 72.000 — más que casi cualquier otra región.</p>
+        <p>Hay un truco que sigue funcionando: el casero hace la visita por videollamada — enseñando un piso que en realidad no es el que te va a alquilar. La policía española ha detenido a gente por hacer exactamente esto. Una pantalla se puede preparar. Alguien que entra y llama a la puerta, no.</p>
       </div>
+      <div class="stat-highlight"><p>Una fianza más el primer mes en Madrid se va fácilmente a 900–2.000 €. Una comprobación de ConfirMad cuesta menos que una cena para dos — desde 49 €.</p></div>
       <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20de%20las%20primeras%2010%20comprobaciones%20gratis" class="btn btn-invert">Escríbenos por WhatsApp</a>
+        <a href="https://wa.me/34639589180?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20comprobaci%C3%B3n%20antes%20de%20enviar%20la%20fianza" class="btn btn-invert">Escríbenos por WhatsApp</a>
         <a href="#request" class="btn btn-outline-invert">Envíanos el anuncio</a>
       </div>
     </div>

@@ -105,10 +105,13 @@
     "live_cta": "Richiedi questo piano",
     "foot": "Se l'annuncio non è affidabile, ti diciamo esattamente perché — e di solito vale molto più della tariffa."
   },
-  "early": {
-    "badge": "Prime 10 verifiche gratis",
-    "h2": "Siamo appena partiti",
-    "p": "ConfirMad è nuovissimo — non c'è ancora una lunga lista di casi passati, e preferiamo dirlo apertamente piuttosto che inventarne una. Le prime 10 verifiche sono gratuite, in ordine di arrivo. In cambio, chiediamo il permesso di pubblicare quello che troviamo (possiamo omettere il tuo nome, se preferisci).",
+  "risk": {
+    "badge": "Il rischio è reale",
+    "h2": "Quasi 1 studente Erasmus su 4 subisce una truffa sull'alloggio",
+    "p1": "Un sondaggio europeo su quasi 9.000 studenti Erasmus ha rilevato che quasi un quarto aveva subito una truffa cercando casa prima ancora di arrivare.",
+    "p2": "E non succede solo all'estero. Nel 2025 in Spagna sono stati registrati 488.426 reati informatici, e solo Madrid ne ha accumulati oltre 72.000 — più di quasi ogni altra regione del paese.",
+    "p3": "C'è un trucco che continua a funzionare: il padrone di casa fa vedere l'appartamento in videochiamata — mostrando un appartamento che in realtà non è quello che ti affitterà. La polizia spagnola ha arrestato persone per questo esatto motivo. Uno schermo si può preparare. Qualcuno che entra e bussa alla porta, no.",
+    "highlight": "Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica ConfirMad costa meno di una cena per due — a partire da 49 €.",
     "whatsapp_cta": "Scrivici su WhatsApp",
     "form_cta": "Mandaci l'annuncio"
   },
@@ -160,7 +163,7 @@
   "whatsapp": {
     "aria_label": "Scrivici su WhatsApp",
     "float_message": "Ciao, ho una domanda sulla verifica di un annuncio a Madrid",
-    "early_message": "Ciao, vorrei prenotare una delle prime 10 verifiche gratuite"
+    "early_message": "Ciao, vorrei prenotare una verifica prima di inviare la caparra"
   },
   "check_tool": {
     "eyebrow": "Strumento gratuito",

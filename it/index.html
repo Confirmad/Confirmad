@@ -326,10 +326,15 @@
   #check{ background: #E6ECE8; }
 
   /* ---------- EARLY ACCESS ---------- */
-  #early{ background: var(--stamp); }
-  #early .section-head h2{ color: #fff; }
-  #early .section-head p{ color: #D6E6DC; }
-  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk{ background: var(--stamp); }
+  #risk .section-head h2{ color: #fff; }
+  #risk .section-head p{ color: #D6E6DC; }
+  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .stat-highlight{
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
+  }
+  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
   .early-badge{
     display:inline-flex; align-items:center; gap:6px;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
@@ -798,15 +803,18 @@
   </section>
 
   <!-- EARLY ACCESS -->
-  <section id="early">
+  <section id="risk">
     <div class="wrap">
       <div class="section-head">
-        <div class="early-badge">Prime 10 verifiche gratis</div>
-        <h2>Siamo appena partiti</h2>
-        <p>ConfirMad è nuovissimo — non c'è ancora una lunga lista di casi passati, e preferiamo dirlo apertamente piuttosto che inventarne una. Le prime 10 verifiche sono gratuite, in ordine di arrivo. In cambio, chiediamo il permesso di pubblicare quello che troviamo (possiamo omettere il tuo nome, se preferisci).</p>
+        <div class="early-badge">Il rischio è reale</div>
+        <h2>Quasi 1 studente Erasmus su 4 subisce una truffa sull'alloggio</h2>
+        <p>Un sondaggio europeo su quasi 9.000 studenti Erasmus ha rilevato che quasi un quarto aveva subito una truffa cercando casa prima ancora di arrivare.</p>
+        <p>E non succede solo all'estero. Nel 2025 in Spagna sono stati registrati 488.426 reati informatici, e solo Madrid ne ha accumulati oltre 72.000 — più di quasi ogni altra regione del paese.</p>
+        <p>C'è un trucco che continua a funzionare: il padrone di casa fa vedere l'appartamento in videochiamata — mostrando un appartamento che in realtà non è quello che ti affitterà. La polizia spagnola ha arrestato persone per questo esatto motivo. Uno schermo si può preparare. Qualcuno che entra e bussa alla porta, no.</p>
       </div>
+      <div class="stat-highlight"><p>Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica ConfirMad costa meno di una cena per due — a partire da 49 €.</p></div>
       <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20delle%20prime%2010%20verifiche%20gratuite" class="btn btn-invert">Scrivici su WhatsApp</a>
+        <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20verifica%20prima%20di%20inviare%20la%20caparra" class="btn btn-invert">Scrivici su WhatsApp</a>
         <a href="#request" class="btn btn-outline-invert">Mandaci l'annuncio</a>
       </div>
     </div>

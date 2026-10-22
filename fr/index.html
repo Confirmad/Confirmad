@@ -326,10 +326,15 @@
   #check{ background: #E6ECE8; }
 
   /* ---------- EARLY ACCESS ---------- */
-  #early{ background: var(--stamp); }
-  #early .section-head h2{ color: #fff; }
-  #early .section-head p{ color: #D6E6DC; }
-  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk{ background: var(--stamp); }
+  #risk .section-head h2{ color: #fff; }
+  #risk .section-head p{ color: #D6E6DC; }
+  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .stat-highlight{
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
+  }
+  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
   .early-badge{
     display:inline-flex; align-items:center; gap:6px;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
@@ -798,15 +803,18 @@
   </section>
 
   <!-- EARLY ACCESS -->
-  <section id="early">
+  <section id="risk">
     <div class="wrap">
       <div class="section-head">
-        <div class="early-badge">Les 10 premières offertes</div>
-        <h2>Nous ne faisons que commencer</h2>
-        <p>ConfirMad est tout nouveau — il n'y a pas encore de longue liste de cas passés, et nous préférons le dire plutôt que d'en inventer un. Les 10 premières vérifications sont gratuites, dans l'ordre d'arrivée. En échange, nous demandons la permission de publier ce que nous trouvons (nous pouvons ne pas mentionner votre nom si vous préférez).</p>
+        <div class="early-badge">Le risque est réel</div>
+        <h2>Près d'un étudiant Erasmus sur 4 se fait arnaquer sur son logement</h2>
+        <p>Une enquête européenne menée auprès de près de 9 000 étudiants Erasmus a révélé que près d'un quart d'entre eux avait été arnaqué en cherchant un logement avant même d'arriver.</p>
+        <p>Et ce n'est pas qu'à l'étranger. L'Espagne a enregistré 488 426 cas de cybercriminalité en 2025, dont plus de 72 000 rien que pour Madrid — plus que presque toute autre région du pays.</p>
+        <p>Une technique continue de fonctionner : le propriétaire fait visiter par appel vidéo — en montrant un appartement qui n'est en réalité pas celui qu'il va vous louer. La police espagnole a procédé à des arrestations pour exactement cela. Un écran, ça se prépare. Quelqu'un qui entre et frappe à la porte, non.</p>
       </div>
+      <div class="stat-highlight"><p>Une caution plus le premier mois à Madrid atteint facilement 900–2 000 €. Une vérification ConfirMad coûte moins cher qu'un dîner pour deux — à partir de 49 €.</p></div>
       <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Bonjour%2C%20je%20voudrais%20r%C3%A9server%20l%27une%20des%2010%20premi%C3%A8res%20v%C3%A9rifications%20gratuites" class="btn btn-invert">Écrivez-nous sur WhatsApp</a>
+        <a href="https://wa.me/34639589180?text=Bonjour%2C%20je%20voudrais%20r%C3%A9server%20une%20v%C3%A9rification%20avant%20d%27envoyer%20la%20caution" class="btn btn-invert">Écrivez-nous sur WhatsApp</a>
         <a href="#request" class="btn btn-outline-invert">Envoyez-nous l'annonce</a>
       </div>
     </div>

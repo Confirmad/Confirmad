@@ -326,10 +326,15 @@
   #check{ background: #E6ECE8; }
 
   /* ---------- EARLY ACCESS ---------- */
-  #early{ background: var(--stamp); }
-  #early .section-head h2{ color: #fff; }
-  #early .section-head p{ color: #D6E6DC; }
-  #early .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk{ background: var(--stamp); }
+  #risk .section-head h2{ color: #fff; }
+  #risk .section-head p{ color: #D6E6DC; }
+  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .stat-highlight{
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
+  }
+  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
   .early-badge{
     display:inline-flex; align-items:center; gap:6px;
     font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
@@ -798,15 +803,18 @@
   </section>
 
   <!-- EARLY ACCESS -->
-  <section id="early">
+  <section id="risk">
     <div class="wrap">
       <div class="section-head">
-        <div class="early-badge">First 10 checks free</div>
-        <h2>We're just getting started</h2>
-        <p>ConfirMad is brand new — there's no long list of past cases yet, and we'd rather say that than fake one. The first 10 checks are free, first come, first served. In exchange, we ask permission to publish what we found (we can leave your name out of it if you'd rather).</p>
+        <div class="early-badge">The risk is real</div>
+        <h2>Nearly 1 in 4 exchange students gets scammed on housing</h2>
+        <p>A Europe-wide survey of almost 9,000 exchange students found close to a quarter had been scammed looking for a place to live before they even arrived.</p>
+        <p>It's not just abroad, either. Spain logged 488,426 cybercrime cases in 2025, and Madrid alone accounted for over 72,000 of them — more than almost anywhere else in the country.</p>
+        <p>One trick keeps working: a landlord does the viewing over video call — through an apartment that isn't actually for rent. Spanish police have made arrests over exactly this. A screen can be staged. Someone walking in and knocking on the door cannot.</p>
       </div>
+      <div class="stat-highlight"><p>A deposit plus first month in Madrid easily runs €900–2,000. A ConfirMad check costs less than dinner for two — from €49.</p></div>
       <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20one%20of%20the%20first%2010%20free%20checks" class="btn btn-invert">Message us on WhatsApp</a>
+        <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20a%20check%20before%20I%20send%20a%20deposit" class="btn btn-invert">Message us on WhatsApp</a>
         <a href="#request" class="btn btn-outline-invert">Send us the listing</a>
       </div>
     </div>
