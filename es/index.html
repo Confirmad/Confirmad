@@ -421,6 +421,18 @@
     background: rgba(47,93,69,0.06); border-radius: 0 14px 14px 0;
   }
 
+  /* ---------- WHY CONFIRMAD ---------- */
+  .why-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px){ .why-grid{ grid-template-columns: 1fr 1fr; } }
+  .why-item{
+    padding: 18px 20px; border-radius: 12px;
+    background: var(--card); border: 1px solid var(--line);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .why-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
+  .why-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
+  .why-item p{ font-size: 0.9rem; margin-bottom:0; }
+
   /* ---------- WHO THIS IS FOR ---------- */
   .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
   @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
@@ -672,6 +684,38 @@
       </div>
       <div>
         <p class="callout">Somos la persona que se acerca y lo comprueba — antes de que transfieras nada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CONFIRMAD -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>¿Por qué ConfirMad?</h2>
+        <p>ConfirMad manda a una persona real a comprobar un piso en Madrid antes de que envíes ninguna fianza. Existimos porque alquilar un piso que no puedes ver con tus propios ojos es una de las formas más fáciles de perder dinero: casi uno de cada cuatro estudiantes de intercambio europeos dice haber sufrido una estafa buscando alojamiento, y España registró casi medio millón de ciberdelitos solo en 2025.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Comprobación presencial</h3>
+          <p>No es revisar fotos ni un chat — alguien va de verdad a la dirección y la compara con lo que te han enseñado.</p>
+        </div>
+        <div class="why-item">
+          <h3>Rapidez</h3>
+          <p>Informes Express en 24–48 horas, Basic en 3–4 días, para que no te quedes esperando mientras otra persona se queda el piso.</p>
+        </div>
+        <div class="why-item">
+          <h3>Prueba por escrito, no solo una opinión</h3>
+          <p>Un informe claro con fotos que puedes guardar, releer y enseñar a quien vaya a pagar la fianza contigo.</p>
+        </div>
+        <div class="why-item">
+          <h3>Una fracción del riesgo</h3>
+          <p>Las comprobaciones empiezan desde 49 €. Una fianza más el primer mes en Madrid fácilmente llega a 900–2.000 € — esto sale barato en comparación.</p>
+        </div>
+        <div class="why-item">
+          <h3>Sin agencia, sin intermediarios</h3>
+          <p>Solo una persona real sobre el terreno en Madrid, trabajando para ti — no para el casero, ni para el algoritmo de una plataforma.</p>
+        </div>
       </div>
     </div>
   </section>

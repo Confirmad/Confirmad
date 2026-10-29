@@ -47,6 +47,20 @@
     "p2": "Le pasa constantemente a gente que todavía no conoce Madrid: estudiantes de intercambio que llegan para un semestre, personas que se mudan por unos meses, visitantes que reservan una estancia larga. Son el objetivo más fácil, porque no pueden simplemente acercarse a comprobarlo.",
     "callout": "Somos la persona que se acerca y lo comprueba — antes de que transfieras nada."
   },
+  "why": {
+    "h2": "¿Por qué ConfirMad?",
+    "lead": "ConfirMad manda a una persona real a comprobar un piso en Madrid antes de que envíes ninguna fianza. Existimos porque alquilar un piso que no puedes ver con tus propios ojos es una de las formas más fáciles de perder dinero: casi uno de cada cuatro estudiantes de intercambio europeos dice haber sufrido una estafa buscando alojamiento, y España registró casi medio millón de ciberdelitos solo en 2025.",
+    "b1_title": "Comprobación presencial",
+    "b1_body": "No es revisar fotos ni un chat — alguien va de verdad a la dirección y la compara con lo que te han enseñado.",
+    "b2_title": "Rapidez",
+    "b2_body": "Informes Express en 24–48 horas, Basic en 3–4 días, para que no te quedes esperando mientras otra persona se queda el piso.",
+    "b3_title": "Prueba por escrito, no solo una opinión",
+    "b3_body": "Un informe claro con fotos que puedes guardar, releer y enseñar a quien vaya a pagar la fianza contigo.",
+    "b4_title": "Una fracción del riesgo",
+    "b4_body": "Las comprobaciones empiezan desde 49 €. Una fianza más el primer mes en Madrid fácilmente llega a 900–2.000 € — esto sale barato en comparación.",
+    "b5_title": "Sin agencia, sin intermediarios",
+    "b5_body": "Solo una persona real sobre el terreno en Madrid, trabajando para ti — no para el casero, ni para el algoritmo de una plataforma."
+  },
   "who": {
     "h2": "Para quién es esto",
     "sub": "Para cualquiera que vaya a firmar un contrato de un piso que no ha visto con sus propios ojos.",

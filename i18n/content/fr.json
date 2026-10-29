@@ -47,6 +47,20 @@
     "p2": "Cela arrive sans cesse à ceux qui ne connaissent pas encore Madrid : étudiants Erasmus arrivant pour un semestre, personnes qui déménagent pour quelques mois, visiteurs réservant un séjour plus long. Ce sont les cibles les plus faciles, car ils ne peuvent pas simplement passer vérifier.",
     "callout": "Nous sommes la personne qui se déplace et vérifie — avant que vous ne fassiez le moindre virement."
   },
+  "why": {
+    "h2": "Pourquoi ConfirMad ?",
+    "lead": "ConfirMad envoie une vraie personne vérifier un appartement à Madrid avant que vous n'envoyiez la moindre caution. Nous existons parce que louer un logement que vous ne pouvez pas voir de vos propres yeux est l'un des moyens les plus simples de perdre de l'argent : près d'un étudiant Erasmus européen sur quatre déclare avoir été arnaqué en cherchant un logement, et l'Espagne a enregistré près d'un demi-million de cas de cybercriminalité rien qu'en 2025.",
+    "b1_title": "Vérification sur place",
+    "b1_body": "Pas une relecture de photos ou de messages — quelqu'un se rend vraiment à l'adresse et la compare à ce qui vous a été montré.",
+    "b2_title": "Rapidité",
+    "b2_body": "Rapports Express en 24–48 heures, Basic en 3–4 jours, pour que vous n'attendiez pas pendant que quelqu'un d'autre prend l'appartement.",
+    "b3_title": "Une preuve écrite, pas juste un avis",
+    "b3_body": "Un rapport clair avec des photos que vous pouvez garder, relire et montrer à la personne qui paie la caution avec vous.",
+    "b4_title": "Une fraction du risque",
+    "b4_body": "Les vérifications commencent à 49 €. Une caution plus le premier mois à Madrid atteint facilement 900–2 000 € — c'est une assurance bon marché en comparaison.",
+    "b5_title": "Pas d'agence, pas d'intermédiaire",
+    "b5_body": "Juste une vraie personne sur le terrain à Madrid, qui travaille pour vous — pas pour le propriétaire, ni pour l'algorithme d'une plateforme."
+  },
   "who": {
     "h2": "Pour qui c'est fait",
     "sub": "Pour quiconque s'apprête à signer un bail pour un logement qu'il n'a pas vu de ses propres yeux.",
