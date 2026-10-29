@@ -119,7 +119,25 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
   nav.wrap{ gap: 10px; }
 }
 
-main{ padding: 40px 0 80px; }
+main{ padding: 0 0 80px; }
+
+.tool-hero{ position:relative; overflow:hidden; padding: 40px 0 8px; }
+.tool-hero::before, .tool-hero::after{
+  content:""; position:absolute; border-radius:50%; filter: blur(70px);
+  z-index:0; pointer-events:none;
+}
+.tool-hero::before{ width:320px; height:320px; background: var(--stamp); opacity:0.18; top:-170px; right:-120px; }
+.tool-hero::after{ width:240px; height:240px; background: var(--verified); opacity:0.14; bottom:-150px; left:-100px; }
+.tool-hero .wrap{ position:relative; z-index:1; }
+
+.tool-icon{
+  width:52px; height:52px; border-radius:14px;
+  background: var(--card); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  color: var(--stamp); margin-bottom:16px;
+  box-shadow: 0 14px 28px -20px rgba(22,35,59,0.3);
+}
+.tool-icon svg{ width:26px; height:26px; }
 
 .tool-head{ max-width: 62ch; margin-bottom: 32px; }
 .tool-head .eyebrow{
@@ -137,7 +155,8 @@ main{ padding: 40px 0 80px; }
 
 /* ---------- form ---------- */
 .tool-card{
-  background: var(--card); border:1px solid var(--line); border-radius:18px;
+  background: var(--card); border:1px solid var(--line); border-top:4px solid var(--stamp);
+  border-radius:18px;
   padding: 26px 24px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
   margin-bottom: 28px;
 }
@@ -282,17 +301,24 @@ footer .lang-switch a.lang-current{ color:#fff; }
 </header>
 
 <main>
-  <div class="wrap">
-
-    <div class="tool-head">
-      <span class="eyebrow">Herramienta gratuita</span>
-      <h1>¿Ese anuncio es una señal de alarma?</h1>
-      <p>Responde unas preguntas rápidas sobre un anuncio que estás mirando y obtén al instante una valoración de las señales de alarma más comunes en alquileres en Madrid: precio poco realista para la zona, pago exigido antes de una visita, sin videollamada, y más.</p>
-      <div class="privacy-note">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-        <span>Esto funciona entero en tu navegador. Nada de lo que escribas aquí se nos envía ni se guarda en ningún sitio.</span>
+  <section class="tool-hero">
+    <div class="wrap">
+      <div class="tool-head">
+        <div class="tool-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <span class="eyebrow">Herramienta gratuita</span>
+        <h1>¿Ese anuncio es una señal de alarma?</h1>
+        <p>Responde unas preguntas rápidas sobre un anuncio que estás mirando y obtén al instante una valoración de las señales de alarma más comunes en alquileres en Madrid: precio poco realista para la zona, pago exigido antes de una visita, sin videollamada, y más.</p>
+        <div class="privacy-note">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <span>Esto funciona entero en tu navegador. Nada de lo que escribas aquí se nos envía ni se guarda en ningún sitio.</span>
+        </div>
       </div>
     </div>
+  </section>
+
+  <div class="wrap">
 
     <form id="checkForm" class="tool-card" novalidate>
       <fieldset>
