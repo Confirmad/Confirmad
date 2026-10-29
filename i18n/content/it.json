@@ -95,6 +95,12 @@
     "item5": "Non viene richiesto il pagamento completo prima di una visita",
     "item6": "Eventuali segnali d'allarme evidenti nelle condizioni che ti sono state offerte"
   },
+  "free_tool": {
+    "badge": "100% gratuito · senza registrazione",
+    "h2": "Non sei ancora pronto a prenotare? Verifica tu stesso un annuncio, gratis.",
+    "body": "Rispondi a poche domande rapide su un annuncio che stai guardando e ottieni subito una valutazione dei segnali d'allarme più comuni negli affitti a Madrid — direttamente nel tuo browser, senza inviare nulla da nessuna parte.",
+    "cta": "Prova la verifica gratuita"
+  },
   "pricing": {
     "h2": "Prezzi",
     "sub": "Una tariffa fissa, pagata in modo sicuro con carta al momento della prenotazione.",

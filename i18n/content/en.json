@@ -95,6 +95,12 @@
     "item5": "No full payment is being demanded before a viewing",
     "item6": "Any obvious red flags in the terms you've been offered"
   },
+  "free_tool": {
+    "badge": "100% free · no sign-up",
+    "h2": "Not ready to book yet? Check a listing yourself, free.",
+    "body": "Answer a few quick questions about a listing you're looking at and get an instant read on common Madrid rental-scam warning signs — right in your browser, nothing sent anywhere.",
+    "cta": "Try the free check"
+  },
   "pricing": {
     "h2": "Pricing",
     "sub": "One flat fee, paid securely by card when you book.",

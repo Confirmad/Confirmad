@@ -346,6 +346,24 @@
   .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
   .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
 
+  /* ---------- FREE TOOL CALLOUT ---------- */
+  .free-tool-card{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;
+    background: rgba(47,93,69,0.07); border: 1.5px solid var(--stamp);
+    border-radius: 20px; padding: 36px 40px;
+  }
+  .free-tool-text{ max-width: 620px; }
+  .free-tool-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
+    background: var(--stamp); color:#fff;
+    padding: 7px 14px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .free-tool-text h2{ font-size: clamp(1.3rem, 2.2vw, 1.6rem); margin-bottom: 10px; }
+  .free-tool-text p{ margin-bottom:0; }
+  .free-tool-cta{ flex:none; }
+  @media (max-width: 700px){ .free-tool-card{ padding: 28px 24px; } }
+
   /* ---------- ABOUT / FOUNDER ---------- */
   #about{ background: #E6ECE8; }
   .about-card{
@@ -795,6 +813,20 @@
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">[[check_section.item4]]</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.item5]]</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">[[check_section.item6]]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE TOOL CALLOUT -->
+  <section id="free-tool">
+    <div class="wrap">
+      <div class="free-tool-card">
+        <div class="free-tool-text">
+          <div class="free-tool-badge">[[free_tool.badge]]</div>
+          <h2>[[free_tool.h2]]</h2>
+          <p>[[free_tool.body]]</p>
+        </div>
+        <a href="check.html" class="btn btn-primary free-tool-cta">[[free_tool.cta]]</a>
       </div>
     </div>
   </section>

@@ -95,6 +95,12 @@
     "item5": "Aucun paiement intégral n'est exigé avant une visite",
     "item6": "Tout signal d'alerte évident dans les conditions qui vous ont été proposées"
   },
+  "free_tool": {
+    "badge": "100% gratuit · sans inscription",
+    "h2": "Pas encore prêt à réserver ? Vérifiez vous-même une annonce, gratuitement.",
+    "body": "Répondez à quelques questions rapides sur une annonce que vous regardez et obtenez instantanément une évaluation des signaux d'alerte courants dans les locations à Madrid — directement dans votre navigateur, sans rien envoyer nulle part.",
+    "cta": "Essayer la vérification gratuite"
+  },
   "pricing": {
     "h2": "Tarifs",
     "sub": "Un tarif fixe, payé en toute sécurité par carte au moment de la réservation.",

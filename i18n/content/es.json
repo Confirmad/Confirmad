@@ -95,6 +95,12 @@
     "item5": "No se está exigiendo el pago completo antes de una visita",
     "item6": "Cualquier señal de alarma evidente en las condiciones que te han ofrecido"
   },
+  "free_tool": {
+    "badge": "100% gratis · sin registro",
+    "h2": "¿Todavía no quieres reservar? Comprueba un anuncio tú mismo, gratis.",
+    "body": "Responde unas preguntas rápidas sobre un anuncio que estés mirando y obtén al instante una valoración de las señales de alarma más comunes en alquileres en Madrid — directamente en tu navegador, sin enviar nada a ningún sitio.",
+    "cta": "Probar el detector gratuito"
+  },
   "pricing": {
     "h2": "Precios",
     "sub": "Una tarifa fija, pagada de forma segura con tarjeta al reservar.",
