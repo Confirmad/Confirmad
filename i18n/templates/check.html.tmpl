@@ -320,15 +320,19 @@ footer .lang-switch a.lang-current{ color:#fff; }
       <fieldset>
         <legend>[[check_tool.legend_listing]]</legend>
         <div class="grid-2">
-          <div class="field field-prefix">
+          <div class="field">
             <label for="price">[[check_tool.price_label]]</label>
-            <span>€</span>
-            <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.price_placeholder]]">
+            <div class="field-prefix">
+              <span>€</span>
+              <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.price_placeholder]]">
+            </div>
           </div>
-          <div class="field field-prefix">
+          <div class="field">
             <label for="size">[[check_tool.size_label]]</label>
-            <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.size_placeholder]]">
-            <span style="left:auto; right:13px;">m²</span>
+            <div class="field-prefix">
+              <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="[[check_tool.size_placeholder]]">
+              <span style="left:auto; right:13px;">m²</span>
+            </div>
           </div>
         </div>
         <div class="grid-2">

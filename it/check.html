@@ -324,15 +324,19 @@ footer .lang-switch a.lang-current{ color:#fff; }
       <fieldset>
         <legend>L'annuncio</legend>
         <div class="grid-2">
-          <div class="field field-prefix">
+          <div class="field">
             <label for="price">Affitto mensile</label>
-            <span>€</span>
-            <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="650">
+            <div class="field-prefix">
+              <span>€</span>
+              <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" placeholder="650">
+            </div>
           </div>
-          <div class="field field-prefix">
+          <div class="field">
             <label for="size">Superficie circa</label>
-            <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="45">
-            <span style="left:auto; right:13px;">m²</span>
+            <div class="field-prefix">
+              <input type="number" id="size" name="size" min="0" step="1" inputmode="numeric" placeholder="45">
+              <span style="left:auto; right:13px;">m²</span>
+            </div>
           </div>
         </div>
         <div class="grid-2">
