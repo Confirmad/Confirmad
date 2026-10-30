@@ -30,11 +30,11 @@
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99",
+  "priceRange": "€29–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "[[meta.jsonld_offer_basic]]" } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "[[meta.jsonld_offer_express]]" } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "[[meta.jsonld_offer_live]]" } }
+    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "[[meta.jsonld_offer_online]]" } },
+    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "[[meta.jsonld_offer_visit]]" } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "[[meta.jsonld_offer_live]]" } }
   ]
 }
 </script>
@@ -83,7 +83,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
 .nav-links a:hover{ color: var(--ink); }
 .nav-links a.current{ color: var(--stamp); }
-@media (min-width:760px){ .nav-links{ display:flex; } }
+@media (min-width:860px){ .nav-links{ display:flex; } }
 .nav-right{ display:flex; align-items:center; gap:14px; margin-left:auto; }
 .lang-switch{
   display:flex; align-items:center; gap:7px;
@@ -108,7 +108,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .btn-outline:hover{ border-color: var(--ink-faint); background: rgba(22,35,59,0.03); }
 .btn-block{ width:100%; }
 .nav-cta{ padding: 9px 14px; font-size:0.86rem; }
-@media (min-width:760px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
+@media (min-width:860px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
 @media (max-width: 400px){
   .brand-logo{ height: 24px; }
   .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }

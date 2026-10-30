@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ConfirMad — In-person rental checks in Madrid</title>
-<meta name="description" content="ConfirMad sends someone in person to verify a Madrid rental listing before you send any money: the address, the landlord, the photos, and the price. Reports in 24–48 hours.">
+<meta name="description" content="ConfirMad verifies a Madrid rental listing before you send any money: the Land Registry, the landlord, the photos, and the price. Online verification in under 12 hours, visits within 1 day.">
 <link rel="canonical" href="https://confirmad.es/">
 <link rel="alternate" hreflang="en" href="https://confirmad.es/">
 <link rel="alternate" hreflang="es" href="https://confirmad.es/es/">
@@ -30,15 +30,15 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "description": "Online and in-person rental listing verification in Madrid: Land Registry check, landlord identity, photos and terms confirmed before you pay a deposit.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99",
+  "priceRange": "€29–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
+    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
   ]
 }
 </script>
@@ -157,7 +157,7 @@
   }
   .nav-links a:hover{ color: var(--ink); }
   .nav-links a:hover::after{ width:100%; }
-  @media (min-width: 760px){ .nav-links{ display:flex; } }
+  @media (min-width: 860px){ .nav-links{ display:flex; } }
   .nav-right{ display:flex; align-items:center; gap:14px; margin-left:auto; }
   .lang-switch{
     display:flex; align-items:center; gap:7px;
@@ -182,7 +182,7 @@
   .btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
   .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
   .nav-cta{ padding: 9px 14px; font-size: 0.86rem; }
-  @media (min-width: 760px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
+  @media (min-width: 860px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
   @media (max-width: 400px){
     .brand-logo{ height: 24px; }
     .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }
@@ -390,6 +390,10 @@
   }
   .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
   .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
+  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
+  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
+  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
+  a[href="[LINKEDIN]"]{ background: rgba(166,58,52,0.1); outline: 1px dashed #A63A34; padding: 1px 6px; border-radius: 4px; }
 
   /* ---------- DECORATIVE RING (used sparingly) ---------- */
   .ring-deco{ position:relative; overflow:hidden; }
@@ -500,6 +504,11 @@
   .step p{ font-size: 0.92rem; margin-bottom:0; }
 
   /* ---------- CHECK LIST SECTION ---------- */
+  .check-group-label{
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; color: var(--stamp);
+    text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 14px;
+  }
+  .check-group-label:first-of-type{ margin-top: 0; }
   .check-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; }
   @media (min-width: 700px){ .check-grid{ grid-template-columns: 1fr 1fr; } }
   .check-item{
@@ -538,7 +547,16 @@
   .price-card .turnaround{ font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 18px; }
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
+  .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
+  .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
   .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
+  .speed-note{
+    font-size: 0.92rem; color: var(--ink-soft); margin: -10px 0 26px; max-width: 70ch;
+    background: rgba(47,93,69,0.06); border-left: 3px solid var(--stamp); border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+  }
+  .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
+  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
 
 
   /* ---------- FAQ ---------- */
@@ -588,6 +606,29 @@
     display:none; background: #1F2E48; border: 1px solid var(--verified);
     padding: 18px 20px; border-radius: 12px; font-size: 0.95rem;
   }
+
+  /* ---------- BUSINESS / B2B ---------- */
+  #business{ background: #E6ECE8; }
+  #business .business-form{
+    max-width: 680px; margin-top: 28px; display:grid; grid-template-columns:1fr; gap:16px;
+  }
+  @media (min-width:640px){ #business .business-form{ grid-template-columns: 1fr 1fr; } }
+  #business .business-form .field{ display:flex; flex-direction:column; gap:6px; }
+  #business .business-form .field label{ font-size:0.85rem; font-weight:600; color: var(--ink); font-family: var(--font); }
+  #business .business-form input, #business .business-form select{
+    background:#fff; border:1px solid var(--line); color: var(--ink);
+    padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size:0.95rem;
+  }
+  #business .business-form input:focus, #business .business-form select:focus{
+    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
+  }
+  #business .business-form button{ grid-column: 1 / -1; justify-self:start; }
+  #business .form-success-light{
+    display:none; background: var(--card); border:1px solid var(--verified);
+    padding:16px 18px; border-radius:12px; font-size:0.9rem; margin-top:16px; max-width:680px;
+  }
+  #business .form-success-light.show{ display:block; }
+  #business .form-success-light strong{ color: var(--verified); }
   .form-success.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
   @keyframes popIn{
     0%{ opacity:0; transform: scale(0.95) translateY(6px); }
@@ -636,7 +677,7 @@
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/" class="lang-current">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
-      <a href="#request" class="btn btn-primary nav-cta">Request a visit</a>
+      <a href="#request" class="btn btn-primary nav-cta">Check a listing</a>
     </div>
   </nav>
 </header>
@@ -649,12 +690,12 @@
       <div>
         <div class="eyebrow">In-person rental checks · Madrid</div>
         <h1>Someone will actually go look at the apartment, before you send any money.</h1>
-        <p class="lede">You're moving to Madrid for a semester, a job, or a few months, and the listing looks fine — but you can't see it yourself. We can. Give us the address and we'll visit in person, confirm it's real, and send you the proof.</p>
+        <p class="lede">We go and see it for you before you pay: we check the listing is real and show you what the photos don't, like the light, the noise, the condition and the street.</p>
         <div class="hero-ctas">
-           <a href="#pricing" class="btn btn-primary nav-cta">Request a visit</a>
-           <a href="/sample-report.html" class="btn btn-ghost">See a sample report</a>
+           <a href="/solicitar.html?plan=online" class="btn btn-primary nav-cta">Verify it online (€29)</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-ghost">Book a visit (€59)</a>
           </div>
-        <div class="hero-note">Based in Madrid. Express checks in 24–48 hours, Basic in 3–4 days.</div>
+        <div class="hero-note">Based in Madrid. Online verification in under 12 hours. Visits within 1 day. <a href="/sample-report.html" style="text-decoration:underline;">See a sample report</a></div>
       </div>
 
       <div id="report-sample">
@@ -692,21 +733,6 @@
   </section>
 
   <!-- PROBLEM -->
-  <section id="problem" class="ring-deco">
-    <div class="wrap problem-grid">
-      <div>
-        <div class="section-head" style="margin-bottom:20px;">
-          <h2>It's a familiar story, and it's not your fault.</h2>
-        </div>
-        <p>A nice two-bedroom near Sol. Real-looking photos, a reasonable price for the area, and a landlord who's "traveling" and can't show it in person right now — but needs the deposit and first month by transfer to hold it for you. Then the money is gone, and so is he.</p>
-        <p>It happens constantly to people who don't yet know Madrid: exchange students arriving for a semester, people relocating for a few months, visitors booking a longer stay. They're the easiest targets, because they can't just walk over and check.</p>
-      </div>
-      <div>
-        <p class="callout">We're the person who walks over and checks — before you wire anything.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- WHY CONFIRMAD -->
   <section id="why">
     <div class="wrap">
@@ -721,7 +747,7 @@
         </div>
         <div class="why-item">
           <h3>Fast turnaround</h3>
-          <p>Express reports in 24–48 hours, Basic in 3–4 days, so you're not stuck waiting while someone else takes the apartment.</p>
+          <p>Online verification in under 12 hours, visits within 1 day, so you're not stuck waiting while someone else takes the apartment.</p>
         </div>
         <div class="why-item">
           <h3>Written proof, not just an opinion</h3>
@@ -729,7 +755,7 @@
         </div>
         <div class="why-item">
           <h3>A fraction of the risk</h3>
-          <p>Checks start from €49. A deposit plus first month in Madrid easily runs €900–2,000 — this is cheap insurance by comparison.</p>
+          <p>Checks start from €29. A deposit plus first month in Madrid easily runs €900–2,000 — this is cheap insurance by comparison.</p>
         </div>
         <div class="why-item">
           <h3>No agency, no middleman</h3>
@@ -786,8 +812,8 @@
         </div>
         <div class="step">
           <div class="num">02</div>
-          <h3>We go in person</h3>
-          <p>Someone visits the address and checks it against the listing — in 24–48 hours with Express, or 3–4 days with Standard.</p>
+          <h3>We verify it</h3>
+          <p>Online in under 12 hours, or someone visits the address in person within 1 day, depending on the plan you pick.</p>
         </div>
         <div class="step">
           <div class="num">03</div>
@@ -808,15 +834,25 @@
     <div class="wrap">
       <div class="section-head">
         <h2>What we actually check</h2>
-        <p>The things that are easy to fake in photos and a chat message, but hard to fake in person.</p>
+        <p>Online first, then in person for the things a photo can't show.</p>
       </div>
+      <h3 class="check-group-label">Online verification</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span class="txt">We check the Land Registry (nota simple) to see if the advertiser matches the owner on record — if not, we tell you to ask them for authorization, since it could be an agency or a sublet</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span class="txt">We reverse-search the photos to see if they show up in other listings</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">We compare the price against others in the area</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></span><span class="txt">We ask the advertiser for a video call or a visit</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">We review the terms you've been offered for obvious red flags</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="12" cy="17" r="1.3"/></svg></span><span class="txt">You get a green / amber / red result</span></div>
+      </div>
+      <h3 class="check-group-label">Added during the in-person visit</h3>
       <div class="check-grid">
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">The address exists and matches the listing</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">The rooms match the photos you were sent</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Someone is actually present to show the apartment</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">We visually confirm the landlord's name matches the listing — no ID is photographed or stored</span></div>
         <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">No full payment is being demanded before a viewing</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">Any obvious red flags in the terms you've been offered</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93"/></svg></span><span class="txt">What photos can't show you: the light, the noise at the time of the visit, the visible condition, the entrance and the street</span></div>
       </div>
     </div>
   </section>
@@ -840,45 +876,67 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Pricing</h2>
-        <p>One flat fee, paid securely by card when you book.</p>
+        <p>One flat fee, paid securely by card when you book. VAT included.</p>
       </div>
+      <p class="speed-note">Good flats in Madrid go fast: 11% are let in under 24 hours. That's why we visit within 1 day. <span class="speed-source">Source: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">idealista data, Q4 2025, via El Español</a></span></p>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">Basic check</div>
-          <div class="amount">€49</div>
-          <div class="turnaround">Report within 3–4 days</div>
+          <div class="tag">Online verification</div>
+          <div class="amount">€29 <span class="vat-note">VAT included</span></div>
+          <div class="turnaround">Delivered in under 12 hours</div>
           <ul>
-            <li>In-person visit to the address</li>
-            <li>Full checklist review</li>
-            <li>Written report with photos</li>
+            <li>We check the Land Registry (nota simple) against the advertiser</li>
+            <li>Reverse photo search, price comparison, terms review</li>
+            <li>We ask the advertiser for a video call or a visit</li>
           </ul>
-          <a href="/solicitar.html?plan=basic" class="btn btn-ghost">Request this</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-ghost">Request this</a>
+          <p class="price-note">We verify it online. Nobody visits the flat. Book a visit within 7 days and we credit your €29 against it.</p>
         </div>
         <div class="price-card featured">
-          <span class="ribbon">Most popular</span>
-          <div class="tag">Express check</div>
-          <div class="amount">€69</div>
-          <div class="turnaround">Report within 24–48 hours</div>
+          <span class="ribbon">Recommended</span>
+          <div class="tag">In-person visit</div>
+          <div class="amount">€59 <span class="vat-note">VAT included</span></div>
+          <div class="turnaround">Within 1 day: we visit within 24 hours of the landlord confirming a time</div>
           <ul>
-            <li>Everything in Basic</li>
-            <li>Priority scheduling, same or next day</li>
-            <li>WhatsApp update as soon as it's done</li>
+            <li>Everything in Online verification</li>
+            <li>In person: the light, the noise, the visible condition, the entrance and the street</li>
+            <li>Written report with dated photos</li>
           </ul>
-          <a href="/solicitar.html?plan=express" class="btn btn-primary">Request this</a>
+          <a href="/solicitar.html?plan=visit" class="btn btn-primary">Request this</a>
         </div>
         <div class="price-card">
-          <div class="tag">Live check</div>
-          <div class="amount">€99</div>
-          <div class="turnaround">Report within 24–48 hours</div>
+          <div class="tag">Live visit</div>
+          <div class="amount">€99 <span class="vat-note">VAT included</span></div>
+          <div class="turnaround">Within 1 day</div>
           <ul>
-            <li>Everything in Express</li>
+            <li>Everything in In-person visit</li>
             <li>Live video call from inside the apartment</li>
-            <li>See the rooms yourself, ask the landlord questions in real time</li>
+            <li>Invite whoever's paying the rent with you to join the call</li>
           </ul>
           <a href="/solicitar.html?plan=live" class="btn btn-ghost">Request this</a>
         </div>
       </div>
       <p class="price-foot">If the listing doesn't check out, we tell you exactly why — and that's usually worth a lot more than the fee.</p>
+      <div class="share-row-light">
+        <a href="https://wa.me/?text=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Send this to whoever is paying (WhatsApp)</a>
+        <a href="mailto:?subject=A%20listing%20I%27m%20checking%20with%20ConfirMad&amp;body=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" class="btn btn-ghost">Send this to whoever is paying (Email)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="ring-deco">
+    <div class="wrap problem-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:20px;">
+          <h2>It's a familiar story, and it's not your fault.</h2>
+        </div>
+        <p>A nice two-bedroom near Sol. Real-looking photos, a reasonable price for the area, and a landlord who's "traveling" and can't show it in person right now — but needs the deposit and first month by transfer to hold it for you. Then the money is gone, and so is he.</p>
+        <p>It happens constantly to people who don't yet know Madrid: exchange students arriving for a semester, people relocating for a few months, visitors booking a longer stay. They're the easiest targets, because they can't just walk over and check.</p>
+      </div>
+      <div>
+        <p class="callout">We're the person who walks over and checks — before you wire anything.</p>
+      </div>
     </div>
   </section>
 
@@ -888,12 +946,13 @@
       <div class="section-head">
         <div class="early-badge">The risk is real</div>
         <h2>Nearly 1 in 4 exchange students gets scammed on housing</h2>
-        <p>A Europe-wide survey of almost 9,000 exchange students found close to a quarter had been scammed looking for a place to live before they even arrived.</p>
-        <p class="risk-source">Source: <a href="https://esu-online.org/publications/international-student-housing-report-how-are-exchange-students-navigating-the-housing-crisis/" target="_blank" rel="noopener">ESU/ESN, 2023</a></p>
-        <p>It's not just abroad, either. Spain logged 488,426 cybercrime cases in 2025, and Madrid alone accounted for over 72,000 of them — more than almost anywhere else in the country.</p>
-        <p>One trick keeps working: a landlord does the viewing over video call — through an apartment that isn't actually for rent. Spanish police have made arrests over exactly this. A screen can be staged. Someone walking in and knocking on the door cannot.</p>
+        <p>1 in 4 exchange students surveyed across Europe said they had experienced a housing scam, and 21% of those who came to Spain.</p>
+        <p class="risk-source">Source: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023 (about 7,000 responses)</a></p>
+        <p>In 2025 Spain recorded 488,426 cybercrime offences, 72,217 of them in the Comunidad de Madrid. Most were online fraud of all kinds, not only rental scams.</p>
+        <p class="risk-source">Source: <a href="https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/interior/paginas/2026/100726-interior-ciberdelitos.aspx" target="_blank" rel="noopener">Ministry of the Interior, via La Moncloa</a></p>
+        <p>One trick keeps working: a landlord does the viewing over video call — through an apartment that isn't actually for rent. A screen can be staged. Someone walking in and knocking on the door cannot.</p>
       </div>
-      <div class="stat-highlight"><p>A deposit plus first month in Madrid easily runs €900–2,000. A ConfirMad check costs less than dinner for two — from €49.</p></div>
+      <div class="stat-highlight"><p>A deposit plus first month in Madrid easily runs €900–2,000. A ConfirMad check costs less than dinner for two — from €29.</p></div>
       <div class="early-ctas">
         <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20a%20check%20before%20I%20send%20a%20deposit" class="btn btn-invert">Message us on WhatsApp</a>
         <a href="#request" class="btn btn-outline-invert">Send us the listing</a>
@@ -916,6 +975,11 @@
         </div>
         <p class="about-quote">"I moved to Madrid myself and saw how easy it is to get scammed on a rental you can't see in person. ConfirMad exists because someone should be able to just go look — no agency, no middleman, just a real person on the ground you can trust."</p>
         <div class="about-name">Santiago Antonio Platas Rengel<span>Founder, ConfirMad</span></div>
+        <ul class="about-trust">
+          <li>Right now I do every visit myself.</li>
+          <li>Independent: no landlord or agent pays us for your check.</li>
+        </ul>
+        <a href="[LINKEDIN]" target="_blank" rel="noopener" class="about-linkedin">LinkedIn ↗</a>
       </div>
     </div>
     </div>
@@ -934,7 +998,7 @@
         </details>
         <details>
           <summary aria-expanded="false">Do you check apartments outside Madrid?<span class="ind"></span></summary>
-          <p>Not yet — right now we only visit properties within the city of Madrid.</p>
+          <p>We visit properties within the city of Madrid itself — even if your university campus is outside it, in Somosaguas, Getafe, or Leganés, for example, most student housing is still in the city. If the flat is genuinely outside Madrid, online verification is usually still possible — just write to us.</p>
         </details>
         <details>
           <summary aria-expanded="false">What if the landlord won't let you in?<span class="ind"></span></summary>
@@ -946,7 +1010,7 @@
         </details>
         <details>
           <summary aria-expanded="false">How fast can you actually go?<span class="ind"></span></summary>
-          <p>Express and Live checks are typically completed within 24–48 hours. Basic checks usually take 3–4 days, depending on availability that week.</p>
+          <p>Online verification is delivered in under 12 hours. In-person and Live visits happen within 1 day of the landlord confirming a time, depending on availability that week.</p>
         </details>
       </div>
     </div>
@@ -992,6 +1056,46 @@
     </div>
   </section>
 
+  <!-- BUSINESS / B2B -->
+  <section id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>For relocation agencies, universities and companies</h2>
+        <p>Sending people to Madrid who can't see a flat themselves? We offer online verifications and in-person visits by volume, priced per volume, for your incoming students, employees or clients.</p>
+      </div>
+      <form id="businessForm" class="business-form">
+        <div class="field">
+          <label for="bizOrg">Organization name</label>
+          <input id="bizOrg" type="text" required>
+        </div>
+        <div class="field">
+          <label for="bizType">Type of organization</label>
+          <select id="bizType">
+            <option value="agency">Relocation agency</option>
+            <option value="university">University</option>
+            <option value="company">Company</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bizVolume">Approximate volume (per month or semester)</label>
+          <input id="bizVolume" type="text">
+        </div>
+        <div class="field">
+          <label for="bizEmail">Your email</label>
+          <input id="bizEmail" type="email" placeholder="name@organization.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="bizSendBtn">Get in touch</button>
+      </form>
+      <div class="form-success-light" id="bizSuccess">
+        <strong>Message sent.</strong> We'll reply within a few hours.
+      </div>
+      <div class="form-success-light" id="bizError" style="border-color:#A63A34;">
+        <strong>Something went wrong.</strong> Please email us directly at <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> instead.
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -999,7 +1103,7 @@
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>Not a law firm. We verify listings, not contracts.</div>
-    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a></div>
+    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a> · <a href="#business">For agencies</a></div>
     <div class="lang-switch"><a href="https://confirmad.es/" class="lang-current">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
   </div>
 </footer>
@@ -1074,6 +1178,52 @@ const form = document.getElementById('checkForm');
       sendBtn.disabled = false;
       sendBtn.textContent = I18N_FORM.submit;
       errorMsg.classList.add('show');
+    });
+  });
+
+  var I18N_BUSINESS = {"sending": "Sending…", "submit": "Get in touch"};
+  var bizForm = document.getElementById('businessForm');
+  var bizSuccess = document.getElementById('bizSuccess');
+  var bizError = document.getElementById('bizError');
+  var bizSendBtn = document.getElementById('bizSendBtn');
+
+  bizForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var org = document.getElementById('bizOrg').value;
+    var orgType = document.getElementById('bizType').value;
+    var volume = document.getElementById('bizVolume').value;
+    var email = document.getElementById('bizEmail').value;
+
+    bizSendBtn.disabled = true;
+    bizSendBtn.textContent = I18N_BUSINESS.sending;
+    bizError.classList.remove('show');
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'B2B inquiry from ' + org,
+        from_name: org,
+        name: org,
+        email: email,
+        message: 'Organization: ' + org + '\nType: ' + orgType + '\nApprox. volume: ' + volume
+      })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (data.success){
+        bizForm.style.display = 'none';
+        bizSuccess.classList.add('show');
+      } else {
+        throw new Error(data.message || 'Web3Forms error');
+      }
+    })
+    .catch(function(){
+      bizSendBtn.disabled = false;
+      bizSendBtn.textContent = I18N_BUSINESS.submit;
+      bizError.classList.add('show');
     });
   });
 

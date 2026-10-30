@@ -30,15 +30,15 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "description": "Online and in-person rental listing verification in Madrid: Land Registry check, landlord identity, photos and terms confirmed before you pay a deposit.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99",
+  "priceRange": "€29–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "In-person visit, full checklist review, written report with photos." } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Everything in Basic, with priority scheduling and a WhatsApp update as soon as it's done." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Everything in Express, plus a live video call from inside the apartment." } }
+    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
+    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
   ]
 }
 </script>
@@ -87,7 +87,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
 .nav-links a:hover{ color: var(--ink); }
 .nav-links a.current{ color: var(--stamp); }
-@media (min-width:760px){ .nav-links{ display:flex; } }
+@media (min-width:860px){ .nav-links{ display:flex; } }
 .nav-right{ display:flex; align-items:center; gap:14px; margin-left:auto; }
 .lang-switch{
   display:flex; align-items:center; gap:7px;
@@ -112,7 +112,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .btn-outline:hover{ border-color: var(--ink-faint); background: rgba(22,35,59,0.03); }
 .btn-block{ width:100%; }
 .nav-cta{ padding: 9px 14px; font-size:0.86rem; }
-@media (min-width:760px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
+@media (min-width:860px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
 @media (max-width: 400px){
   .brand-logo{ height: 24px; }
   .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }
@@ -295,7 +295,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/check.html" class="lang-current">EN</a> · <a href="https://confirmad.es/es/check.html">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html">FR</a></div>
-      <a href="index.html#pricing" class="btn btn-primary nav-cta">Request a visit</a>
+      <a href="index.html#pricing" class="btn btn-primary nav-cta">Check a listing</a>
     </div>
   </nav>
 </header>
@@ -407,7 +407,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">This is a quick self-check based on common scam patterns — it looks at what you told it, nothing more. It isn't proof of anything, and it can't replace someone actually standing in the apartment and confirming it's real.</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Get a real check from €49</a>
+          <a href="index.html#pricing" class="btn btn-primary">Verify it online for €29</a>
           <a href="index.html#faq" class="btn btn-outline">Why an in-person check?</a>
         </div>
       </div>

@@ -30,15 +30,15 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "Verifica di persona di annunci di affitto a Madrid: indirizzo, identità del padrone di casa, foto e condizioni confermate prima di pagare una caparra.",
+  "description": "Verifica online e di persona di annunci di affitto a Madrid: Catasto, identità del padrone di casa, foto e condizioni confermate prima di pagare una caparra.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99",
+  "priceRange": "€29–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "Visita di persona, controllo completo della checklist, report scritto con foto." } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "Tutto quello del piano Basic, con programmazione prioritaria e aggiornamento su WhatsApp appena pronto." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "Tutto quello del piano Express, più una videochiamata dal vivo dall'interno dell'appartamento." } }
+    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Controllo catastale rispetto all'inserzionista, ricerca inversa delle foto, confronto del prezzo, verifica delle condizioni." } },
+    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Tutto quello della Verifica online, più una visita di persona con report scritto e foto datate." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Tutto quello della Visita di persona, più una videochiamata dal vivo dall'interno dell'appartamento." } }
   ]
 }
 </script>
@@ -87,7 +87,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .nav-links a{ text-decoration:none; color: var(--ink-soft); font-size:0.94rem; }
 .nav-links a:hover{ color: var(--ink); }
 .nav-links a.current{ color: var(--stamp); }
-@media (min-width:760px){ .nav-links{ display:flex; } }
+@media (min-width:860px){ .nav-links{ display:flex; } }
 .nav-right{ display:flex; align-items:center; gap:14px; margin-left:auto; }
 .lang-switch{
   display:flex; align-items:center; gap:7px;
@@ -112,7 +112,7 @@ nav.wrap{ max-width:1120px; display:flex; align-items:center; justify-content: s
 .btn-outline:hover{ border-color: var(--ink-faint); background: rgba(22,35,59,0.03); }
 .btn-block{ width:100%; }
 .nav-cta{ padding: 9px 14px; font-size:0.86rem; }
-@media (min-width:760px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
+@media (min-width:860px){ .nav-cta{ padding:11px 20px; font-size:0.94rem; } }
 @media (max-width: 400px){
   .brand-logo{ height: 24px; }
   .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }
@@ -295,7 +295,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/check.html">EN</a> · <a href="https://confirmad.es/es/check.html">ES</a> · <a href="https://confirmad.es/it/check.html" class="lang-current">IT</a> · <a href="https://confirmad.es/fr/check.html">FR</a></div>
-      <a href="index.html#pricing" class="btn btn-primary nav-cta">Richiedi una visita</a>
+      <a href="index.html#pricing" class="btn btn-primary nav-cta">Verifica un annuncio</a>
     </div>
   </nav>
 </header>
@@ -407,7 +407,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">Questa è una verifica rapida basata su schemi di truffa comuni — considera solo quello che hai indicato, niente di più. Non è prova di nulla, e non può sostituire qualcuno che verifichi di persona che l'appartamento è reale.</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Richiedi una verifica reale da 49 €</a>
+          <a href="index.html#pricing" class="btn btn-primary">Verificalo online a 29 €</a>
           <a href="index.html#faq" class="btn btn-outline">Perché una verifica di persona?</a>
         </div>
       </div>

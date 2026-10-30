@@ -30,11 +30,11 @@
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€49–€99",
+  "priceRange": "€29–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "49", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Basic check", "description": "[[meta.jsonld_offer_basic]]" } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express check", "description": "[[meta.jsonld_offer_express]]" } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live check", "description": "[[meta.jsonld_offer_live]]" } }
+    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "[[meta.jsonld_offer_online]]" } },
+    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "[[meta.jsonld_offer_visit]]" } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "[[meta.jsonld_offer_live]]" } }
   ]
 }
 </script>
@@ -153,7 +153,7 @@
   }
   .nav-links a:hover{ color: var(--ink); }
   .nav-links a:hover::after{ width:100%; }
-  @media (min-width: 760px){ .nav-links{ display:flex; } }
+  @media (min-width: 860px){ .nav-links{ display:flex; } }
   .nav-right{ display:flex; align-items:center; gap:14px; margin-left:auto; }
   .lang-switch{
     display:flex; align-items:center; gap:7px;
@@ -178,7 +178,7 @@
   .btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
   .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
   .nav-cta{ padding: 9px 14px; font-size: 0.86rem; }
-  @media (min-width: 760px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
+  @media (min-width: 860px){ .nav-cta{ padding: 11px 20px; font-size: 0.94rem; } }
   @media (max-width: 400px){
     .brand-logo{ height: 24px; }
     .nav-cta{ padding: 7px 10px; font-size: 0.76rem; }
@@ -386,6 +386,10 @@
   }
   .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
   .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
+  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
+  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
+  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
+  a[href="[LINKEDIN]"]{ background: rgba(166,58,52,0.1); outline: 1px dashed #A63A34; padding: 1px 6px; border-radius: 4px; }
 
   /* ---------- DECORATIVE RING (used sparingly) ---------- */
   .ring-deco{ position:relative; overflow:hidden; }
@@ -496,6 +500,11 @@
   .step p{ font-size: 0.92rem; margin-bottom:0; }
 
   /* ---------- CHECK LIST SECTION ---------- */
+  .check-group-label{
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; color: var(--stamp);
+    text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 14px;
+  }
+  .check-group-label:first-of-type{ margin-top: 0; }
   .check-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; }
   @media (min-width: 700px){ .check-grid{ grid-template-columns: 1fr 1fr; } }
   .check-item{
@@ -534,7 +543,16 @@
   .price-card .turnaround{ font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 18px; }
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
+  .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
+  .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
   .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
+  .speed-note{
+    font-size: 0.92rem; color: var(--ink-soft); margin: -10px 0 26px; max-width: 70ch;
+    background: rgba(47,93,69,0.06); border-left: 3px solid var(--stamp); border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+  }
+  .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
+  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
 
 
   /* ---------- FAQ ---------- */
@@ -584,6 +602,29 @@
     display:none; background: #1F2E48; border: 1px solid var(--verified);
     padding: 18px 20px; border-radius: 12px; font-size: 0.95rem;
   }
+
+  /* ---------- BUSINESS / B2B ---------- */
+  #business{ background: #E6ECE8; }
+  #business .business-form{
+    max-width: 680px; margin-top: 28px; display:grid; grid-template-columns:1fr; gap:16px;
+  }
+  @media (min-width:640px){ #business .business-form{ grid-template-columns: 1fr 1fr; } }
+  #business .business-form .field{ display:flex; flex-direction:column; gap:6px; }
+  #business .business-form .field label{ font-size:0.85rem; font-weight:600; color: var(--ink); font-family: var(--font); }
+  #business .business-form input, #business .business-form select{
+    background:#fff; border:1px solid var(--line); color: var(--ink);
+    padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size:0.95rem;
+  }
+  #business .business-form input:focus, #business .business-form select:focus{
+    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
+  }
+  #business .business-form button{ grid-column: 1 / -1; justify-self:start; }
+  #business .form-success-light{
+    display:none; background: var(--card); border:1px solid var(--verified);
+    padding:16px 18px; border-radius:12px; font-size:0.9rem; margin-top:16px; max-width:680px;
+  }
+  #business .form-success-light.show{ display:block; }
+  #business .form-success-light strong{ color: var(--verified); }
   .form-success.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
   @keyframes popIn{
     0%{ opacity:0; transform: scale(0.95) translateY(6px); }
@@ -647,10 +688,10 @@
         <h1>[[hero.h1]]</h1>
         <p class="lede">[[hero.lede]]</p>
         <div class="hero-ctas">
-           <a href="#pricing" class="btn btn-primary nav-cta">[[hero.cta_primary]]</a>
-           <a href="/sample-report.html" class="btn btn-ghost">[[hero.cta_secondary]]</a>
+           <a href="/solicitar.html?plan=online" class="btn btn-primary nav-cta">[[hero.cta_primary]]</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-ghost">[[hero.cta_secondary]]</a>
           </div>
-        <div class="hero-note">[[hero.note]]</div>
+        <div class="hero-note">[[hero.note]] <a href="/sample-report.html" style="text-decoration:underline;">[[hero.sample_link]]</a></div>
       </div>
 
       <div id="report-sample">
@@ -688,21 +729,6 @@
   </section>
 
   <!-- PROBLEM -->
-  <section id="problem" class="ring-deco">
-    <div class="wrap problem-grid">
-      <div>
-        <div class="section-head" style="margin-bottom:20px;">
-          <h2>[[problem.h2]]</h2>
-        </div>
-        <p>[[problem.p1]]</p>
-        <p>[[problem.p2]]</p>
-      </div>
-      <div>
-        <p class="callout">[[problem.callout]]</p>
-      </div>
-    </div>
-  </section>
-
   <!-- WHY CONFIRMAD -->
   <section id="why">
     <div class="wrap">
@@ -806,13 +832,23 @@
         <h2>[[check_section.h2]]</h2>
         <p>[[check_section.sub]]</p>
       </div>
+      <h3 class="check-group-label">[[check_section.online_label]]</h3>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.item1]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.item2]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">[[check_section.item3]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">[[check_section.item4]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.item5]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">[[check_section.item6]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span class="txt">[[check_section.online_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span class="txt">[[check_section.online_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.online_item3]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></span><span class="txt">[[check_section.online_item4]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">[[check_section.online_item5]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="12" cy="17" r="1.3"/></svg></span><span class="txt">[[check_section.online_item6]]</span></div>
+      </div>
+      <h3 class="check-group-label">[[check_section.visit_label]]</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">[[check_section.visit_item3]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">[[check_section.visit_item4]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.visit_item5]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93"/></svg></span><span class="txt">[[check_section.visit_item6]]</span></div>
       </div>
     </div>
   </section>
@@ -838,33 +874,35 @@
         <h2>[[pricing.h2]]</h2>
         <p>[[pricing.sub]]</p>
       </div>
+      <p class="speed-note">[[pricing.speed_note]] <span class="speed-source">[[pricing.speed_source_label]] <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">[[pricing.speed_source_name]]</a></span></p>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">[[pricing.basic_tag]]</div>
-          <div class="amount">€49</div>
-          <div class="turnaround">[[pricing.basic_turnaround]]</div>
+          <div class="tag">[[pricing.online_tag]]</div>
+          <div class="amount">[[pricing.online_amount]] <span class="vat-note">[[pricing.vat_note]]</span></div>
+          <div class="turnaround">[[pricing.online_turnaround]]</div>
           <ul>
-            <li>[[pricing.basic_li1]]</li>
-            <li>[[pricing.basic_li2]]</li>
-            <li>[[pricing.basic_li3]]</li>
+            <li>[[pricing.online_li1]]</li>
+            <li>[[pricing.online_li2]]</li>
+            <li>[[pricing.online_li3]]</li>
           </ul>
-          <a href="/solicitar.html?plan=basic" class="btn btn-ghost">[[pricing.basic_cta]]</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-ghost">[[pricing.online_cta]]</a>
+          <p class="price-note">[[pricing.online_note]]</p>
         </div>
         <div class="price-card featured">
-          <span class="ribbon">[[pricing.express_ribbon]]</span>
-          <div class="tag">[[pricing.express_tag]]</div>
-          <div class="amount">€69</div>
-          <div class="turnaround">[[pricing.express_turnaround]]</div>
+          <span class="ribbon">[[pricing.visit_ribbon]]</span>
+          <div class="tag">[[pricing.visit_tag]]</div>
+          <div class="amount">[[pricing.visit_amount]] <span class="vat-note">[[pricing.vat_note]]</span></div>
+          <div class="turnaround">[[pricing.visit_turnaround]]</div>
           <ul>
-            <li>[[pricing.express_li1]]</li>
-            <li>[[pricing.express_li2]]</li>
-            <li>[[pricing.express_li3]]</li>
+            <li>[[pricing.visit_li1]]</li>
+            <li>[[pricing.visit_li2]]</li>
+            <li>[[pricing.visit_li3]]</li>
           </ul>
-          <a href="/solicitar.html?plan=express" class="btn btn-primary">[[pricing.express_cta]]</a>
+          <a href="/solicitar.html?plan=visit" class="btn btn-primary">[[pricing.visit_cta]]</a>
         </div>
         <div class="price-card">
           <div class="tag">[[pricing.live_tag]]</div>
-          <div class="amount">€99</div>
+          <div class="amount">[[pricing.live_amount]] <span class="vat-note">[[pricing.vat_note]]</span></div>
           <div class="turnaround">[[pricing.live_turnaround]]</div>
           <ul>
             <li>[[pricing.live_li1]]</li>
@@ -875,6 +913,26 @@
         </div>
       </div>
       <p class="price-foot">[[pricing.foot]]</p>
+      <div class="share-row-light">
+        <a href="https://wa.me/?text=[[WA_SHARE_TEXT]]" target="_blank" rel="noopener" class="btn btn-ghost">[[pricing.share_cta]] (WhatsApp)</a>
+        <a href="mailto:?subject=[[EMAIL_SHARE_SUBJECT]]&amp;body=[[WA_SHARE_TEXT]]" class="btn btn-ghost">[[pricing.share_cta]] (Email)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="ring-deco">
+    <div class="wrap problem-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:20px;">
+          <h2>[[problem.h2]]</h2>
+        </div>
+        <p>[[problem.p1]]</p>
+        <p>[[problem.p2]]</p>
+      </div>
+      <div>
+        <p class="callout">[[problem.callout]]</p>
+      </div>
     </div>
   </section>
 
@@ -885,8 +943,9 @@
         <div class="early-badge">[[risk.badge]]</div>
         <h2>[[risk.h2]]</h2>
         <p>[[risk.p1]]</p>
-        <p class="risk-source">[[risk.source_label]] <a href="https://esu-online.org/publications/international-student-housing-report-how-are-exchange-students-navigating-the-housing-crisis/" target="_blank" rel="noopener">ESU/ESN, 2023</a></p>
+        <p class="risk-source">[[risk.source_label]] <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">[[risk.source_name]]</a></p>
         <p>[[risk.p2]]</p>
+        <p class="risk-source">[[risk.source2_label]] <a href="https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/interior/paginas/2026/100726-interior-ciberdelitos.aspx" target="_blank" rel="noopener">[[risk.source2_name]]</a></p>
         <p>[[risk.p3]]</p>
       </div>
       <div class="stat-highlight"><p>[[risk.highlight]]</p></div>
@@ -912,6 +971,11 @@
         </div>
         <p class="about-quote">[[about.quote]]</p>
         <div class="about-name">Santiago Antonio Platas Rengel<span>[[about.role]]</span></div>
+        <ul class="about-trust">
+          <li>[[about.now_line]]</li>
+          <li>[[about.independent_line]]</li>
+        </ul>
+        <a href="[LINKEDIN]" target="_blank" rel="noopener" class="about-linkedin">[[about.linkedin_label]] ↗</a>
       </div>
     </div>
     </div>
@@ -988,6 +1052,46 @@
     </div>
   </section>
 
+  <!-- BUSINESS / B2B -->
+  <section id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>[[business.h2]]</h2>
+        <p>[[business.body]]</p>
+      </div>
+      <form id="businessForm" class="business-form">
+        <div class="field">
+          <label for="bizOrg">[[business.org_label]]</label>
+          <input id="bizOrg" type="text" required>
+        </div>
+        <div class="field">
+          <label for="bizType">[[business.org_type_label]]</label>
+          <select id="bizType">
+            <option value="agency">[[business.org_type_agency]]</option>
+            <option value="university">[[business.org_type_university]]</option>
+            <option value="company">[[business.org_type_company]]</option>
+            <option value="other">[[business.org_type_other]]</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bizVolume">[[business.volume_label]]</label>
+          <input id="bizVolume" type="text">
+        </div>
+        <div class="field">
+          <label for="bizEmail">[[business.email_label]]</label>
+          <input id="bizEmail" type="email" placeholder="[[business.email_placeholder]]" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="bizSendBtn">[[business.submit]]</button>
+      </form>
+      <div class="form-success-light" id="bizSuccess">
+        <strong>[[business.success_strong]]</strong> [[business.success_rest]]
+      </div>
+      <div class="form-success-light" id="bizError" style="border-color:#A63A34;">
+        <strong>[[business.error_strong]]</strong> [[business.error_rest_pre]] <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> [[business.error_rest_post]]
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -995,7 +1099,7 @@
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>[[footer.tagline]]</div>
-    <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a></div>
+    <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a> · <a href="#business">[[footer.business]]</a></div>
     [[LANG_SELECTOR]]
   </div>
 </footer>
@@ -1070,6 +1174,52 @@ const form = document.getElementById('checkForm');
       sendBtn.disabled = false;
       sendBtn.textContent = I18N_FORM.submit;
       errorMsg.classList.add('show');
+    });
+  });
+
+  var I18N_BUSINESS = [[JSON_I18N_BUSINESS]];
+  var bizForm = document.getElementById('businessForm');
+  var bizSuccess = document.getElementById('bizSuccess');
+  var bizError = document.getElementById('bizError');
+  var bizSendBtn = document.getElementById('bizSendBtn');
+
+  bizForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var org = document.getElementById('bizOrg').value;
+    var orgType = document.getElementById('bizType').value;
+    var volume = document.getElementById('bizVolume').value;
+    var email = document.getElementById('bizEmail').value;
+
+    bizSendBtn.disabled = true;
+    bizSendBtn.textContent = I18N_BUSINESS.sending;
+    bizError.classList.remove('show');
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'B2B inquiry from ' + org,
+        from_name: org,
+        name: org,
+        email: email,
+        message: 'Organization: ' + org + '\nType: ' + orgType + '\nApprox. volume: ' + volume
+      })
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (data.success){
+        bizForm.style.display = 'none';
+        bizSuccess.classList.add('show');
+      } else {
+        throw new Error(data.message || 'Web3Forms error');
+      }
+    })
+    .catch(function(){
+      bizSendBtn.disabled = false;
+      bizSendBtn.textContent = I18N_BUSINESS.submit;
+      bizError.classList.add('show');
     });
   });
 

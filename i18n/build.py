@@ -114,6 +114,16 @@ def render(page, lang, template_text, lang_data):
         ),
         "WA_FLOAT_TEXT": quote(get_path(lang_data, "whatsapp.float_message") or ""),
         "WA_EARLY_TEXT": quote(get_path(lang_data, "whatsapp.early_message") or ""),
+        "WA_SHARE_TEXT": quote(get_path(lang_data, "whatsapp.share_message") or ""),
+        "EMAIL_SHARE_SUBJECT": quote(get_path(lang_data, "whatsapp.share_email_subject") or ""),
+        "WA_BUSINESS_TEXT": quote(get_path(lang_data, "whatsapp.business_message") or ""),
+        "JSON_I18N_BUSINESS": json.dumps(
+            {
+                "sending": get_path(lang_data, "business.sending"),
+                "submit": get_path(lang_data, "business.submit"),
+            },
+            ensure_ascii=False,
+        ),
     }
 
     missing = []
