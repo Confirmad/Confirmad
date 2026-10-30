@@ -30,10 +30,10 @@
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
-  "priceRange": "€29–€99",
+  "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
-    { "@type": "Offer", "price": "59", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
     { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
   ]
 }
@@ -202,7 +202,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       <div class="plan-card">
         <div>
           <div class="tag" id="planTag">Online verification</div>
-          <div class="amount" id="planAmount">€29 <span class="vat-note">VAT included</span></div>
+          <div class="amount" id="planAmount">€29.85 <span class="vat-note">VAT included</span></div>
         </div>
         <div class="turnaround" id="planTurnaround">Report within 3–4 days</div>
       </div>
@@ -326,7 +326,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
       <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
         <div class="tag" id="payPlanTag">Online verification</div>
-        <div class="pay-amount" id="payAmount">€29</div>
+        <div class="pay-amount" id="payAmount">€29.85</div>
         <div class="vat-note">VAT included</div>
         <div class="turnaround" id="payTurnaround">Report within 3–4 days</div>
       </div>
@@ -372,12 +372,12 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
   var PLANS = {
     online: {
-      tag: 'Online verification', amount: '€29', turnaround: 'Delivered in under 12 hours',
-      stripe: '[STRIPE_LINK_ONLINE]'
+      tag: 'Online verification', amount: '€29.85', turnaround: 'Delivered in under 12 hours',
+      stripe: 'https://buy.stripe.com/test_fZu8wJ2dQcffgND1CjfMA02'
     },
     visit: {
-      tag: 'In-person visit', amount: '€59', turnaround: 'Within 1 day of the landlord confirming a time',
-      stripe: '[STRIPE_LINK_VISIT]'
+      tag: 'In-person visit', amount: '€59.99', turnaround: 'Within 1 day of the landlord confirming a time',
+      stripe: 'https://buy.stripe.com/test_bJeeV76u60wxbtj6WDfMA00'
     },
     live: {
       tag: 'Live visit', amount: '€99', turnaround: 'Within 1 day',
@@ -397,9 +397,17 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
   document.getElementById('payTurnaround').textContent = plan.turnaround;
 
   var payButton = document.getElementById('payButton');
-  payButton.href = plan.stripe;
-  payButton.target = '_top';
-  payButton.textContent = 'Pay ' + plan.amount + ' now →';
+  if (plan.stripe.indexOf('https://buy.stripe.com/') === 0){
+    payButton.href = plan.stripe;
+    payButton.target = '_top';
+    payButton.textContent = 'Pay ' + plan.amount + ' now →';
+  } else {
+    payButton.href = 'https://wa.me/34639589180?text=' + encodeURIComponent('Hi, I\'d like to book a ' + plan.tag + ' (' + plan.amount + ') for a Madrid listing.');
+    payButton.target = '_blank';
+    payButton.rel = 'noopener';
+    payButton.textContent = 'Message us to pay →';
+    document.getElementById('payNote').textContent = plan.tag + ' isn\'t set up for card payment yet — message us on WhatsApp and we\'ll arrange it directly.';
+  }
 
   var utmParams = {};
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k){
