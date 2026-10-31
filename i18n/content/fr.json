@@ -43,12 +43,6 @@
     "stamp_aria": "Tampon ConfirMad — Vérifié, Madrid",
     "stamp_city": "MADRID"
   },
-  "problem": {
-    "h2": "C'est une histoire familière, et ce n'est pas de votre faute.",
-    "p1": "Un joli deux-pièces près de Sol. Des photos qui semblent réelles, un prix raisonnable pour le quartier, et un propriétaire qui est \"en voyage\" et ne peut pas vous le montrer en personne pour le moment — mais qui a besoin de la caution et du premier mois par virement pour vous le réserver. Puis l'argent disparaît, et lui aussi.",
-    "p2": "Cela arrive sans cesse à ceux qui ne connaissent pas encore Madrid : étudiants Erasmus arrivant pour un semestre, personnes qui déménagent pour quelques mois, visiteurs réservant un séjour plus long. Ce sont les cibles les plus faciles, car ils ne peuvent pas simplement passer vérifier.",
-    "callout": "Nous sommes la personne qui se déplace et vérifie — avant que vous ne fassiez le moindre virement."
-  },
   "why": {
     "h2": "Pourquoi ConfirMad ?",
     "lead": "ConfirMad envoie une vraie personne vérifier un appartement à Madrid avant que vous ne signiez quoi que ce soit ou n'envoyiez de caution. Nous vérifions l'état de l'appartement, ses équipements, le quartier et si le prix est juste — et si en plus il y a des signes d'arnaque, nous les détectons aussi.",
@@ -122,7 +116,7 @@
   },
   "check_section": {
     "h2": "Ce que nous vérifions vraiment",
-    "sub": "La vérification en ligne couvre la légitimité. La visite sur place ajoute tout le reste : l'appartement, ses équipements, l'immeuble, le quartier, la cohabitation et les conditions promises.",
+    "sub": "La vérification en ligne couvre la légitimité. La visite sur place ajoute tout le reste : l'appartement, ses équipements, l'immeuble, le quartier et les conditions promises.",
     "online_label": "Vérification en ligne : la légitimité",
     "online_item1": "L'adresse existe et correspond à l'annonce",
     "online_item2": "La personne qui fait visiter a accès au logement et son nom correspond à l'annonceur",
@@ -137,14 +131,11 @@
     "visit_g2_item2": "L'état et la propreté de la rue et des environs",
     "visit_g2_item3": "Le bruit au moment de la visite",
     "visit_g2_item4": "Supermarché, transports, et temps de trajet réel jusqu'à votre université ou votre travail",
-    "visit_group3_label": "La cohabitation (pour une chambre)",
-    "visit_g3_item1": "Combien de personnes y vivent vraiment, et qui elles sont",
-    "visit_g3_item2": "Les règles de la maison, et si le propriétaire y vit aussi",
-    "visit_group4_label": "Les conditions promises",
-    "visit_g4_item1": "Que le prix, les charges, la caution et la date d'entrée correspondent à ce qui a été promis",
-    "visit_g4_item2": "Le coût mensuel total réel, charges comprises",
-    "visit_g4_item3": "Si l'appartement permet de s'y domicilier (empadronamiento)",
-    "visit_g4_item4": "Si la caution ou les paiements d'avance sont plus élevés que d'habitude"
+    "visit_group3_label": "Les conditions promises",
+    "visit_g3_item1": "Que le prix, les charges, la caution et la date d'entrée correspondent à ce qui a été promis",
+    "visit_g3_item2": "Le coût mensuel total réel, charges comprises",
+    "visit_g3_item3": "Si l'appartement permet de s'y domicilier (empadronamiento)",
+    "visit_g3_item4": "Si la caution ou les paiements d'avance sont plus élevés que d'habitude"
   },
   "free_tool": {
     "badge": "100% gratuit · sans inscription",
@@ -173,7 +164,7 @@
     "visit_amount": "59,99 €",
     "visit_turnaround": "Sous 1 jour : nous visitons dans les 24 heures suivant la confirmation de l'horaire par le propriétaire",
     "visit_li1": "Tout ce qui est inclus dans la Vérification anti-arnaque express",
-    "visit_li2": "L'appartement, ses équipements, l'immeuble, le quartier et la cohabitation, sur place",
+    "visit_li2": "L'appartement, ses équipements, l'immeuble et le quartier, sur place",
     "visit_li3": "Rapport avec photos datées et analyse du prix",
     "visit_cta": "Demander cette formule",
     "live_tag": "Visite en direct",
@@ -187,15 +178,12 @@
     "share_cta": "Envoyez ceci à la personne qui paie"
   },
   "risk": {
-    "badge": "Le risque est réel",
-    "h2": "Et si c'est une arnaque, nous vous le disons avant que vous payiez.",
-    "p1": "1 étudiant Erasmus sur 4 interrogé en Europe a déclaré avoir été victime d'une arnaque au logement, et 21 % de ceux venus en Espagne.",
+    "badge": "Un doute ?",
+    "h2": "Vous soupçonnez une arnaque ? On vous le dit avant que vous payiez.",
+    "p1": "Dans une enquête menée auprès d'environ 7 000 étudiants Erasmus en Europe, 1 sur 4 a déclaré avoir été victime d'une arnaque au logement — 21 % parmi ceux venus en Espagne.",
     "source_label": "Source :",
-    "source_name": "ESU/ESN, International Student Housing Report, 2023 (environ 7 000 réponses)",
-    "p2": "En 2025, l'Espagne a enregistré 488 426 infractions de cybercriminalité, dont 72 217 dans la Comunidad de Madrid.",
-    "source2_label": "Source :",
-    "source2_name": "Ministère de l'Intérieur, via La Moncloa",
-    "highlight": "Une caution plus le premier mois à Madrid atteint facilement 900–2 000 €. Une vérification anti-arnaque ConfirMad part de 29,85 €.",
+    "source_name": "ESU/ESN, International Student Housing Report, 2023",
+    "highlight": "Une caution plus le premier mois à Madrid atteint facilement 900–2 000 €. Une vérification rapide ConfirMad part de 29,85 €.",
     "whatsapp_cta": "Écrivez-nous sur WhatsApp",
     "form_cta": "Demander la vérification express (29,85 €)"
   },

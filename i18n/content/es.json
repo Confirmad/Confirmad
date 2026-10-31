@@ -43,12 +43,6 @@
     "stamp_aria": "Sello ConfirMad — Comprobado, Madrid",
     "stamp_city": "MADRID"
   },
-  "problem": {
-    "h2": "Es una historia que se repite, y no es culpa tuya.",
-    "p1": "Un bonito piso de dos habitaciones cerca de Sol. Fotos que parecen reales, un precio razonable para la zona, y un casero que está \"de viaje\" y no puede enseñártelo en persona ahora mismo — pero necesita la fianza y el primer mes por transferencia para reservártelo. Y luego el dinero desaparece, y él también.",
-    "p2": "Le pasa constantemente a gente que todavía no conoce Madrid: estudiantes de intercambio que llegan para un semestre, personas que se mudan por unos meses, visitantes que reservan una estancia larga. Son el objetivo más fácil, porque no pueden simplemente acercarse a comprobarlo.",
-    "callout": "Somos la persona que se acerca y lo comprueba — antes de que transfieras nada."
-  },
   "why": {
     "h2": "¿Por qué ConfirMad?",
     "lead": "ConfirMad manda a una persona real a comprobar un piso en Madrid antes de que firmes nada o envíes ninguna fianza. Comprobamos el estado del piso, el equipamiento, la zona y si el precio es justo — y si además hay señales de estafa, también las detectamos.",
@@ -122,7 +116,7 @@
   },
   "check_section": {
     "h2": "Qué comprobamos exactamente",
-    "sub": "La Verificación online cubre la legitimidad. La Visita lo añade todo: el piso, el equipamiento, el edificio, la zona, la convivencia y las condiciones prometidas.",
+    "sub": "La Verificación online cubre la legitimidad. La Visita lo añade todo: el piso, el equipamiento, el edificio, la zona y las condiciones prometidas.",
     "online_label": "Verificación online: la legitimidad",
     "online_item1": "La dirección existe y coincide con el anuncio",
     "online_item2": "Quien enseña el piso tiene acceso a él y su nombre coincide con el anunciante",
@@ -137,14 +131,11 @@
     "visit_g2_item2": "Limpieza y estado de la calle y los alrededores",
     "visit_g2_item3": "El ruido en el momento de la visita",
     "visit_g2_item4": "Supermercado, transporte y tiempo real hasta tu universidad o trabajo",
-    "visit_group3_label": "La convivencia (si es una habitación)",
-    "visit_g3_item1": "Cuántas personas viven de verdad y su perfil",
-    "visit_g3_item2": "Las normas de la casa y si vive el casero",
-    "visit_group4_label": "Las condiciones prometidas",
-    "visit_g4_item1": "Que el precio, los gastos, la fianza y la fecha de entrada coinciden con lo prometido",
-    "visit_g4_item2": "El coste mensual total real, con los gastos incluidos",
-    "visit_g4_item3": "Si el piso permite empadronarte",
-    "visit_g4_item4": "Si la fianza o los pagos por adelantado son más altos de lo habitual"
+    "visit_group3_label": "Las condiciones prometidas",
+    "visit_g3_item1": "Que el precio, los gastos, la fianza y la fecha de entrada coinciden con lo prometido",
+    "visit_g3_item2": "El coste mensual total real, con los gastos incluidos",
+    "visit_g3_item3": "Si el piso permite empadronarte",
+    "visit_g3_item4": "Si la fianza o los pagos por adelantado son más altos de lo habitual"
   },
   "free_tool": {
     "badge": "100% gratis · sin registro",
@@ -173,7 +164,7 @@
     "visit_amount": "59,99 €",
     "visit_turnaround": "En 1 día: visitamos en las 24 horas siguientes a que el anunciante confirme la hora",
     "visit_li1": "Todo lo de la Verificación antiestafa exprés",
-    "visit_li2": "El piso, el equipamiento, el edificio, la zona y la convivencia, en persona",
+    "visit_li2": "El piso, el equipamiento, el edificio y la zona, en persona",
     "visit_li3": "Informe con fotos fechadas y análisis de precio",
     "visit_cta": "Pedir este plan",
     "live_tag": "Visita en directo",
@@ -187,15 +178,12 @@
     "share_cta": "Envíaselo a quien te paga el alquiler"
   },
   "risk": {
-    "badge": "El riesgo es real",
-    "h2": "Y si es una estafa, te lo decimos antes de que pagues.",
-    "p1": "1 de cada 4 estudiantes de intercambio encuestados en Europa dijo haber sufrido una estafa con la vivienda, y un 21 % de los que vinieron a España.",
+    "badge": "Si algo no te cuadra",
+    "h2": "¿Sospechas de fraude? Te lo decimos antes de que pagues.",
+    "p1": "En una encuesta europea a unos 7.000 estudiantes de intercambio, 1 de cada 4 dijo haber sufrido una estafa buscando alojamiento — un 21 % entre los que vinieron a España.",
     "source_label": "Fuente:",
-    "source_name": "ESU/ESN, International Student Housing Report, 2023 (unas 7.000 respuestas)",
-    "p2": "España registró 488.426 ciberdelitos en 2025, 72.217 de ellos en la Comunidad de Madrid.",
-    "source2_label": "Fuente:",
-    "source2_name": "Ministerio del Interior, vía La Moncloa",
-    "highlight": "Una fianza más el primer mes en Madrid se va fácilmente a 900–2.000 €. Una verificación antiestafa de ConfirMad cuesta desde 29,85 €.",
+    "source_name": "ESU/ESN, International Student Housing Report, 2023",
+    "highlight": "Una fianza más el primer mes en Madrid se va fácilmente a 900–2.000 €. Una comprobación rápida de ConfirMad cuesta desde 29,85 €.",
     "whatsapp_cta": "Escríbenos por WhatsApp",
     "form_cta": "Pedir la verificación exprés (29,85 €)"
   },

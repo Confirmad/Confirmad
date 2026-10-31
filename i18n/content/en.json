@@ -43,12 +43,6 @@
     "stamp_aria": "ConfirMad stamp — Verified, Madrid",
     "stamp_city": "MADRID"
   },
-  "problem": {
-    "h2": "It's a familiar story, and it's not your fault.",
-    "p1": "A nice two-bedroom near Sol. Real-looking photos, a reasonable price for the area, and a landlord who's \"traveling\" and can't show it in person right now — but needs the deposit and first month by transfer to hold it for you. Then the money is gone, and so is he.",
-    "p2": "It happens constantly to people who don't yet know Madrid: exchange students arriving for a semester, people relocating for a few months, visitors booking a longer stay. They're the easiest targets, because they can't just walk over and check.",
-    "callout": "We're the person who walks over and checks — before you wire anything."
-  },
   "why": {
     "h2": "Why ConfirMad?",
     "lead": "ConfirMad sends a real person to check a Madrid apartment before you sign anything or send a deposit. We check the apartment's condition, its appliances, the area, and whether the price is fair — and if there are also signs of a scam, we catch those too.",
@@ -122,7 +116,7 @@
   },
   "check_section": {
     "h2": "What we actually check",
-    "sub": "Online verification covers legitimacy. The in-person visit adds everything else: the apartment, its appliances, the building, the area, cohabitation and the promised terms.",
+    "sub": "Online verification covers legitimacy. The in-person visit adds everything else: the apartment, its appliances, the building, the area and the promised terms.",
     "online_label": "Online verification: legitimacy",
     "online_item1": "The address exists and matches the listing",
     "online_item2": "Whoever is showing the apartment has access to it and their name matches the advertiser",
@@ -137,14 +131,11 @@
     "visit_g2_item2": "How clean and well-kept the street and surroundings are",
     "visit_g2_item3": "The noise at the time of the visit",
     "visit_g2_item4": "Supermarket, transport, and real door-to-door time to your university or job",
-    "visit_group3_label": "Cohabitation (for a room)",
-    "visit_g3_item1": "How many people actually live there, and who they are",
-    "visit_g3_item2": "House rules, and whether the landlord lives there too",
-    "visit_group4_label": "The promised terms",
-    "visit_g4_item1": "That the price, fees, deposit and move-in date match what you were promised",
-    "visit_g4_item2": "The real total monthly cost, fees included",
-    "visit_g4_item3": "Whether the apartment lets you register your address there (empadronamiento)",
-    "visit_g4_item4": "Whether the deposit or upfront payments are higher than usual"
+    "visit_group3_label": "The promised terms",
+    "visit_g3_item1": "That the price, fees, deposit and move-in date match what you were promised",
+    "visit_g3_item2": "The real total monthly cost, fees included",
+    "visit_g3_item3": "Whether the apartment lets you register your address there (empadronamiento)",
+    "visit_g3_item4": "Whether the deposit or upfront payments are higher than usual"
   },
   "free_tool": {
     "badge": "100% free · no sign-up",
@@ -173,7 +164,7 @@
     "visit_amount": "€59.99",
     "visit_turnaround": "Within 1 day: we visit within 24 hours of the landlord confirming a time",
     "visit_li1": "Everything in the Express anti-scam check",
-    "visit_li2": "The apartment, its appliances, the building, the area and cohabitation, in person",
+    "visit_li2": "The apartment, its appliances, the building and the area, in person",
     "visit_li3": "Written report with dated photos and a price analysis",
     "visit_cta": "Request this",
     "live_tag": "Live visit",
@@ -187,15 +178,12 @@
     "share_cta": "Send this to whoever is paying"
   },
   "risk": {
-    "badge": "The risk is real",
-    "h2": "And if it's a scam, we tell you before you pay.",
-    "p1": "1 in 4 exchange students surveyed across Europe said they had experienced a housing scam, and 21% of those who came to Spain.",
+    "badge": "If something feels off",
+    "h2": "Suspect fraud? We'll tell you before you pay.",
+    "p1": "In a Europe-wide survey of around 7,000 exchange students, 1 in 4 said they'd experienced a housing scam while searching for a place — 21% of those who came to Spain.",
     "source_label": "Source:",
-    "source_name": "ESU/ESN, International Student Housing Report, 2023 (about 7,000 responses)",
-    "p2": "Spain recorded 488,426 cybercrime offences in 2025, 72,217 of them in the Comunidad de Madrid.",
-    "source2_label": "Source:",
-    "source2_name": "Ministry of the Interior, via La Moncloa",
-    "highlight": "A deposit plus first month in Madrid easily runs €900–2,000. A ConfirMad anti-scam check starts from €29.85.",
+    "source_name": "ESU/ESN, International Student Housing Report, 2023",
+    "highlight": "A deposit plus first month in Madrid easily runs €900–2,000. A quick ConfirMad check starts from €29.85.",
     "whatsapp_cta": "Message us on WhatsApp",
     "form_cta": "Get the express check (€29.85)"
   },

@@ -43,12 +43,6 @@
     "stamp_aria": "Timbro ConfirMad — Verificato, Madrid",
     "stamp_city": "MADRID"
   },
-  "problem": {
-    "h2": "È una storia familiare, e non è colpa tua.",
-    "p1": "Un bel bilocale vicino a Sol. Foto dall'aspetto reale, un prezzo ragionevole per la zona, e un padrone di casa che sta \"viaggiando\" e non può farti vedere l'appartamento di persona in questo momento — ma ha bisogno della caparra e del primo mese tramite bonifico per tenertelo. Poi i soldi spariscono, e anche lui.",
-    "p2": "Succede continuamente a chi non conosce ancora Madrid: studenti Erasmus arrivati per un semestre, persone che si trasferiscono per qualche mese, visitatori che prenotano un soggiorno più lungo. Sono il bersaglio più facile, perché non possono semplicemente andare a controllare di persona.",
-    "callout": "Siamo la persona che va a controllare di persona — prima che tu invii qualsiasi bonifico."
-  },
   "why": {
     "h2": "Perché ConfirMad?",
     "lead": "ConfirMad manda una persona reale a verificare un appartamento a Madrid prima che tu firmi qualcosa o invii una caparra. Controlliamo lo stato dell'appartamento, gli elettrodomestici, la zona e se il prezzo è giusto — e se ci sono anche segnali di truffa, li scopriamo anche quelli.",
@@ -122,7 +116,7 @@
   },
   "check_section": {
     "h2": "Cosa verifichiamo davvero",
-    "sub": "La Verifica online copre la legittimità. La Visita di persona aggiunge tutto il resto: l'appartamento, gli elettrodomestici, l'edificio, la zona, la convivenza e le condizioni promesse.",
+    "sub": "La Verifica online copre la legittimità. La Visita di persona aggiunge tutto il resto: l'appartamento, gli elettrodomestici, l'edificio, la zona e le condizioni promesse.",
     "online_label": "Verifica online: la legittimità",
     "online_item1": "L'indirizzo esiste e corrisponde all'annuncio",
     "online_item2": "Chi mostra l'appartamento ha accesso ad esso e il suo nome corrisponde all'inserzionista",
@@ -137,14 +131,11 @@
     "visit_g2_item2": "Quanto sono pulite e curate la strada e i dintorni",
     "visit_g2_item3": "Il rumore al momento della visita",
     "visit_g2_item4": "Supermercato, trasporti e tempo reale porta a porta fino alla tua università o al lavoro",
-    "visit_group3_label": "La convivenza (per una stanza)",
-    "visit_g3_item1": "Quante persone vivono davvero lì, e chi sono",
-    "visit_g3_item2": "Le regole della casa, e se il padrone di casa vive lì",
-    "visit_group4_label": "Le condizioni promesse",
-    "visit_g4_item1": "Che prezzo, spese, caparra e data d'ingresso corrispondano a quanto promesso",
-    "visit_g4_item2": "Il costo mensile totale reale, spese comprese",
-    "visit_g4_item3": "Se l'appartamento permette di registrare la residenza lì (empadronamiento)",
-    "visit_g4_item4": "Se la caparra o i pagamenti anticipati sono più alti del normale"
+    "visit_group3_label": "Le condizioni promesse",
+    "visit_g3_item1": "Che prezzo, spese, caparra e data d'ingresso corrispondano a quanto promesso",
+    "visit_g3_item2": "Il costo mensile totale reale, spese comprese",
+    "visit_g3_item3": "Se l'appartamento permette di registrare la residenza lì (empadronamiento)",
+    "visit_g3_item4": "Se la caparra o i pagamenti anticipati sono più alti del normale"
   },
   "free_tool": {
     "badge": "100% gratuito · senza registrazione",
@@ -173,7 +164,7 @@
     "visit_amount": "59,99 €",
     "visit_turnaround": "Entro 1 giorno: visitiamo entro 24 ore dalla conferma dell'orario da parte del padrone di casa",
     "visit_li1": "Tutto quello della Verifica antitruffa express",
-    "visit_li2": "L'appartamento, gli elettrodomestici, l'edificio, la zona e la convivenza, di persona",
+    "visit_li2": "L'appartamento, gli elettrodomestici, l'edificio e la zona, di persona",
     "visit_li3": "Report con foto datate e analisi del prezzo",
     "visit_cta": "Richiedi questo piano",
     "live_tag": "Visita dal vivo",
@@ -187,15 +178,12 @@
     "share_cta": "Mandalo a chi ti paga l'affitto"
   },
   "risk": {
-    "badge": "Il rischio è reale",
-    "h2": "E se è una truffa, te lo diciamo prima che tu paghi.",
-    "p1": "1 studente Erasmus su 4 intervistato in Europa ha dichiarato di aver subito una truffa sull'alloggio, e il 21% di chi è venuto in Spagna.",
+    "badge": "Se qualcosa non ti torna",
+    "h2": "Sospetti una truffa? Te lo diciamo prima che tu paghi.",
+    "p1": "In un sondaggio europeo su circa 7.000 studenti Erasmus, 1 su 4 ha dichiarato di aver subito una truffa cercando casa — il 21% tra chi è venuto in Spagna.",
     "source_label": "Fonte:",
-    "source_name": "ESU/ESN, International Student Housing Report, 2023 (circa 7.000 risposte)",
-    "p2": "Nel 2025 la Spagna ha registrato 488.426 reati informatici, 72.217 dei quali nella Comunidad de Madrid.",
-    "source2_label": "Fonte:",
-    "source2_name": "Ministero dell'Interno, via La Moncloa",
-    "highlight": "Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica antitruffa ConfirMad parte da 29,85 €.",
+    "source_name": "ESU/ESN, International Student Housing Report, 2023",
+    "highlight": "Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica rapida ConfirMad parte da 29,85 €.",
     "whatsapp_cta": "Scrivici su WhatsApp",
     "form_cta": "Richiedi la verifica express (29,85 €)"
   },
