@@ -225,6 +225,7 @@
     margin-bottom: 28px;
   }
   .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 10px; }
+  .hero-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
   .hero-note{ font-size: 0.85rem; color: var(--ink-faint); }
 
   /* ---------- REPORT CARD ---------- */
@@ -280,6 +281,7 @@
     display:flex; align-items:center; justify-content:center;
     font-size: 10px; margin-top:2px;
   }
+  .checklist .tick.tick-warn{ background: #B8862F; }
 
   .stamp{
     position:absolute; top: 66px; right: -12px;
@@ -330,6 +332,7 @@
   #risk .risk-source a{ color: rgba(255,255,255,0.9); text-decoration: underline; }
   #risk .risk-source a:hover{ color: #fff; }
   #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .early-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
   #risk .stat-highlight{
     background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
     border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
@@ -451,6 +454,38 @@
   .why-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
   .why-item p{ font-size: 0.9rem; margin-bottom:0; }
 
+  /* ---------- COMPARISON TABLE ---------- */
+  #compare{ background: #E6ECE8; }
+  .compare-table{ display:flex; flex-direction:column; gap:10px; max-width:860px; }
+  .compare-row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+  .compare-row-head{ display:none; }
+  .compare-label{ font-weight:700; color:var(--ink); font-size:0.92rem; grid-column: 1 / -1; align-self:center; }
+  @media (min-width:700px){
+    .compare-row{ grid-template-columns: 0.85fr 1fr 1fr; align-items:center; gap:14px; }
+    .compare-row-head{ display:grid; }
+    .compare-row-head .compare-cell{
+      background:transparent; border:none; padding:0 14px;
+      font-family:var(--font-mono); font-size:0.76rem; font-weight:700; color: var(--ink-faint);
+      text-transform:uppercase; letter-spacing:0.03em;
+    }
+    .compare-label{ grid-column:auto; }
+  }
+  .compare-cell{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:12px 14px; font-size:0.88rem; color:var(--ink-soft);
+  }
+  .compare-cell.compare-col2{ border-color: var(--stamp); background: rgba(47,93,69,0.07); color: var(--ink); font-weight:600; }
+  .compare-cell[data-label]::before{
+    content: attr(data-label); display:block; font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+    color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;
+  }
+  @media (min-width:700px){ .compare-cell[data-label]::before{ display:none; } }
+  .compare-closing{
+    font-family: var(--font-mono); font-weight:700; font-size:1.02rem; color:var(--ink); margin-top:20px;
+    border-left:3px solid var(--stamp); padding:14px 18px; background:rgba(47,93,69,0.06);
+    border-radius:0 12px 12px 0; max-width:640px;
+  }
+
   /* ---------- WHO THIS IS FOR ---------- */
   .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
   @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
@@ -543,6 +578,7 @@
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
   .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
+  .price-card .price-desc{ font-size: 0.86rem; color: var(--ink-soft); margin: 2px 0 16px; }
   .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
   .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
   .speed-note{
@@ -552,6 +588,7 @@
   }
   .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
   .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
+  .share-row-light .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
 
 
   /* ---------- FAQ ---------- */
@@ -687,8 +724,8 @@
         <h1>[[hero.h1]]</h1>
         <p class="lede">[[hero.lede]]</p>
         <div class="hero-ctas">
-           <a href="/solicitar.html?plan=online" class="btn btn-primary nav-cta">[[hero.cta_primary]]</a>
-           <a href="/solicitar.html?plan=visit" class="btn btn-ghost">[[hero.cta_secondary]]</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta">[[hero.cta_primary]]</a>
+           <a href="/solicitar.html?plan=online" class="btn btn-ghost">[[hero.cta_secondary]]</a>
           </div>
         <div class="hero-note">[[hero.note]] <a href="/sample-report.html" style="text-decoration:underline;">[[hero.sample_link]]</a></div>
       </div>
@@ -714,7 +751,7 @@
           <ul class="checklist">
             <li><span class="tick">✓</span> [[report_sample.check1]]</li>
             <li><span class="tick">✓</span> [[report_sample.check2]]</li>
-            <li><span class="tick">✓</span> [[report_sample.check3]]</li>
+            <li><span class="tick tick-warn">!</span> [[report_sample.check3]]</li>
             <li><span class="tick">✓</span> [[report_sample.check4]]</li>
           </ul>
           <div class="stamp" role="img" aria-label="[[report_sample.stamp_aria]]">
@@ -760,6 +797,64 @@
     </div>
   </section>
 
+  <!-- COMPARISON -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>[[compare.h2]]</h2>
+        <p>[[compare.lead]]</p>
+      </div>
+      <div class="compare-table">
+        <div class="compare-row compare-row-head">
+          <div class="compare-cell compare-label"></div>
+          <div class="compare-cell">[[compare.col1_label]]</div>
+          <div class="compare-cell compare-col2">[[compare.col2_label]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row1_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row1_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row1_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row2_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row2_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row2_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row3_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row3_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row3_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row4_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row4_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row4_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row5_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row5_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row5_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row6_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row6_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row6_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row7_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row7_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row7_col2]]</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">[[compare.row8_label]]</div>
+          <div class="compare-cell" data-label="[[compare.col1_label]]">[[compare.row8_col1]]</div>
+          <div class="compare-cell compare-col2" data-label="[[compare.col2_label]]">[[compare.row8_col2]]</div>
+        </div>
+      </div>
+      <p class="compare-closing">[[compare.closing]]</p>
+    </div>
+  </section>
+
   <!-- WHO THIS IS FOR -->
   <section id="who">
     <div class="wrap">
@@ -787,6 +882,11 @@
           <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
           <h3>[[who.card4_title]]</h3>
           <p>[[who.card4_body]]</p>
+        </div>
+        <div class="who-card">
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
+          <h3>[[who.card5_title]]</h3>
+          <p>[[who.card5_body]]</p>
         </div>
       </div>
     </div>
@@ -833,21 +933,35 @@
       </div>
       <h3 class="check-group-label">[[check_section.online_label]]</h3>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span class="txt">[[check_section.online_item1]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span class="txt">[[check_section.online_item2]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.online_item3]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></span><span class="txt">[[check_section.online_item4]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">[[check_section.online_item5]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="12" cy="17" r="1.3"/></svg></span><span class="txt">[[check_section.online_item6]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.online_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.online_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.online_item3]]</span></div>
       </div>
-      <h3 class="check-group-label">[[check_section.visit_label]]</h3>
+      <h3 class="check-group-label">[[check_section.visit_group1_label]]</h3>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_item1]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_item2]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">[[check_section.visit_item3]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">[[check_section.visit_item4]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">[[check_section.visit_item5]]</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93"/></svg></span><span class="txt">[[check_section.visit_item6]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_g1_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_g1_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_g1_item3]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">[[check_section.visit_g1_item4]]</span></div>
+      </div>
+      <h3 class="check-group-label">[[check_section.visit_group2_label]]</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_g2_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_g2_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_g2_item3]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">[[check_section.visit_g2_item4]]</span></div>
+      </div>
+      <h3 class="check-group-label">[[check_section.visit_group3_label]]</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">[[check_section.visit_g3_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">[[check_section.visit_g3_item2]]</span></div>
+      </div>
+      <h3 class="check-group-label">[[check_section.visit_group4_label]]</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.visit_g4_item1]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.visit_g4_item2]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.visit_g4_item3]]</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">[[check_section.visit_g4_item4]]</span></div>
       </div>
     </div>
   </section>
@@ -879,6 +993,7 @@
           <div class="tag">[[pricing.online_tag]]</div>
           <div class="amount">[[pricing.online_amount]] <span class="vat-note">[[pricing.vat_note]]</span></div>
           <div class="turnaround">[[pricing.online_turnaround]]</div>
+          <p class="price-desc">[[pricing.online_desc]]</p>
           <ul>
             <li>[[pricing.online_li1]]</li>
             <li>[[pricing.online_li2]]</li>
@@ -945,12 +1060,11 @@
         <p class="risk-source">[[risk.source_label]] <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">[[risk.source_name]]</a></p>
         <p>[[risk.p2]]</p>
         <p class="risk-source">[[risk.source2_label]] <a href="https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/interior/paginas/2026/100726-interior-ciberdelitos.aspx" target="_blank" rel="noopener">[[risk.source2_name]]</a></p>
-        <p>[[risk.p3]]</p>
       </div>
       <div class="stat-highlight"><p>[[risk.highlight]]</p></div>
       <div class="early-ctas">
         <a href="https://wa.me/34639589180?text=[[WA_EARLY_TEXT]]" class="btn btn-invert">[[risk.whatsapp_cta]]</a>
-        <a href="#request" class="btn btn-outline-invert">[[risk.form_cta]]</a>
+        <a href="/solicitar.html?plan=online" class="btn btn-outline-invert">[[risk.form_cta]]</a>
       </div>
     </div>
   </section>
@@ -1006,6 +1120,26 @@
         <details>
           <summary aria-expanded="false">[[faq.q5]]<span class="ind"></span></summary>
           <p>[[faq.a5]]</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">[[faq.q6]]<span class="ind"></span></summary>
+          <p>[[faq.a6]]</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">[[faq.q7]]<span class="ind"></span></summary>
+          <p>[[faq.a7]]</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">[[faq.q8]]<span class="ind"></span></summary>
+          <p>[[faq.a8]]</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">[[faq.q9]]<span class="ind"></span></summary>
+          <p>[[faq.a9]]</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">[[faq.q10]]<span class="ind"></span></summary>
+          <p>[[faq.a10]]</p>
         </details>
       </div>
     </div>

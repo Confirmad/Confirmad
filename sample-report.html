@@ -31,8 +31,8 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Express anti-scam check: Land Registry, Catastro, reverse photo search, advertiser check and price comparison, with a green/amber/red verdict." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the Express anti-scam check, plus an in-person visit with a written report, dated photos and a price analysis." } },
     { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
   ]
 }
@@ -261,7 +261,32 @@ header.site nav{
 }
 .pill.ok{ background: rgba(47,93,69,0.12); color: var(--verified); }
 .pill.note{ background: rgba(152,102,9,0.14); color: var(--note); }
+.pill.bad{ background: rgba(166,58,52,0.14); color: #A63A34; }
 .findings p{ font-size: 0.92rem; margin:0; }
+
+/* ---------- PROMISED VS VERIFIED ---------- */
+.promise-table{ display:flex; flex-direction:column; gap:10px; }
+.promise-row{ display:grid; grid-template-columns: 1fr; gap:6px; padding: 12px 0; border-bottom: 1px solid #EEF1EF; }
+.promise-row:last-child{ border-bottom:none; padding-bottom:0; }
+.promise-row:first-child{ padding-top:0; }
+@media (min-width: 640px){ .promise-row{ grid-template-columns: 1fr 1fr 1fr; align-items:start; gap:16px; } }
+.promise-cell .k{ display:block; font-family: var(--font-mono); font-size: 0.68rem; font-weight:700; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:3px; }
+.promise-cell .v{ font-size: 0.92rem; color: var(--ink); }
+
+/* ---------- CONDITION / AREA / PRICE ROWS ---------- */
+.rate-list{ list-style:none; margin:0; padding:0; }
+.rate-list li{ padding: 12px 0; border-bottom: 1px solid #EEF1EF; }
+.rate-list li:first-child{ padding-top:0; }
+.rate-list li:last-child{ border-bottom:none; padding-bottom:0; }
+.rate-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:4px; }
+.rate-top span.q{ font-size: 0.95rem; font-weight:600; color: var(--ink); }
+.rate-list p{ font-size: 0.9rem; margin:0; }
+.price-verdict{
+  margin-top: 16px; padding: 14px 16px; border-radius: 10px;
+  background: rgba(47,93,69,0.08); border: 1px solid rgba(47,93,69,0.25);
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.price-verdict p{ margin:0; font-size: 0.92rem; color: var(--ink); }
 
 /* ---------- PHOTOS ---------- */
 .photo-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -480,6 +505,63 @@ footer.site a:hover{ text-decoration:underline; }
       </ul>
     </section>
 
+    <!-- PROMISED VS VERIFIED -->
+    <section class="block">
+      <h3>Promised terms vs. verified</h3>
+      <div class="hint">What the listing and the landlord told you, next to what we confirmed in person.</div>
+      <div class="promise-table">
+        <div class="promise-row">
+          <div class="promise-cell"><span class="k">Promised</span><span class="v">Rent: €1,150/month</span></div>
+          <div class="promise-cell"><span class="k">Verified</span><span class="v">€1,150 rent, plus ~€45/month community fee and winter heating, not stated in the listing</span></div>
+          <div class="promise-cell"><span class="pill note">Note</span></div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-cell"><span class="k">Promised</span><span class="v">Deposit: one month</span></div>
+          <div class="promise-cell"><span class="k">Verified</span><span class="v">One month deposit plus first month, paid when the contract is signed — nothing upfront</span></div>
+          <div class="promise-cell"><span class="pill ok">Match</span></div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-cell"><span class="k">Promised</span><span class="v">Move-in: early September</span></div>
+          <div class="promise-cell"><span class="k">Verified</span><span class="v">Landlord confirmed the flat will be free from 1 September</span></div>
+          <div class="promise-cell"><span class="pill ok">Match</span></div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-cell"><span class="k">Promised</span><span class="v">Listing didn't say whether it's shared</span></div>
+          <div class="promise-cell"><span class="k">Verified</span><span class="v">Whole flat, single tenancy — not a room in a shared flat</span></div>
+          <div class="promise-cell"><span class="pill ok">Match</span></div>
+        </div>
+        <div class="promise-row">
+          <div class="promise-cell"><span class="k">Promised</span><span class="v">Empadronamiento: not mentioned in the listing</span></div>
+          <div class="promise-cell"><span class="k">Verified</span><span class="v">Landlord confirmed he allows registering your address (empadronamiento) there</span></div>
+          <div class="promise-cell"><span class="pill ok">Match</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAT & EQUIPMENT CONDITION -->
+    <section class="block">
+      <h3>Flat &amp; equipment condition</h3>
+      <div class="hint">What we could see, test, or ask about on the day.</div>
+      <ul class="rate-list">
+        <li>
+          <div class="rate-top"><span class="q">Walls, floors, windows</span><span class="pill ok">Good</span></div>
+          <p>No visible damp, mould, or odd smells in any room, including the interior-facing bedroom.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Appliances (fridge, washing machine, oven)</span><span class="pill ok">Good</span></div>
+          <p>All present and switched on for us; the washing machine ran a short test cycle without issues.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Heating &amp; hot water</span><span class="pill note">To confirm</span></div>
+          <p>Gas boiler, landlord says it works. We visited in September, so we couldn't test the heating itself — only that hot water ran at normal pressure. Ask for this in writing if it matters to you.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Wifi speed test</span><span class="pill note">To confirm</span></div>
+          <p>No fixed internet currently installed — the landlord said you'd set up your own contract. We couldn't run a speed test on this visit.</p>
+        </li>
+      </ul>
+    </section>
+
     <!-- PHOTOS -->
     <section class="block">
       <h3>Photos from the visit</h3>
@@ -513,15 +595,70 @@ footer.site a:hover{ text-decoration:underline; }
       </div>
     </section>
 
+    <!-- BUILDING & AREA -->
+    <section class="block">
+      <h3>Building &amp; area</h3>
+      <div class="hint">What we saw and heard on the way in, not just inside the flat.</div>
+      <ul class="rate-list">
+        <li>
+          <div class="rate-top"><span class="q">Entrance &amp; accessibility</span><span class="pill note">Note</span></div>
+          <p>No lift — the flat is on the 4th floor. Worth knowing if that matters to you or anyone moving in with you.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Street &amp; surroundings</span><span class="pill ok">Good</span></div>
+          <p>Quiet residential stretch of C/ Fuencarral, clean pavement, no visible issues around the entrance.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Noise during the visit</span><span class="pill note">Note</span></div>
+          <p>Moderate street traffic audible from the street-facing rooms around 11:40am. The interior-facing bedroom was noticeably quieter. We can't tell you what it sounds like at night or on weekends — only what we heard at that time.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Supermarket, transport &amp; commute</span><span class="pill ok">Good</span></div>
+          <p>14 min walk to Gran Vía. As an example: about 25 min door-to-door by metro to Ciudad Universitaria.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- COHABITATION -->
+    <section class="block">
+      <h3>Cohabitation</h3>
+      <div class="hint">This only applies when you're renting a room in a shared flat — included here to show how we'd report it.</div>
+      <p>This listing is for the whole flat, not a room, so cohabitation in the usual sense doesn't apply. Confirmed on the visit: the flat is currently empty, will be let as a single tenancy, and the landlord does not live on site. For a room in a shared flat, this section would instead say how many people actually live there, their profile, and the house rules.</p>
+    </section>
+
+    <!-- PRICE ANALYSIS -->
+    <section class="block">
+      <h3>Price analysis</h3>
+      <div class="hint">How the price compares to the area, example only — not a market statistic.</div>
+      <ul class="rate-list">
+        <li>
+          <div class="rate-top"><span class="q">Asking rent</span></div>
+          <p>€1,150/month for a 2-bedroom flat in Malasaña.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Comparable listings nearby, at the time of the visit</span></div>
+          <p>Similar 2-bedroom flats in the same streets were asking roughly €1,050–€1,300/month.</p>
+        </li>
+        <li>
+          <div class="rate-top"><span class="q">Real total monthly cost</span></div>
+          <p>About €1,195/month once the ~€45 community fee is added — heating is separate and not included in either figure.</p>
+        </li>
+      </ul>
+      <div class="price-verdict">
+        <span class="pill ok">Fair for the area</span>
+        <p>€1,150 sits inside the normal range for a 2-bedroom in this part of Malasaña once you account for the extra monthly costs above.</p>
+      </div>
+    </section>
+
     <!-- LIMITS -->
     <section class="block">
       <h3>What this report does not tell you</h3>
       <div class="hint">So you know exactly where our check stops.</div>
       <ul class="limits">
-        <li>Whether he legally owns the flat. We match names and documents on the day; we do not search the Land Registry.</li>
-        <li>Whether the contract he offers is fair or valid. We are not lawyers and we do not review clauses.</li>
+        <li>Hidden defects that weren't visible on the day — behind furniture, under flooring, or inside walls.</li>
+        <li>Noise or anything else at times other than when we visited.</li>
+        <li>The legal validity of the contract he offers. We are not lawyers and we do not review clauses.</li>
         <li>Anything that changes after the visit — a different flat being offered, a new price, or a new payment method.</li>
-        <li>Hidden defects: damp behind furniture, noise at night, heating that only fails in January.</li>
       </ul>
     </section>
 

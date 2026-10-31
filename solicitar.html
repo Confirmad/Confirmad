@@ -32,8 +32,8 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Land Registry check against the advertiser, reverse photo search, price comparison, terms review." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in Online verification, plus an in-person visit with a written report and dated photos." } },
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Express anti-scam check: Land Registry, Catastro, reverse photo search, advertiser check and price comparison, with a green/amber/red verdict." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the Express anti-scam check, plus an in-person visit with a written report, dated photos and a price analysis." } },
     { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
   ]
 }
@@ -201,10 +201,10 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
       <div class="plan-card">
         <div>
-          <div class="tag" id="planTag">Online verification</div>
+          <div class="tag" id="planTag">Express anti-scam check</div>
           <div class="amount" id="planAmount">€29.85 <span class="vat-note">VAT included</span></div>
         </div>
-        <div class="turnaround" id="planTurnaround">Report within 3–4 days</div>
+        <div class="turnaround" id="planTurnaround">Delivered in under 12 hours</div>
       </div>
 
       <h1 class="title">Tell us about the listing</h1>
@@ -325,10 +325,10 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       </div>
 
       <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
-        <div class="tag" id="payPlanTag">Online verification</div>
+        <div class="tag" id="payPlanTag">Express anti-scam check</div>
         <div class="pay-amount" id="payAmount">€29.85</div>
         <div class="vat-note">VAT included</div>
-        <div class="turnaround" id="payTurnaround">Report within 3–4 days</div>
+        <div class="turnaround" id="payTurnaround">Delivered in under 12 hours</div>
       </div>
 
       <a id="payButton" class="btn btn-primary" href="#" target="_top">Pay now →</a>
@@ -372,7 +372,7 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
   var PLANS = {
     online: {
-      tag: 'Online verification', amount: '€29.85', turnaround: 'Delivered in under 12 hours',
+      tag: 'Express anti-scam check', amount: '€29.85', turnaround: 'Delivered in under 12 hours',
       stripe: 'https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07'
     },
     visit: {

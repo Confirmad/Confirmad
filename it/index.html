@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ConfirMad — Verifiche di persona degli affitti a Madrid</title>
-<meta name="description" content="ConfirMad verifica un annuncio di affitto a Madrid prima che tu invii soldi: il Catasto, il padrone di casa, le foto e il prezzo. Verifica online in meno di 12 ore, visite entro 1 giorno.">
+<title>ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare</title>
+<meta name="description" content="Prima di pagare qualsiasi cosa, una terza parte imparziale va in un appartamento a Madrid e verifica che lo stato, le condizioni e il prezzo corrispondano a quanto promesso. E se è una truffa, la scopriamo anche quella.">
 <link rel="canonical" href="https://confirmad.es/it/">
 <link rel="alternate" hreflang="en" href="https://confirmad.es/">
 <link rel="alternate" hreflang="es" href="https://confirmad.es/es/">
@@ -13,13 +13,13 @@
 <link rel="alternate" hreflang="x-default" href="https://confirmad.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConfirMad">
-<meta property="og:title" content="ConfirMad — Verifiche di persona degli affitti a Madrid">
-<meta property="og:description" content="Qualcuno andrà davvero a vedere l'appartamento, prima che tu invii soldi. Verifica di persona degli affitti a Madrid.">
+<meta property="og:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
+<meta property="og:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
 <meta property="og:url" content="https://confirmad.es/it/">
 <meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ConfirMad — Verifiche di persona degli affitti a Madrid">
-<meta name="twitter:description" content="Qualcuno andrà davvero a vedere l'appartamento, prima che tu invii soldi.">
+<meta name="twitter:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
+<meta name="twitter:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
 <meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
@@ -36,8 +36,8 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Controllo catastale rispetto all'inserzionista, ricerca inversa delle foto, confronto del prezzo, verifica delle condizioni." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Tutto quello della Verifica online, più una visita di persona con report scritto e foto datate." } },
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Verifica antitruffa express: Catasto, ricerca inversa delle foto, verifica dell'inserzionista e confronto del prezzo, con verdetto a semaforo." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Tutto quello della Verifica antitruffa express, più una visita di persona con report scritto, foto datate e analisi del prezzo." } },
     { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Tutto quello della Visita di persona, più una videochiamata dal vivo dall'interno dell'appartamento." } }
   ]
 }
@@ -229,6 +229,7 @@
     margin-bottom: 28px;
   }
   .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 10px; }
+  .hero-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
   .hero-note{ font-size: 0.85rem; color: var(--ink-faint); }
 
   /* ---------- REPORT CARD ---------- */
@@ -284,6 +285,7 @@
     display:flex; align-items:center; justify-content:center;
     font-size: 10px; margin-top:2px;
   }
+  .checklist .tick.tick-warn{ background: #B8862F; }
 
   .stamp{
     position:absolute; top: 66px; right: -12px;
@@ -334,6 +336,7 @@
   #risk .risk-source a{ color: rgba(255,255,255,0.9); text-decoration: underline; }
   #risk .risk-source a:hover{ color: #fff; }
   #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
+  #risk .early-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
   #risk .stat-highlight{
     background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
     border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
@@ -455,6 +458,38 @@
   .why-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
   .why-item p{ font-size: 0.9rem; margin-bottom:0; }
 
+  /* ---------- COMPARISON TABLE ---------- */
+  #compare{ background: #E6ECE8; }
+  .compare-table{ display:flex; flex-direction:column; gap:10px; max-width:860px; }
+  .compare-row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+  .compare-row-head{ display:none; }
+  .compare-label{ font-weight:700; color:var(--ink); font-size:0.92rem; grid-column: 1 / -1; align-self:center; }
+  @media (min-width:700px){
+    .compare-row{ grid-template-columns: 0.85fr 1fr 1fr; align-items:center; gap:14px; }
+    .compare-row-head{ display:grid; }
+    .compare-row-head .compare-cell{
+      background:transparent; border:none; padding:0 14px;
+      font-family:var(--font-mono); font-size:0.76rem; font-weight:700; color: var(--ink-faint);
+      text-transform:uppercase; letter-spacing:0.03em;
+    }
+    .compare-label{ grid-column:auto; }
+  }
+  .compare-cell{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:12px 14px; font-size:0.88rem; color:var(--ink-soft);
+  }
+  .compare-cell.compare-col2{ border-color: var(--stamp); background: rgba(47,93,69,0.07); color: var(--ink); font-weight:600; }
+  .compare-cell[data-label]::before{
+    content: attr(data-label); display:block; font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+    color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;
+  }
+  @media (min-width:700px){ .compare-cell[data-label]::before{ display:none; } }
+  .compare-closing{
+    font-family: var(--font-mono); font-weight:700; font-size:1.02rem; color:var(--ink); margin-top:20px;
+    border-left:3px solid var(--stamp); padding:14px 18px; background:rgba(47,93,69,0.06);
+    border-radius:0 12px 12px 0; max-width:640px;
+  }
+
   /* ---------- WHO THIS IS FOR ---------- */
   .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
   @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
@@ -547,6 +582,7 @@
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
   .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
+  .price-card .price-desc{ font-size: 0.86rem; color: var(--ink-soft); margin: 2px 0 16px; }
   .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
   .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
   .speed-note{
@@ -556,6 +592,7 @@
   }
   .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
   .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
+  .share-row-light .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
 
 
   /* ---------- FAQ ---------- */
@@ -688,13 +725,13 @@
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow">Verifiche di persona degli affitti · Madrid</div>
-        <h1>Qualcuno andrà davvero a vedere l'appartamento, prima che tu invii soldi.</h1>
-        <p class="lede">Andiamo a vederlo per te prima che tu paghi: verifichiamo che l'annuncio sia reale e ti mostriamo quello che le foto non fanno vedere, come la luce, il rumore, lo stato e la strada.</p>
+        <h1>Prima di pagare qualsiasi cosa, andiamo a vedere l'appartamento e verifichiamo che sia davvero come promesso.</h1>
+        <p class="lede">Una terza parte imparziale controlla lo stato dell'appartamento e degli elettrodomestici, la luce, il rumore e la zona, e ti dice se il prezzo è giusto. E se qualcosa sembra una truffa, la scopriamo prima che tu perda soldi.</p>
         <div class="hero-ctas">
-           <a href="/solicitar.html?plan=online" class="btn btn-primary nav-cta">Verifica online (29,85 €)</a>
-           <a href="/solicitar.html?plan=visit" class="btn btn-ghost">Prenota una visita (59,99 €)</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta">Prenota una visita (59,99 €)</a>
+           <a href="/solicitar.html?plan=online" class="btn btn-ghost">Sospetti una truffa? Verdetto in poche ore (29,85 €)</a>
           </div>
-        <div class="hero-note">Con base a Madrid. Verifica online in meno di 12 ore. Visite entro 1 giorno. <a href="/sample-report.html" style="text-decoration:underline;">Guarda un report di esempio</a></div>
+        <div class="hero-note">Indipendenti: nessun padrone di casa o agenzia ci paga. Visite entro 1 giorno. <a href="/sample-report.html" style="text-decoration:underline;">Guarda un report di esempio</a></div>
       </div>
 
       <div id="report-sample">
@@ -716,10 +753,10 @@
             </div>
           </div>
           <ul class="checklist">
-            <li><span class="tick">✓</span> L'indirizzo esiste e corrisponde all'annuncio</li>
-            <li><span class="tick">✓</span> Le stanze corrispondono alle foto</li>
-            <li><span class="tick">✓</span> Padrone di casa presente, nome confermato visivamente (nessun documento conservato)</li>
-            <li><span class="tick">✓</span> Non è stato richiesto il pagamento completo prima della visita</li>
+            <li><span class="tick">✓</span> Stanza di 11 m², esterna</li>
+            <li><span class="tick">✓</span> Il riscaldamento funziona</li>
+            <li><span class="tick tick-warn">!</span> Le spese non includono il condominio</li>
+            <li><span class="tick">✓</span> Prezzo nella media della zona</li>
           </ul>
           <div class="stamp" role="img" aria-label="Timbro ConfirMad — Verificato, Madrid">
             <img src="/confirmad-simbolo-sello.png" alt="" class="stamp-icon">
@@ -737,30 +774,88 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Perché ConfirMad?</h2>
-        <p>ConfirMad manda una persona reale a verificare un appartamento a Madrid prima che tu invii una caparra. Esistiamo perché affittare una casa che non puoi vedere con i tuoi occhi è uno dei modi più facili per perdere denaro: quasi uno studente Erasmus europeo su quattro dichiara di aver subito una truffa cercando casa, e la Spagna ha registrato quasi mezzo milione di reati informatici solo nel 2025.</p>
+        <p>ConfirMad manda una persona reale a verificare un appartamento a Madrid prima che tu firmi qualcosa o invii una caparra. Controlliamo lo stato dell'appartamento, gli elettrodomestici, la zona e se il prezzo è giusto — e se ci sono anche segnali di truffa, li scopriamo anche quelli.</p>
       </div>
       <div class="why-grid">
         <div class="why-item">
-          <h3>Verifica di persona</h3>
-          <p>Non è una revisione di foto o di messaggi — qualcuno va davvero all'indirizzo e lo confronta con quanto ti è stato mostrato.</p>
+          <h3>Imparziali</h3>
+          <p>Lavoriamo per te, non per il padrone di casa. Non prendiamo commissioni da nessun proprietario o agenzia.</p>
         </div>
         <div class="why-item">
-          <h3>Tempi rapidi</h3>
-          <p>Verifica online in meno di 12 ore, visite entro 1 giorno, così non resti in attesa mentre qualcun altro prende l'appartamento.</p>
+          <h3>Vediamo quello che le foto non mostrano</h3>
+          <p>Luce, rumore, odori, umidità, lo stato reale dei mobili e degli elettrodomestici — tutto quello che una foto ben scelta può nascondere.</p>
         </div>
         <div class="why-item">
-          <h3>Prova scritta, non solo un'opinione</h3>
-          <p>Un report chiaro con foto che puoi conservare, rileggere e mostrare a chi paga la caparra con te.</p>
+          <h3>Ti diciamo se il prezzo è giusto</h3>
+          <p>Confrontiamo l'affitto con appartamenti e stanze simili nella zona, e calcoliamo il costo mensile reale comprese le spese.</p>
         </div>
         <div class="why-item">
-          <h3>Una frazione del rischio</h3>
-          <p>Le verifiche partono da 29,85 €. Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 € — è un'assicurazione economica al confronto.</p>
+          <h3>Prova scritta, con foto datate</h3>
+          <p>Un report chiaro che puoi conservare, rileggere e mostrare a chi paga la caparra con te.</p>
         </div>
         <div class="why-item">
-          <h3>Senza agenzia, senza intermediari</h3>
-          <p>Solo una persona reale sul posto a Madrid, che lavora per te — non per il proprietario, né per l'algoritmo di una piattaforma.</p>
+          <h3>E se è una truffa, la blocchiamo in tempo</h3>
+          <p>Se qualcosa non torna — il padrone di casa, l'indirizzo, le condizioni — te lo diciamo prima che tu invii qualsiasi cosa.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Quello che non puoi verificare da casa</h2>
+        <p>Questo è quello che sappiamo dopo essere andati davvero sul posto — e quello che non potresti mai sapere solo con foto o una videochiamata.</p>
+      </div>
+      <div class="compare-table">
+        <div class="compare-row compare-row-head">
+          <div class="compare-cell compare-label"></div>
+          <div class="compare-cell">Con foto e videochiamata</div>
+          <div class="compare-cell compare-col2">Con ConfirMad</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Dimensioni</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Foto con grandangolo</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Misurate di persona</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Luce</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">L'ora e l'angolo scelti dal padrone di casa</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">La luce al momento della visita</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Rumore</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Non si sente dallo schermo</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Quello che si sente davvero lì</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Umidità e odori</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Non si vedono</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Vengono verificati</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Wifi</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che ti dicono</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Test reale</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Zona</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che mostra la videocamera</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">L'ingresso e la strada</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Condizioni</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che ti dicono in chat</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Quello che il padrone di casa confermerà di persona</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-label">Chi guida la visita</div>
+          <div class="compare-cell" data-label="Con foto e videochiamata">Il padrone di casa, che mostra quello che vuole</div>
+          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Qualcuno che lavora per te</div>
+        </div>
+      </div>
+      <p class="compare-closing">La videochiamata te la fa il padrone di casa. La visita, qualcuno che lavora per te.</p>
     </div>
   </section>
 
@@ -792,6 +887,11 @@
           <h3>Alla pair e soggiorni lunghi</h3>
           <p>Si impegnano per mesi a casa di qualcun altro prima ancora di conoscerlo.</p>
         </div>
+        <div class="who-card">
+          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
+          <h3>Chi paga l'affitto dall'estero</h3>
+          <p>Genitori o familiari che bonificano la caparra da un altro paese e vogliono sapere dove stanno mettendo i loro soldi.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -806,23 +906,23 @@
       <div class="steps">
         <div class="step">
           <div class="num">01</div>
-          <h3>Mandaci l'annuncio</h3>
-          <p>Il link, più tutti i contatti che hai del padrone di casa.</p>
+          <h3>Dicci cosa ti hanno promesso</h3>
+          <p>Mandaci l'annuncio, quello che ti ha detto il padrone di casa, e le tue domande.</p>
         </div>
         <div class="step">
           <div class="num">02</div>
-          <h3>Lo verifichiamo</h3>
-          <p>Online in meno di 12 ore, oppure qualcuno visita l'indirizzo di persona entro 1 giorno, a seconda del piano scelto.</p>
+          <h3>Andiamo all'appartamento</h3>
+          <p>Entro 1 giorno se prenoti una visita. Sospetti una truffa? Ti diamo un verdetto online in poche ore.</p>
         </div>
         <div class="step">
           <div class="num">03</div>
           <h3>Ricevi il report</h3>
-          <p>Un report che spiega esattamente perché l'appartamento è affidabile — o perché non lo è.</p>
+          <p>Con foto datate: cosa corrisponde, cosa no, e se il prezzo è giusto.</p>
         </div>
         <div class="step">
           <div class="num">04</div>
           <h3>Decidi tu</h3>
-          <p>Invia la caparra con fiducia, fai altre domande, oppure fai un passo indietro prima di perdere qualcosa.</p>
+          <p>Paga con fiducia, negozia, oppure rinuncia prima di perdere qualcosa.</p>
         </div>
       </div>
     </div>
@@ -833,25 +933,39 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Cosa verifichiamo davvero</h2>
-        <p>Prima online, poi di persona per quello che una foto non può mostrare.</p>
+        <p>La Verifica online copre la legittimità. La Visita di persona aggiunge tutto il resto: l'appartamento, gli elettrodomestici, l'edificio, la zona, la convivenza e le condizioni promesse.</p>
       </div>
-      <h3 class="check-group-label">Verifica online</h3>
+      <h3 class="check-group-label">Verifica online: la legittimità</h3>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span class="txt">Controlliamo il Catasto per vedere se chi pubblica l'annuncio corrisponde al proprietario registrato — se non corrisponde, ti diciamo di chiedere un'autorizzazione all'inserzionista, perché potrebbe trattarsi di un'agenzia o di un subaffitto</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span class="txt">Facciamo una ricerca inversa delle foto in altri annunci</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Confrontiamo il prezzo con altri nella zona</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></span><span class="txt">Chiediamo all'inserzionista una videochiamata o una visita</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2.5 3.5L16 11H5"/></svg></span><span class="txt">Verifichiamo le condizioni offerte per eventuali segnali d'allarme</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="4"/><circle cx="12" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="12" cy="17" r="1.3"/></svg></span><span class="txt">Ricevi un risultato a semaforo: verde, giallo o rosso</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">L'indirizzo esiste e corrisponde all'annuncio</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Chi mostra l'appartamento ha accesso ad esso e il suo nome corrisponde all'inserzionista</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Non viene richiesto il pagamento completo prima di vedere l'appartamento</span></div>
       </div>
-      <h3 class="check-group-label">Cosa aggiungiamo con la visita di persona</h3>
+      <h3 class="check-group-label">La Visita aggiunge: l'appartamento e gli elettrodomestici</h3>
       <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">L'indirizzo esiste e corrisponde all'annuncio</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Le stanze corrispondono alle foto che ti hanno mandato</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">C'è davvero qualcuno presente per mostrare l'appartamento</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9.5" cy="11" r="1.8"/><path d="M6.5 16c0-1.6 1.4-2.6 3-2.6s3 1 3 2.6"/><path d="M14.5 10h3M14.5 13h3"/></svg></span><span class="txt">Confermiamo visivamente che il nome del padrone di casa corrisponde all'annuncio — nessun documento viene fotografato o conservato</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Non viene richiesto il pagamento completo prima di una visita</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41M6.34 6.34L4.93 4.93"/></svg></span><span class="txt">Quello che le foto non mostrano: la luce, il rumore al momento della visita, lo stato visibile, l'ingresso e la strada</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">La dimensione reale della stanza, misurata di persona — non quella di una foto con grandangolo</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Luce naturale, ventilazione, e se la finestra dà sulla strada o su un cortile interno</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Stato di pareti, pavimenti e finestre, e segni visibili di umidità, muffa o odori</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Se elettrodomestici, riscaldamento, acqua calda e wifi funzionano davvero (con test reale se il padrone di casa lo permette)</span></div>
+      </div>
+      <h3 class="check-group-label">L'edificio e la zona</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Ingresso, zone comuni, ascensore e accessibilità</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Quanto sono pulite e curate la strada e i dintorni</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Il rumore al momento della visita</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Supermercato, trasporti e tempo reale porta a porta fino alla tua università o al lavoro</span></div>
+      </div>
+      <h3 class="check-group-label">La convivenza (per una stanza)</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Quante persone vivono davvero lì, e chi sono</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5S19 16 19 20"/></svg></span><span class="txt">Le regole della casa, e se il padrone di casa vive lì</span></div>
+      </div>
+      <h3 class="check-group-label">Le condizioni promesse</h3>
+      <div class="check-grid">
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Che prezzo, spese, caparra e data d'ingresso corrispondano a quanto promesso</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Il costo mensile totale reale, spese comprese</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Se l'appartamento permette di registrare la residenza lì (empadronamiento)</span></div>
+        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Se la caparra o i pagamenti anticipati sono più alti del normale</span></div>
       </div>
     </div>
   </section>
@@ -880,16 +994,17 @@
       <p class="speed-note">I buoni appartamenti a Madrid vanno a ruba: l'11% viene affittato in meno di 24 ore. Per questo visitiamo entro 1 giorno. <span class="speed-source">Fonte: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">dati idealista, quarto trimestre 2025, via El Español</a></span></p>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">Verifica online</div>
+          <div class="tag">Verifica antitruffa express</div>
           <div class="amount">29,85 € <span class="vat-note">IVA inclusa</span></div>
           <div class="turnaround">Consegnata in meno di 12 ore</div>
+          <p class="price-desc">Qualcosa non ti convince? Mandaci l'annuncio e la conversazione con il padrone di casa: ti diamo un verdetto consultando fonti ufficiali.</p>
           <ul>
-            <li>Controlliamo il Catasto rispetto all'inserzionista</li>
-            <li>Ricerca inversa delle foto, confronto prezzo, verifica delle condizioni</li>
-            <li>Chiediamo all'inserzionista una videochiamata o una visita</li>
+            <li>Controllo del Catasto rispetto all'annuncio</li>
+            <li>Ricerca inversa delle foto e verifica dell'inserzionista</li>
+            <li>Verifica delle condizioni e del pagamento, con verdetto a semaforo</li>
           </ul>
           <a href="/solicitar.html?plan=online" class="btn btn-ghost">Richiedi questo piano</a>
-          <p class="price-note">Lo verifichiamo online. Nessuno visita l'appartamento. Se prenoti una visita entro 7 giorni, ti scontiamo i 29,85 €.</p>
+          <p class="price-note">Questo piano non include vedere l'appartamento. Per lo stato, la zona e le condizioni c'è la Visita — se la prenoti entro 7 giorni, ti scontiamo questi 29,85 €.</p>
         </div>
         <div class="price-card featured">
           <span class="ribbon">Consigliato</span>
@@ -897,9 +1012,9 @@
           <div class="amount">59,99 € <span class="vat-note">IVA inclusa</span></div>
           <div class="turnaround">Entro 1 giorno: visitiamo entro 24 ore dalla conferma dell'orario da parte del padrone di casa</div>
           <ul>
-            <li>Tutto quello della Verifica online</li>
-            <li>Di persona: la luce, il rumore, lo stato visibile, l'ingresso e la strada</li>
-            <li>Report scritto con foto datate</li>
+            <li>Tutto quello della Verifica antitruffa express</li>
+            <li>L'appartamento, gli elettrodomestici, l'edificio, la zona e la convivenza, di persona</li>
+            <li>Report con foto datate e analisi del prezzo</li>
           </ul>
           <a href="/solicitar.html?plan=visit" class="btn btn-primary">Richiedi questo piano</a>
         </div>
@@ -915,7 +1030,7 @@
           <a href="/solicitar.html?plan=live" class="btn btn-ghost">Richiedi questo piano</a>
         </div>
       </div>
-      <p class="price-foot">Se l'annuncio non è affidabile, ti diciamo esattamente perché — e di solito vale molto più della tariffa.</p>
+      <p class="price-foot">Se qualcosa non torna, ti diciamo esattamente cosa e perché — che sia il prezzo, lo stato dell'appartamento o la legittimità dell'annuncio.</p>
       <div class="share-row-light">
         <a href="https://wa.me/?text=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (WhatsApp)</a>
         <a href="mailto:?subject=Un%20annuncio%20che%20sto%20verificando%20con%20ConfirMad&amp;body=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (Email)</a>
@@ -944,17 +1059,16 @@
     <div class="wrap">
       <div class="section-head">
         <div class="early-badge">Il rischio è reale</div>
-        <h2>Quasi 1 studente Erasmus su 4 subisce una truffa sull'alloggio</h2>
+        <h2>E se è una truffa, te lo diciamo prima che tu paghi.</h2>
         <p>1 studente Erasmus su 4 intervistato in Europa ha dichiarato di aver subito una truffa sull'alloggio, e il 21% di chi è venuto in Spagna.</p>
         <p class="risk-source">Fonte: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023 (circa 7.000 risposte)</a></p>
-        <p>Nel 2025 la Spagna ha registrato 488.426 reati informatici, 72.217 dei quali nella Comunidad de Madrid. La maggior parte erano frodi online di ogni tipo, non solo truffe sugli affitti.</p>
+        <p>Nel 2025 la Spagna ha registrato 488.426 reati informatici, 72.217 dei quali nella Comunidad de Madrid.</p>
         <p class="risk-source">Fonte: <a href="https://www.lamoncloa.gob.es/serviciosdeprensa/notasprensa/interior/paginas/2026/100726-interior-ciberdelitos.aspx" target="_blank" rel="noopener">Ministero dell'Interno, via La Moncloa</a></p>
-        <p>C'è un trucco che continua a funzionare: il padrone di casa fa vedere l'appartamento in videochiamata — mostrando un appartamento che in realtà non è quello che ti affitterà. Uno schermo si può preparare. Qualcuno che entra e bussa alla porta, no.</p>
       </div>
-      <div class="stat-highlight"><p>Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica ConfirMad costa meno di una cena per due — a partire da 29,85 €.</p></div>
+      <div class="stat-highlight"><p>Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica antitruffa ConfirMad parte da 29,85 €.</p></div>
       <div class="early-ctas">
         <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20verifica%20prima%20di%20inviare%20la%20caparra" class="btn btn-invert">Scrivici su WhatsApp</a>
-        <a href="#request" class="btn btn-outline-invert">Mandaci l'annuncio</a>
+        <a href="/solicitar.html?plan=online" class="btn btn-outline-invert">Richiedi la verifica express (29,85 €)</a>
       </div>
     </div>
   </section>
@@ -1005,11 +1119,31 @@
         </details>
         <details>
           <summary aria-expanded="false">È una consulenza legale, o una revisione del contratto?<span class="ind"></span></summary>
-          <p>No. Confermiamo che un annuncio è genuino e corrisponde a quanto ti è stato mostrato. Non siamo avvocati e non revisioniamo i contratti per la loro validità legale.</p>
+          <p>No. Continuiamo a non verificare la validità legale del contratto — non siamo avvocati. Ma controlliamo che quanto promesso corrisponda alla realtà, e segnaliamo le condizioni poco comuni prima che tu firmi.</p>
         </details>
         <details>
           <summary aria-expanded="false">Quanto siete veloci davvero?<span class="ind"></span></summary>
           <p>La verifica online viene consegnata in meno di 12 ore. Le visite di persona e dal vivo avvengono entro 1 giorno dalla conferma dell'orario da parte del padrone di casa, in base alla disponibilità di quella settimana.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">E se l'appartamento va bene?<span class="ind"></span></summary>
+          <p>Paghi sapendo esattamente cosa stai pagando: ti mandiamo un report con foto datate dello stato in cui l'abbiamo trovato, così puoi prenotare con tranquillità.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">Come sapete se il prezzo è giusto?<span class="ind"></span></summary>
+          <p>Lo confrontiamo con appartamenti e stanze simili della zona, e calcoliamo il costo mensile reale comprese le spese.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">Verificate il rumore di notte?<span class="ind"></span></summary>
+          <p>Verifichiamo quello che si sente durante la visita. Se ti preoccupa un orario specifico, proviamo ad andare in quell'orario, se il padrone di casa può.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">E se il padrone di casa non fa provare qualcosa?<span class="ind"></span></summary>
+          <p>Lo annotiamo nel report. Anche questa è un'informazione.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">Posso chiedervi di controllare qualcosa in particolare?<span class="ind"></span></summary>
+          <p>Sì — mandaci le tue domande insieme alla richiesta e le verifichiamo durante la visita.</p>
         </details>
       </div>
     </div>
