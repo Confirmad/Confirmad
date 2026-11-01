@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="08368dc">
+<meta name="confirmad-build" content="05e47e3">
 <title>Thank you · ConfirMad</title>
 <meta name="description" content="Your ConfirMad request is confirmed.">
 <meta name="robots" content="noindex, nofollow">
@@ -182,7 +182,7 @@ footer a:hover{ color: var(--ink); }
 
 <footer>
   <span id="footerTagline">ConfirMad · Madrid, Spain · Not a law firm.</span><br>
-  <a href="/aviso-legal.html" id="footerLegal">Legal notice</a> · <a href="/privacidad.html" id="footerPrivacy">Privacy</a> · <a href="/terminos.html" id="footerTerms">Terms</a>
+  <a href="/aviso-legal.html" id="footerLegal">Legal notice</a> · <a href="/privacidad.html" id="footerPrivacy">Privacy</a> · <a href="/terminos.html" id="footerTerms">Terms</a> · <a href="/empresas.html" id="footerBusiness">For agencies, universities and companies</a>
 </footer>
 
 <script>
@@ -198,7 +198,7 @@ footer a:hover{ color: var(--ink); }
       shareTitle: 'Know someone else flat-hunting in Madrid?', shareWhatsApp: 'Share on WhatsApp', shareEmail: 'Share by email',
       shareMsg: "I'm using ConfirMad to verify a Madrid rental before paying anything — thought you should see this too: https://confirmad.es",
       shareSubject: 'A site for checking Madrid rentals before you pay', backLink: '← Back to ConfirMad',
-      footerTagline: 'ConfirMad · Madrid, Spain · Not a law firm.', footerLegal: 'Legal notice', footerPrivacy: 'Privacy', footerTerms: 'Terms',
+      footerTagline: 'ConfirMad · Madrid, Spain · Not a law firm.', footerLegal: 'Legal notice', footerPrivacy: 'Privacy', footerTerms: 'Terms', footerBusiness: 'For agencies, universities and companies',
       noOrderLede: "Thanks for booking with ConfirMad. We've emailed you a confirmation — check your inbox (and spam folder) for your reference number."
     },
     es: {
@@ -211,7 +211,7 @@ footer a:hover{ color: var(--ink); }
       shareTitle: '¿Conoces a alguien más buscando piso en Madrid?', shareWhatsApp: 'Compartir por WhatsApp', shareEmail: 'Compartir por correo',
       shareMsg: 'Estoy usando ConfirMad para comprobar un piso en alquiler en Madrid antes de pagar nada — pensé que te interesaría: https://confirmad.es',
       shareSubject: 'Una web para comprobar pisos en Madrid antes de pagar', backLink: '← Volver a ConfirMad',
-      footerTagline: 'ConfirMad · Madrid, España · No somos un despacho de abogados.', footerLegal: 'Aviso legal', footerPrivacy: 'Privacidad', footerTerms: 'Términos',
+      footerTagline: 'ConfirMad · Madrid, España · No somos un despacho de abogados.', footerLegal: 'Aviso legal', footerPrivacy: 'Privacidad', footerTerms: 'Términos', footerBusiness: 'Para agencias, universidades y empresas',
       noOrderLede: 'Gracias por reservar con ConfirMad. Te hemos enviado un correo de confirmación — revisa tu bandeja de entrada (y spam) para ver tu número de referencia.'
     },
     it: {
@@ -224,7 +224,7 @@ footer a:hover{ color: var(--ink); }
       shareTitle: 'Conosci qualcun altro in cerca di casa a Madrid?', shareWhatsApp: 'Condividi su WhatsApp', shareEmail: 'Condividi via email',
       shareMsg: "Sto usando ConfirMad per verificare un affitto a Madrid prima di pagare qualsiasi cosa — ho pensato potesse interessarti: https://confirmad.es",
       shareSubject: 'Un sito per verificare gli affitti a Madrid prima di pagare', backLink: '← Torna a ConfirMad',
-      footerTagline: 'ConfirMad · Madrid, Spagna · Non siamo uno studio legale.', footerLegal: 'Note legali', footerPrivacy: 'Privacy', footerTerms: 'Termini',
+      footerTagline: 'ConfirMad · Madrid, Spagna · Non siamo uno studio legale.', footerLegal: 'Note legali', footerPrivacy: 'Privacy', footerTerms: 'Termini', footerBusiness: 'Per agenzie, università e aziende',
       noOrderLede: "Grazie per aver prenotato con ConfirMad. Ti abbiamo inviato una email di conferma — controlla la posta in arrivo (e lo spam) per il numero di riferimento."
     },
     fr: {
@@ -237,7 +237,7 @@ footer a:hover{ color: var(--ink); }
       shareTitle: 'Vous connaissez quelqu\'un qui cherche un logement à Madrid ?', shareWhatsApp: 'Partager sur WhatsApp', shareEmail: 'Partager par email',
       shareMsg: "J'utilise ConfirMad pour vérifier une location à Madrid avant de payer quoi que ce soit — je me suis dit que ça pourrait t'intéresser : https://confirmad.es",
       shareSubject: 'Un site pour vérifier les locations à Madrid avant de payer', backLink: '← Retour à ConfirMad',
-      footerTagline: 'ConfirMad · Madrid, Espagne · Nous ne sommes pas un cabinet juridique.', footerLegal: 'Mentions légales', footerPrivacy: 'Confidentialité', footerTerms: 'Conditions',
+      footerTagline: 'ConfirMad · Madrid, Espagne · Nous ne sommes pas un cabinet juridique.', footerLegal: 'Mentions légales', footerPrivacy: 'Confidentialité', footerTerms: 'Conditions', footerBusiness: 'Pour les agences, universités et entreprises',
       noOrderLede: "Merci d'avoir réservé avec ConfirMad. Nous vous avons envoyé un email de confirmation — vérifiez votre boîte de réception (et vos spams) pour votre numéro de référence."
     }
   };
@@ -277,6 +277,7 @@ footer a:hover{ color: var(--ink); }
   setText('footerLegal', t.footerLegal);
   setText('footerPrivacy', t.footerPrivacy);
   setText('footerTerms', t.footerTerms);
+  setText('footerBusiness', t.footerBusiness);
 
   var planKeyFromUrl = params.get('plan');
   var planKey = (order && order.plan) || planKeyFromUrl || 'visit';

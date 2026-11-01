@@ -40,7 +40,6 @@ STATIC_PAGES = [
     "cookies.html",
     "modelo-desistimiento.html",
     "gracias.html",
-    "empresas.html",
 ]
 
 BUILD_META_RE = re.compile(
@@ -80,7 +79,7 @@ def stamp_static_page(path, build_id):
 LANGS = ["en", "es", "it", "fr"]
 LANG_NAMES = {"en": "EN", "es": "ES", "it": "IT", "fr": "FR"}
 
-PAGES = ["index", "check", "solicitar"]
+PAGES = ["index", "check", "solicitar", "empresas"]
 
 PAGE_URLS = {
     "index": {
@@ -101,6 +100,12 @@ PAGE_URLS = {
         "it": "https://confirmad.es/it/solicitar.html",
         "fr": "https://confirmad.es/fr/solicitar.html",
     },
+    "empresas": {
+        "en": "https://confirmad.es/empresas.html",
+        "es": "https://confirmad.es/es/empresas.html",
+        "it": "https://confirmad.es/it/empresas.html",
+        "fr": "https://confirmad.es/fr/empresas.html",
+    },
 }
 
 OUTPUT_PATHS = {
@@ -116,6 +121,10 @@ OUTPUT_PATHS = {
     ("solicitar", "es"): "es/solicitar.html",
     ("solicitar", "it"): "it/solicitar.html",
     ("solicitar", "fr"): "fr/solicitar.html",
+    ("empresas", "en"): "empresas.html",
+    ("empresas", "es"): "es/empresas.html",
+    ("empresas", "it"): "it/empresas.html",
+    ("empresas", "fr"): "fr/empresas.html",
 }
 
 PLACEHOLDER_RE = re.compile(r"\[\[([\w.\-]+)\]\]")
@@ -185,6 +194,11 @@ def render(page, lang, template_text, lang_data, build_id):
             {
                 "sending": get_path(lang_data, "business.sending"),
                 "submit": get_path(lang_data, "business.submit"),
+                "success_strong": get_path(lang_data, "business.success_strong"),
+                "success_rest": get_path(lang_data, "business.success_rest"),
+                "error_strong": get_path(lang_data, "business.error_strong"),
+                "error_rest_pre": get_path(lang_data, "business.error_rest_pre"),
+                "error_rest_post": get_path(lang_data, "business.error_rest_post"),
             },
             ensure_ascii=False,
         ),
