@@ -14,9 +14,24 @@
     "jsonld_offer_live": "Todo lo de la visita presencial, más una videollamada en directo desde dentro del piso."
   },
   "plans": {
-    "online": { "name": "Verificación online exprés", "price": "29,85 €", "turnaround": "Resultado en menos de 12 h", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07" },
-    "visit": { "name": "Visita presencial", "price": "59,99 €", "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01" },
-    "live": { "name": "Visita en directo", "price": "99 €", "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04" }
+    "online": {
+      "name": "Verificación online exprés",
+      "price": "29,85 €",
+      "turnaround": "Resultado en menos de 12 h",
+      "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"
+    },
+    "visit": {
+      "name": "Visita presencial",
+      "price": "59,99 €",
+      "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora",
+      "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"
+    },
+    "live": {
+      "name": "Visita en directo",
+      "price": "99 €",
+      "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora",
+      "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"
+    }
   },
   "nav": {
     "how": "Cómo funciona",
@@ -211,12 +226,26 @@
   },
   "check_js": {
     "district_labels": {
-      "centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín",
-      "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán",
-      "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo",
-      "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina",
-      "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas",
-      "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"
+      "centro": "Centro",
+      "salamanca": "Salamanca",
+      "chamberi": "Chamberí",
+      "chamartin": "Chamartín",
+      "retiro": "Retiro",
+      "arganzuela": "Arganzuela",
+      "moncloa-aravaca": "Moncloa-Aravaca",
+      "tetuan": "Tetuán",
+      "ciudad-lineal": "Ciudad Lineal",
+      "hortaleza": "Hortaleza",
+      "fuencarral-el-pardo": "Fuencarral-El Pardo",
+      "san-blas-canillejas": "San Blas-Canillejas",
+      "barajas": "Barajas",
+      "latina": "Latina",
+      "carabanchel": "Carabanchel",
+      "usera": "Usera",
+      "puente-de-vallecas": "Puente de Vallecas",
+      "villa-de-vallecas": "Villa de Vallecas",
+      "vicalvaro": "Vicálvaro",
+      "villaverde": "Villaverde"
     },
     "price_severe_title": "El precio parece inusualmente bajo para {district}",
     "price_severe_detail": "Eso equivale a unos {perM2} €/m², muy por debajo del rango habitual de {low}–{high} €/m² en esta zona. Los anuncios con precios poco realistas son uno de los cebos más comunes en las estafas de alquiler.",
@@ -254,5 +283,33 @@
     "copy_text_checked_at": "Comprobado en",
     "copied_to_clipboard": "Copiado al portapapeles",
     "link_copied": "Enlace copiado"
+  },
+  "request": {
+    "meta_title": "Reservar una comprobación · ConfirMad",
+    "meta_description": "Reserva una comprobación independiente de un piso en alquiler en Madrid. Rellena los datos del anuncio, acepta las condiciones y paga de forma segura — empezamos en cuanto llegan el pago y los datos.",
+    "back_link": "← Volver a los precios",
+    "title": "Cuéntanos sobre el anuncio",
+    "lede": "Rellena esto y pasarás directamente al pago seguro. Empezamos en cuanto llegan el pago y los datos del anuncio.",
+    "name_label": "Tu nombre",
+    "name_placeholder": "Jane Smith",
+    "email_label": "Tu correo electrónico",
+    "email_placeholder": "jane@email.com",
+    "phone_label": "Teléfono o WhatsApp (opcional)",
+    "phone_placeholder": "+34 600 000 000",
+    "listing_label": "Enlace del anuncio o dirección",
+    "listing_placeholder": "Enlace de Idealista, o la dirección",
+    "landlord_label": "Nombre y contacto del casero (opcional)",
+    "landlord_placeholder": "Nombre, teléfono o correo que tengas",
+    "notes_label": "Algo más que debamos saber (opcional)",
+    "notes_placeholder": "Fecha de entrada, preguntas...",
+    "consent_start": "Pido a ConfirMad que empiece el servicio dentro del plazo de desistimiento de 14 días.",
+    "consent_withdrawal": "Entiendo que, una vez el servicio se haya prestado por completo, perderé mi derecho de desistimiento, y que si desisto después de haber empezado pagaré la parte ya prestada. <a href=\"/terminos.html#withdrawal\">Ver nuestras condiciones</a>.",
+    "consent_terms": "Acepto los <a href=\"/terminos.html\" target=\"_blank\">Términos del servicio</a> y la <a href=\"/privacidad.html\" target=\"_blank\">Política de privacidad</a>.",
+    "consent_marketing": "También quiero recibir correos ocasionales sobre ConfirMad (opcional).",
+    "submit_button": "Continuar al pago (pedido con obligación de pago) →",
+    "submitting_button": "Te llevamos al pago…",
+    "error_prefix": "Algo ha fallado al enviar tus datos",
+    "error_fallback": "Inténtalo de nuevo, o escríbenos directamente a contacto@confirmad.es.",
+    "reference_label": "Tu referencia"
   }
 }

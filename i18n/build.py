@@ -33,7 +33,6 @@ TEMPLATES_DIR = ROOT / "i18n" / "templates"
 # you commit the output) - good enough to prove "these pages were built
 # together", which is all the check in README/Santiago's instructions needs.
 STATIC_PAGES = [
-    "solicitar.html",
     "sample-report.html",
     "terminos.html",
     "privacidad.html",
@@ -81,7 +80,7 @@ def stamp_static_page(path, build_id):
 LANGS = ["en", "es", "it", "fr"]
 LANG_NAMES = {"en": "EN", "es": "ES", "it": "IT", "fr": "FR"}
 
-PAGES = ["index", "check"]
+PAGES = ["index", "check", "solicitar"]
 
 PAGE_URLS = {
     "index": {
@@ -96,6 +95,12 @@ PAGE_URLS = {
         "it": "https://confirmad.es/it/check.html",
         "fr": "https://confirmad.es/fr/check.html",
     },
+    "solicitar": {
+        "en": "https://confirmad.es/solicitar.html",
+        "es": "https://confirmad.es/es/solicitar.html",
+        "it": "https://confirmad.es/it/solicitar.html",
+        "fr": "https://confirmad.es/fr/solicitar.html",
+    },
 }
 
 OUTPUT_PATHS = {
@@ -107,6 +112,10 @@ OUTPUT_PATHS = {
     ("check", "es"): "es/check.html",
     ("check", "it"): "it/check.html",
     ("check", "fr"): "fr/check.html",
+    ("solicitar", "en"): "solicitar.html",
+    ("solicitar", "es"): "es/solicitar.html",
+    ("solicitar", "it"): "it/solicitar.html",
+    ("solicitar", "fr"): "fr/solicitar.html",
 }
 
 PLACEHOLDER_RE = re.compile(r"\[\[([\w.\-]+)\]\]")
@@ -179,6 +188,20 @@ def render(page, lang, template_text, lang_data, build_id):
             },
             ensure_ascii=False,
         ),
+        "JSON_I18N_PLANS": json.dumps(
+            get_path(lang_data, "plans"), ensure_ascii=False
+        ),
+        "JSON_I18N_REQUEST": json.dumps(
+            {
+                "submitting_button": get_path(lang_data, "request.submitting_button"),
+                "submit_button": get_path(lang_data, "request.submit_button"),
+                "error_prefix": get_path(lang_data, "request.error_prefix"),
+                "error_fallback": get_path(lang_data, "request.error_fallback"),
+                "reference_label": get_path(lang_data, "request.reference_label"),
+            },
+            ensure_ascii=False,
+        ),
+        "STRIPE_LOCALE": lang,
     }
 
     missing = []

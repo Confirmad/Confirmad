@@ -14,9 +14,24 @@
     "jsonld_offer_live": "Tout ce qui est inclus dans la visite sur place, plus un appel vidéo en direct depuis l'intérieur de l'appartement."
   },
   "plans": {
-    "online": { "name": "Vérification en ligne express", "price": "29,85 €", "turnaround": "Résultat en moins de 12 h", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07" },
-    "visit": { "name": "Visite sur place", "price": "59,99 €", "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01" },
-    "live": { "name": "Visite en direct", "price": "99 €", "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04" }
+    "online": {
+      "name": "Vérification en ligne express",
+      "price": "29,85 €",
+      "turnaround": "Résultat en moins de 12 h",
+      "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"
+    },
+    "visit": {
+      "name": "Visite sur place",
+      "price": "59,99 €",
+      "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire",
+      "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"
+    },
+    "live": {
+      "name": "Visite en direct",
+      "price": "99 €",
+      "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire",
+      "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"
+    }
   },
   "nav": {
     "how": "Comment ça marche",
@@ -211,12 +226,26 @@
   },
   "check_js": {
     "district_labels": {
-      "centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín",
-      "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán",
-      "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo",
-      "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina",
-      "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas",
-      "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"
+      "centro": "Centro",
+      "salamanca": "Salamanca",
+      "chamberi": "Chamberí",
+      "chamartin": "Chamartín",
+      "retiro": "Retiro",
+      "arganzuela": "Arganzuela",
+      "moncloa-aravaca": "Moncloa-Aravaca",
+      "tetuan": "Tetuán",
+      "ciudad-lineal": "Ciudad Lineal",
+      "hortaleza": "Hortaleza",
+      "fuencarral-el-pardo": "Fuencarral-El Pardo",
+      "san-blas-canillejas": "San Blas-Canillejas",
+      "barajas": "Barajas",
+      "latina": "Latina",
+      "carabanchel": "Carabanchel",
+      "usera": "Usera",
+      "puente-de-vallecas": "Puente de Vallecas",
+      "villa-de-vallecas": "Villa de Vallecas",
+      "vicalvaro": "Vicálvaro",
+      "villaverde": "Villaverde"
     },
     "price_severe_title": "Le prix semble anormalement bas pour {district}",
     "price_severe_detail": "Cela équivaut à environ {perM2} €/m², bien en dessous de la fourchette habituelle de {low}–{high} €/m² pour ce quartier. Les annonces à prix irréaliste sont l'un des appâts les plus courants dans les arnaques locatives.",
@@ -254,5 +283,33 @@
     "copy_text_checked_at": "Vérifié le",
     "copied_to_clipboard": "Copié dans le presse-papiers",
     "link_copied": "Lien copié"
+  },
+  "request": {
+    "meta_title": "Réserver une vérification · ConfirMad",
+    "meta_description": "Réservez une vérification indépendante d'une annonce de location à Madrid. Remplissez les détails de l'annonce, acceptez les conditions et payez en toute sécurité — nous commençons dès réception du paiement et des détails.",
+    "back_link": "← Retour aux tarifs",
+    "title": "Parlez-nous de l'annonce",
+    "lede": "Remplissez ce formulaire et vous passerez directement au paiement sécurisé. Nous commençons dès réception du paiement et des détails de l'annonce.",
+    "name_label": "Votre nom",
+    "name_placeholder": "Jane Smith",
+    "email_label": "Votre email",
+    "email_placeholder": "jane@email.com",
+    "phone_label": "Téléphone ou WhatsApp (facultatif)",
+    "phone_placeholder": "+34 600 000 000",
+    "listing_label": "Lien de l'annonce ou adresse",
+    "listing_placeholder": "Lien Idealista, ou l'adresse",
+    "landlord_label": "Nom et contact du propriétaire (facultatif)",
+    "landlord_placeholder": "Nom, téléphone ou email que vous avez",
+    "notes_label": "Autre chose à nous dire (facultatif)",
+    "notes_placeholder": "Date d'emménagement, questions...",
+    "consent_start": "Je demande à ConfirMad de commencer le service pendant le délai de rétractation de 14 jours.",
+    "consent_withdrawal": "Je comprends qu'une fois le service entièrement exécuté, je perds mon droit de rétractation, et qu'en cas de rétractation après le début du service, je paierai la partie déjà fournie. <a href=\"/terminos.html#withdrawal\">Voir nos conditions</a>.",
+    "consent_terms": "J'accepte les <a href=\"/terminos.html\" target=\"_blank\">Conditions d'utilisation</a> et la <a href=\"/privacidad.html\" target=\"_blank\">Politique de confidentialité</a>.",
+    "consent_marketing": "Je souhaite aussi recevoir occasionnellement des emails sur ConfirMad (facultatif).",
+    "submit_button": "Continuer vers le paiement (commande avec obligation de paiement) →",
+    "submitting_button": "Direction le paiement…",
+    "error_prefix": "Un problème est survenu lors de l'envoi de vos informations",
+    "error_fallback": "Veuillez réessayer, ou écrivez-nous directement à contacto@confirmad.es.",
+    "reference_label": "Votre référence"
   }
 }

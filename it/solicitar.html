@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="confirmad-build" content="4158e63">
+<title>Prenota una verifica · ConfirMad</title>
+<meta name="description" content="Prenota una verifica indipendente di un annuncio di affitto a Madrid. Compila i dati dell'annuncio, accetta le condizioni e paga in sicurezza — iniziamo appena arrivano il pagamento e i dati.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://confirmad.es/it/solicitar.html">
+<link rel="alternate" hreflang="en" href="https://confirmad.es/solicitar.html">
+<link rel="alternate" hreflang="es" href="https://confirmad.es/es/solicitar.html">
+<link rel="alternate" hreflang="it" href="https://confirmad.es/it/solicitar.html">
+<link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/solicitar.html">
+<link rel="alternate" hreflang="x-default" href="https://confirmad.es/solicitar.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConfirMad">
+<meta property="og:title" content="Prenota una verifica · ConfirMad">
+<meta property="og:description" content="Prenota una verifica indipendente di un annuncio di affitto a Madrid. Compila i dati dell'annuncio, accetta le condizioni e paga in sicurezza — iniziamo appena arrivano il pagamento e i dati.">
+<meta property="og:url" content="https://confirmad.es/it/solicitar.html">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prenota una verifica · ConfirMad">
+<meta name="twitter:description" content="Prenota una verifica indipendente di un annuncio di affitto a Madrid. Compila i dati dell'annuncio, accetta le condizioni e paga in sicurezza — iniziamo appena arrivano il pagamento e i dati.">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
+<link rel="icon" href="/confirmad-favicon-16.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ConfirMad",
+  "url": "https://confirmad.es/",
+  "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "image": "https://confirmad.es/confirmad-logo-horizontal.png",
+  "description": "Verifica di persona e indipendente degli affitti a Madrid: stato, luce, rumore, prezzo e condizioni confermati prima di pagare una caparra.",
+  "email": "contacto@confirmad.es",
+  "areaServed": { "@type": "City", "name": "Madrid" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+  "priceRange": "€29.85–€99",
+  "makesOffer": [
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Verifica online express", "description": "Controllo al Registro de la Propiedad rispetto all'inserzionista, ricerca inversa delle foto e confronto del prezzo, con un verdetto chiaro." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita di persona", "description": "Tutto quello della verifica online, più una visita di persona con report scritto, foto datate e analisi del prezzo." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita in diretta", "description": "Tutto quello della visita di persona, più una videochiamata dal vivo dall'interno dell'appartamento." } }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #636C79;
+  --stamp: #2F5D45;
+  --stamp-dark: #234634;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --font: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --max: 640px;
+}
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+a{ color: inherit; }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+h1,h2,h3{ font-family: var(--font); font-weight: 700; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+p{ margin: 0 0 1em; color: var(--ink-soft); }
+:focus-visible{ outline: 2px solid var(--stamp); outline-offset: 3px; }
+
+header.site{
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  position: sticky; top:0;
+}
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand-logo{ height: 28px; width:auto; display:block; }
+.back{ font-size: 0.85rem; color: var(--ink-faint); text-decoration:none; }
+.back:hover{ color: var(--ink); }
+
+main{ padding: 40px 0 80px; }
+
+.plan-card{
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px 22px; margin-bottom: 28px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  box-shadow: 0 14px 28px -22px rgba(22,35,59,0.28);
+}
+.plan-card .tag{ font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 4px; }
+.plan-card .amount{ font-family: var(--font-mono); font-size: 1.6rem; font-weight:700; color: var(--ink); }
+.plan-card .turnaround{ font-size: 0.85rem; color: var(--ink-soft); text-align:right; }
+.plan-card .vat-note{ font-size: 0.68rem; font-weight:400; color: var(--ink-faint); }
+@media (max-width: 480px){
+  .plan-card{ flex-direction: column; align-items: flex-start; gap: 10px; }
+  .plan-card .turnaround{ text-align: left; }
+}
+
+h1.title{ font-size: 1.6rem; margin-bottom: 10px; line-height:1.3; }
+p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
+
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.field label{ font-size: 0.85rem; font-weight:600; color: var(--ink); }
+.field input, .field textarea{
+  background: #fff; border: 1px solid var(--line); color: var(--ink);
+  padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size: 0.95rem;
+  transition: border-color .15s ease, box-shadow .15s ease; width:100%;
+}
+.field input:focus, .field textarea:focus{
+  outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
+}
+.field textarea{ resize: vertical; min-height: 80px; }
+
+.consent-field{
+  background: rgba(47,93,69,0.06); border: 1.5px solid var(--line); border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 20px;
+}
+.consent-field label{ display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-weight:400; }
+.consent-field input[type=checkbox]{
+  margin-top:3px; flex:none; width:17px; height:17px; accent-color: var(--stamp); cursor:pointer;
+}
+.consent-field span{ font-size: 0.88rem; color: var(--ink); }
+.consent-field a{ color: var(--stamp); font-weight:600; }
+.form-error{
+  display:none; background: rgba(166,58,52,0.08); border: 1px solid #A63A34; border-radius: 12px;
+  padding: 14px 16px; font-size: 0.9rem; color: var(--ink); margin-bottom: 20px;
+}
+.form-error.show{ display:block; }
+.form-error a{ color: #A63A34; font-weight:600; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family: var(--font); font-weight:700; font-size: 0.98rem;
+  padding: 13px 22px; border-radius: 999px;
+  text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  white-space: normal; line-height: 1.3; width:100%; text-align:center;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn:active{ transform: translateY(0) scale(0.97); }
+.btn:disabled{ opacity:0.7; cursor:default; transform:none; }
+.btn-primary{ background: var(--stamp); color:#fff; box-shadow: 0 10px 20px -10px rgba(47,93,69,0.6); }
+.btn-primary:hover{ background: var(--stamp-dark); box-shadow: 0 14px 24px -8px rgba(47,93,69,0.7); }
+
+footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+footer a{ color: var(--ink-faint); text-decoration:underline; }
+footer a:hover{ color: var(--ink); }
+footer .lang-switch{ display:flex; justify-content:center; gap:7px; margin-top:10px; font-family: var(--font-mono); font-size:0.74rem; font-weight:600; }
+footer .lang-switch a{ text-decoration:none; }
+footer .lang-switch a.lang-current{ color: var(--stamp); }
+
+.whatsapp-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:56px; height:56px; border-radius:50%;
+  background: var(--stamp); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: waFloatIn .4s cubic-bezier(.2,1.4,.4,1) .6s both;
+}
+.whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
+.whatsapp-float:active{ transform: scale(0.95); }
+.whatsapp-float svg{ width:28px; height:28px; }
+@keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
+@media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
+    <a href="/index.html#top" class="brand"><img src="/confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+    <a href="/index.html#pricing" class="back">← Torna ai prezzi</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="plan-card">
+      <div>
+        <div class="tag" id="planTag">Visita di persona</div>
+        <div class="amount" id="planAmount">59,99 € <span class="vat-note">IVA inclusa</span></div>
+      </div>
+      <div class="turnaround" id="planTurnaround">Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa</div>
+    </div>
+
+    <h1 class="title">Raccontaci dell'annuncio</h1>
+    <p class="lede">Compila questo modulo e passerai subito al pagamento sicuro. Iniziamo appena arrivano il pagamento e i dati dell'annuncio.</p>
+
+    <form id="detailsForm">
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_term" name="utm_term">
+      <input type="hidden" id="utm_content" name="utm_content">
+      <div class="field">
+        <label for="name">Il tuo nome</label>
+        <input id="name" type="text" placeholder="Jane Smith" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">La tua email</label>
+        <input id="email" type="email" placeholder="jane@email.com" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="phone">Telefono o WhatsApp (opzionale)</label>
+        <input id="phone" type="tel" placeholder="+34 600 000 000" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="listing">Link dell'annuncio o indirizzo</label>
+        <input id="listing" type="text" placeholder="Link di Idealista, o l'indirizzo" required>
+      </div>
+      <div class="field">
+        <label for="landlord">Nome e contatto del locatore (opzionale)</label>
+        <input id="landlord" type="text" placeholder="Nome, telefono o email che hai">
+      </div>
+      <div class="field">
+        <label for="notes">Altro che dovremmo sapere (opzionale)</label>
+        <textarea id="notes" placeholder="Data d'ingresso, domande..."></textarea>
+      </div>
+
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentStart" required>
+          <span>Chiedo a ConfirMad di iniziare il servizio entro il periodo di recesso di 14 giorni.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentWithdrawal" required>
+          <span>Capisco che, una volta eseguito interamente il servizio, perderò il diritto di recesso, e che se recedo dopo l'inizio pagherò la parte già fornita. <a href="/terminos.html#withdrawal">Vedi le nostre condizioni</a>.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentTerms" required>
+          <span>Accetto i <a href="/terminos.html" target="_blank">Termini di servizio</a> e l'<a href="/privacidad.html" target="_blank">Informativa sulla privacy</a>.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentMarketing">
+          <span>Vorrei anche ricevere email occasionali su ConfirMad (opzionale).</span>
+        </label>
+      </div>
+
+      <div class="form-error" id="formError"></div>
+
+      <button type="submit" class="btn btn-primary" id="sendBtn">Continua al pagamento (ordine con obbligo di pagare) →</button>
+    </form>
+
+  </div>
+</main>
+
+<footer>
+  ConfirMad · Madrid, Spain · Non siamo uno studio legale. Verifichiamo annunci, non contratti.<br>
+  <a href="/aviso-legal.html">Note legali</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookie</a> · <a href="/terminos.html">Termini</a>
+  <div class="lang-switch"><a href="https://confirmad.es/solicitar.html">EN</a> · <a href="https://confirmad.es/es/solicitar.html">ES</a> · <a href="https://confirmad.es/it/solicitar.html" class="lang-current">IT</a> · <a href="https://confirmad.es/fr/solicitar.html">FR</a></div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34639589180?text=Ciao%2C%20ho%20una%20domanda%20sulla%20verifica%20di%20un%20annuncio%20a%20Madrid" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script>
+  var PLANS = {"online": {"name": "Verifica online express", "price": "29,85 €", "turnaround": "Risultato in meno di 12 ore", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "Visita di persona", "price": "59,99 €", "turnaround": "Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Visita in diretta", "price": "99 €", "turnaround": "Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}};
+  var REQ = {"submitting_button": "Ti portiamo al pagamento…", "submit_button": "Continua al pagamento (ordine con obbligo di pagare) →", "error_prefix": "Qualcosa è andato storto nell'invio dei tuoi dati", "error_fallback": "Riprova, oppure scrivici direttamente a contacto@confirmad.es.", "reference_label": "Il tuo riferimento"};
+  var STRIPE_LOCALE = "it";
+
+  function isValidEmail(value){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function sendAutoReply(toEmail, toName, extra){
+    if (!isValidEmail(toEmail) || typeof emailjs === 'undefined') return;
+    try {
+      emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+      emailjs.send('service_wa43yg8', 'template_ykjy3pj', Object.assign({
+        to_email: toEmail, email: toEmail, reply_to: toEmail,
+        to_name: toName, name: toName
+      }, extra || {}))
+        .catch(function(err){ console.warn('Auto-reply email failed:', err); });
+    } catch (e) { console.warn('Auto-reply email failed:', e); }
+  }
+
+  function generateReference(){
+    var now = new Date();
+    var pad = function(n){ return String(n).padStart(2, '0'); };
+    var stamp = '' + now.getFullYear() + pad(now.getMonth() + 1) + pad(now.getDate()) + pad(now.getHours()) + pad(now.getMinutes());
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var suffix = '';
+    if (window.crypto && window.crypto.getRandomValues){
+      var bytes = new Uint8Array(4);
+      window.crypto.getRandomValues(bytes);
+      for (var i = 0; i < 4; i++) suffix += chars[bytes[i] % chars.length];
+    } else {
+      for (var j = 0; j < 4; j++) suffix += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return 'CM-' + stamp + '-' + suffix;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var planKey = PLANS[params.get('plan')] ? params.get('plan') : 'visit';
+  var plan = PLANS[planKey];
+
+  document.getElementById('planTag').textContent = plan.name;
+  document.getElementById('planAmount').innerHTML = plan.price + ' <span class="vat-note">IVA inclusa</span>';
+  document.getElementById('planTurnaround').textContent = plan.turnaround;
+
+  var utmParams = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k){
+    var v = params.get(k) || '';
+    utmParams[k] = v;
+    var hidden = document.getElementById(k);
+    if (hidden) hidden.value = v;
+  });
+
+  var form = document.getElementById('detailsForm');
+  var sendBtn = document.getElementById('sendBtn');
+  var formError = document.getElementById('formError');
+  var WEB3FORMS_KEY = 'a066c66c-8b2b-4320-893c-7fd55cf355e6';
+
+  function withTimeout(promise, ms){
+    return new Promise(function(resolve, reject){
+      var timer = setTimeout(function(){ reject(new Error('timeout')); }, ms);
+      promise.then(function(v){ clearTimeout(timer); resolve(v); }, function(e){ clearTimeout(timer); reject(e); });
+    });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var listing = document.getElementById('listing').value;
+    var landlord = document.getElementById('landlord').value;
+    var notes = document.getElementById('notes').value;
+    var consentStart = document.getElementById('consentStart').checked;
+    var consentWithdrawal = document.getElementById('consentWithdrawal').checked;
+    var consentTerms = document.getElementById('consentTerms').checked;
+    var consentMarketing = document.getElementById('consentMarketing').checked;
+    var consentTimestamp = new Date().toISOString();
+    var reference = generateReference();
+
+    formError.classList.remove('show');
+
+    try {
+      sessionStorage.setItem('confirmad_order', JSON.stringify({
+        reference: reference, plan: planKey, planName: plan.name, amount: plan.price,
+        turnaround: plan.turnaround, name: name, email: email, phone: phone,
+        listing: listing, lang: STRIPE_LOCALE, createdAt: consentTimestamp
+      }));
+    } catch (err) { console.warn('sessionStorage unavailable:', err); }
+
+    var utmLine = Object.keys(utmParams).length
+      ? Object.keys(utmParams).map(function(k){ return k + '=' + utmParams[k]; }).join(', ')
+      : '(none)';
+
+    var message =
+      'Reference: ' + reference + '\n' +
+      'Plan: ' + plan.name + ' (' + plan.price + ', VAT included)\n' +
+      'Phone/WhatsApp: ' + phone + '\n' +
+      'Listing: ' + listing + '\n' +
+      'Landlord contact: ' + landlord + '\n' +
+      'UTM: ' + utmLine + '\n' +
+      'Notes: ' + notes + '\n' +
+      '--- Consent record (' + consentTimestamp + ') ---\n' +
+      'Requested immediate start within withdrawal period: ' + consentStart + '\n' +
+      'Acknowledged loss of withdrawal right / pro-rata payment: ' + consentWithdrawal + '\n' +
+      'Accepted Terms of Service and Privacy Policy: ' + consentTerms + '\n' +
+      'Opted in to marketing emails: ' + consentMarketing;
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = REQ.submitting_button;
+
+    withTimeout(fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: plan.name + ' request — ' + name + ' (' + reference + ')',
+        from_name: name,
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+      })
+    }).then(function(res){ return res.json(); }), 8000)
+    .then(function(data){
+      if (!data.success){ throw new Error(data.message || 'Web3Forms error'); }
+      sendAutoReply(email, name, {
+        reference: reference,
+        plan_name: plan.name,
+        plan_amount: plan.price,
+        plan_turnaround: plan.turnaround,
+        consent_start: consentStart ? 'Yes' : 'No',
+        consent_withdrawal: consentWithdrawal ? 'Yes' : 'No',
+        consent_timestamp: consentTimestamp,
+        listing: listing
+      });
+      var stripeUrl = plan.stripe
+        + '?prefilled_email=' + encodeURIComponent(email)
+        + '&client_reference_id=' + encodeURIComponent(reference)
+        + '&locale=' + encodeURIComponent(STRIPE_LOCALE);
+      window.location.href = stripeUrl;
+    })
+    .catch(function(err){
+      sendBtn.disabled = false;
+      sendBtn.textContent = REQ.submit_button;
+      formError.textContent = REQ.error_prefix + ' (' + err.message + '). ' + REQ.error_fallback;
+      formError.classList.add('show');
+    });
+  });
+</script>
+
+<script src="/consent.js" defer></script>
+</body>
+</html>

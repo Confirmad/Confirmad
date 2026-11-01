@@ -3,22 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="6309b5c">
-<title>Request a check · ConfirMad</title>
-<meta name="description" content="Book an online verification or in-person check of a Madrid rental listing. Pick a plan, pay securely, get your result in under 12 hours or within 1 day.">
+<meta name="confirmad-build" content="4158e63">
+<title>Book a check · ConfirMad</title>
+<meta name="description" content="Book an independent check of a Madrid rental listing. Fill in the listing details, agree to the terms, and pay securely — we start as soon as payment and the details come through.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://confirmad.es/solicitar.html">
+<link rel="alternate" hreflang="en" href="https://confirmad.es/solicitar.html">
+<link rel="alternate" hreflang="es" href="https://confirmad.es/es/solicitar.html">
+<link rel="alternate" hreflang="it" href="https://confirmad.es/it/solicitar.html">
+<link rel="alternate" hreflang="fr" href="https://confirmad.es/fr/solicitar.html">
+<link rel="alternate" hreflang="x-default" href="https://confirmad.es/solicitar.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConfirMad">
-<meta property="og:title" content="Request a check · ConfirMad">
-<meta property="og:description" content="Book an online verification or in-person check of a Madrid rental listing. Pick a plan, pay securely, get your result in under 12 hours or within 1 day.">
+<meta property="og:title" content="Book a check · ConfirMad">
+<meta property="og:description" content="Book an independent check of a Madrid rental listing. Fill in the listing details, agree to the terms, and pay securely — we start as soon as payment and the details come through.">
 <meta property="og:url" content="https://confirmad.es/solicitar.html">
 <meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Request a check · ConfirMad">
-<meta name="twitter:description" content="Book an in-person check of a Madrid rental listing.">
+<meta name="twitter:title" content="Book a check · ConfirMad">
+<meta name="twitter:description" content="Book an independent check of a Madrid rental listing. Fill in the listing details, agree to the terms, and pay securely — we start as soon as payment and the details come through.">
 <meta name="twitter:image" content="https://confirmad.es/og-image.png">
-<link rel="icon" href="confirmad-favicon-16.png">
+<link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,12 +87,6 @@ header.site{
 
 main{ padding: 40px 0 80px; }
 
-.steps-tag{
-  display:flex; gap:8px; align-items:center; font-size: 0.8rem; color: var(--ink-faint);
-  font-weight:600; margin-bottom: 18px;
-}
-.steps-tag .on{ color: var(--stamp); }
-
 .plan-card{
   background: var(--card); border: 1px solid var(--line); border-radius: 16px;
   padding: 20px 22px; margin-bottom: 28px;
@@ -96,30 +95,27 @@ main{ padding: 40px 0 80px; }
 }
 .plan-card .tag{ font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 4px; }
 .plan-card .amount{ font-family: var(--font-mono); font-size: 1.6rem; font-weight:700; color: var(--ink); }
-.plan-card .turnaround{ font-size: 0.85rem; color: var(--ink-soft); }
+.plan-card .turnaround{ font-size: 0.85rem; color: var(--ink-soft); text-align:right; }
+.plan-card .vat-note{ font-size: 0.68rem; font-weight:400; color: var(--ink-faint); }
+@media (max-width: 480px){
+  .plan-card{ flex-direction: column; align-items: flex-start; gap: 10px; }
+  .plan-card .turnaround{ text-align: left; }
+}
 
 h1.title{ font-size: 1.6rem; margin-bottom: 10px; line-height:1.3; }
 p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
 
 .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
 .field label{ font-size: 0.85rem; font-weight:600; color: var(--ink); }
-.field .hint{ font-size: 0.78rem; color: var(--ink-faint); margin-top:-2px; }
-.field input, .field textarea, .field select{
+.field input, .field textarea{
   background: #fff; border: 1px solid var(--line); color: var(--ink);
   padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size: 0.95rem;
   transition: border-color .15s ease, box-shadow .15s ease; width:100%;
 }
-.field input:focus, .field textarea:focus, .field select:focus{
+.field input:focus, .field textarea:focus{
   outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
 }
 .field textarea{ resize: vertical; min-height: 80px; }
-.plan-card .vat-note{ font-size: 0.68rem; font-weight:400; color: var(--ink-faint); }
-
-.photo-field{
-  background: rgba(47,93,69,0.06); border: 1.5px dashed var(--verified); border-radius: 12px;
-  padding: 14px 16px; margin-bottom: 24px; font-size: 0.88rem; color: var(--ink);
-}
-.photo-field strong{ color: var(--verified); }
 
 .consent-field{
   background: rgba(47,93,69,0.06); border: 1.5px solid var(--line); border-radius: 12px;
@@ -144,31 +140,20 @@ p.lede{ font-size: 0.98rem; margin-bottom: 28px; max-width: 52ch; }
   padding: 13px 22px; border-radius: 999px;
   text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
   transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
-  white-space: nowrap; width:100%; text-align:center;
+  white-space: normal; line-height: 1.3; width:100%; text-align:center;
 }
-#sendBtn{ white-space: normal; line-height: 1.3; }
 .btn:hover{ transform: translateY(-2px); }
 .btn:active{ transform: translateY(0) scale(0.97); }
+.btn:disabled{ opacity:0.7; cursor:default; transform:none; }
 .btn-primary{ background: var(--stamp); color:#fff; box-shadow: 0 10px 20px -10px rgba(47,93,69,0.6); }
 .btn-primary:hover{ background: var(--stamp-dark); box-shadow: 0 14px 24px -8px rgba(47,93,69,0.7); }
 
-#payStep{ display:none; }
-#payStep.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
-@keyframes popIn{
-  0%{ opacity:0; transform: scale(0.96) translateY(8px); }
-  100%{ opacity:1; transform: scale(1) translateY(0); }
-}
-.confirm-box{
-  background: rgba(47,93,69,0.08); border: 1px solid var(--verified); border-radius: 14px;
-  padding: 18px 20px; margin-bottom: 20px; font-size: 0.92rem;
-}
-.confirm-box strong{ color: var(--verified); }
-.pay-amount{ font-family: var(--font-mono); font-size: 2.2rem; font-weight:700; margin: 4px 0 2px; }
-.pay-note{ font-size: 0.8rem; color: var(--ink-faint); text-align:center; margin-top: 10px; }
-.share-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:18px; }
-.share-link{ font-size: 0.82rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
-
 footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+footer a{ color: var(--ink-faint); text-decoration:underline; }
+footer a:hover{ color: var(--ink); }
+footer .lang-switch{ display:flex; justify-content:center; gap:7px; margin-top:10px; font-family: var(--font-mono); font-size:0.74rem; font-weight:600; }
+footer .lang-switch a{ text-decoration:none; }
+footer .lang-switch a.lang-current{ color: var(--stamp); }
 
 .whatsapp-float{
   position:fixed; right:20px; bottom:20px; z-index:60;
@@ -191,181 +176,114 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
 
 <header class="site">
   <div class="wrap" style="display:flex; align-items:center; justify-content:space-between;">
-    <a href="index.html#top" class="brand"><img src="confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
-    <a href="index.html#pricing" class="back">← Back to pricing</a>
+    <a href="/index.html#top" class="brand"><img src="/confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+    <a href="/index.html#pricing" class="back">← Back to pricing</a>
   </div>
 </header>
 
 <main>
   <div class="wrap">
 
-    <div id="formStep">
-      <div class="steps-tag"><span class="on">1. Details</span> · <span>2. Pay</span></div>
-
-      <div class="plan-card">
-        <div>
-          <div class="tag" id="planTag">Express anti-scam check</div>
-          <div class="amount" id="planAmount">€29.85 <span class="vat-note">VAT included</span></div>
-        </div>
-        <div class="turnaround" id="planTurnaround">Delivered in under 12 hours</div>
+    <div class="plan-card">
+      <div>
+        <div class="tag" id="planTag">In-person visit</div>
+        <div class="amount" id="planAmount">€59.99 <span class="vat-note">VAT included</span></div>
       </div>
-
-      <h1 class="title">Tell us about the listing</h1>
-      <p class="lede">Fill this in and you'll go straight to payment. We start the visit as soon as payment and the listing details come through.</p>
-
-      <form id="detailsForm">
-        <input type="hidden" id="utm_source" name="utm_source">
-        <input type="hidden" id="utm_medium" name="utm_medium">
-        <input type="hidden" id="utm_campaign" name="utm_campaign">
-        <input type="hidden" id="utm_term" name="utm_term">
-        <input type="hidden" id="utm_content" name="utm_content">
-        <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" type="text" placeholder="Jane Smith" required>
-        </div>
-        <div class="field">
-          <label for="email">Your email</label>
-          <input id="email" type="email" placeholder="jane@email.com" required>
-        </div>
-        <div class="field">
-          <label for="phone">Phone or WhatsApp (optional)</label>
-          <input id="phone" type="tel" placeholder="+34 600 000 000">
-        </div>
-        <div class="field">
-          <label for="listing">Listing link or address</label>
-          <input id="listing" type="text" placeholder="Idealista link, or the address" required>
-        </div>
-        <div class="field">
-          <label for="landlord">Landlord's name and contact</label>
-          <input id="landlord" type="text" placeholder="Name, phone or email you have for them">
-        </div>
-        <div class="field">
-          <label for="notes">Anything else we should know</label>
-          <textarea id="notes" placeholder="Move-in date, questions..." required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="howFound">How did you hear about us?</label>
-          <select id="howFound">
-            <option value="">—</option>
-            <option value="esn">ESN</option>
-            <option value="facebook_whatsapp">Facebook group or WhatsApp</option>
-            <option value="reddit">Reddit</option>
-            <option value="google">Google</option>
-            <option value="university">University</option>
-            <option value="friend">A friend</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="discountCode">Discount code (optional)</label>
-          <input id="discountCode" type="text" placeholder="If you have one">
-        </div>
-        <div class="field">
-          <label for="listingUrl">Link to the listing</label>
-          <input id="listingUrl" type="text" placeholder="https://...">
-        </div>
-        <div class="field">
-          <label for="listingPlatform">Where is it listed?</label>
-          <select id="listingPlatform">
-            <option value="">—</option>
-            <option value="idealista">Idealista</option>
-            <option value="fotocasa">Fotocasa</option>
-            <option value="airbnb">Airbnb / Booking</option>
-            <option value="badi">Badi / roommate site</option>
-            <option value="facebook">Facebook group / Marketplace</option>
-            <option value="direct">Sent directly, no public listing</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="urgency">When do you need this by?</label>
-          <input id="urgency" type="text" placeholder="e.g. before Friday, no rush...">
-        </div>
-
-        <div class="photo-field">
-          <strong>About photos:</strong> once you submit this form, send the listing photos to us on WhatsApp or by replying to the confirmation email.
-        </div>
-
-        <div class="consent-field">
-          <label>
-            <input type="checkbox" id="consentStart" required>
-            <span>I ask ConfirMad to start the service within the 14-day withdrawal period.</span>
-          </label>
-        </div>
-        <div class="consent-field">
-          <label>
-            <input type="checkbox" id="consentWithdrawal" required>
-            <span>I understand that once the service has been fully performed I lose my right of withdrawal, and that if I withdraw after it has started I will pay for the part already provided. <a href="terminos.html#withdrawal">See our terms</a>.</span>
-          </label>
-        </div>
-        <div class="consent-field">
-          <label>
-            <input type="checkbox" id="consentTerms" required>
-            <span>I accept the <a href="terminos.html" target="_blank">Terms of Service</a> and the <a href="privacidad.html" target="_blank">Privacy Policy</a>.</span>
-          </label>
-        </div>
-        <div class="consent-field">
-          <label>
-            <input type="checkbox" id="consentMarketing">
-            <span>I'd also like to receive occasional emails about ConfirMad (optional).</span>
-          </label>
-        </div>
-
-        <div class="form-error" id="formError">
-          Something went wrong sending your details. Please try again, or email us directly at <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a>.
-        </div>
-
-        <button type="submit" class="btn btn-primary" id="sendBtn">Continue to payment (order with obligation to pay) →</button>
-      </form>
+      <div class="turnaround" id="planTurnaround">Visit within 24 h of the landlord confirming a time</div>
     </div>
 
-    <div id="payStep">
-      <div class="steps-tag"><span>1. Details</span> · <span class="on">2. Pay</span></div>
+    <h1 class="title">Tell us about the listing</h1>
+    <p class="lede">Fill this in and you'll go straight to secure payment. We start as soon as payment and the listing details come through.</p>
 
-      <div class="confirm-box">
-        <strong>Got it.</strong> Your details have been sent to us — don't forget to send the listing photos by WhatsApp or email too. Now just pay to confirm the check.
+    <form id="detailsForm">
+      <input type="hidden" id="utm_source" name="utm_source">
+      <input type="hidden" id="utm_medium" name="utm_medium">
+      <input type="hidden" id="utm_campaign" name="utm_campaign">
+      <input type="hidden" id="utm_term" name="utm_term">
+      <input type="hidden" id="utm_content" name="utm_content">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" type="text" placeholder="Jane Smith" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Your email</label>
+        <input id="email" type="email" placeholder="jane@email.com" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="phone">Phone or WhatsApp (optional)</label>
+        <input id="phone" type="tel" placeholder="+34 600 000 000" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="listing">Listing link or address</label>
+        <input id="listing" type="text" placeholder="Idealista link, or the address" required>
+      </div>
+      <div class="field">
+        <label for="landlord">Landlord's name and contact (optional)</label>
+        <input id="landlord" type="text" placeholder="Name, phone or email you have for them">
+      </div>
+      <div class="field">
+        <label for="notes">Anything else we should know (optional)</label>
+        <textarea id="notes" placeholder="Move-in date, questions..."></textarea>
       </div>
 
-      <div class="plan-card" style="flex-direction:column; align-items:center; text-align:center;">
-        <div class="tag" id="payPlanTag">Express anti-scam check</div>
-        <div class="pay-amount" id="payAmount">€29.85</div>
-        <div class="vat-note">VAT included</div>
-        <div class="turnaround" id="payTurnaround">Delivered in under 12 hours</div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentStart" required>
+          <span>I ask ConfirMad to start the service within the 14-day withdrawal period.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentWithdrawal" required>
+          <span>I understand that once the service has been fully performed I lose my right of withdrawal, and that if I withdraw after it has started I will pay for the part already provided. <a href="/terminos.html#withdrawal">See our terms</a>.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentTerms" required>
+          <span>I accept the <a href="/terminos.html" target="_blank">Terms of Service</a> and the <a href="/privacidad.html" target="_blank">Privacy Policy</a>.</span>
+        </label>
+      </div>
+      <div class="consent-field">
+        <label>
+          <input type="checkbox" id="consentMarketing">
+          <span>I'd also like to receive occasional emails about ConfirMad (optional).</span>
+        </label>
       </div>
 
-      <a id="payButton" class="btn btn-primary" href="#" target="_top">Pay now →</a>
-      <p class="pay-note" id="payNote">You'll pay securely on Stripe's page. We start the check as soon as payment goes through.</p>
-      <div class="share-row">
-        <a id="shareWhatsApp" href="#" target="_blank" rel="noopener" class="share-link">Send this to whoever is paying (WhatsApp)</a>
-        <a id="shareEmail" href="#" class="share-link">Send this to whoever is paying (Email)</a>
-      </div>
-    </div>
+      <div class="form-error" id="formError"></div>
+
+      <button type="submit" class="btn btn-primary" id="sendBtn">Continue to payment (order with obligation to pay) →</button>
+    </form>
 
   </div>
 </main>
 
 <footer>
-  ConfirMad · Madrid, Spain · Not a law firm.<br>
-  <a href="aviso-legal.html">Legal notice</a> · <a href="privacidad.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <a href="terminos.html">Terms</a>
+  ConfirMad · Madrid, Spain · Not a law firm. We verify listings, not contracts.<br>
+  <a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a>
+  <div class="lang-switch"><a href="https://confirmad.es/solicitar.html" class="lang-current">EN</a> · <a href="https://confirmad.es/es/solicitar.html">ES</a> · <a href="https://confirmad.es/it/solicitar.html">IT</a> · <a href="https://confirmad.es/fr/solicitar.html">FR</a></div>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 <script>
-  try { emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' }); } catch (e) { console.warn('EmailJS failed to load:', e); }
+  var PLANS = {"online": {"name": "Express online check", "price": "€29.85", "turnaround": "Result in under 12 hours", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "In-person visit", "price": "€59.99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Live visit", "price": "€99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}};
+  var REQ = {"submitting_button": "Taking you to payment…", "submit_button": "Continue to payment (order with obligation to pay) →", "error_prefix": "Something went wrong sending your details", "error_fallback": "Please try again, or email us directly at contacto@confirmad.es.", "reference_label": "Your reference"};
+  var STRIPE_LOCALE = "en";
 
   function isValidEmail(value){
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  function sendAutoReply(templateId, toEmail, toName, extra){
-    if (!isValidEmail(toEmail)) return;
+  function sendAutoReply(toEmail, toName, extra){
+    if (!isValidEmail(toEmail) || typeof emailjs === 'undefined') return;
     try {
-      emailjs.send('service_wa43yg8', templateId, Object.assign({
+      emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' });
+      emailjs.send('service_wa43yg8', 'template_ykjy3pj', Object.assign({
         to_email: toEmail, email: toEmail, reply_to: toEmail,
         to_name: toName, name: toName
       }, extra || {}))
@@ -373,44 +291,29 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     } catch (e) { console.warn('Auto-reply email failed:', e); }
   }
 
-  var PLANS = {
-    online: {
-      tag: 'Express anti-scam check', amount: '€29.85', turnaround: 'Delivered in under 12 hours',
-      stripe: 'https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07'
-    },
-    visit: {
-      tag: 'In-person visit', amount: '€59.99', turnaround: 'Within 1 day of the landlord confirming a time',
-      stripe: 'https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01'
-    },
-    live: {
-      tag: 'Live visit', amount: '€99', turnaround: 'Within 1 day',
-      stripe: 'https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04'
+  function generateReference(){
+    var now = new Date();
+    var pad = function(n){ return String(n).padStart(2, '0'); };
+    var stamp = '' + now.getFullYear() + pad(now.getMonth() + 1) + pad(now.getDate()) + pad(now.getHours()) + pad(now.getMinutes());
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var suffix = '';
+    if (window.crypto && window.crypto.getRandomValues){
+      var bytes = new Uint8Array(4);
+      window.crypto.getRandomValues(bytes);
+      for (var i = 0; i < 4; i++) suffix += chars[bytes[i] % chars.length];
+    } else {
+      for (var j = 0; j < 4; j++) suffix += chars[Math.floor(Math.random() * chars.length)];
     }
-  };
+    return 'CM-' + stamp + '-' + suffix;
+  }
 
   var params = new URLSearchParams(window.location.search);
-  var planKey = PLANS[params.get('plan')] ? params.get('plan') : 'online';
+  var planKey = PLANS[params.get('plan')] ? params.get('plan') : 'visit';
   var plan = PLANS[planKey];
 
-  document.getElementById('planTag').textContent = plan.tag;
-  document.getElementById('planAmount').innerHTML = plan.amount + ' <span class="vat-note">VAT included</span>';
+  document.getElementById('planTag').textContent = plan.name;
+  document.getElementById('planAmount').innerHTML = plan.price + ' <span class="vat-note">VAT included</span>';
   document.getElementById('planTurnaround').textContent = plan.turnaround;
-  document.getElementById('payPlanTag').textContent = plan.tag;
-  document.getElementById('payAmount').textContent = plan.amount;
-  document.getElementById('payTurnaround').textContent = plan.turnaround;
-
-  var payButton = document.getElementById('payButton');
-  if (plan.stripe.indexOf('https://buy.stripe.com/') === 0){
-    payButton.href = plan.stripe;
-    payButton.target = '_top';
-    payButton.textContent = 'Pay ' + plan.amount + ' now →';
-  } else {
-    payButton.href = 'https://wa.me/34639589180?text=' + encodeURIComponent('Hi, I\'d like to book a ' + plan.tag + ' (' + plan.amount + ') for a Madrid listing.');
-    payButton.target = '_blank';
-    payButton.rel = 'noopener';
-    payButton.textContent = 'Message us to pay →';
-    document.getElementById('payNote').textContent = plan.tag + ' isn\'t set up for card payment yet — message us on WhatsApp and we\'ll arrange it directly.';
-  }
 
   var utmParams = {};
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k){
@@ -420,18 +323,17 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     if (hidden) hidden.value = v;
   });
 
-  var shareText = "I'm using ConfirMad to verify a Madrid rental before paying anything — thought you should see this too: " + window.location.href;
-  var shareWhatsApp = document.getElementById('shareWhatsApp');
-  var shareEmail = document.getElementById('shareEmail');
-  if (shareWhatsApp) shareWhatsApp.href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
-  if (shareEmail) shareEmail.href = 'mailto:?subject=' + encodeURIComponent('A listing I\'m checking with ConfirMad') + '&body=' + encodeURIComponent(shareText);
-
   var form = document.getElementById('detailsForm');
-  var formStep = document.getElementById('formStep');
-  var payStep = document.getElementById('payStep');
   var sendBtn = document.getElementById('sendBtn');
   var formError = document.getElementById('formError');
   var WEB3FORMS_KEY = 'a066c66c-8b2b-4320-893c-7fd55cf355e6';
+
+  function withTimeout(promise, ms){
+    return new Promise(function(resolve, reject){
+      var timer = setTimeout(function(){ reject(new Error('timeout')); }, ms);
+      promise.then(function(v){ clearTimeout(timer); resolve(v); }, function(e){ clearTimeout(timer); reject(e); });
+    });
+  }
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -442,33 +344,33 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
     var listing = document.getElementById('listing').value;
     var landlord = document.getElementById('landlord').value;
     var notes = document.getElementById('notes').value;
-    var howFound = document.getElementById('howFound').value;
-    var discountCode = document.getElementById('discountCode').value;
-    var listingUrl = document.getElementById('listingUrl').value;
-    var listingPlatform = document.getElementById('listingPlatform').value;
-    var urgency = document.getElementById('urgency').value;
     var consentStart = document.getElementById('consentStart').checked;
     var consentWithdrawal = document.getElementById('consentWithdrawal').checked;
     var consentTerms = document.getElementById('consentTerms').checked;
     var consentMarketing = document.getElementById('consentMarketing').checked;
     var consentTimestamp = new Date().toISOString();
+    var reference = generateReference();
 
     formError.classList.remove('show');
+
+    try {
+      sessionStorage.setItem('confirmad_order', JSON.stringify({
+        reference: reference, plan: planKey, planName: plan.name, amount: plan.price,
+        turnaround: plan.turnaround, name: name, email: email, phone: phone,
+        listing: listing, lang: STRIPE_LOCALE, createdAt: consentTimestamp
+      }));
+    } catch (err) { console.warn('sessionStorage unavailable:', err); }
 
     var utmLine = Object.keys(utmParams).length
       ? Object.keys(utmParams).map(function(k){ return k + '=' + utmParams[k]; }).join(', ')
       : '(none)';
 
     var message =
-      'Plan: ' + plan.tag + ' (' + plan.amount + ', VAT included)\n' +
+      'Reference: ' + reference + '\n' +
+      'Plan: ' + plan.name + ' (' + plan.price + ', VAT included)\n' +
       'Phone/WhatsApp: ' + phone + '\n' +
       'Listing: ' + listing + '\n' +
-      'Listing link: ' + listingUrl + '\n' +
-      'Listed on: ' + listingPlatform + '\n' +
       'Landlord contact: ' + landlord + '\n' +
-      'How they heard about us: ' + howFound + '\n' +
-      'Discount code: ' + discountCode + '\n' +
-      'Needed by: ' + urgency + '\n' +
       'UTM: ' + utmLine + '\n' +
       'Notes: ' + notes + '\n' +
       '--- Consent record (' + consentTimestamp + ') ---\n' +
@@ -478,41 +380,43 @@ footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(
       'Opted in to marketing emails: ' + consentMarketing;
 
     sendBtn.disabled = true;
-    sendBtn.textContent = 'Sending…';
+    sendBtn.textContent = REQ.submitting_button;
 
-    fetch('https://api.web3forms.com/submit', {
+    withTimeout(fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
         access_key: WEB3FORMS_KEY,
-        subject: plan.tag + ' request — ' + name,
+        subject: plan.name + ' request — ' + name + ' (' + reference + ')',
         from_name: name,
         name: name,
         email: email,
         phone: phone,
         message: message
       })
-    })
-    .then(function(res){ return res.json(); })
+    }).then(function(res){ return res.json(); }), 8000)
     .then(function(data){
       if (!data.success){ throw new Error(data.message || 'Web3Forms error'); }
-      sendAutoReply('template_ykjy3pj', email, name, {
-        plan_name: plan.tag,
-        plan_amount: plan.amount,
+      sendAutoReply(email, name, {
+        reference: reference,
+        plan_name: plan.name,
+        plan_amount: plan.price,
         plan_turnaround: plan.turnaround,
         consent_start: consentStart ? 'Yes' : 'No',
         consent_withdrawal: consentWithdrawal ? 'Yes' : 'No',
         consent_timestamp: consentTimestamp,
         listing: listing
       });
-      formStep.style.display = 'none';
-      payStep.classList.add('show');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var stripeUrl = plan.stripe
+        + '?prefilled_email=' + encodeURIComponent(email)
+        + '&client_reference_id=' + encodeURIComponent(reference)
+        + '&locale=' + encodeURIComponent(STRIPE_LOCALE);
+      window.location.href = stripeUrl;
     })
     .catch(function(err){
       sendBtn.disabled = false;
-      sendBtn.textContent = 'Continue to payment (order with obligation to pay) →';
-      formError.textContent = 'Something went wrong sending your details (' + err.message + '). Please try again, or email us directly at contacto@confirmad.es.';
+      sendBtn.textContent = REQ.submit_button;
+      formError.textContent = REQ.error_prefix + ' (' + err.message + '). ' + REQ.error_fallback;
       formError.classList.add('show');
     });
   });

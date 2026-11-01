@@ -14,9 +14,24 @@
     "jsonld_offer_live": "Everything in the in-person visit, plus a live video call from inside the flat."
   },
   "plans": {
-    "online": { "name": "Express online check", "price": "€29.85", "turnaround": "Result in under 12 hours", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07" },
-    "visit": { "name": "In-person visit", "price": "€59.99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01" },
-    "live": { "name": "Live visit", "price": "€99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04" }
+    "online": {
+      "name": "Express online check",
+      "price": "€29.85",
+      "turnaround": "Result in under 12 hours",
+      "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"
+    },
+    "visit": {
+      "name": "In-person visit",
+      "price": "€59.99",
+      "turnaround": "Visit within 24 h of the landlord confirming a time",
+      "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"
+    },
+    "live": {
+      "name": "Live visit",
+      "price": "€99",
+      "turnaround": "Visit within 24 h of the landlord confirming a time",
+      "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"
+    }
   },
   "nav": {
     "how": "How it works",
@@ -211,12 +226,26 @@
   },
   "check_js": {
     "district_labels": {
-      "centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín",
-      "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán",
-      "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo",
-      "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina",
-      "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas",
-      "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"
+      "centro": "Centro",
+      "salamanca": "Salamanca",
+      "chamberi": "Chamberí",
+      "chamartin": "Chamartín",
+      "retiro": "Retiro",
+      "arganzuela": "Arganzuela",
+      "moncloa-aravaca": "Moncloa-Aravaca",
+      "tetuan": "Tetuán",
+      "ciudad-lineal": "Ciudad Lineal",
+      "hortaleza": "Hortaleza",
+      "fuencarral-el-pardo": "Fuencarral-El Pardo",
+      "san-blas-canillejas": "San Blas-Canillejas",
+      "barajas": "Barajas",
+      "latina": "Latina",
+      "carabanchel": "Carabanchel",
+      "usera": "Usera",
+      "puente-de-vallecas": "Puente de Vallecas",
+      "villa-de-vallecas": "Villa de Vallecas",
+      "vicalvaro": "Vicálvaro",
+      "villaverde": "Villaverde"
     },
     "price_severe_title": "Price looks unusually low for {district}",
     "price_severe_detail": "That works out to about €{perM2}/m², well under the typical €{low}–€{high}/m² for this area. Unrealistically cheap listings are one of the most common lures in rental scams.",
@@ -254,5 +283,33 @@
     "copy_text_checked_at": "Checked at",
     "copied_to_clipboard": "Copied to clipboard",
     "link_copied": "Link copied"
+  },
+  "request": {
+    "meta_title": "Book a check · ConfirMad",
+    "meta_description": "Book an independent check of a Madrid rental listing. Fill in the listing details, agree to the terms, and pay securely — we start as soon as payment and the details come through.",
+    "back_link": "← Back to pricing",
+    "title": "Tell us about the listing",
+    "lede": "Fill this in and you'll go straight to secure payment. We start as soon as payment and the listing details come through.",
+    "name_label": "Your name",
+    "name_placeholder": "Jane Smith",
+    "email_label": "Your email",
+    "email_placeholder": "jane@email.com",
+    "phone_label": "Phone or WhatsApp (optional)",
+    "phone_placeholder": "+34 600 000 000",
+    "listing_label": "Listing link or address",
+    "listing_placeholder": "Idealista link, or the address",
+    "landlord_label": "Landlord's name and contact (optional)",
+    "landlord_placeholder": "Name, phone or email you have for them",
+    "notes_label": "Anything else we should know (optional)",
+    "notes_placeholder": "Move-in date, questions...",
+    "consent_start": "I ask ConfirMad to start the service within the 14-day withdrawal period.",
+    "consent_withdrawal": "I understand that once the service has been fully performed I lose my right of withdrawal, and that if I withdraw after it has started I will pay for the part already provided. <a href=\"/terminos.html#withdrawal\">See our terms</a>.",
+    "consent_terms": "I accept the <a href=\"/terminos.html\" target=\"_blank\">Terms of Service</a> and the <a href=\"/privacidad.html\" target=\"_blank\">Privacy Policy</a>.",
+    "consent_marketing": "I'd also like to receive occasional emails about ConfirMad (optional).",
+    "submit_button": "Continue to payment (order with obligation to pay) →",
+    "submitting_button": "Taking you to payment…",
+    "error_prefix": "Something went wrong sending your details",
+    "error_fallback": "Please try again, or email us directly at contacto@confirmad.es.",
+    "reference_label": "Your reference"
   }
 }
