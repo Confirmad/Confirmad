@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="dfede15">
+<meta name="confirmad-build" content="8ba3b9c">
 <title>Verifica gratuita dei segnali d'allarme · ConfirMad</title>
 <meta name="description" content="Inserisci i dettagli di un annuncio di affitto a Madrid e ottieni subito una verifica gratuita dei segnali d'allarme più comuni: prezzo poco realistico, pagamento prima della visita, niente videochiamata, e altro.">
 <link rel="canonical" href="https://confirmad.es/it/check.html">
@@ -410,8 +410,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">Questa è una verifica rapida basata su schemi di truffa comuni — considera solo quello che hai indicato, niente di più. Non è prova di nulla, e non può sostituire qualcuno che verifichi di persona che l'appartamento è reale.</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Verificalo online a 29,85 €</a>
-          <a href="index.html#faq" class="btn btn-outline">Perché una verifica di persona?</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-primary" id="ctaPrimary" data-plan="online" data-position="check_result">Verificalo online a 29,85 €</a>
+          <a href="index.html#faq" class="btn btn-outline" id="ctaSecondary">Perché una verifica di persona?</a>
         </div>
       </div>
 
@@ -442,7 +442,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
 (function(){
   'use strict';
 
-  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "Il prezzo sembra insolitamente basso per {district}", "price_severe_detail": "Corrisponde a circa {perM2} €/m², ben al di sotto del range tipico di {low}–{high} €/m² per questa zona. Gli annunci con prezzi irrealisticamente bassi sono una delle esche più comuni nelle truffe sugli affitti.", "price_moderate_title": "Il prezzo è un po' basso per {district}", "price_moderate_detail": "Circa {perM2} €/m², leggermente sotto il range tipico di {low}–{high} €/m² per questa zona. Non allarmante da solo, ma vale la pena riconsiderarlo insieme al resto.", "price_ok_title": "Il prezzo sembra realistico per {district}", "price_ok_detail": "Circa {perM2} €/m², in linea con il range tipico di {low}–{high} €/m² per questa zona.", "abroad_title": "Il padrone di casa dice di essere all'estero", "abroad_detail": "Non può mostrare l'appartamento di persona perché dice di essere attualmente fuori dal paese. I padroni di casa legittimi con un contatto locale o un'agenzia di solito possono comunque organizzare una visita.", "transfer_title": "Pagamento richiesto prima di una visita", "transfer_detail": "Ti viene chiesto di trasferire una caparra o l'affitto prima di aver effettivamente visto l'appartamento: è uno dei segnali più chiari di una truffa sugli affitti.", "wu_title": "Chiede di pagare tramite Western Union, cripto o carte regalo", "wu_detail": "Nessun padrone di casa legittimo in Spagna chiede questo. Esistono perché sono quasi impossibili da tracciare o recuperare.", "novideo_title": "Ha rifiutato una videochiamata", "novideo_detail": "Un vero padrone di casa che mostra un appartamento reale, vuoto o attualmente affittato, di solito non ha problemi a fare una breve videochiamata per dimostrarlo.", "rush_title": "Ti ha spinto a decidere in fretta", "rush_detail": "L'urgenza del \"c'è un altro interessato\" è una tattica classica per impedirti di controllare bene le cose prima di pagare.", "lang_title": "Errori strani di ortografia o grammatica nell'annuncio", "lang_detail": "A volte è il segno di un annuncio-truffa copiato e incollato o tradotto automaticamente — anche se molti annunci genuini hanno comunque refusi, quindi da solo questo non dimostra nulla.", "platform_title": "Condiviso al di fuori di una piattaforma di annunci verificata", "platform_detail_direct": "Inviato direttamente, senza alcun annuncio pubblico con cui confrontarlo.", "platform_detail_facebook": "I gruppi Facebook e Marketplace hanno poca o nessuna verifica degli annunci.", "platform_detail_suffix": "Più facile da falsificare rispetto a un annuncio su una piattaforma come Idealista o Fotocasa.", "no_flags": "Non è ancora stato inserito nessun dettaglio che corrisponda a segnali d'allarme comuni.", "badge_green": "Rischio basso", "head_green": "Nessun segnale d'allarme importante rilevato", "sub_green": "Niente qui corrisponde ai soliti schemi di truffa. È un buon segno — non garantisce che l'annuncio sia genuino, ma non c'è nulla di evidente di cui preoccuparsi per ora.", "badge_amber": "Alcuni dubbi", "head_amber": "Alcune cose da ricontrollare", "sub_amber": "Niente qui è definitivo da solo, ma un paio di dettagli meritano conferma prima di inviare soldi.", "badge_red": "Rischio alto", "head_red": "Diversi segnali d'allarme comuni nelle truffe", "sub_red": "Questa combinazione di dettagli corrisponde a schemi che vediamo spesso nelle truffe sugli affitti. Ti consigliamo vivamente di non inviare soldi finché qualcuno non l'abbia verificato di persona.", "copy_text_title": "Verifica gratuita ConfirMad —", "copy_text_checked_at": "Verificato il", "copied_to_clipboard": "Copiato negli appunti", "link_copied": "Link copiato"};
+  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "Il prezzo sembra insolitamente basso per {district}", "price_severe_detail": "Corrisponde a circa {perM2} €/m², ben al di sotto del range tipico di {low}–{high} €/m² per questa zona. Gli annunci con prezzi irrealisticamente bassi sono una delle esche più comuni nelle truffe sugli affitti.", "price_moderate_title": "Il prezzo è un po' basso per {district}", "price_moderate_detail": "Circa {perM2} €/m², leggermente sotto il range tipico di {low}–{high} €/m² per questa zona. Non allarmante da solo, ma vale la pena riconsiderarlo insieme al resto.", "price_ok_title": "Il prezzo sembra realistico per {district}", "price_ok_detail": "Circa {perM2} €/m², in linea con il range tipico di {low}–{high} €/m² per questa zona.", "abroad_title": "Il padrone di casa dice di essere all'estero", "abroad_detail": "Non può mostrare l'appartamento di persona perché dice di essere attualmente fuori dal paese. I padroni di casa legittimi con un contatto locale o un'agenzia di solito possono comunque organizzare una visita.", "transfer_title": "Pagamento richiesto prima di una visita", "transfer_detail": "Ti viene chiesto di trasferire una caparra o l'affitto prima di aver effettivamente visto l'appartamento: è uno dei segnali più chiari di una truffa sugli affitti.", "wu_title": "Chiede di pagare tramite Western Union, cripto o carte regalo", "wu_detail": "Nessun padrone di casa legittimo in Spagna chiede questo. Esistono perché sono quasi impossibili da tracciare o recuperare.", "novideo_title": "Ha rifiutato una videochiamata", "novideo_detail": "Un vero padrone di casa che mostra un appartamento reale, vuoto o attualmente affittato, di solito non ha problemi a fare una breve videochiamata per dimostrarlo.", "rush_title": "Ti ha spinto a decidere in fretta", "rush_detail": "L'urgenza del \"c'è un altro interessato\" è una tattica classica per impedirti di controllare bene le cose prima di pagare.", "lang_title": "Errori strani di ortografia o grammatica nell'annuncio", "lang_detail": "A volte è il segno di un annuncio-truffa copiato e incollato o tradotto automaticamente — anche se molti annunci genuini hanno comunque refusi, quindi da solo questo non dimostra nulla.", "platform_title": "Condiviso al di fuori di una piattaforma di annunci verificata", "platform_detail_direct": "Inviato direttamente, senza alcun annuncio pubblico con cui confrontarlo.", "platform_detail_facebook": "I gruppi Facebook e Marketplace hanno poca o nessuna verifica degli annunci.", "platform_detail_suffix": "Più facile da falsificare rispetto a un annuncio su una piattaforma come Idealista o Fotocasa.", "no_flags": "Non è ancora stato inserito nessun dettaglio che corrisponda a segnali d'allarme comuni.", "badge_green": "Rischio basso", "head_green": "Nessun segnale d'allarme importante rilevato", "sub_green": "Niente qui corrisponde ai soliti schemi di truffa. È un buon segno — non garantisce che l'annuncio sia genuino, ma non c'è nulla di evidente di cui preoccuparsi per ora.", "badge_amber": "Alcuni dubbi", "head_amber": "Alcune cose da ricontrollare", "sub_amber": "Niente qui è definitivo da solo, ma un paio di dettagli meritano conferma prima di inviare soldi.", "badge_red": "Rischio alto", "head_red": "Diversi segnali d'allarme comuni nelle truffe", "sub_red": "Questa combinazione di dettagli corrisponde a schemi che vediamo spesso nelle truffe sugli affitti. Ti consigliamo vivamente di non inviare soldi finché qualcuno non l'abbia verificato di persona.", "copy_text_title": "Verifica gratuita ConfirMad —", "copy_text_checked_at": "Verificato il", "copied_to_clipboard": "Copiato negli appunti", "link_copied": "Link copiato", "cta_online": "Verificalo online per 29,85 €", "cta_visit": "Prenota una visita per 59,99 €", "cta_faq": "Perché una verifica di persona?", "cta_visit_secondary": "Preferisci che qualcuno visiti l'appartamento di persona? · 59,99 €", "cta_online_secondary": "Oppure fai una verifica online veloce · 29,85 €"};
 
   function t(str, vars){
     return str.replace(/\{(\w+)\}/g, function(_, k){ return (vars && (k in vars)) ? vars[k] : ''; });
@@ -503,6 +503,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
   var resultHeadline = document.getElementById('resultHeadline');
   var resultSub = document.getElementById('resultSub');
   var flagList = document.getElementById('flagList');
+  var ctaPrimary = document.getElementById('ctaPrimary');
+  var ctaSecondary = document.getElementById('ctaSecondary');
 
   var ICONS = {
     high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
@@ -614,6 +616,33 @@ footer .lang-switch a.lang-current{ color:#fff; }
       li.className = 'flag-item sev-ok';
       li.innerHTML = severityIcon('ok') + '<span>' + I18N.no_flags + '</span>';
       flagList.appendChild(li);
+    }
+
+    // Route the result CTAs by risk level: a red result goes straight to
+    // the plan that actually resolves it (a human visiting in person),
+    // amber offers the online check with a secondary nudge toward a visit,
+    // and green keeps pointing at the online check with the usual FAQ link.
+    if (result.level === 'red') {
+      ctaPrimary.href = '/solicitar.html?plan=visit';
+      ctaPrimary.textContent = I18N.cta_visit;
+      ctaPrimary.setAttribute('data-plan', 'visit');
+      ctaSecondary.href = '/solicitar.html?plan=online';
+      ctaSecondary.textContent = I18N.cta_online_secondary;
+      ctaSecondary.setAttribute('data-plan', 'online');
+    } else if (result.level === 'amber') {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = '/solicitar.html?plan=visit';
+      ctaSecondary.textContent = I18N.cta_visit_secondary;
+      ctaSecondary.setAttribute('data-plan', 'visit');
+    } else {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = 'index.html#faq';
+      ctaSecondary.textContent = I18N.cta_faq;
+      ctaSecondary.removeAttribute('data-plan');
     }
 
     resultSection.classList.add('show');

@@ -282,7 +282,12 @@
     "copy_text_title": "Vérification gratuite ConfirMad —",
     "copy_text_checked_at": "Vérifié le",
     "copied_to_clipboard": "Copié dans le presse-papiers",
-    "link_copied": "Lien copié"
+    "link_copied": "Lien copié",
+    "cta_online": "Vérifiez-le en ligne pour 29,85 €",
+    "cta_visit": "Réservez une visite pour 59,99 €",
+    "cta_faq": "Pourquoi une vérification sur place ?",
+    "cta_visit_secondary": "Vous préférez qu'une personne visite l'appartement ? · 59,99 €",
+    "cta_online_secondary": "Ou faites une vérification en ligne rapide · 29,85 €"
   },
   "request": {
     "meta_title": "Réserver une vérification · ConfirMad",

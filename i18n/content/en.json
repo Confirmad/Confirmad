@@ -282,7 +282,12 @@
     "copy_text_title": "ConfirMad free listing check —",
     "copy_text_checked_at": "Checked at",
     "copied_to_clipboard": "Copied to clipboard",
-    "link_copied": "Link copied"
+    "link_copied": "Link copied",
+    "cta_online": "Verify it online for €29.85",
+    "cta_visit": "Book a visit for €59.99",
+    "cta_faq": "Why an in-person check?",
+    "cta_visit_secondary": "Prefer someone to visit in person? · €59.99",
+    "cta_online_secondary": "Or get a quick online check instead · €29.85"
   },
   "request": {
     "meta_title": "Book a check · ConfirMad",

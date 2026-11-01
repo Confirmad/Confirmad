@@ -282,7 +282,12 @@
     "copy_text_title": "Comprobación gratuita de ConfirMad —",
     "copy_text_checked_at": "Comprobado en",
     "copied_to_clipboard": "Copiado al portapapeles",
-    "link_copied": "Enlace copiado"
+    "link_copied": "Enlace copiado",
+    "cta_online": "Verifícalo online por 29,85 €",
+    "cta_visit": "Reserva una visita por 59,99 €",
+    "cta_faq": "¿Por qué una comprobación presencial?",
+    "cta_visit_secondary": "¿Prefieres que alguien visite el piso en persona? · 59,99 €",
+    "cta_online_secondary": "O haz una comprobación online rápida · 29,85 €"
   },
   "request": {
     "meta_title": "Reservar una comprobación · ConfirMad",

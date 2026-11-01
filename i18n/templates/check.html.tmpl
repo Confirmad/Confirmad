@@ -406,8 +406,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">[[check_tool.disclaimer]]</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">[[check_tool.cta_primary]]</a>
-          <a href="index.html#faq" class="btn btn-outline">[[check_tool.cta_secondary]]</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-primary" id="ctaPrimary" data-plan="online" data-position="check_result">[[check_tool.cta_primary]]</a>
+          <a href="index.html#faq" class="btn btn-outline" id="ctaSecondary">[[check_tool.cta_secondary]]</a>
         </div>
       </div>
 
@@ -499,6 +499,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
   var resultHeadline = document.getElementById('resultHeadline');
   var resultSub = document.getElementById('resultSub');
   var flagList = document.getElementById('flagList');
+  var ctaPrimary = document.getElementById('ctaPrimary');
+  var ctaSecondary = document.getElementById('ctaSecondary');
 
   var ICONS = {
     high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
@@ -610,6 +612,33 @@ footer .lang-switch a.lang-current{ color:#fff; }
       li.className = 'flag-item sev-ok';
       li.innerHTML = severityIcon('ok') + '<span>' + I18N.no_flags + '</span>';
       flagList.appendChild(li);
+    }
+
+    // Route the result CTAs by risk level: a red result goes straight to
+    // the plan that actually resolves it (a human visiting in person),
+    // amber offers the online check with a secondary nudge toward a visit,
+    // and green keeps pointing at the online check with the usual FAQ link.
+    if (result.level === 'red') {
+      ctaPrimary.href = '/solicitar.html?plan=visit';
+      ctaPrimary.textContent = I18N.cta_visit;
+      ctaPrimary.setAttribute('data-plan', 'visit');
+      ctaSecondary.href = '/solicitar.html?plan=online';
+      ctaSecondary.textContent = I18N.cta_online_secondary;
+      ctaSecondary.setAttribute('data-plan', 'online');
+    } else if (result.level === 'amber') {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = '/solicitar.html?plan=visit';
+      ctaSecondary.textContent = I18N.cta_visit_secondary;
+      ctaSecondary.setAttribute('data-plan', 'visit');
+    } else {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = 'index.html#faq';
+      ctaSecondary.textContent = I18N.cta_faq;
+      ctaSecondary.removeAttribute('data-plan');
     }
 
     resultSection.classList.add('show');
