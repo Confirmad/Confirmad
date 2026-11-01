@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="e7b94fe">
+<meta name="confirmad-build" content="33db2d2">
 <title>ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare</title>
 <meta name="description" content="Prima di pagare qualsiasi cosa, una terza parte imparziale va in un appartamento a Madrid e verifica che lo stato, le condizioni e il prezzo corrispondano a quanto promesso. E se è una truffa, la scopriamo anche quella.">
 <link rel="canonical" href="https://confirmad.es/it/">
@@ -17,11 +17,11 @@
 <meta property="og:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
 <meta property="og:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
 <meta property="og:url" content="https://confirmad.es/it/">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
 <meta name="twitter:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -43,8 +43,10 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
     --paper: #EEF1EF;
@@ -747,10 +749,16 @@
           </div>
           <div class="photo-row">
             <div class="photo">
-              <img src="/image1.jpg" alt="Facciata dell'edificio in C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <picture>
+                <source srcset="/image-salon.webp" type="image/webp">
+                <img src="/image-salon.jpg" alt="Salotto fotografato durante una visita ConfirMad" width="800" height="534" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </picture>
             </div>
             <div class="photo">
-              <img src="/image2.jpg" alt="Ingresso dell'edificio in C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <picture>
+                <source srcset="/image-dormitorio.webp" type="image/webp">
+                <img src="/image-dormitorio.jpg" alt="Camera da letto fotografata durante una visita ConfirMad" width="800" height="534" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </picture>
             </div>
           </div>
           <ul class="checklist">

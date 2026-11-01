@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="confirmad-build" content="e7b94fe">
+<meta name="confirmad-build" content="33db2d2">
 <title>Sample report · ConfirMad</title>
 <meta name="description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
 <link rel="canonical" href="https://confirmad.es/sample-report.html">
@@ -12,11 +12,11 @@
 <meta property="og:title" content="Sample report · ConfirMad">
 <meta property="og:description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
 <meta property="og:url" content="https://confirmad.es/sample-report.html">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sample report · ConfirMad">
 <meta name="twitter:description" content="See exactly what a ConfirMad verification report looks like before you book a check.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -38,8 +38,10 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
   --paper: #EEF1EF;
@@ -571,16 +573,10 @@ footer.site a:hover{ text-decoration:underline; }
         <div class="shot">
           <figure>
             <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
-              <img src="/image1.jpg" alt="Building façade at C/ Fuencarral 45" onerror="this.remove()">
-            </div>
-            <figcaption>Façade and street number, from the pavement.</figcaption>
-          </figure>
-        </div>
-        <div class="shot">
-          <figure>
-            <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 12v7h18v-7"/><path d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M6 19v2M18 19v2"/></svg>
+              <picture>
+                <source srcset="/image-salon.webp" type="image/webp">
+                <img src="/image-salon.jpg" alt="Living room, photographed during the visit" width="800" height="534" loading="lazy" decoding="async" onerror="this.closest('picture').remove()">
+              </picture>
             </div>
             <figcaption>Living room, matching the listing photos.</figcaption>
           </figure>
@@ -588,7 +584,10 @@ footer.site a:hover{ text-decoration:underline; }
         <div class="shot">
           <figure>
             <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M12 4v16M4 12h16"/></svg>
+              <picture>
+                <source srcset="/image-dormitorio.webp" type="image/webp">
+                <img src="/image-dormitorio.jpg" alt="Second bedroom, photographed during the visit" width="800" height="534" loading="lazy" decoding="async" onerror="this.closest('picture').remove()">
+              </picture>
             </div>
             <figcaption>Second bedroom — window faces the courtyard, not the street.</figcaption>
           </figure>
