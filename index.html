@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="f0dd642">
-<title>ConfirMad — Impartial apartment checks in Madrid, before you pay</title>
-<meta name="description" content="Before you pay anything, an impartial third party goes to a Madrid apartment and checks that the condition, the terms and the price match what you were promised. And if it's a scam, we catch that too.">
+<meta name="confirmad-build" content="d309f90">
+<title>ConfirMad — We check the Madrid flat before you pay</title>
+<meta name="description" content="Before you pay anything, an independent person checks a Madrid rental flat: condition, light, noise, the street and a fair price. Report with dated photos. Online check in under 12 hours, visits within 24 h.">
 <link rel="canonical" href="https://confirmad.es/">
 <link rel="alternate" hreflang="en" href="https://confirmad.es/">
 <link rel="alternate" hreflang="es" href="https://confirmad.es/es/">
@@ -14,13 +14,13 @@
 <link rel="alternate" hreflang="x-default" href="https://confirmad.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConfirMad">
-<meta property="og:title" content="ConfirMad — Impartial apartment checks in Madrid, before you pay">
-<meta property="og:description" content="Before you pay, someone impartial goes to see the apartment and checks it's really what they promised.">
+<meta property="og:title" content="ConfirMad — We check the Madrid flat before you pay">
+<meta property="og:description" content="We check the Madrid flat for you, before you pay — condition, price and whether it matches what you were promised.">
 <meta property="og:url" content="https://confirmad.es/">
 <meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ConfirMad — Impartial apartment checks in Madrid, before you pay">
-<meta name="twitter:description" content="Before you pay, someone impartial goes to see the apartment and checks it's really what they promised.">
+<meta name="twitter:title" content="ConfirMad — We check the Madrid flat before you pay">
+<meta name="twitter:description" content="We check the Madrid flat for you, before you pay.">
 <meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
@@ -31,15 +31,15 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "Online and in-person rental listing verification in Madrid: Land Registry check, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "description": "Independent, in-person rental listing checks in Madrid: condition, light, noise, price and terms confirmed before you pay a deposit.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Express anti-scam check: Land Registry, Catastro, reverse photo search, advertiser check and price comparison, with a green/amber/red verdict." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the Express anti-scam check, plus an in-person visit with a written report, dated photos and a price analysis." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express online check", "description": "Land Registry check against the advertiser, reverse photo search, and a price comparison, with a clear verdict." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the online check, plus an in-person visit with a written report, dated photos and a price check." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in the in-person visit, plus a live video call from inside the flat." } }
   ]
 }
 </script>
@@ -47,7 +47,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-
 :root{
     --paper: #EEF1EF;
     --card: #FFFFFF;
@@ -101,8 +100,7 @@
   /* ---------- SCROLL REVEAL ---------- */
   html.has-reveal .section-head,
   html.has-reveal .step,
-  html.has-reveal .who-card,
-  html.has-reveal .check-item,
+  html.has-reveal .get-item,
   html.has-reveal .price-card,
   html.has-reveal .about-photo,
   html.has-reveal .faq-list details{
@@ -111,8 +109,7 @@
   }
   html.has-reveal .section-head.is-visible,
   html.has-reveal .step.is-visible,
-  html.has-reveal .who-card.is-visible,
-  html.has-reveal .check-item.is-visible,
+  html.has-reveal .get-item.is-visible,
   html.has-reveal .price-card.is-visible,
   html.has-reveal .about-photo.is-visible,
   html.has-reveal .faq-list details.is-visible{
@@ -120,12 +117,6 @@
   }
   html.has-reveal .step:nth-child(2){ transition-delay:.08s; }
   html.has-reveal .step:nth-child(3){ transition-delay:.16s; }
-  html.has-reveal .step:nth-child(4){ transition-delay:.24s; }
-  html.has-reveal .check-item:nth-child(2){ transition-delay:.06s; }
-  html.has-reveal .check-item:nth-child(3){ transition-delay:.12s; }
-  html.has-reveal .check-item:nth-child(4){ transition-delay:.18s; }
-  html.has-reveal .check-item:nth-child(5){ transition-delay:.24s; }
-  html.has-reveal .check-item:nth-child(6){ transition-delay:.3s; }
 
   /* ---------- NAV ---------- */
   header.site{
@@ -193,7 +184,7 @@
   }
 
   /* ---------- HERO ---------- */
-  .hero{ padding: 76px 0 88px; position:relative; overflow:hidden; }
+  .hero{ padding: 44px 0 56px; position:relative; overflow:hidden; }
   .hero::before, .hero::after{
     content:""; position:absolute; border-radius:50%; filter: blur(70px);
     z-index:0; pointer-events:none;
@@ -201,17 +192,15 @@
   .hero::before{ width:420px; height:420px; background: var(--stamp); opacity:0.22; top:-180px; right:-140px; }
   .hero::after{ width:340px; height:340px; background: var(--verified); opacity:0.18; bottom:-160px; left:-110px; }
   .hero-grid{
-    display:grid; grid-template-columns: 1fr; gap: 52px; align-items:center;
+    display:grid; grid-template-columns: 1fr; gap: 36px; align-items:center;
     position:relative; z-index:1;
   }
   @media (min-width: 900px){
     .hero-grid{ grid-template-columns: 1.05fr 0.95fr; gap: 40px; }
   }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.82rem; color: var(--stamp); font-weight:600;
-    margin-bottom: 18px;
-    background: rgba(47,93,69,0.1); padding: 6px 12px; border-radius: 999px;
+  .hero-audience{
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--stamp); font-weight:600;
+    margin-bottom: 14px; letter-spacing: 0.01em;
   }
   #report-sample{ animation: floatCard 5s ease-in-out infinite; }
   @keyframes floatCard{
@@ -219,21 +208,41 @@
     50%{ transform: translateY(-10px); }
   }
   @media (prefers-reduced-motion: reduce){ #report-sample{ animation:none; } }
+  @media (max-width: 899px){ #report-sample{ display:none; } }
   .hero h1{
-    font-size: clamp(2.9rem, 4.6vw, 3.5rem);
+    font-size: clamp(1.9rem, 6vw, 3.1rem);
     font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-    max-width: 16ch;
-    margin-bottom: 22px;
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+    max-width: 17ch;
+    margin-bottom: 16px;
   }
   .hero p.lede{
-    font-size: 1.05rem; max-width: 46ch; color: var(--ink-soft);
-    margin-bottom: 28px;
+    font-size: 1.02rem; max-width: 48ch; color: var(--ink-soft);
+    margin-bottom: 22px;
   }
-  .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 10px; }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 12px; }
   .hero-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
-  .hero-note{ font-size: 0.85rem; color: var(--ink-faint); }
+  .hero-secondary-link{
+    display:block; font-size: 0.9rem; color: var(--ink-soft); text-decoration:none; margin-bottom: 18px;
+  }
+  .hero-secondary-link:hover{ color: var(--ink); }
+  .hero-secondary-link u{ color: var(--stamp); text-decoration: underline; }
+  .hero-trust{ font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 18px; line-height:1.5; }
+  .hero-founder{ display:flex; align-items:center; gap:10px; }
+  .hero-founder img{
+    width:40px; height:40px; border-radius:50%; object-fit:cover; flex:none;
+    border:1.5px solid var(--card); box-shadow: 0 0 0 1px var(--line);
+  }
+  .hero-founder span{ font-size: 0.86rem; color: var(--ink-soft); font-weight:500; }
+  .hero-sample-mobile{ display:block; margin-top: 18px; }
+  @media (min-width: 900px){ .hero-sample-mobile{ display:none; } }
+  .hero-sample-mobile a{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    border: 1.5px dashed var(--line); border-radius: 14px;
+    padding: 16px; font-size: 0.9rem; font-weight:600; color: var(--stamp);
+    text-decoration:none; background: rgba(47,93,69,0.05);
+  }
 
   /* ---------- REPORT CARD ---------- */
   .report{
@@ -325,197 +334,28 @@
   }
 
   /* ---------- SECTION SCAFFOLDING ---------- */
-  section{ padding: 72px 0; border-top: 1px solid var(--line); }
-  .section-head{ max-width: 640px; margin-bottom: 40px; }
+  section{ padding: 60px 0; border-top: 1px solid var(--line); }
+  .section-head{ max-width: 640px; margin-bottom: 36px; }
   .section-head h2{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 14px; line-height:1.3; }
-  #check{ background: #E6ECE8; }
-  #why{ background: #E6ECE8; }
+  #get{ background: #E6ECE8; }
 
-  /* ---------- EARLY ACCESS ---------- */
-  #risk{ background: var(--stamp); }
-  #risk .section-head h2{ color: #fff; }
-  #risk .section-head p{ color: #D6E6DC; }
-  #risk .risk-source{ font-size: 0.8rem; color: rgba(255,255,255,0.65); margin: -8px 0 18px; }
-  #risk .risk-source a{ color: rgba(255,255,255,0.9); text-decoration: underline; }
-  #risk .risk-source a:hover{ color: #fff; }
-  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
-  #risk .early-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
-  #risk .stat-highlight{
-    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
-  }
-  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
-  .early-badge{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
-    background:#fff; color: var(--stamp-dark);
-    padding: 7px 14px; border-radius: 999px; margin-bottom: 16px;
-  }
-  .btn-invert{ background:#fff; color: var(--stamp); }
-  .btn-invert:hover{ background: var(--paper); }
-  .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
-  .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
-
-  /* ---------- FREE TOOL CALLOUT ---------- */
-  .free-tool-card{
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;
-    background: rgba(47,93,69,0.07); border: 1.5px solid var(--stamp);
-    border-radius: 20px; padding: 36px 40px;
-  }
-  .free-tool-text{ max-width: 620px; }
-  .free-tool-badge{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
-    background: var(--stamp); color:#fff;
-    padding: 7px 14px; border-radius: 999px; margin-bottom: 14px;
-  }
-  .free-tool-text h2{ font-size: clamp(1.3rem, 2.2vw, 1.6rem); margin-bottom: 10px; }
-  .free-tool-text p{ margin-bottom:0; }
-  .free-tool-cta{ flex:none; }
-  @media (max-width: 700px){ .free-tool-card{ padding: 28px 24px; } }
-
-  /* ---------- ABOUT / FOUNDER ---------- */
-  #about{ background: #E6ECE8; }
-  .about-card{
-    display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;
-    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
-    padding: 40px 32px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
-  }
-  @media (min-width: 760px){ .about-card{ grid-template-columns: auto 1fr; gap: 44px; padding: 44px; } }
-  .about-avatar{
-    width:172px; height:172px; border-radius:50%; flex:none;
-    background: rgba(47,93,69,0.1); color: var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    margin: 0 auto; overflow:hidden;
-  }
-  .about-avatar svg{ width:72px; height:72px; }
-  .about-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .about-quote{
-    font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
-    margin-bottom: 18px;
-  }
-  .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
-  .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
-  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
-  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
-  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
-
-  /* ---------- DECORATIVE RING (used sparingly) ---------- */
-  .ring-deco{ position:relative; overflow:hidden; }
-  .ring-deco::before{
-    content:""; position:absolute; border-radius:50%; pointer-events:none;
-    width:300px; height:300px; border:26px solid var(--stamp); opacity:0.07;
-  }
-  #problem.ring-deco::before{ top:-120px; right:-110px; }
-  #check.ring-deco::before{ bottom:-140px; left:-100px; }
-  .ring-deco > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- STEPS TIMELINE ---------- */
-  #how{ position:relative; }
-  .steps{ position:relative; }
-  .steps::before{
-    content:""; position:absolute; left:0; right:0; top:41px;
-    border-top: 2px dashed var(--line); z-index:0;
-    display:none;
-  }
-  @media (min-width: 860px){ .steps::before{ display:block; } }
-
-  /* ---------- PRICING WATERMARK ---------- */
-  #pricing{ position:relative; overflow:hidden; }
-  #pricing::before{
-    content:""; position:absolute; top:-30px; right:-40px; width:260px; height:260px;
-    background: url('/confirmad-simbolo-sello.png') center/contain no-repeat;
-    opacity:0.05; pointer-events:none;
-  }
-  #pricing > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- FAQ WATERMARK ---------- */
-  #faq{ position:relative; overflow:hidden; }
-  #faq::before{
-    content:"?"; position:absolute; top:-10px; right:-6px; line-height:1;
-    font-family: Georgia, serif; font-weight:700; font-size:9rem; color: var(--ink);
-    opacity:0.07; pointer-events:none;
-  }
-  #faq > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- PROBLEM ---------- */
-  .problem-grid{ display:grid; grid-template-columns: 1fr; gap: 36px; }
-  @media (min-width: 860px){ .problem-grid{ grid-template-columns: 1fr 1fr; gap: 56px; } }
-  .problem-grid p{ max-width: 54ch; font-size: 1.01rem; }
-  .problem-grid .callout{
-    position:relative;
-    font-family: var(--font-mono); font-size: 1.35rem; line-height: 1.4; font-weight: 700; color: var(--ink);
-    border-left: 3px solid var(--stamp); padding: 22px 22px 22px 26px;
-    background: rgba(47,93,69,0.06); border-radius: 0 14px 14px 0;
-  }
-
-  /* ---------- WHY CONFIRMAD ---------- */
-  .why-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 700px){ .why-grid{ grid-template-columns: 1fr 1fr; } }
-  .why-item{
+  /* ---------- WHAT YOU GET ---------- */
+  .get-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px){ .get-grid{ grid-template-columns: 1fr 1fr; } }
+  .get-item{
     padding: 18px 20px; border-radius: 12px;
     background: var(--card); border: 1px solid var(--line);
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .why-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .why-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
-  .why-item p{ font-size: 0.9rem; margin-bottom:0; }
-
-  /* ---------- COMPARISON TABLE ---------- */
-  #compare{ background: #E6ECE8; }
-  .compare-table{ display:flex; flex-direction:column; gap:10px; max-width:860px; }
-  .compare-row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-  .compare-row-head{ display:none; }
-  .compare-label{ font-weight:700; color:var(--ink); font-size:0.92rem; grid-column: 1 / -1; align-self:center; }
-  @media (min-width:700px){
-    .compare-row{ grid-template-columns: 0.85fr 1fr 1fr; align-items:center; gap:14px; }
-    .compare-row-head{ display:grid; }
-    .compare-row-head .compare-cell{
-      background:transparent; border:none; padding:0 14px;
-      font-family:var(--font-mono); font-size:0.76rem; font-weight:700; color: var(--ink-faint);
-      text-transform:uppercase; letter-spacing:0.03em;
-    }
-    .compare-label{ grid-column:auto; }
-  }
-  .compare-cell{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:12px 14px; font-size:0.88rem; color:var(--ink-soft);
-  }
-  .compare-cell.compare-col2{ border-color: var(--stamp); background: rgba(47,93,69,0.07); color: var(--ink); font-weight:600; }
-  .compare-cell[data-label]::before{
-    content: attr(data-label); display:block; font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
-    color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;
-  }
-  @media (min-width:700px){ .compare-cell[data-label]::before{ display:none; } }
-  .compare-closing{
-    font-family: var(--font-mono); font-weight:700; font-size:1.02rem; color:var(--ink); margin-top:20px;
-    border-left:3px solid var(--stamp); padding:14px 18px; background:rgba(47,93,69,0.06);
-    border-radius:0 12px 12px 0; max-width:640px;
-  }
-
-  /* ---------- WHO THIS IS FOR ---------- */
-  .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1000px){ .who-grid{ grid-template-columns: repeat(4, 1fr); } }
-  .who-card{
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 24px 20px;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .who-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .who-icon{
-    width:44px; height:44px; border-radius:12px;
-    background: rgba(47,93,69,0.1); color: var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom: 14px;
-  }
-  .who-icon svg{ width:23px; height:23px; }
-  .who-card h3{ font-size: 1rem; margin-bottom: 6px; font-weight: 600; }
-  .who-card p{ font-size: 0.88rem; margin-bottom:0; }
+  .get-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
+  .get-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
+  .get-item p{ font-size: 0.9rem; margin-bottom:0; }
+  .get-cta{ margin-top: 28px; }
 
   /* ---------- STEPS ---------- */
-  .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; }
-  @media (min-width: 860px){ .steps{ grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+  #how{ position:relative; }
+  .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; position:relative; }
+  @media (min-width: 860px){ .steps{ grid-template-columns: repeat(3, 1fr); gap: 20px; } }
   .step{
     position:relative; z-index:1;
     background: var(--card);
@@ -540,28 +380,32 @@
   .step h3{ font-size: 1.02rem; margin-bottom: 8px; font-weight: 600; }
   .step p{ font-size: 0.92rem; margin-bottom:0; }
 
-  /* ---------- CHECK LIST SECTION ---------- */
-  .check-group-label{
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; color: var(--stamp);
-    text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 14px;
+  /* ---------- GUARANTEE CALLOUT ---------- */
+  .guarantee-box{
+    display:flex; align-items:flex-start; gap:10px;
+    background: rgba(47,93,69,0.07); border: 1px solid rgba(47,93,69,0.25);
+    border-radius: 12px; padding: 14px 18px; margin-top: 24px; max-width: 640px;
   }
-  .check-group-label:first-of-type{ margin-top: 0; }
-  .check-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; }
-  @media (min-width: 700px){ .check-grid{ grid-template-columns: 1fr 1fr; } }
-  .check-item{
-    display:flex; gap: 12px; align-items:flex-start;
-    padding: 16px 18px; border-radius: 12px;
-    background: var(--card); border: 1px solid var(--line);
-    transition: transform .15s ease, box-shadow .15s ease;
+  .guarantee-box svg{ flex:none; width:18px; height:18px; color: var(--stamp); margin-top:2px; }
+  .guarantee-box p{ margin:0; font-size: 0.88rem; color: var(--ink); font-weight:500; }
+
+  /* ---------- PRICING WATERMARK ---------- */
+  #pricing{ position:relative; overflow:hidden; }
+  #pricing::before{
+    content:""; position:absolute; top:-30px; right:-40px; width:260px; height:260px;
+    background: url('/confirmad-simbolo-sello.png') center/contain no-repeat;
+    opacity:0.05; pointer-events:none;
   }
-  .check-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .check-item .tick{
-    flex:none; width:28px; height:28px; border-radius:50%;
-    background: var(--verified); color:#fff; font-size:12px;
-    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  #pricing > .wrap{ position:relative; z-index:1; }
+
+  /* ---------- FAQ WATERMARK ---------- */
+  #faq{ position:relative; overflow:hidden; }
+  #faq::before{
+    content:"?"; position:absolute; top:-10px; right:-6px; line-height:1;
+    font-family: Georgia, serif; font-weight:700; font-size:9rem; color: var(--ink);
+    opacity:0.07; pointer-events:none;
   }
-  .check-item .tick svg{ width:15px; height:15px; }
-  .check-item span.txt{ font-size: 0.95rem; color: var(--ink); }
+  #faq > .wrap{ position:relative; z-index:1; }
 
   /* ---------- PRICING ---------- */
   .price-grid{ display:grid; grid-template-columns: 1fr; gap: 20px; }
@@ -585,18 +429,44 @@
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
   .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
-  .price-card .price-desc{ font-size: 0.86rem; color: var(--ink-soft); margin: 2px 0 16px; }
-  .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
-  .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
+  .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 24px; max-width: 60ch; }
   .speed-note{
     font-size: 0.92rem; color: var(--ink-soft); margin: -10px 0 26px; max-width: 70ch;
     background: rgba(47,93,69,0.06); border-left: 3px solid var(--stamp); border-radius: 0 10px 10px 0;
     padding: 12px 16px;
   }
   .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
-  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
+  .pricing-extras{ margin-top: 26px; display:flex; flex-direction:column; gap: 14px; }
+  .payment-methods{ font-size: 0.82rem; color: var(--ink-faint); }
+  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; }
   .share-row-light .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
+  .free-check-link{ font-size: 0.86rem; color: var(--ink-soft); text-decoration:underline; }
+  .free-check-link:hover{ color: var(--ink); }
 
+  /* ---------- ABOUT / FOUNDER ---------- */
+  #about{ background: #E6ECE8; }
+  .about-card{
+    display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 40px 32px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
+  }
+  @media (min-width: 760px){ .about-card{ grid-template-columns: auto 1fr; gap: 44px; padding: 44px; } }
+  .about-avatar{
+    width:172px; height:172px; border-radius:50%; flex:none;
+    background: rgba(47,93,69,0.1); color: var(--stamp);
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto; overflow:hidden;
+  }
+  .about-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-quote{
+    font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
+    margin-bottom: 18px;
+  }
+  .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
+  .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
+  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
+  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
+  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
 
   /* ---------- FAQ ---------- */
   .faq-list{ max-width: 720px; }
@@ -618,62 +488,17 @@
   details[open] summary .ind{ background: var(--stamp); border-color: var(--stamp); color:#fff; }
   details[open] summary .ind::before{ transform: rotate(45deg); }
   details p{ margin: 0 10px 14px; font-size: 0.95rem; }
+  .faq-source{ font-size: 0.8rem; color: var(--ink-faint); margin: -10px 10px 14px; }
+  .faq-source a{ color: var(--stamp); }
 
-  /* ---------- CTA FORM ---------- */
-  .cta-section{
-    background: var(--ink); color: var(--paper); border-top:none;
-  }
-  .cta-section .section-head h2{ color: #fff; }
-  .cta-section p{ color: #C7CFD8; }
-  .cta-grid{ display:grid; grid-template-columns: 1fr; gap: 40px; }
-  @media (min-width: 900px){ .cta-grid{ grid-template-columns: 1fr 1fr; gap: 60px; } }
-  form{ display:flex; flex-direction:column; gap: 14px; }
-  .field{ display:flex; flex-direction:column; gap:6px; }
-  .field label{ font-size: 0.82rem; color: #AEB8C4; font-family: var(--font-mono); }
-  .field input, .field textarea{
-    background: #1F2E48; border: 1px solid #34435F; color: #fff;
-    padding: 11px 13px; border-radius: 10px; font-family: var(--font-sans); font-size: 0.95rem;
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .field input:focus, .field textarea:focus{
-    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.35);
-  }
-  .field input::placeholder, .field textarea::placeholder{ color: #7C8AA1; }
-  .field textarea{ resize: vertical; min-height: 84px; }
-  form .btn-primary{ align-self:flex-start; margin-top: 4px; }
-  .form-success{
-    display:none; background: #1F2E48; border: 1px solid var(--verified);
-    padding: 18px 20px; border-radius: 12px; font-size: 0.95rem;
-  }
-
-  /* ---------- BUSINESS / B2B ---------- */
-  #business{ background: #E6ECE8; }
-  #business .business-form{
-    max-width: 680px; margin-top: 28px; display:grid; grid-template-columns:1fr; gap:16px;
-  }
-  @media (min-width:640px){ #business .business-form{ grid-template-columns: 1fr 1fr; } }
-  #business .business-form .field{ display:flex; flex-direction:column; gap:6px; }
-  #business .business-form .field label{ font-size:0.85rem; font-weight:600; color: var(--ink); font-family: var(--font); }
-  #business .business-form input, #business .business-form select{
-    background:#fff; border:1px solid var(--line); color: var(--ink);
-    padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size:0.95rem;
-  }
-  #business .business-form input:focus, #business .business-form select:focus{
-    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
-  }
-  #business .business-form button{ grid-column: 1 / -1; justify-self:start; }
-  #business .form-success-light{
-    display:none; background: var(--card); border:1px solid var(--verified);
-    padding:16px 18px; border-radius:12px; font-size:0.9rem; margin-top:16px; max-width:680px;
-  }
-  #business .form-success-light.show{ display:block; }
-  #business .form-success-light strong{ color: var(--verified); }
-  .form-success.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
-  @keyframes popIn{
-    0%{ opacity:0; transform: scale(0.95) translateY(6px); }
-    100%{ opacity:1; transform: scale(1) translateY(0); }
-  }
-  .form-success strong{ font-weight: 700; color: #fff; }
+  /* ---------- CLOSING ---------- */
+  .closing-section{ background: var(--ink); color: var(--paper); border-top:none; text-align:center; }
+  .closing-section .section-head{ max-width: 640px; margin: 0 auto 28px; }
+  .closing-section .section-head h2{ color: #fff; }
+  .closing-ctas{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+  .closing-ctas .btn{ white-space: normal; line-height: 1.3; text-align:center; }
+  .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
+  .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
 
   /* ---------- FOOTER ---------- */
   footer{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
@@ -688,7 +513,7 @@
   /* ---------- WHATSAPP FLOAT ---------- */
   .whatsapp-float{
     position:fixed; right:20px; bottom:20px; z-index:60;
-    width:56px; height:56px; border-radius:50%;
+    width:50px; height:50px; border-radius:50%;
     background: var(--stamp); color:#fff;
     display:flex; align-items:center; justify-content:center;
     box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
@@ -697,10 +522,10 @@
   }
   .whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
   .whatsapp-float:active{ transform: scale(0.95); }
-  .whatsapp-float svg{ width:28px; height:28px; }
+  .whatsapp-float svg{ width:24px; height:24px; }
   @keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
   @media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
-  @media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+  @media (max-width: 480px){ .whatsapp-float{ right:12px; bottom:12px; width:44px; height:44px; } .whatsapp-float svg{ width:21px; height:21px; } }
 </style>
 </head>
 <body>
@@ -716,7 +541,7 @@
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/" class="lang-current">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
-      <a href="#request" class="btn btn-primary nav-cta">Check a listing</a>
+      <a href="#pricing" class="btn btn-primary nav-cta">Book a check</a>
     </div>
   </nav>
 </header>
@@ -727,14 +552,21 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">In-person rental checks · Madrid</div>
-        <h1>Before you pay anything, we go to the apartment and check it's really what they promised.</h1>
-        <p class="lede">An impartial third party checks the apartment's condition and appliances, the light, the noise and the area, and tells you if the price is fair. And if something smells like a scam, we catch it before you lose any money.</p>
+        <div class="hero-audience">For students and newcomers renting in Madrid from abroad</div>
+        <h1>We check the Madrid flat for you before you pay.</h1>
+        <p class="lede">An independent person checks it's real and that it's what you were promised — condition, light, noise, the street and a fair price — and sends you a report with dated photos. If something looks like a scam, we flag it before you send any money.</p>
         <div class="hero-ctas">
-           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta">Book a visit (€59.99)</a>
-           <a href="/solicitar.html?plan=online" class="btn btn-ghost">Suspect a scam? Verdict in hours (€29.85)</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta" data-plan="visit" data-position="hero">Book a visit · €59.99</a>
           </div>
-        <div class="hero-note">Independent: no landlord or agency pays us. Visits within 1 day. <a href="/sample-report.html" style="text-decoration:underline;">See a sample report</a></div>
+        <a href="/solicitar.html?plan=online" class="hero-secondary-link" data-plan="online" data-position="hero_secondary">Just need a quick check? Express online check · €29.85 · under 12 h</a>
+        <div class="hero-trust">Visit within 24 h of the landlord confirming · Can't get in? Free second try or full refund · No landlord or agency pays us</div>
+        <div class="hero-founder">
+          <img src="/confirmad-founder-santiago.jpg" alt="" loading="lazy" decoding="async" width="40" height="40">
+          <span>Santiago Platas, founder · Madrid</span>
+        </div>
+        <div class="hero-sample-mobile">
+          <a href="/sample-report.html">See a sample report →</a>
+        </div>
       </div>
 
       <div id="report-sample">
@@ -777,130 +609,40 @@
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <!-- WHY CONFIRMAD -->
-  <section id="why">
+  <!-- WHAT YOU GET -->
+  <section id="get">
     <div class="wrap">
       <div class="section-head">
-        <h2>Why ConfirMad?</h2>
-        <p>ConfirMad sends a real person to check a Madrid apartment before you sign anything or send a deposit. We check the apartment's condition, its appliances, the area, and whether the price is fair — and if there are also signs of a scam, we catch those too.</p>
+        <h2>What you get</h2>
       </div>
-      <div class="why-grid">
-        <div class="why-item">
-          <h3>Impartial</h3>
-          <p>We work for you, not for the landlord. We take no commission from any owner or agency.</p>
+      <div class="get-grid">
+        <div class="get-item">
+          <h3>It's real</h3>
+          <p>Land Registry check against the advertiser, and the listing photos reverse-searched.</p>
         </div>
-        <div class="why-item">
-          <h3>We see what the photos don't</h3>
-          <p>Light, noise, smells, damp, the real condition of the furniture and appliances — everything a well-chosen photo can hide.</p>
+        <div class="get-item">
+          <h3>It matches the listing</h3>
+          <p>Rooms, condition and appliances checked against what you were shown.</p>
         </div>
-        <div class="why-item">
-          <h3>We tell you if the price is fair</h3>
-          <p>We compare the rent against similar flats and rooms nearby, and work out the real monthly cost including fees.</p>
+        <div class="get-item">
+          <h3>What photos don't show</h3>
+          <p>Light, the noise at the time of the visit, damp, the entrance and the street.</p>
         </div>
-        <div class="why-item">
-          <h3>Written proof, with dated photos</h3>
-          <p>A clear report you can keep, re-read, and show to whoever's paying the deposit with you.</p>
+        <div class="get-item">
+          <h3>A fair price</h3>
+          <p>Compared with similar flats nearby, so you know if you're overpaying.</p>
         </div>
-        <div class="why-item">
-          <h3>And if it's a scam, we stop it in time</h3>
-          <p>If something doesn't add up — the landlord, the address, the terms — we tell you before you send anything.</p>
+        <div class="get-item">
+          <h3>Red flags in the terms</h3>
+          <p>Anything about the price, deposit or payment method that doesn't add up.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARISON -->
-  <section id="compare">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>What you can't check from home</h2>
-        <p>This is what we know after actually going there — and what you'd never know from photos or a video call alone.</p>
-      </div>
-      <div class="compare-table">
-        <div class="compare-row compare-row-head">
-          <div class="compare-cell compare-label"></div>
-          <div class="compare-cell">With photos & video call</div>
-          <div class="compare-cell compare-col2">With ConfirMad</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Size</div>
-          <div class="compare-cell" data-label="With photos & video call">Wide-angle photos</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">Measured in person</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Light</div>
-          <div class="compare-cell" data-label="With photos & video call">Whatever time and angle the landlord picks</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">The light at the time of the visit</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Noise</div>
-          <div class="compare-cell" data-label="With photos & video call">Can't hear it through a screen</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">What you actually hear there</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Damp & smells</div>
-          <div class="compare-cell" data-label="With photos & video call">Invisible</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">Checked in person</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Wifi</div>
-          <div class="compare-cell" data-label="With photos & video call">Whatever they tell you</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">A real speed test</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Area</div>
-          <div class="compare-cell" data-label="With photos & video call">Whatever the camera shows</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">The entrance and the street</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Terms</div>
-          <div class="compare-cell" data-label="With photos & video call">Whatever they say in chat</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">Confirmed by the landlord in person</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Who runs the visit</div>
-          <div class="compare-cell" data-label="With photos & video call">The landlord, showing you what they want</div>
-          <div class="compare-cell compare-col2" data-label="With ConfirMad">Someone working for you</div>
+        <div class="get-item">
+          <h3>A clear verdict</h3>
+          <p>A written report with dated photos — not just an opinion.</p>
         </div>
       </div>
-      <p class="compare-closing">The landlord runs the video call. We run the visit — and we work for you.</p>
-    </div>
-  </section>
-
-  <!-- WHO THIS IS FOR -->
-  <section id="who">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Who this is for</h2>
-        <p>Anyone signing a lease on a place they haven't seen with their own eyes.</p>
-      </div>
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
-          <h3>Exchange students</h3>
-          <p>Coming for a semester and can't fly in early just to see a room.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
-          <h3>People relocating for work</h3>
-          <p>Moving for a new job on a tight timeline, no time to gamble on a bad address.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="10" rx="1"/><path d="M2 18h20"/></svg></div>
-          <h3>Digital nomads on a visa</h3>
-          <p>Signing a lease from another country before the paperwork even clears.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
-          <h3>Au pairs & long-stay visitors</h3>
-          <p>Committing to months in someone else's home before ever meeting them.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
-          <h3>Whoever's paying from abroad</h3>
-          <p>Parents or family wiring the deposit from another country, who want to know what they're putting their money into.</p>
-        </div>
+      <div class="get-cta">
+        <a href="/sample-report.html" class="btn btn-ghost">See a sample report</a>
       </div>
     </div>
   </section>
@@ -909,81 +651,28 @@
   <section id="how">
     <div class="wrap">
       <div class="section-head">
-        <h2>How a check works</h2>
-        <p>Four steps, start to finish. No account needed, no long forms.</p>
+        <h2>How it works</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="num">01</div>
-          <h3>Tell us what you were promised</h3>
-          <p>Send us the listing, whatever the landlord told you, and your own questions.</p>
+          <h3>Send the listing link</h3>
+          <p>It takes 2 minutes.</p>
         </div>
         <div class="step">
           <div class="num">02</div>
-          <h3>We go to the apartment</h3>
-          <p>Within 1 day if you book a visit. Suspect a scam? We give you an online verdict in hours.</p>
+          <h3>We check it</h3>
+          <p>Online in under 12 hours, or a visit within 24 h of the landlord confirming a time.</p>
         </div>
         <div class="step">
           <div class="num">03</div>
-          <h3>You get the report</h3>
-          <p>With dated photos: what matches, what doesn't, and whether the price is fair.</p>
-        </div>
-        <div class="step">
-          <div class="num">04</div>
           <h3>You decide</h3>
-          <p>Pay with confidence, negotiate, or walk away before you lose anything.</p>
+          <p>With the report in hand.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE CHECK -->
-  <section id="check" class="ring-deco">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>What we actually check</h2>
-        <p>Online verification covers legitimacy. The in-person visit adds everything else: the apartment, its appliances, the building, the area and the promised terms.</p>
-      </div>
-      <h3 class="check-group-label">Online verification: legitimacy</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">The address exists and matches the listing</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Whoever is showing the apartment has access to it and their name matches the advertiser</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">No full payment is demanded before you see the apartment</span></div>
-      </div>
-      <h3 class="check-group-label">The visit adds: the apartment and its appliances</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">The room's real size, measured in person — not what a wide-angle photo makes it look like</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Natural light, ventilation, and whether the window faces the street or an interior patio</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Condition of walls, floors and windows, and any visible damp, mould or smells</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Whether the appliances, heating, hot water and wifi actually work (with a real speed test if the landlord allows it)</span></div>
-      </div>
-      <h3 class="check-group-label">The building and the area</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Entrance, common areas, lift and accessibility</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">How clean and well-kept the street and surroundings are</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">The noise at the time of the visit</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Supermarket, transport, and real door-to-door time to your university or job</span></div>
-      </div>
-      <h3 class="check-group-label">The promised terms</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">That the price, fees, deposit and move-in date match what you were promised</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">The real total monthly cost, fees included</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Whether the apartment lets you register your address there (empadronamiento)</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Whether the deposit or upfront payments are higher than usual</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE TOOL CALLOUT -->
-  <section id="free-tool">
-    <div class="wrap">
-      <div class="free-tool-card">
-        <div class="free-tool-text">
-          <div class="free-tool-badge">100% free · no sign-up</div>
-          <h2>Not ready to book yet? Check a listing yourself, free.</h2>
-          <p>Answer a few quick questions about a listing you're looking at and get an instant read on common Madrid rental-scam warning signs — right in your browser, nothing sent anywhere.</p>
-        </div>
-        <a href="check.html" class="btn btn-primary free-tool-cta">Try the free check</a>
+      <div class="guarantee-box">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <p>If the landlord won't let us in, we try again for free. If that fails too, you get a full refund.</p>
       </div>
     </div>
   </section>
@@ -995,66 +684,54 @@
         <h2>Pricing</h2>
         <p>One flat fee, paid securely by card when you book. VAT included.</p>
       </div>
-      <p class="speed-note">Good flats in Madrid go fast: 11% are let in under 24 hours. That's why we visit within 1 day. <span class="speed-source">Source: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">idealista data, Q4 2025, via El Español</a></span></p>
+      <p class="speed-note">Good flats in Madrid go fast: 11% are let in under 24 hours. That's why we visit within 24 h. <span class="speed-source">Source: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">idealista data, Q4 2025, via El Español</a></span></p>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">Express anti-scam check</div>
+          <div class="tag">Express online check</div>
           <div class="amount">€29.85 <span class="vat-note">VAT included</span></div>
-          <div class="turnaround">Delivered in under 12 hours</div>
-          <p class="price-desc">Something not adding up? Send us the listing and your conversation with the landlord — we'll give you a verdict using official sources.</p>
+          <div class="turnaround">Result in under 12 hours</div>
           <ul>
             <li>Land Registry and Catastro check against the listing</li>
-            <li>Reverse photo search and advertiser/agency check</li>
-            <li>Terms & payment review against scam patterns, plus a green/amber/red verdict</li>
+            <li>Reverse photo search and advertiser check</li>
+            <li>Price comparison and a clear verdict</li>
           </ul>
-          <a href="/solicitar.html?plan=online" class="btn btn-ghost">Request this</a>
-          <p class="price-note">This plan doesn't include seeing the apartment. For the condition, the area and the terms, book the in-person visit — within 7 days and we credit your €29.85 against it.</p>
+          <a href="/solicitar.html?plan=online" class="btn btn-ghost" data-plan="online" data-position="pricing_card">Book the online check · €29.85</a>
         </div>
         <div class="price-card featured">
           <span class="ribbon">Recommended</span>
           <div class="tag">In-person visit</div>
           <div class="amount">€59.99 <span class="vat-note">VAT included</span></div>
-          <div class="turnaround">Within 1 day: we visit within 24 hours of the landlord confirming a time</div>
+          <div class="turnaround">Visit within 24 h of the landlord confirming a time</div>
           <ul>
-            <li>Everything in the Express anti-scam check</li>
-            <li>The apartment, its appliances, the building and the area, in person</li>
-            <li>Written report with dated photos and a price analysis</li>
+            <li>Everything in the online check</li>
+            <li>The flat, its condition and the area, in person</li>
+            <li>Written report with dated photos and a price check</li>
           </ul>
-          <a href="/solicitar.html?plan=visit" class="btn btn-primary">Request this</a>
+          <a href="/solicitar.html?plan=visit" class="btn btn-primary" data-plan="visit" data-position="pricing_card">Book a visit · €59.99</a>
         </div>
         <div class="price-card">
           <div class="tag">Live visit</div>
           <div class="amount">€99 <span class="vat-note">VAT included</span></div>
-          <div class="turnaround">Within 1 day</div>
+          <div class="turnaround">Visit within 24 h of the landlord confirming a time</div>
           <ul>
             <li>Everything in the in-person visit</li>
-            <li>Live video call from inside the apartment</li>
+            <li>Live video call from inside the flat</li>
             <li>Invite whoever's paying the rent with you to join the call</li>
           </ul>
-          <a href="/solicitar.html?plan=live" class="btn btn-ghost">Request this</a>
+          <a href="/solicitar.html?plan=live" class="btn btn-ghost" data-plan="live" data-position="pricing_card">Book the live visit · €99</a>
         </div>
       </div>
-      <p class="price-foot">If something doesn't add up, we tell you exactly what and why — whether it's the price, the apartment's condition, or the listing's legitimacy.</p>
-      <div class="share-row-light">
-        <a href="https://wa.me/?text=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Send this to whoever is paying (WhatsApp)</a>
-        <a href="mailto:?subject=A%20listing%20I%27m%20checking%20with%20ConfirMad&amp;body=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" class="btn btn-ghost">Send this to whoever is paying (Email)</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- EARLY ACCESS -->
-  <section id="risk">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="early-badge">If something feels off</div>
-        <h2>Suspect fraud? We'll tell you before you pay.</h2>
-        <p>In a Europe-wide survey of around 7,000 exchange students, 1 in 4 said they'd experienced a housing scam while searching for a place — 21% of those who came to Spain.</p>
-        <p class="risk-source">Source: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023</a></p>
-      </div>
-      <div class="stat-highlight"><p>A deposit plus first month in Madrid easily runs €900–2,000. A quick ConfirMad check starts from €29.85.</p></div>
-      <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20a%20check%20before%20I%20send%20a%20deposit" class="btn btn-invert">Message us on WhatsApp</a>
-        <a href="/solicitar.html?plan=online" class="btn btn-outline-invert">Get the express check (€29.85)</a>
+      <div class="pricing-extras">
+        <div class="guarantee-box" style="margin-top:0;">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <p>If the landlord won't let us in, we try again for free. If that fails too, you get a full refund.</p>
+        </div>
+        <div class="payment-methods">Secure card payment via Stripe.</div>
+        <div class="share-row-light">
+          <a href="https://wa.me/?text=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Send this to whoever is paying (WhatsApp)</a>
+          <a href="mailto:?subject=A%20listing%20I%27m%20checking%20with%20ConfirMad&amp;body=I%27m%20using%20ConfirMad%20to%20verify%20a%20Madrid%20rental%20before%20paying%20anything%20%E2%80%94%20thought%20you%20should%20see%20this%20too%3A%20https%3A//confirmad.es" class="btn btn-ghost">Send this to whoever is paying (Email)</a>
+        </div>
+        <a href="check.html" class="free-check-link">Not ready yet? Try the free red-flag check →</a>
       </div>
     </div>
   </section>
@@ -1065,19 +742,21 @@
     <div class="about-card">
       <div class="about-photo">
         <div class="about-avatar">
-          <img src="/confirmad-founder-santiago.jpg" alt="Santiago, founder of ConfirMad" loading="lazy" width="172" height="172">
+          <img src="/confirmad-founder-santiago.jpg" alt="Santiago, founder of ConfirMad" loading="lazy" decoding="async" width="172" height="172">
         </div>
       </div>
       <div>
         <div class="section-head" style="margin-bottom:16px;">
           <h2>Who's behind this</h2>
         </div>
-        <p class="about-quote">"I moved to Madrid myself and saw how easy it is to get scammed on a rental you can't see in person. ConfirMad exists because someone should be able to just go look — no agency, no middleman, just a real person on the ground you can trust."</p>
+        <p class="about-quote">"I set up ConfirMad so that anyone moving to Madrid has someone they can trust look at a flat before they pay for it."</p>
         <div class="about-name">Santiago Antonio Platas Rengel<span>Founder, ConfirMad</span></div>
         <ul class="about-trust">
-          <li>Independent: no landlord or agent pays us for your check.</li>
+          <li>Independent: no landlord or agency pays us for your check.</li>
         </ul>
         <a href="https://www.linkedin.com/in/santiagoplatas/" target="_blank" rel="noopener" class="about-linkedin">LinkedIn ↗</a>
+        <!-- {{PENDIENTE: número real de verificaciones realizadas, para mostrar aquí cuando exista}} -->
+        <!-- {{PENDIENTE: reseñas verificadas de clientes, para mostrar aquí cuando existan}} -->
       </div>
     </div>
     </div>
@@ -1091,125 +770,43 @@
       </div>
       <div class="faq-list">
         <details>
-          <summary aria-expanded="false">What if I've already sent a deposit?<span class="ind"></span></summary>
-          <p>We can still visit and tell you whether the apartment matches what you paid for, but we can't recover money that's already been sent. It's always better to book a check before paying anything.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">Do you check apartments outside Madrid?<span class="ind"></span></summary>
-          <p>We visit properties within the city of Madrid itself — even if your university campus is outside it, in Somosaguas, Getafe, or Leganés, for example, most student housing is still in the city. If the flat is genuinely outside Madrid, online verification is usually still possible — just write to us.</p>
-        </details>
-        <details>
           <summary aria-expanded="false">What if the landlord won't let you in?<span class="ind"></span></summary>
-          <p>That goes straight into your report as a red flag. A landlord with a real apartment and nothing to hide rarely refuses a short visit.</p>
+          <p>That goes straight into your report as a red flag. If it happens on an in-person visit, we try again for free — and if that fails too, you get a full refund.</p>
         </details>
         <details>
-          <summary aria-expanded="false">Is this legal advice, or a lease review?<span class="ind"></span></summary>
-          <p>No. We still don't review a lease's legal validity — we're not lawyers. But we do check that what you were promised matches reality, and flag any unusual terms before you sign.</p>
+          <summary aria-expanded="false">I've already paid a deposit — can you still help?<span class="ind"></span></summary>
+          <p>We can still visit and tell you whether the flat matches what you paid for, but we can't recover money that's already been sent. It's always better to book a check before paying anything.</p>
         </details>
         <details>
-          <summary aria-expanded="false">How fast can you actually go?<span class="ind"></span></summary>
-          <p>Online verification is delivered in under 12 hours. In-person and Live visits happen within 1 day of the landlord confirming a time, depending on availability that week.</p>
+          <summary aria-expanded="false">Do you check flats outside Madrid?<span class="ind"></span></summary>
+          <p>We visit properties within the city of Madrid itself. If the flat is genuinely outside Madrid, online verification is usually still possible — just write to us.</p>
         </details>
         <details>
-          <summary aria-expanded="false">What if the apartment is fine?<span class="ind"></span></summary>
-          <p>You pay knowing exactly what you're paying for: we send a report with dated photos of the condition we found it in, so you can book with confidence.</p>
+          <summary aria-expanded="false">Is this legal advice?<span class="ind"></span></summary>
+          <p>No. We check that what you were promised matches reality. We're not lawyers, and we don't review contracts for legal validity.</p>
         </details>
         <details>
-          <summary aria-expanded="false">How do you know if the price is fair?<span class="ind"></span></summary>
-          <p>We compare it against similar flats and rooms in the area, and work out the real monthly cost including fees.</p>
+          <summary aria-expanded="false">How common are rental scams?<span class="ind"></span></summary>
+          <p>In the ESN/ESU International Student Housing Report (2023), around 7,000 exchange students across Europe answered this question: 1 in 4 said they had experienced a housing scam while searching; among those who came to Spain, 21%.</p>
+          <p class="faq-source">Source: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023</a></p>
         </details>
         <details>
-          <summary aria-expanded="false">Do you check the noise at night?<span class="ind"></span></summary>
-          <p>We check what we hear during the visit. If a specific time worries you, we'll try to go then, if the landlord allows it.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">What if the landlord won't let you test something?<span class="ind"></span></summary>
-          <p>We note it in the report. That's information too.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">Can I ask you to check something specific?<span class="ind"></span></summary>
-          <p>Yes — send us your questions with the request and we'll check them during the visit.</p>
+          <summary aria-expanded="false">Can my parents pay for it?<span class="ind"></span></summary>
+          <p>Yes — use the share buttons in the pricing section to send them the link, or they can book directly using your details.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- CTA / FORM -->
-  <section id="request" class="cta-section">
-    <div class="wrap cta-grid">
-      <div>
-        <div class="section-head">
-          <h2>Still have questions? Talk to a real person</h2>
-          <p>Not sure how a check works, or want to ask something before booking? Write to us directly — no bots, no call center.</p>
-        </div>
-        <p style="color:#8B96A8; font-size:0.88rem;">We usually reply within a few hours. Ready to book instead? <a href="#pricing" style="color:#fff; text-decoration:underline;">See pricing</a>.</p>
-      </div>
-      <div>
-        <form id="checkForm">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input id="name" type="text" placeholder="Jane Smith" required>
-          </div>
-          <div class="field">
-            <label for="email">Your email</label>
-            <input id="email" type="email" placeholder="jane@email.com" required>
-          </div>
-          <div class="field">
-            <label for="phone">Phone or WhatsApp (optional)</label>
-            <input id="phone" type="tel" placeholder="+34 600 000 000">
-          </div>
-          <div class="field">
-            <label for="notes">Your question</label>
-            <textarea id="notes" placeholder="Ask us anything about how a check works, timing, an address you're considering..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" id="sendBtn">Send message</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <strong>Message sent.</strong> We'll reply within a few hours.
-        </div>
-        <div class="form-success" id="formError" style="border-color:#A63A34;">
-          <strong>Something went wrong.</strong> Please email us directly at <a href="mailto:contacto@confirmad.es" style="color:#fff; text-decoration:underline;">contacto@confirmad.es</a> instead.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS / B2B -->
-  <section id="business">
+  <!-- CLOSING -->
+  <section id="closing" class="closing-section">
     <div class="wrap">
       <div class="section-head">
-        <h2>For relocation agencies, universities and companies</h2>
-        <p>Sending people to Madrid who can't see a flat themselves? We offer online verifications and in-person visits by volume, priced per volume, for your incoming students, employees or clients.</p>
+        <h2>Found a flat you like? Get it checked before you pay.</h2>
       </div>
-      <form id="businessForm" class="business-form">
-        <div class="field">
-          <label for="bizOrg">Organization name</label>
-          <input id="bizOrg" type="text" required>
-        </div>
-        <div class="field">
-          <label for="bizType">Type of organization</label>
-          <select id="bizType">
-            <option value="agency">Relocation agency</option>
-            <option value="university">University</option>
-            <option value="company">Company</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="bizVolume">Approximate volume (per month or semester)</label>
-          <input id="bizVolume" type="text">
-        </div>
-        <div class="field">
-          <label for="bizEmail">Your email</label>
-          <input id="bizEmail" type="email" placeholder="name@organization.com" required>
-        </div>
-        <button type="submit" class="btn btn-primary" id="bizSendBtn">Get in touch</button>
-      </form>
-      <div class="form-success-light" id="bizSuccess">
-        <strong>Message sent.</strong> We'll reply within a few hours.
-      </div>
-      <div class="form-success-light" id="bizError" style="border-color:#A63A34;">
-        <strong>Something went wrong.</strong> Please email us directly at <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> instead.
+      <div class="closing-ctas">
+        <a href="/solicitar.html?plan=visit" class="btn btn-primary" data-plan="visit" data-position="closing">Book a visit · €59.99</a>
+        <a href="https://wa.me/34639589180?text=Hi%2C%20I%27d%20like%20to%20book%20a%20check%20before%20I%20send%20a%20deposit" class="btn btn-outline-invert">Questions? WhatsApp us</a>
       </div>
     </div>
   </section>
@@ -1221,7 +818,7 @@
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>Not a law firm. We verify listings, not contracts.</div>
-    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a> · <a href="#business">For agencies</a></div>
+    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a> · <a href="/empresas.html">For agencies, universities and companies</a></div>
     <div class="lang-switch"><a href="https://confirmad.es/" class="lang-current">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
   </div>
 </footer>
@@ -1230,124 +827,10 @@
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-try { emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' }); } catch (e) { console.warn('EmailJS failed to load:', e); }
-
-var I18N_FORM = {"sending": "Sending…", "submit": "Send message"};
-
-const form = document.getElementById('checkForm');
-  const success = document.getElementById('formSuccess');
-  const errorMsg = document.getElementById('formError');
-  const sendBtn = document.getElementById('sendBtn');
-  const WEB3FORMS_KEY = 'e1ec2b34-f6bc-42d3-9f90-834f6ab579bc';
-
-  function isValidEmail(value){
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  function sendAutoReply(templateId, toEmail, toName){
-    if (!isValidEmail(toEmail)) return;
-    try {
-      emailjs.send('service_wa43yg8', templateId, {
-        to_email: toEmail, email: toEmail, reply_to: toEmail,
-        to_name: toName, name: toName
-      })
-        .catch(function(err){ console.warn('Auto-reply email failed:', err); });
-    } catch (e) { console.warn('Auto-reply email failed:', e); }
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var notes = document.getElementById('notes').value;
-
-    sendBtn.disabled = true;
-    sendBtn.textContent = I18N_FORM.sending;
-    errorMsg.classList.remove('show');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: 'Question from ' + name,
-        from_name: name,
-        name: name,
-        email: email,
-        phone: phone,
-        message: notes
-      })
-    })
-    .then(function(res){ return res.json(); })
-    .then(function(data){
-      if (data.success){
-        sendAutoReply('template_0i7xoyv', email, name);
-        form.style.display = 'none';
-        success.classList.add('show');
-      } else {
-        throw new Error(data.message || 'Web3Forms error');
-      }
-    })
-    .catch(function(){
-      sendBtn.disabled = false;
-      sendBtn.textContent = I18N_FORM.submit;
-      errorMsg.classList.add('show');
-    });
-  });
-
-  var I18N_BUSINESS = {"sending": "Sending…", "submit": "Get in touch"};
-  var bizForm = document.getElementById('businessForm');
-  var bizSuccess = document.getElementById('bizSuccess');
-  var bizError = document.getElementById('bizError');
-  var bizSendBtn = document.getElementById('bizSendBtn');
-
-  bizForm.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var org = document.getElementById('bizOrg').value;
-    var orgType = document.getElementById('bizType').value;
-    var volume = document.getElementById('bizVolume').value;
-    var email = document.getElementById('bizEmail').value;
-
-    bizSendBtn.disabled = true;
-    bizSendBtn.textContent = I18N_BUSINESS.sending;
-    bizError.classList.remove('show');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: 'B2B inquiry from ' + org,
-        from_name: org,
-        name: org,
-        email: email,
-        message: 'Organization: ' + org + '\nType: ' + orgType + '\nApprox. volume: ' + volume
-      })
-    })
-    .then(function(res){ return res.json(); })
-    .then(function(data){
-      if (data.success){
-        bizForm.style.display = 'none';
-        bizSuccess.classList.add('show');
-      } else {
-        throw new Error(data.message || 'Web3Forms error');
-      }
-    })
-    .catch(function(){
-      bizSendBtn.disabled = false;
-      bizSendBtn.textContent = I18N_BUSINESS.submit;
-      bizError.classList.add('show');
-    });
-  });
-
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
     document.documentElement.classList.add('has-reveal');
-    var revealTargets = document.querySelectorAll('.section-head, .step, .who-card, .check-item, .price-card, .about-photo, .faq-list details');
+    var revealTargets = document.querySelectorAll('.section-head, .step, .get-item, .price-card, .about-photo, .faq-list details');
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if (entry.isIntersecting){
@@ -1362,6 +845,23 @@ const form = document.getElementById('checkForm');
   document.querySelectorAll('.faq-list details').forEach(function(el){
     el.addEventListener('toggle', function(){
       el.querySelector('summary').setAttribute('aria-expanded', el.open ? 'true' : 'false');
+    });
+  });
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  document.querySelectorAll('[data-plan]').forEach(function(el){
+    el.addEventListener('click', function(){
+      cmTrack('select_plan', { plan: el.getAttribute('data-plan'), position: el.getAttribute('data-position') || '' });
+    });
+  });
+  document.querySelectorAll('.whatsapp-float, .closing-ctas a[href*="wa.me"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: el.closest('.whatsapp-float') ? 'float' : 'closing' });
     });
   });
 </script>
