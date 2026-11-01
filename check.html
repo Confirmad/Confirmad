@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="8ba3b9c">
+<meta name="confirmad-build" content="08368dc">
 <title>Free listing red-flag check · ConfirMad</title>
 <meta name="description" content="Paste in the details of a Madrid rental listing and get an instant, free check for common scam warning signs — unrealistic price, payment before viewing, no video call, and more.">
 <link rel="canonical" href="https://confirmad.es/check.html">
@@ -646,6 +646,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
     }
 
     resultSection.classList.add('show');
+    cmTrack('free_check_result', { risk_level: result.level, score: result.score });
   }
 
   function getFormData(){
@@ -749,6 +750,25 @@ footer .lang-switch a.lang-current{ color:#fff; }
     });
     runCheck(false);
   })();
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  [ctaPrimary, ctaSecondary].forEach(function(el){
+    el.addEventListener('click', function(){
+      var plan = el.getAttribute('data-plan');
+      if (plan) cmTrack('select_plan', { plan: plan, position: 'check_result' });
+    });
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
 
 })();
 </script>

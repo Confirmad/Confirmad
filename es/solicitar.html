@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="8ba3b9c">
+<meta name="confirmad-build" content="08368dc">
 <title>Reservar una comprobación · ConfirMad</title>
 <meta name="description" content="Reserva una comprobación independiente de un piso en alquiler en Madrid. Rellena los datos del anuncio, acepta las condiciones y paga de forma segura — empezamos en cuanto llegan el pago y los datos.">
 <meta name="robots" content="index, follow">
@@ -314,6 +314,24 @@ footer .lang-switch a.lang-current{ color: var(--stamp); }
   document.getElementById('planTag').textContent = plan.name;
   document.getElementById('planAmount').innerHTML = plan.price + ' <span class="vat-note">IVA incluido</span>';
   document.getElementById('planTurnaround').textContent = plan.turnaround;
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, trackParams){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, trackParams || {});
+    }
+  }
+  var checkoutAmount = parseFloat(String(plan.price).replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
+  cmTrack('begin_checkout', {
+    currency: 'EUR', value: checkoutAmount,
+    items: [{ item_name: plan.name, price: checkoutAmount, quantity: 1 }]
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
 
   var utmParams = {};
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k){

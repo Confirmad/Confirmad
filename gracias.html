@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="8ba3b9c">
+<meta name="confirmad-build" content="08368dc">
 <title>Thank you · ConfirMad</title>
 <meta name="description" content="Your ConfirMad request is confirmed.">
 <meta name="robots" content="noindex, nofollow">
@@ -299,6 +299,18 @@ footer a:hover{ color: var(--ink); }
 
   document.getElementById('shareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(t.shareMsg);
   document.getElementById('shareEmail').href = 'mailto:?subject=' + encodeURIComponent(t.shareSubject) + '&body=' + encodeURIComponent(t.shareMsg);
+
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  document.getElementById('photoWhatsApp').addEventListener('click', function(){
+    cmTrack('whatsapp_click', { position: 'gracias_photos' });
+  });
+  document.getElementById('shareWhatsApp').addEventListener('click', function(){
+    cmTrack('whatsapp_click', { position: 'gracias_share' });
+  });
 
   // GA4 purchase event — only fires once consent has loaded gtag, and only once per order
   try {
