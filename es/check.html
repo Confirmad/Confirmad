@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="confirmad-build" content="6a260fb">
 <title>Detector gratuito de señales de alarma · ConfirMad</title>
 <meta name="description" content="Introduce los datos de un anuncio de alquiler en Madrid y obtén al instante una comprobación gratuita de las señales de alarma más comunes: precio poco realista, pago antes de ver el piso, sin videollamada, y más.">
 <link rel="canonical" href="https://confirmad.es/es/check.html">
@@ -16,11 +17,11 @@
 <meta property="og:title" content="Detector gratuito de señales de alarma · ConfirMad">
 <meta property="og:description" content="Comprobación gratuita e instantánea de las señales de alarma más comunes en alquileres en Madrid. Sin registro, nada se envía a ningún sitio — funciona entero en tu navegador.">
 <meta property="og:url" content="https://confirmad.es/es/check.html">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Detector gratuito de señales de alarma · ConfirMad">
 <meta name="twitter:description" content="Comprobación gratuita e instantánea de las señales de alarma más comunes en alquileres en Madrid.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -30,20 +31,22 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "Verificación online y presencial de anuncios de alquiler en Madrid: Registro de la Propiedad, identidad del casero, fotos y condiciones confirmadas antes de pagar una fianza.",
+  "description": "Comprobación presencial e independiente de alquileres en Madrid: estado, luz, ruido, precio y condiciones confirmados antes de pagar una fianza.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Verificación antiestafa exprés: Registro de la Propiedad, Catastro, búsqueda de fotos, comprobación del anunciante y comparación de precio, con veredicto en semáforo." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Todo lo de la Verificación antiestafa exprés, más una visita presencial con informe escrito, fotos fechadas y análisis de precio." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Todo lo de la Visita presencial, más una videollamada en directo desde dentro del piso." } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Verificación online exprés", "description": "Comprobación en el Registro de la Propiedad frente al anunciante, búsqueda inversa de fotos y comparación de precio, con un veredicto claro." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita presencial", "description": "Todo lo de la verificación online, más una visita presencial con informe escrito, fotos fechadas y análisis de precio." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita en directo", "description": "Todo lo de la visita presencial, más una videollamada en directo desde dentro del piso." } }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
   --paper: #EEF1EF;
@@ -295,7 +298,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/check.html">EN</a> · <a href="https://confirmad.es/es/check.html" class="lang-current">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html">FR</a></div>
-      <a href="index.html#pricing" class="btn btn-primary nav-cta">Comprobar un anuncio</a>
+      <a href="index.html#pricing" class="btn btn-primary nav-cta">Reservar una comprobación</a>
     </div>
   </nav>
 </header>
@@ -407,8 +410,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">Esto es una autocomprobación rápida basada en patrones habituales de estafa — solo tiene en cuenta lo que le has contado, nada más. No es prueba de nada, y no puede sustituir a alguien que compruebe en persona que el piso es real.</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Verifícalo online por 29,85 €</a>
-          <a href="index.html#faq" class="btn btn-outline">¿Por qué una comprobación presencial?</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-primary" id="ctaPrimary" data-plan="online" data-position="check_result">Verifícalo online por 29,85 €</a>
+          <a href="index.html#faq" class="btn btn-outline" id="ctaSecondary">¿Por qué una comprobación presencial?</a>
         </div>
       </div>
 
@@ -426,7 +429,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
   <div class="wrap">
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
-    <div><a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Términos</a></div>
+    <div><a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Términos</a> · <a href="/empresas.html">Para agencias, universidades y empresas</a></div>
     <div class="lang-switch"><a href="https://confirmad.es/check.html">EN</a> · <a href="https://confirmad.es/es/check.html" class="lang-current">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html">FR</a></div>
   </div>
 </footer>
@@ -439,7 +442,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
 (function(){
   'use strict';
 
-  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "El precio parece inusualmente bajo para {district}", "price_severe_detail": "Eso equivale a unos {perM2} €/m², muy por debajo del rango habitual de {low}–{high} €/m² en esta zona. Los anuncios con precios poco realistas son uno de los cebos más comunes en las estafas de alquiler.", "price_moderate_title": "El precio es algo bajo para {district}", "price_moderate_detail": "Unos {perM2} €/m², algo por debajo del rango habitual de {low}–{high} €/m² en esta zona. No es alarmante por sí solo, pero merece un segundo vistazo junto con el resto de datos.", "price_ok_title": "El precio parece realista para {district}", "price_ok_detail": "Unos {perM2} €/m², en línea con el rango habitual de {low}–{high} €/m² en esta zona.", "abroad_title": "El casero dice que está en el extranjero", "abroad_detail": "No puede enseñar el piso en persona porque dice estar fuera del país. Los caseros legítimos con un contacto local o una agencia normalmente pueden organizar una visita igualmente.", "transfer_title": "Pago exigido antes de una visita", "transfer_detail": "Que te pidan transferir una fianza o el alquiler antes de haber visto realmente el piso es una de las señales más claras de una estafa de alquiler.", "wu_title": "Piden pagar por Western Union, cripto o tarjetas regalo", "wu_detail": "Ningún casero legítimo en España pide esto. Existen porque son casi imposibles de rastrear o de recuperar.", "novideo_title": "Se negó a hacer una videollamada", "novideo_detail": "Un casero real que enseña un piso real, esté vacío o alquilado en ese momento, normalmente no tiene problema en hacer una videollamada rápida para demostrarlo.", "rush_title": "Te presionó para decidir rápido", "rush_detail": "La urgencia de \"hay otra persona interesada\" es una táctica clásica para evitar que compruebes las cosas con calma antes de pagar.", "lang_title": "Errores raros de ortografía o gramática en el anuncio", "lang_detail": "A veces es señal de un anuncio de estafa copiado y pegado o traducido automáticamente — aunque muchos anuncios genuinos también tienen erratas, así que esto por sí solo no demuestra nada.", "platform_title": "Compartido fuera de una plataforma de anuncios verificada", "platform_detail_direct": "Te lo enviaron directamente, sin ningún anuncio público con el que contrastarlo.", "platform_detail_facebook": "Los grupos de Facebook y Marketplace apenas tienen verificación de anuncios.", "platform_detail_suffix": "Más fácil de falsear que un anuncio en una plataforma como Idealista o Fotocasa.", "no_flags": "Todavía no se ha introducido ningún dato que coincida con señales de alarma habituales.", "badge_green": "Riesgo bajo", "head_green": "No se han encontrado señales de alarma importantes", "sub_green": "Nada de esto coincide con los patrones habituales de estafa. Es una buena señal — no garantiza que el anuncio sea genuino, pero no hay nada evidente de qué preocuparse por ahora.", "badge_amber": "Algunas dudas", "head_amber": "Algunas cosas merecen una segunda comprobación", "sub_amber": "Nada de esto es determinante por sí solo, pero conviene confirmar un par de detalles antes de enviar dinero.", "badge_red": "Riesgo alto", "head_red": "Varias señales de alarma habituales en estafas", "sub_red": "Esta combinación de detalles coincide con patrones que vemos a menudo en estafas de alquiler. Te recomendamos encarecidamente no enviar dinero hasta que alguien lo haya comprobado en persona.", "copy_text_title": "Comprobación gratuita de ConfirMad —", "copy_text_checked_at": "Comprobado en", "copied_to_clipboard": "Copiado al portapapeles", "link_copied": "Enlace copiado"};
+  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "El precio parece inusualmente bajo para {district}", "price_severe_detail": "Eso equivale a unos {perM2} €/m², muy por debajo del rango habitual de {low}–{high} €/m² en esta zona. Los anuncios con precios poco realistas son uno de los cebos más comunes en las estafas de alquiler.", "price_moderate_title": "El precio es algo bajo para {district}", "price_moderate_detail": "Unos {perM2} €/m², algo por debajo del rango habitual de {low}–{high} €/m² en esta zona. No es alarmante por sí solo, pero merece un segundo vistazo junto con el resto de datos.", "price_ok_title": "El precio parece realista para {district}", "price_ok_detail": "Unos {perM2} €/m², en línea con el rango habitual de {low}–{high} €/m² en esta zona.", "abroad_title": "El casero dice que está en el extranjero", "abroad_detail": "No puede enseñar el piso en persona porque dice estar fuera del país. Los caseros legítimos con un contacto local o una agencia normalmente pueden organizar una visita igualmente.", "transfer_title": "Pago exigido antes de una visita", "transfer_detail": "Que te pidan transferir una fianza o el alquiler antes de haber visto realmente el piso es una de las señales más claras de una estafa de alquiler.", "wu_title": "Piden pagar por Western Union, cripto o tarjetas regalo", "wu_detail": "Ningún casero legítimo en España pide esto. Existen porque son casi imposibles de rastrear o de recuperar.", "novideo_title": "Se negó a hacer una videollamada", "novideo_detail": "Un casero real que enseña un piso real, esté vacío o alquilado en ese momento, normalmente no tiene problema en hacer una videollamada rápida para demostrarlo.", "rush_title": "Te presionó para decidir rápido", "rush_detail": "La urgencia de \"hay otra persona interesada\" es una táctica clásica para evitar que compruebes las cosas con calma antes de pagar.", "lang_title": "Errores raros de ortografía o gramática en el anuncio", "lang_detail": "A veces es señal de un anuncio de estafa copiado y pegado o traducido automáticamente — aunque muchos anuncios genuinos también tienen erratas, así que esto por sí solo no demuestra nada.", "platform_title": "Compartido fuera de una plataforma de anuncios verificada", "platform_detail_direct": "Te lo enviaron directamente, sin ningún anuncio público con el que contrastarlo.", "platform_detail_facebook": "Los grupos de Facebook y Marketplace apenas tienen verificación de anuncios.", "platform_detail_suffix": "Más fácil de falsear que un anuncio en una plataforma como Idealista o Fotocasa.", "no_flags": "Todavía no se ha introducido ningún dato que coincida con señales de alarma habituales.", "badge_green": "Riesgo bajo", "head_green": "No se han encontrado señales de alarma importantes", "sub_green": "Nada de esto coincide con los patrones habituales de estafa. Es una buena señal — no garantiza que el anuncio sea genuino, pero no hay nada evidente de qué preocuparse por ahora.", "badge_amber": "Algunas dudas", "head_amber": "Algunas cosas merecen una segunda comprobación", "sub_amber": "Nada de esto es determinante por sí solo, pero conviene confirmar un par de detalles antes de enviar dinero.", "badge_red": "Riesgo alto", "head_red": "Varias señales de alarma habituales en estafas", "sub_red": "Esta combinación de detalles coincide con patrones que vemos a menudo en estafas de alquiler. Te recomendamos encarecidamente no enviar dinero hasta que alguien lo haya comprobado en persona.", "copy_text_title": "Comprobación gratuita de ConfirMad —", "copy_text_checked_at": "Comprobado en", "copied_to_clipboard": "Copiado al portapapeles", "link_copied": "Enlace copiado", "cta_online": "Verifícalo online por 29,85 €", "cta_visit": "Reserva una visita por 59,99 €", "cta_faq": "¿Por qué una comprobación presencial?", "cta_visit_secondary": "¿Prefieres que alguien visite el piso en persona? · 59,99 €", "cta_online_secondary": "O haz una comprobación online rápida · 29,85 €"};
 
   function t(str, vars){
     return str.replace(/\{(\w+)\}/g, function(_, k){ return (vars && (k in vars)) ? vars[k] : ''; });
@@ -500,6 +503,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
   var resultHeadline = document.getElementById('resultHeadline');
   var resultSub = document.getElementById('resultSub');
   var flagList = document.getElementById('flagList');
+  var ctaPrimary = document.getElementById('ctaPrimary');
+  var ctaSecondary = document.getElementById('ctaSecondary');
 
   var ICONS = {
     high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
@@ -613,7 +618,35 @@ footer .lang-switch a.lang-current{ color:#fff; }
       flagList.appendChild(li);
     }
 
+    // Route the result CTAs by risk level: a red result goes straight to
+    // the plan that actually resolves it (a human visiting in person),
+    // amber offers the online check with a secondary nudge toward a visit,
+    // and green keeps pointing at the online check with the usual FAQ link.
+    if (result.level === 'red') {
+      ctaPrimary.href = '/solicitar.html?plan=visit';
+      ctaPrimary.textContent = I18N.cta_visit;
+      ctaPrimary.setAttribute('data-plan', 'visit');
+      ctaSecondary.href = '/solicitar.html?plan=online';
+      ctaSecondary.textContent = I18N.cta_online_secondary;
+      ctaSecondary.setAttribute('data-plan', 'online');
+    } else if (result.level === 'amber') {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = '/solicitar.html?plan=visit';
+      ctaSecondary.textContent = I18N.cta_visit_secondary;
+      ctaSecondary.setAttribute('data-plan', 'visit');
+    } else {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = 'index.html#faq';
+      ctaSecondary.textContent = I18N.cta_faq;
+      ctaSecondary.removeAttribute('data-plan');
+    }
+
     resultSection.classList.add('show');
+    cmTrack('free_check_result', { risk_level: result.level, score: result.score });
   }
 
   function getFormData(){
@@ -717,6 +750,25 @@ footer .lang-switch a.lang-current{ color:#fff; }
     });
     runCheck(false);
   })();
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  [ctaPrimary, ctaSecondary].forEach(function(el){
+    el.addEventListener('click', function(){
+      var plan = el.getAttribute('data-plan');
+      if (plan) cmTrack('select_plan', { plan: plan, position: 'check_result' });
+    });
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
 
 })();
 </script>

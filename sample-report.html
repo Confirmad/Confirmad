@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="confirmad-build" content="6a260fb">
 <title>Sample report · ConfirMad</title>
 <meta name="description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
 <link rel="canonical" href="https://confirmad.es/sample-report.html">
@@ -11,11 +12,11 @@
 <meta property="og:title" content="Sample report · ConfirMad">
 <meta property="og:description" content="See exactly what a ConfirMad verification report looks like before you book a check on a Madrid rental listing.">
 <meta property="og:url" content="https://confirmad.es/sample-report.html">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sample report · ConfirMad">
 <meta name="twitter:description" content="See exactly what a ConfirMad verification report looks like before you book a check.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -25,20 +26,22 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "In-person rental listing verification in Madrid: address, landlord identity, photos and terms confirmed before you pay a deposit.",
+  "description": "Independent, in-person rental listing checks in Madrid: condition, light, noise, price and terms confirmed before you pay a deposit.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Express anti-scam check: Land Registry, Catastro, reverse photo search, advertiser check and price comparison, with a green/amber/red verdict." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the Express anti-scam check, plus an in-person visit with a written report, dated photos and a price analysis." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in In-person visit, plus a live video call from inside the apartment." } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Express online check", "description": "Land Registry check against the advertiser, reverse photo search, and a price comparison, with a clear verdict." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Everything in the online check, plus an in-person visit with a written report, dated photos and a price check." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Everything in the in-person visit, plus a live video call from inside the flat." } }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
   --paper: #EEF1EF;
@@ -384,7 +387,7 @@ footer.site a:hover{ text-decoration:underline; }
       <li><a href="check.html">Free check</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
     </ul>
-    <a href="index.html#pricing" class="btn btn-primary nav-cta">Check a listing</a>
+    <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta" data-plan="visit" data-position="sample_nav">Check a listing</a>
   </nav>
 </header>
 
@@ -570,16 +573,10 @@ footer.site a:hover{ text-decoration:underline; }
         <div class="shot">
           <figure>
             <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
-              <img src="/image1.jpg" alt="Building façade at C/ Fuencarral 45" onerror="this.remove()">
-            </div>
-            <figcaption>Façade and street number, from the pavement.</figcaption>
-          </figure>
-        </div>
-        <div class="shot">
-          <figure>
-            <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><path d="M3 12v7h18v-7"/><path d="M5 12V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M6 19v2M18 19v2"/></svg>
+              <picture>
+                <source srcset="/image-salon.webp" type="image/webp">
+                <img src="/image-salon.jpg" alt="Living room, photographed during the visit" width="800" height="534" loading="lazy" decoding="async" onerror="this.closest('picture').remove()">
+              </picture>
             </div>
             <figcaption>Living room, matching the listing photos.</figcaption>
           </figure>
@@ -587,7 +584,10 @@ footer.site a:hover{ text-decoration:underline; }
         <div class="shot">
           <figure>
             <div class="frame">
-              <svg class="ph" viewBox="0 0 24 24" fill="none" stroke="#16233B" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M12 4v16M4 12h16"/></svg>
+              <picture>
+                <source srcset="/image-dormitorio.webp" type="image/webp">
+                <img src="/image-dormitorio.jpg" alt="Second bedroom, photographed during the visit" width="800" height="534" loading="lazy" decoding="async" onerror="this.closest('picture').remove()">
+              </picture>
             </div>
             <figcaption>Second bedroom — window faces the courtyard, not the street.</figcaption>
           </figure>
@@ -675,9 +675,9 @@ footer.site a:hover{ text-decoration:underline; }
   <div class="page-cta">
     <div>
       <h2>Have an address you want checked?</h2>
-      <p>One flat fee, paid securely by card when you book, VAT included. Online verification in under 12 hours, visits within 1 day.</p>
+      <p>One flat fee, paid securely by card when you book, VAT included. Express online check in under 12 hours, visits within 1 day.</p>
     </div>
-    <a href="index.html#pricing" class="btn btn-primary">Check a listing</a>
+    <a href="/solicitar.html?plan=visit" class="btn btn-primary" data-plan="visit" data-position="sample_bottom">Check a listing</a>
   </div>
 </main>
 
@@ -686,13 +686,34 @@ footer.site a:hover{ text-decoration:underline; }
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>Not a law firm. We verify listings, not contracts.</div>
-    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a></div>
+    <div><a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Terms</a> · <a href="/empresas.html">For agencies, universities and companies</a></div>
   </div>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/34639589180?text=Hi%2C%20I%20have%20a%20question%20about%20verifying%20a%20listing%20in%20Madrid" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
 </a>
+
+<script>
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  cmTrack('view_sample_report', {});
+  document.querySelectorAll('[data-plan]').forEach(function(el){
+    el.addEventListener('click', function(){
+      cmTrack('select_plan', { plan: el.getAttribute('data-plan'), position: el.getAttribute('data-position') || '' });
+    });
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
+</script>
 
 <script src="/consent.js" defer></script>
 </body>

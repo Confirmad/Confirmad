@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="confirmad-build" content="6a260fb">
+<title>Thank you · ConfirMad</title>
+<meta name="description" content="Your ConfirMad request is confirmed.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/confirmad-favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+
+:root{
+  --paper: #EEF1EF;
+  --card: #FFFFFF;
+  --ink: #16233B;
+  --ink-soft: #4B5768;
+  --ink-faint: #636C79;
+  --stamp: #2F5D45;
+  --stamp-dark: #234634;
+  --verified: #2F5D45;
+  --line: #D7DCD8;
+  --font: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --max: 640px;
+}
+*{ box-sizing: border-box; }
+body{
+  margin:0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+a{ color: inherit; }
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+h1,h2,h3{ font-family: var(--font); font-weight: 700; letter-spacing: -0.01em; margin: 0; color: var(--ink); }
+p{ margin: 0 0 1em; color: var(--ink-soft); }
+:focus-visible{ outline: 2px solid var(--stamp); outline-offset: 3px; }
+
+header.site{
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+  background: rgba(238,241,239,0.92); backdrop-filter: blur(6px);
+  position: sticky; top:0;
+}
+.brand{ display:flex; align-items:center; text-decoration:none; }
+.brand-logo{ height: 28px; width:auto; display:block; }
+
+main{ padding: 44px 0 80px; }
+
+.success-badge{
+  width:64px; height:64px; border-radius:50%;
+  background: rgba(47,93,69,0.12); color: var(--stamp);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom: 20px;
+}
+.success-badge svg{ width:32px; height:32px; }
+
+h1.title{ font-size: 1.7rem; margin-bottom: 10px; line-height:1.3; }
+p.lede{ font-size: 1rem; margin-bottom: 28px; max-width: 54ch; }
+
+.ref-card{
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px 20px; margin-bottom: 28px;
+  box-shadow: 0 14px 28px -22px rgba(22,35,59,0.28);
+}
+.ref-card .ref-label{ font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-faint); margin-bottom: 4px; }
+.ref-card .ref-value{ font-family: var(--font-mono); font-size: 1.2rem; font-weight:700; color: var(--ink); letter-spacing: 0.02em; }
+.ref-card .ref-plan{ font-size: 0.86rem; color: var(--ink-soft); margin-top: 6px; }
+
+.steps{ display:flex; flex-direction:column; gap: 14px; margin-bottom: 28px; }
+.step{
+  display:flex; gap: 14px; align-items:flex-start;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px;
+}
+.step .num{
+  flex:none; width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(47,93,69,0.12); color: var(--stamp);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-mono); font-weight:700; font-size: 0.82rem;
+}
+.step h3{ font-size: 0.95rem; margin-bottom: 4px; font-weight:600; }
+.step p{ font-size: 0.88rem; margin-bottom: 0; }
+
+.photo-box{
+  background: rgba(47,93,69,0.07); border: 1.5px dashed var(--verified); border-radius: 14px;
+  padding: 18px 20px; margin-bottom: 24px;
+}
+.photo-box h3{ font-size: 0.98rem; margin-bottom: 6px; color: var(--verified); }
+.photo-box p{ font-size: 0.9rem; margin-bottom: 14px; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family: var(--font); font-weight:700; font-size: 0.95rem;
+  padding: 12px 20px; border-radius: 999px;
+  text-decoration:none; cursor:pointer; border: 1.5px solid transparent;
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  white-space: normal; line-height: 1.3; text-align:center;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn:active{ transform: translateY(0) scale(0.97); }
+.btn-primary{ background: var(--stamp); color:#fff; box-shadow: 0 10px 20px -10px rgba(47,93,69,0.6); }
+.btn-primary:hover{ background: var(--stamp-dark); box-shadow: 0 14px 24px -8px rgba(47,93,69,0.7); }
+.btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+
+.share-section{ margin-top: 8px; }
+.share-section h3{ font-size: 0.92rem; margin-bottom: 10px; }
+.share-row{ display:flex; flex-wrap:wrap; gap: 12px; }
+.share-row .btn{ flex: 1 1 auto; min-width: 0; }
+
+footer{ padding: 24px 0 40px; text-align:center; font-size: 0.82rem; color: var(--ink-faint); }
+footer a{ color: var(--ink-faint); text-decoration:underline; }
+footer a:hover{ color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="/index.html#top" class="brand"><img src="/confirmad-logo-horizontal.png" alt="ConfirMad" class="brand-logo"></a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="success-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+
+    <h1 class="title" id="title">Payment received</h1>
+    <p class="lede" id="lede">Thanks — we've got your details. We'll email you as soon as your report is ready.</p>
+
+    <div class="ref-card" id="refCard" style="display:none;">
+      <div class="ref-label" id="refLabel">Your reference</div>
+      <div class="ref-value" id="refValue"></div>
+      <div class="ref-plan" id="refPlan"></div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3 id="step1Title">Payment confirmed</h3>
+          <p id="step1Body">We've received your payment and your listing details.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3 id="step2Title">We check it</h3>
+          <p id="step2Body" data-fallback="We start the check now.">We start the check now.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3 id="step3Title">You get your report</h3>
+          <p id="step3Body">A written report with dated photos, sent to your email.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-box">
+      <h3 id="photoTitle">Send us the listing photos</h3>
+      <p id="photoBody">If you haven't already, send us the photos from the listing on WhatsApp — it helps us compare them against what we find.</p>
+      <a id="photoWhatsApp" class="btn btn-primary" href="#" target="_blank" rel="noopener">Send photos on WhatsApp →</a>
+    </div>
+
+    <div class="share-section">
+      <h3 id="shareTitle">Know someone else flat-hunting in Madrid?</h3>
+      <div class="share-row">
+        <a id="shareWhatsApp" class="btn btn-ghost" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+        <a id="shareEmail" class="btn btn-ghost" href="#">Share by email</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span id="footerTagline">ConfirMad · Madrid, Spain · Not a law firm.</span><br>
+  <a href="/aviso-legal.html" id="footerLegal">Legal notice</a> · <a href="/privacidad.html" id="footerPrivacy">Privacy</a> · <a href="/terminos.html" id="footerTerms">Terms</a> · <a href="/empresas.html" id="footerBusiness">For agencies, universities and companies</a>
+</footer>
+
+<script>
+(function(){
+  var STRINGS = {
+    en: {
+      title: 'Payment received', lede: "Thanks — we've got your details. We'll email you as soon as your report is ready.",
+      refLabel: 'Your reference', step1Title: 'Payment confirmed', step1Body: "We've received your payment and your listing details.",
+      step2Title: 'We check it', step2Online: 'Result in under 12 hours.', step2Visit: 'Visit within 24 h of the landlord confirming a time.',
+      step3Title: 'You get your report', step3Body: 'A written report with dated photos, sent to your email.',
+      photoTitle: 'Send us the listing photos', photoBody: "If you haven't already, send us the photos from the listing on WhatsApp — it helps us compare them against what we find.",
+      photoBtn: 'Send photos on WhatsApp →', photoMsg: 'Hi, here are the listing photos for my request {ref}:',
+      shareTitle: 'Know someone else flat-hunting in Madrid?', shareWhatsApp: 'Share on WhatsApp', shareEmail: 'Share by email',
+      shareMsg: "I'm using ConfirMad to verify a Madrid rental before paying anything — thought you should see this too: https://confirmad.es",
+      shareSubject: 'A site for checking Madrid rentals before you pay', backLink: '← Back to ConfirMad',
+      footerTagline: 'ConfirMad · Madrid, Spain · Not a law firm.', footerLegal: 'Legal notice', footerPrivacy: 'Privacy', footerTerms: 'Terms', footerBusiness: 'For agencies, universities and companies',
+      noOrderLede: "Thanks for booking with ConfirMad. We've emailed you a confirmation — check your inbox (and spam folder) for your reference number."
+    },
+    es: {
+      title: 'Pago recibido', lede: 'Gracias — ya tenemos tus datos. Te escribiremos por correo en cuanto el informe esté listo.',
+      refLabel: 'Tu referencia', step1Title: 'Pago confirmado', step1Body: 'Hemos recibido tu pago y los datos del anuncio.',
+      step2Title: 'Lo comprobamos', step2Online: 'Resultado en menos de 12 horas.', step2Visit: 'Visita en las 24 h siguientes a que el anunciante confirme la hora.',
+      step3Title: 'Recibes tu informe', step3Body: 'Un informe escrito con fotos fechadas, enviado a tu correo.',
+      photoTitle: 'Envíanos las fotos del anuncio', photoBody: 'Si no lo has hecho ya, envíanos las fotos del anuncio por WhatsApp — nos ayuda a compararlas con lo que encontremos.',
+      photoBtn: 'Enviar fotos por WhatsApp →', photoMsg: 'Hola, aquí tenéis las fotos del anuncio de mi solicitud {ref}:',
+      shareTitle: '¿Conoces a alguien más buscando piso en Madrid?', shareWhatsApp: 'Compartir por WhatsApp', shareEmail: 'Compartir por correo',
+      shareMsg: 'Estoy usando ConfirMad para comprobar un piso en alquiler en Madrid antes de pagar nada — pensé que te interesaría: https://confirmad.es',
+      shareSubject: 'Una web para comprobar pisos en Madrid antes de pagar', backLink: '← Volver a ConfirMad',
+      footerTagline: 'ConfirMad · Madrid, España · No somos un despacho de abogados.', footerLegal: 'Aviso legal', footerPrivacy: 'Privacidad', footerTerms: 'Términos', footerBusiness: 'Para agencias, universidades y empresas',
+      noOrderLede: 'Gracias por reservar con ConfirMad. Te hemos enviado un correo de confirmación — revisa tu bandeja de entrada (y spam) para ver tu número de referencia.'
+    },
+    it: {
+      title: 'Pagamento ricevuto', lede: 'Grazie — abbiamo i tuoi dati. Ti scriveremo via email non appena il report sarà pronto.',
+      refLabel: 'Il tuo riferimento', step1Title: 'Pagamento confermato', step1Body: "Abbiamo ricevuto il tuo pagamento e i dati dell'annuncio.",
+      step2Title: 'Lo verifichiamo', step2Online: 'Risultato in meno di 12 ore.', step2Visit: "Visita entro 24 h da quando l'inserzionista conferma un orario.",
+      step3Title: 'Ricevi il tuo report', step3Body: 'Un report scritto con foto datate, inviato alla tua email.',
+      photoTitle: "Inviaci le foto dell'annuncio", photoBody: "Se non l'hai già fatto, inviaci le foto dell'annuncio su WhatsApp — ci aiuta a confrontarle con quello che troviamo.",
+      photoBtn: 'Invia foto su WhatsApp →', photoMsg: 'Ciao, ecco le foto dell\'annuncio per la mia richiesta {ref}:',
+      shareTitle: 'Conosci qualcun altro in cerca di casa a Madrid?', shareWhatsApp: 'Condividi su WhatsApp', shareEmail: 'Condividi via email',
+      shareMsg: "Sto usando ConfirMad per verificare un affitto a Madrid prima di pagare qualsiasi cosa — ho pensato potesse interessarti: https://confirmad.es",
+      shareSubject: 'Un sito per verificare gli affitti a Madrid prima di pagare', backLink: '← Torna a ConfirMad',
+      footerTagline: 'ConfirMad · Madrid, Spagna · Non siamo uno studio legale.', footerLegal: 'Note legali', footerPrivacy: 'Privacy', footerTerms: 'Termini', footerBusiness: 'Per agenzie, università e aziende',
+      noOrderLede: "Grazie per aver prenotato con ConfirMad. Ti abbiamo inviato una email di conferma — controlla la posta in arrivo (e lo spam) per il numero di riferimento."
+    },
+    fr: {
+      title: 'Paiement reçu', lede: "Merci — nous avons vos informations. Nous vous écrirons par email dès que votre rapport sera prêt.",
+      refLabel: 'Votre référence', step1Title: 'Paiement confirmé', step1Body: "Nous avons bien reçu votre paiement et les détails de l'annonce.",
+      step2Title: 'Nous vérifions', step2Online: 'Résultat en moins de 12 h.', step2Visit: "Visite sous 24 h après confirmation d'un horaire par l'annonceur.",
+      step3Title: 'Vous recevez votre rapport', step3Body: 'Un rapport écrit avec photos datées, envoyé par email.',
+      photoTitle: "Envoyez-nous les photos de l'annonce", photoBody: "Si ce n'est pas déjà fait, envoyez-nous les photos de l'annonce sur WhatsApp — cela nous aide à les comparer avec ce que nous constatons.",
+      photoBtn: 'Envoyer les photos sur WhatsApp →', photoMsg: 'Bonjour, voici les photos de l\'annonce pour ma demande {ref} :',
+      shareTitle: 'Vous connaissez quelqu\'un qui cherche un logement à Madrid ?', shareWhatsApp: 'Partager sur WhatsApp', shareEmail: 'Partager par email',
+      shareMsg: "J'utilise ConfirMad pour vérifier une location à Madrid avant de payer quoi que ce soit — je me suis dit que ça pourrait t'intéresser : https://confirmad.es",
+      shareSubject: 'Un site pour vérifier les locations à Madrid avant de payer', backLink: '← Retour à ConfirMad',
+      footerTagline: 'ConfirMad · Madrid, Espagne · Nous ne sommes pas un cabinet juridique.', footerLegal: 'Mentions légales', footerPrivacy: 'Confidentialité', footerTerms: 'Conditions', footerBusiness: 'Pour les agences, universités et entreprises',
+      noOrderLede: "Merci d'avoir réservé avec ConfirMad. Nous vous avons envoyé un email de confirmation — vérifiez votre boîte de réception (et vos spams) pour votre numéro de référence."
+    }
+  };
+
+  var params = new URLSearchParams(window.location.search);
+  var order = null;
+  try {
+    var raw = sessionStorage.getItem('confirmad_order');
+    if (raw) order = JSON.parse(raw);
+  } catch (e) { console.warn('sessionStorage unavailable:', e); }
+
+  var lang = (order && order.lang) || (params.get('lang') || '').toLowerCase();
+  if (!STRINGS[lang]) {
+    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    lang = STRINGS[nav] ? nav : 'en';
+  }
+  var t = STRINGS[lang];
+  document.documentElement.lang = lang;
+
+  function setText(id, value){ var el = document.getElementById(id); if (el) el.textContent = value; }
+
+  document.title = t.title + ' · ConfirMad';
+  setText('title', t.title);
+  setText('refLabel', t.refLabel);
+  setText('step1Title', t.step1Title);
+  setText('step1Body', t.step1Body);
+  setText('step2Title', t.step2Title);
+  setText('step3Title', t.step3Title);
+  setText('step3Body', t.step3Body);
+  setText('photoTitle', t.photoTitle);
+  setText('photoBody', t.photoBody);
+  setText('photoWhatsApp', t.photoBtn);
+  setText('shareTitle', t.shareTitle);
+  setText('shareWhatsApp', t.shareWhatsApp);
+  setText('shareEmail', t.shareEmail);
+  setText('footerTagline', t.footerTagline);
+  setText('footerLegal', t.footerLegal);
+  setText('footerPrivacy', t.footerPrivacy);
+  setText('footerTerms', t.footerTerms);
+  setText('footerBusiness', t.footerBusiness);
+
+  var planKeyFromUrl = params.get('plan');
+  var planKey = (order && order.plan) || planKeyFromUrl || 'visit';
+  var step2Body = planKey === 'online' ? t.step2Online : t.step2Visit;
+  setText('step2Body', step2Body);
+
+  var reference = (order && order.reference) || params.get('ref') || '';
+
+  if (order) {
+    setText('lede', t.lede);
+    document.getElementById('refCard').style.display = 'block';
+    setText('refValue', order.reference || '—');
+    setText('refPlan', (order.planName || '') + (order.amount ? ' · ' + order.amount : ''));
+  } else {
+    setText('lede', t.noOrderLede);
+  }
+
+  var photoMsg = t.photoMsg.replace('{ref}', reference || '—');
+  document.getElementById('photoWhatsApp').href = 'https://wa.me/34639589180?text=' + encodeURIComponent(photoMsg);
+
+  document.getElementById('shareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(t.shareMsg);
+  document.getElementById('shareEmail').href = 'mailto:?subject=' + encodeURIComponent(t.shareSubject) + '&body=' + encodeURIComponent(t.shareMsg);
+
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  document.getElementById('photoWhatsApp').addEventListener('click', function(){
+    cmTrack('whatsapp_click', { position: 'gracias_photos' });
+  });
+  document.getElementById('shareWhatsApp').addEventListener('click', function(){
+    cmTrack('whatsapp_click', { position: 'gracias_share' });
+  });
+
+  // GA4 purchase event — only fires once consent has loaded gtag, and only once per order
+  try {
+    if (order && typeof window.gtag === 'function'){
+      var firedKey = 'confirmad_purchase_fired_' + (order.reference || '');
+      if (!sessionStorage.getItem(firedKey)){
+        var amountNum = parseFloat(String(order.amount || '').replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
+        window.gtag('event', 'purchase', {
+          transaction_id: order.reference || '',
+          value: amountNum,
+          currency: 'EUR',
+          items: [{ item_name: order.planName || planKey, price: amountNum, quantity: 1 }]
+        });
+        sessionStorage.setItem(firedKey, '1');
+      }
+    }
+  } catch (e) { console.warn('GA4 purchase event failed:', e); }
+})();
+</script>
+
+<script src="/consent.js" defer></script>
+</body>
+</html>

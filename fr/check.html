@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="confirmad-build" content="6a260fb">
 <title>Détecteur gratuit de signaux d'alerte · ConfirMad</title>
 <meta name="description" content="Indiquez les détails d'une annonce de location à Madrid et obtenez instantanément une vérification gratuite des signaux d'alerte les plus courants : prix irréaliste, paiement avant la visite, pas d'appel vidéo, et plus.">
 <link rel="canonical" href="https://confirmad.es/fr/check.html">
@@ -16,11 +17,11 @@
 <meta property="og:title" content="Détecteur gratuit de signaux d'alerte · ConfirMad">
 <meta property="og:description" content="Vérification gratuite et instantanée des signaux d'alerte les plus courants dans les locations à Madrid. Pas d'inscription, rien n'est envoyé nulle part — tout fonctionne dans votre navigateur.">
 <meta property="og:url" content="https://confirmad.es/fr/check.html">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Détecteur gratuit de signaux d'alerte · ConfirMad">
 <meta name="twitter:description" content="Vérification gratuite et instantanée des signaux d'alerte les plus courants dans les locations à Madrid.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -30,20 +31,22 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "Vérification en ligne et sur place d'annonces de location à Madrid : registre foncier, identité du propriétaire, photos et conditions confirmées avant de verser une caution.",
+  "description": "Vérification sur place et indépendante des locations à Madrid : état, lumière, bruit, prix et conditions confirmés avant de verser une caution.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Vérification anti-arnaque express : registre foncier, cadastre, recherche inversée des photos, vérification de l'annonceur et comparaison du prix, avec verdict vert/orange/rouge." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Tout ce qui est inclus dans la Vérification anti-arnaque express, plus une visite sur place avec rapport écrit, photos datées et analyse du prix." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Tout ce qui est inclus dans la Visite sur place, plus un appel vidéo en direct depuis l'intérieur de l'appartement." } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Vérification en ligne express", "description": "Vérification au registre foncier par rapport à l'annonceur, recherche inversée des photos et comparaison du prix, avec un verdict clair." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visite sur place", "description": "Tout ce qui est inclus dans la vérification en ligne, plus une visite sur place avec rapport écrit, photos datées et analyse du prix." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visite en direct", "description": "Tout ce qui est inclus dans la visite sur place, plus un appel vidéo en direct depuis l'intérieur de l'appartement." } }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
   --paper: #EEF1EF;
@@ -295,7 +298,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/check.html">EN</a> · <a href="https://confirmad.es/es/check.html">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html" class="lang-current">FR</a></div>
-      <a href="index.html#pricing" class="btn btn-primary nav-cta">Vérifier une annonce</a>
+      <a href="index.html#pricing" class="btn btn-primary nav-cta">Réserver une vérification</a>
     </div>
   </nav>
 </header>
@@ -407,8 +410,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">Ceci est une auto-vérification rapide basée sur des schémas d'arnaque courants — elle ne tient compte que de ce que vous avez indiqué, rien de plus. Ce n'est la preuve de rien, et cela ne remplace pas quelqu'un qui vérifie en personne que l'appartement est réel.</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">Vérifiez-le en ligne pour 29,85 €</a>
-          <a href="index.html#faq" class="btn btn-outline">Pourquoi une vérification sur place ?</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-primary" id="ctaPrimary" data-plan="online" data-position="check_result">Vérifiez-le en ligne pour 29,85 €</a>
+          <a href="index.html#faq" class="btn btn-outline" id="ctaSecondary">Pourquoi une vérification sur place ?</a>
         </div>
       </div>
 
@@ -426,7 +429,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
   <div class="wrap">
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
-    <div><a href="/aviso-legal.html">Mentions légales</a> · <a href="/privacidad.html">Confidentialité</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Conditions</a></div>
+    <div><a href="/aviso-legal.html">Mentions légales</a> · <a href="/privacidad.html">Confidentialité</a> · <a href="/cookies.html">Cookies</a> · <a href="/terminos.html">Conditions</a> · <a href="/empresas.html">Pour les agences, universités et entreprises</a></div>
     <div class="lang-switch"><a href="https://confirmad.es/check.html">EN</a> · <a href="https://confirmad.es/es/check.html">ES</a> · <a href="https://confirmad.es/it/check.html">IT</a> · <a href="https://confirmad.es/fr/check.html" class="lang-current">FR</a></div>
   </div>
 </footer>
@@ -439,7 +442,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
 (function(){
   'use strict';
 
-  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "Le prix semble anormalement bas pour {district}", "price_severe_detail": "Cela équivaut à environ {perM2} €/m², bien en dessous de la fourchette habituelle de {low}–{high} €/m² pour ce quartier. Les annonces à prix irréaliste sont l'un des appâts les plus courants dans les arnaques locatives.", "price_moderate_title": "Le prix est un peu bas pour {district}", "price_moderate_detail": "Environ {perM2} €/m², légèrement en dessous de la fourchette habituelle de {low}–{high} €/m² pour ce quartier. Pas alarmant en soi, mais à reconsidérer avec le reste des éléments.", "price_ok_title": "Le prix semble réaliste pour {district}", "price_ok_detail": "Environ {perM2} €/m², conforme à la fourchette habituelle de {low}–{high} €/m² pour ce quartier.", "abroad_title": "Le propriétaire dit être à l'étranger", "abroad_detail": "Ne peut pas montrer l'appartement en personne car il dit être actuellement hors du pays. Les propriétaires légitimes avec un contact local ou une agence peuvent généralement quand même organiser une visite.", "transfer_title": "Paiement demandé avant une visite", "transfer_detail": "Le fait qu'on vous demande de virer une caution ou un loyer avant d'avoir réellement vu l'appartement est l'un des signes les plus clairs d'une arnaque locative.", "wu_title": "Demande à être payé par Western Union, crypto, ou cartes-cadeaux", "wu_detail": "Aucun propriétaire légitime en Espagne ne demande cela. Ces moyens existent car ils sont quasiment impossibles à tracer ou à récupérer.", "novideo_title": "A refusé un appel vidéo", "novideo_detail": "Un vrai propriétaire montrant un appartement réel, vide ou actuellement loué, n'a généralement aucun problème à faire un appel vidéo rapide pour le prouver.", "rush_title": "Vous a poussé à décider vite", "rush_detail": "L'urgence du \"quelqu'un d'autre est intéressé\" est une tactique classique pour vous empêcher de bien vérifier les choses avant de payer.", "lang_title": "Fautes d'orthographe ou de grammaire étranges dans l'annonce", "lang_detail": "Parfois le signe d'une annonce-arnaque copiée-collée ou traduite automatiquement — même si beaucoup d'annonces authentiques ont aussi des fautes de frappe, donc cela seul ne prouve rien.", "platform_title": "Partagée en dehors d'une plateforme d'annonces vérifiée", "platform_detail_direct": "Envoyée directement, sans aucune annonce publique à laquelle la comparer.", "platform_detail_facebook": "Les groupes Facebook et Marketplace n'ont que peu ou pas de vérification des annonces.", "platform_detail_suffix": "Plus facile à falsifier qu'une annonce sur une plateforme comme Idealista ou Fotocasa.", "no_flags": "Aucun détail correspondant à des signaux d'alerte courants n'a encore été saisi.", "badge_green": "Risque faible", "head_green": "Aucun signal d'alerte majeur détecté", "sub_green": "Rien ici ne correspond aux schémas d'arnaque habituels. C'est bon signe — cela ne garantit pas que l'annonce est authentique, mais rien d'évident ne pose problème pour l'instant.", "badge_amber": "Quelques doutes", "head_amber": "Quelques points à revérifier", "sub_amber": "Rien ici n'est déterminant à lui seul, mais quelques détails méritent d'être confirmés avant d'envoyer de l'argent.", "badge_red": "Risque élevé", "head_red": "Plusieurs signaux d'alerte courants dans les arnaques", "sub_red": "Cette combinaison de détails correspond à des schémas que l'on retrouve souvent dans les arnaques locatives. Nous vous recommandons fortement de ne pas envoyer d'argent tant que quelqu'un n'a pas vérifié cela en personne.", "copy_text_title": "Vérification gratuite ConfirMad —", "copy_text_checked_at": "Vérifié le", "copied_to_clipboard": "Copié dans le presse-papiers", "link_copied": "Lien copié"};
+  var I18N = {"district_labels": {"centro": "Centro", "salamanca": "Salamanca", "chamberi": "Chamberí", "chamartin": "Chamartín", "retiro": "Retiro", "arganzuela": "Arganzuela", "moncloa-aravaca": "Moncloa-Aravaca", "tetuan": "Tetuán", "ciudad-lineal": "Ciudad Lineal", "hortaleza": "Hortaleza", "fuencarral-el-pardo": "Fuencarral-El Pardo", "san-blas-canillejas": "San Blas-Canillejas", "barajas": "Barajas", "latina": "Latina", "carabanchel": "Carabanchel", "usera": "Usera", "puente-de-vallecas": "Puente de Vallecas", "villa-de-vallecas": "Villa de Vallecas", "vicalvaro": "Vicálvaro", "villaverde": "Villaverde"}, "price_severe_title": "Le prix semble anormalement bas pour {district}", "price_severe_detail": "Cela équivaut à environ {perM2} €/m², bien en dessous de la fourchette habituelle de {low}–{high} €/m² pour ce quartier. Les annonces à prix irréaliste sont l'un des appâts les plus courants dans les arnaques locatives.", "price_moderate_title": "Le prix est un peu bas pour {district}", "price_moderate_detail": "Environ {perM2} €/m², légèrement en dessous de la fourchette habituelle de {low}–{high} €/m² pour ce quartier. Pas alarmant en soi, mais à reconsidérer avec le reste des éléments.", "price_ok_title": "Le prix semble réaliste pour {district}", "price_ok_detail": "Environ {perM2} €/m², conforme à la fourchette habituelle de {low}–{high} €/m² pour ce quartier.", "abroad_title": "Le propriétaire dit être à l'étranger", "abroad_detail": "Ne peut pas montrer l'appartement en personne car il dit être actuellement hors du pays. Les propriétaires légitimes avec un contact local ou une agence peuvent généralement quand même organiser une visite.", "transfer_title": "Paiement demandé avant une visite", "transfer_detail": "Le fait qu'on vous demande de virer une caution ou un loyer avant d'avoir réellement vu l'appartement est l'un des signes les plus clairs d'une arnaque locative.", "wu_title": "Demande à être payé par Western Union, crypto, ou cartes-cadeaux", "wu_detail": "Aucun propriétaire légitime en Espagne ne demande cela. Ces moyens existent car ils sont quasiment impossibles à tracer ou à récupérer.", "novideo_title": "A refusé un appel vidéo", "novideo_detail": "Un vrai propriétaire montrant un appartement réel, vide ou actuellement loué, n'a généralement aucun problème à faire un appel vidéo rapide pour le prouver.", "rush_title": "Vous a poussé à décider vite", "rush_detail": "L'urgence du \"quelqu'un d'autre est intéressé\" est une tactique classique pour vous empêcher de bien vérifier les choses avant de payer.", "lang_title": "Fautes d'orthographe ou de grammaire étranges dans l'annonce", "lang_detail": "Parfois le signe d'une annonce-arnaque copiée-collée ou traduite automatiquement — même si beaucoup d'annonces authentiques ont aussi des fautes de frappe, donc cela seul ne prouve rien.", "platform_title": "Partagée en dehors d'une plateforme d'annonces vérifiée", "platform_detail_direct": "Envoyée directement, sans aucune annonce publique à laquelle la comparer.", "platform_detail_facebook": "Les groupes Facebook et Marketplace n'ont que peu ou pas de vérification des annonces.", "platform_detail_suffix": "Plus facile à falsifier qu'une annonce sur une plateforme comme Idealista ou Fotocasa.", "no_flags": "Aucun détail correspondant à des signaux d'alerte courants n'a encore été saisi.", "badge_green": "Risque faible", "head_green": "Aucun signal d'alerte majeur détecté", "sub_green": "Rien ici ne correspond aux schémas d'arnaque habituels. C'est bon signe — cela ne garantit pas que l'annonce est authentique, mais rien d'évident ne pose problème pour l'instant.", "badge_amber": "Quelques doutes", "head_amber": "Quelques points à revérifier", "sub_amber": "Rien ici n'est déterminant à lui seul, mais quelques détails méritent d'être confirmés avant d'envoyer de l'argent.", "badge_red": "Risque élevé", "head_red": "Plusieurs signaux d'alerte courants dans les arnaques", "sub_red": "Cette combinaison de détails correspond à des schémas que l'on retrouve souvent dans les arnaques locatives. Nous vous recommandons fortement de ne pas envoyer d'argent tant que quelqu'un n'a pas vérifié cela en personne.", "copy_text_title": "Vérification gratuite ConfirMad —", "copy_text_checked_at": "Vérifié le", "copied_to_clipboard": "Copié dans le presse-papiers", "link_copied": "Lien copié", "cta_online": "Vérifiez-le en ligne pour 29,85 €", "cta_visit": "Réservez une visite pour 59,99 €", "cta_faq": "Pourquoi une vérification sur place ?", "cta_visit_secondary": "Vous préférez qu'une personne visite l'appartement ? · 59,99 €", "cta_online_secondary": "Ou faites une vérification en ligne rapide · 29,85 €"};
 
   function t(str, vars){
     return str.replace(/\{(\w+)\}/g, function(_, k){ return (vars && (k in vars)) ? vars[k] : ''; });
@@ -500,6 +503,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
   var resultHeadline = document.getElementById('resultHeadline');
   var resultSub = document.getElementById('resultSub');
   var flagList = document.getElementById('flagList');
+  var ctaPrimary = document.getElementById('ctaPrimary');
+  var ctaSecondary = document.getElementById('ctaSecondary');
 
   var ICONS = {
     high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
@@ -613,7 +618,35 @@ footer .lang-switch a.lang-current{ color:#fff; }
       flagList.appendChild(li);
     }
 
+    // Route the result CTAs by risk level: a red result goes straight to
+    // the plan that actually resolves it (a human visiting in person),
+    // amber offers the online check with a secondary nudge toward a visit,
+    // and green keeps pointing at the online check with the usual FAQ link.
+    if (result.level === 'red') {
+      ctaPrimary.href = '/solicitar.html?plan=visit';
+      ctaPrimary.textContent = I18N.cta_visit;
+      ctaPrimary.setAttribute('data-plan', 'visit');
+      ctaSecondary.href = '/solicitar.html?plan=online';
+      ctaSecondary.textContent = I18N.cta_online_secondary;
+      ctaSecondary.setAttribute('data-plan', 'online');
+    } else if (result.level === 'amber') {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = '/solicitar.html?plan=visit';
+      ctaSecondary.textContent = I18N.cta_visit_secondary;
+      ctaSecondary.setAttribute('data-plan', 'visit');
+    } else {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = 'index.html#faq';
+      ctaSecondary.textContent = I18N.cta_faq;
+      ctaSecondary.removeAttribute('data-plan');
+    }
+
     resultSection.classList.add('show');
+    cmTrack('free_check_result', { risk_level: result.level, score: result.score });
   }
 
   function getFormData(){
@@ -717,6 +750,25 @@ footer .lang-switch a.lang-current{ color:#fff; }
     });
     runCheck(false);
   })();
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  [ctaPrimary, ctaSecondary].forEach(function(el){
+    el.addEventListener('click', function(){
+      var plan = el.getAttribute('data-plan');
+      if (plan) cmTrack('select_plan', { plan: plan, position: 'check_result' });
+    });
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
 
 })();
 </script>

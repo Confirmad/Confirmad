@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="confirmad-build" content="[[BUILD_META]]">
 <title>[[meta.check_title]]</title>
 <meta name="description" content="[[meta.check_description]]">
 <link rel="canonical" href="[[CANONICAL_URL]]">
@@ -12,11 +13,11 @@
 <meta property="og:title" content="[[meta.check_title]]">
 <meta property="og:description" content="[[meta.check_og_description]]">
 <meta property="og:url" content="[[OG_URL]]">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="[[meta.check_title]]">
 <meta name="twitter:description" content="[[meta.check_twitter_description]]">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -32,14 +33,16 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "[[meta.jsonld_offer_online]]" } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "[[meta.jsonld_offer_visit]]" } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "[[meta.jsonld_offer_live]]" } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "[[plans.online.name]]", "description": "[[meta.jsonld_offer_online]]" } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "[[plans.visit.name]]", "description": "[[meta.jsonld_offer_visit]]" } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "[[plans.live.name]]", "description": "[[meta.jsonld_offer_live]]" } }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
   --paper: #EEF1EF;
@@ -403,8 +406,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
         <p class="disclaimer">[[check_tool.disclaimer]]</p>
 
         <div class="result-ctas">
-          <a href="index.html#pricing" class="btn btn-primary">[[check_tool.cta_primary]]</a>
-          <a href="index.html#faq" class="btn btn-outline">[[check_tool.cta_secondary]]</a>
+          <a href="/solicitar.html?plan=online" class="btn btn-primary" id="ctaPrimary" data-plan="online" data-position="check_result">[[check_tool.cta_primary]]</a>
+          <a href="index.html#faq" class="btn btn-outline" id="ctaSecondary">[[check_tool.cta_secondary]]</a>
         </div>
       </div>
 
@@ -422,7 +425,7 @@ footer .lang-switch a.lang-current{ color:#fff; }
   <div class="wrap">
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
-    <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a></div>
+    <div><a href="/aviso-legal.html">[[footer.legal_notice]]</a> · <a href="/privacidad.html">[[footer.privacy]]</a> · <a href="/cookies.html">[[footer.cookies]]</a> · <a href="/terminos.html">[[footer.terms]]</a> · <a href="/empresas.html">[[footer.business]]</a></div>
     [[LANG_SELECTOR]]
   </div>
 </footer>
@@ -496,6 +499,8 @@ footer .lang-switch a.lang-current{ color:#fff; }
   var resultHeadline = document.getElementById('resultHeadline');
   var resultSub = document.getElementById('resultSub');
   var flagList = document.getElementById('flagList');
+  var ctaPrimary = document.getElementById('ctaPrimary');
+  var ctaSecondary = document.getElementById('ctaSecondary');
 
   var ICONS = {
     high: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.7 3.86a2 2 0 0 0-3.4 0z"/></svg>',
@@ -609,7 +614,35 @@ footer .lang-switch a.lang-current{ color:#fff; }
       flagList.appendChild(li);
     }
 
+    // Route the result CTAs by risk level: a red result goes straight to
+    // the plan that actually resolves it (a human visiting in person),
+    // amber offers the online check with a secondary nudge toward a visit,
+    // and green keeps pointing at the online check with the usual FAQ link.
+    if (result.level === 'red') {
+      ctaPrimary.href = '/solicitar.html?plan=visit';
+      ctaPrimary.textContent = I18N.cta_visit;
+      ctaPrimary.setAttribute('data-plan', 'visit');
+      ctaSecondary.href = '/solicitar.html?plan=online';
+      ctaSecondary.textContent = I18N.cta_online_secondary;
+      ctaSecondary.setAttribute('data-plan', 'online');
+    } else if (result.level === 'amber') {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = '/solicitar.html?plan=visit';
+      ctaSecondary.textContent = I18N.cta_visit_secondary;
+      ctaSecondary.setAttribute('data-plan', 'visit');
+    } else {
+      ctaPrimary.href = '/solicitar.html?plan=online';
+      ctaPrimary.textContent = I18N.cta_online;
+      ctaPrimary.setAttribute('data-plan', 'online');
+      ctaSecondary.href = 'index.html#faq';
+      ctaSecondary.textContent = I18N.cta_faq;
+      ctaSecondary.removeAttribute('data-plan');
+    }
+
     resultSection.classList.add('show');
+    cmTrack('free_check_result', { risk_level: result.level, score: result.score });
   }
 
   function getFormData(){
@@ -713,6 +746,25 @@ footer .lang-switch a.lang-current{ color:#fff; }
     });
     runCheck(false);
   })();
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  [ctaPrimary, ctaSecondary].forEach(function(el){
+    el.addEventListener('click', function(){
+      var plan = el.getAttribute('data-plan');
+      if (plan) cmTrack('select_plan', { plan: plan, position: 'check_result' });
+    });
+  });
+  var waFloat = document.querySelector('.whatsapp-float');
+  if (waFloat){
+    waFloat.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: 'float' });
+    });
+  }
 
 })();
 </script>

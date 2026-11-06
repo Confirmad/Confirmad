@@ -6,25 +6,25 @@
 
   var STRINGS = {
     en: {
-      text: 'We use Google Analytics to see how people use this site — no ads, no selling data. You can accept or decline; the site works the same either way.',
+      text: 'We use cookies to understand how you use ConfirMad.',
       link: 'Cookie policy',
       accept: 'Accept',
       reject: 'Reject'
     },
     es: {
-      text: 'Usamos Google Analytics para ver cómo usa la gente esta web — sin anuncios, sin vender datos. Puedes aceptar o rechazar; la web funciona igual en ambos casos.',
+      text: 'Usamos cookies para entender cómo usas ConfirMad.',
       link: 'Política de cookies',
       accept: 'Aceptar',
       reject: 'Rechazar'
     },
     it: {
-      text: 'Usiamo Google Analytics per capire come le persone usano questo sito — niente pubblicità, niente vendita di dati. Puoi accettare o rifiutare; il sito funziona allo stesso modo.',
+      text: 'Usiamo i cookie per capire come usi ConfirMad.',
       link: 'Informativa sui cookie',
       accept: 'Accetta',
       reject: 'Rifiuta'
     },
     fr: {
-      text: 'Nous utilisons Google Analytics pour comprendre comment les visiteurs utilisent ce site — pas de publicité, pas de vente de données. Vous pouvez accepter ou refuser ; le site fonctionne pareil dans les deux cas.',
+      text: 'Nous utilisons des cookies pour comprendre votre usage de ConfirMad.',
       link: 'Politique de cookies',
       accept: 'Accepter',
       reject: 'Refuser'
@@ -54,31 +54,49 @@
     var css =
       '#cm-consent-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;' +
       'background:var(--card,#fff);border-top:1px solid var(--line,#D7DCD8);' +
-      'box-shadow:0 -10px 26px -14px rgba(22,35,59,0.3);padding:16px 20px;' +
+      'box-shadow:0 -10px 26px -14px rgba(22,35,59,0.3);padding:10px 16px;' +
       'font-family:var(--font,system-ui,sans-serif);animation:cmSlideUp .3s ease;}' +
       '@keyframes cmSlideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}' +
       '#cm-consent-banner .cm-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;' +
-      'gap:14px;align-items:center;justify-content:space-between;}' +
-      '#cm-consent-banner p{margin:0;font-size:0.86rem;line-height:1.5;color:var(--ink-soft,#4B5768);' +
-      'max-width:620px;flex:1 1 320px;}' +
-      '#cm-consent-banner a{color:var(--stamp,#2F5D45);}' +
-      '#cm-consent-banner .cm-btns{display:flex;gap:10px;flex:none;}' +
-      '#cm-consent-banner button{font-family:inherit;font-weight:700;font-size:0.86rem;' +
-      'padding:10px 18px;border-radius:999px;cursor:pointer;border:1.5px solid var(--stamp,#2F5D45);' +
+      'gap:8px 14px;align-items:center;justify-content:space-between;}' +
+      '#cm-consent-banner p{margin:0;font-size:0.82rem;line-height:1.4;color:var(--ink-soft,#4B5768);' +
+      'flex:1 1 auto;min-width:0;}' +
+      '#cm-consent-banner a{color:var(--stamp,#2F5D45); white-space:nowrap;}' +
+      '#cm-consent-banner .cm-btns{display:flex;gap:8px;flex:none;}' +
+      '#cm-consent-banner button{font-family:inherit;font-weight:700;font-size:0.82rem;' +
+      'padding:8px 16px;border-radius:999px;cursor:pointer;border:1.5px solid var(--stamp,#2F5D45);' +
       'background:transparent;color:var(--stamp,#2F5D45);transition:transform .15s ease;white-space:nowrap;}' +
       '#cm-consent-banner button:hover{transform:translateY(-2px);}' +
-      '#cm-consent-banner button.cm-accept{background:var(--stamp,#2F5D45);color:#fff;}' +
-      '@media (max-width:600px){#cm-consent-banner .cm-inner{flex-direction:column;align-items:stretch;}' +
-      '#cm-consent-banner .cm-btns{justify-content:flex-end;}}';
+      '#cm-consent-banner button.cm-reject{border-color:var(--ink-faint,#636C79);color:var(--ink-faint,#636C79);}' +
+      '@media (max-width:600px){' +
+      '#cm-consent-banner{padding:10px 14px;}' +
+      '#cm-consent-banner .cm-inner{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;}' +
+      '#cm-consent-banner p{font-size:0.78rem;}' +
+      '#cm-consent-banner .cm-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}' +
+      '#cm-consent-banner button{padding:9px 10px;font-size:0.8rem;}}';
     var style = document.createElement('style');
     style.id = 'cm-consent-style';
     style.textContent = css;
     document.head.appendChild(style);
   }
 
+  function applyBodyPadding() {
+    var el = document.getElementById('cm-consent-banner');
+    if (!el) return;
+    try {
+      document.body.style.paddingBottom = el.getBoundingClientRect().height + 'px';
+    } catch (e) {}
+  }
+
+  function clearBodyPadding() {
+    document.body.style.paddingBottom = '';
+  }
+
   function hideBanner() {
     var el = document.getElementById('cm-consent-banner');
     if (el) el.remove();
+    clearBodyPadding();
+    window.removeEventListener('resize', applyBodyPadding);
   }
 
   function showBanner() {
@@ -97,6 +115,8 @@
       '<button type="button" class="cm-accept">' + t.accept + '</button>' +
       '</div></div>';
     document.body.appendChild(el);
+    applyBodyPadding();
+    window.addEventListener('resize', applyBodyPadding);
     el.querySelector('.cm-accept').addEventListener('click', function () {
       try { localStorage.setItem(STORAGE_KEY, 'granted'); } catch (e) {}
       loadGA();

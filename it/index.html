@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare</title>
-<meta name="description" content="Prima di pagare qualsiasi cosa, una terza parte imparziale va in un appartamento a Madrid e verifica che lo stato, le condizioni e il prezzo corrispondano a quanto promesso. E se è una truffa, la scopriamo anche quella.">
+<meta name="confirmad-build" content="6a260fb">
+<title>ConfirMad — Verifichiamo l'appartamento a Madrid prima che tu paghi</title>
+<meta name="description" content="Prima di pagare qualsiasi cosa, una persona indipendente verifica un appartamento in affitto a Madrid: stato, luce, rumore, la strada e se il prezzo è giusto. Report con foto datate. Verifica online in meno di 12 ore, visite entro 24 h.">
 <link rel="canonical" href="https://confirmad.es/it/">
 <link rel="alternate" hreflang="en" href="https://confirmad.es/">
 <link rel="alternate" hreflang="es" href="https://confirmad.es/es/">
@@ -13,14 +14,14 @@
 <link rel="alternate" hreflang="x-default" href="https://confirmad.es/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConfirMad">
-<meta property="og:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
-<meta property="og:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
+<meta property="og:title" content="ConfirMad — Verifichiamo l'appartamento a Madrid prima che tu paghi">
+<meta property="og:description" content="Verifichiamo l'appartamento a Madrid per te, prima che tu paghi — stato, prezzo e se corrisponde a quanto promesso.">
 <meta property="og:url" content="https://confirmad.es/it/">
-<meta property="og:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta property="og:image" content="https://confirmad.es/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ConfirMad — Verifica imparziale dell'appartamento a Madrid, prima di pagare">
-<meta name="twitter:description" content="Prima di pagare, qualcuno imparziale va a vedere l'appartamento e verifica che sia davvero come promesso.">
-<meta name="twitter:image" content="https://confirmad.es/confirmad-logo-horizontal.png">
+<meta name="twitter:title" content="ConfirMad — Verifichiamo l'appartamento a Madrid prima che tu paghi">
+<meta name="twitter:description" content="Verifichiamo l'appartamento a Madrid per te, prima che tu paghi.">
+<meta name="twitter:image" content="https://confirmad.es/og-image.png">
 <link rel="icon" href="/confirmad-favicon-16.png">
 <script type="application/ld+json">
 {
@@ -30,21 +31,22 @@
   "url": "https://confirmad.es/",
   "logo": "https://confirmad.es/confirmad-logo-horizontal.png",
   "image": "https://confirmad.es/confirmad-logo-horizontal.png",
-  "description": "Verifica online e di persona di annunci di affitto a Madrid: Catasto, identità del padrone di casa, foto e condizioni confermate prima di pagare una caparra.",
+  "description": "Verifica di persona e indipendente degli affitti a Madrid: stato, luce, rumore, prezzo e condizioni confermati prima di pagare una caparra.",
   "email": "contacto@confirmad.es",
   "areaServed": { "@type": "City", "name": "Madrid" },
   "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
   "priceRange": "€29.85–€99",
   "makesOffer": [
-    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Online verification", "description": "Verifica antitruffa express: Catasto, ricerca inversa delle foto, verifica dell'inserzionista e confronto del prezzo, con verdetto a semaforo." } },
-    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "In-person visit", "description": "Tutto quello della Verifica antitruffa express, più una visita di persona con report scritto, foto datate e analisi del prezzo." } },
-    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Live visit", "description": "Tutto quello della Visita di persona, più una videochiamata dal vivo dall'interno dell'appartamento." } }
+    { "@type": "Offer", "price": "29.85", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Verifica online express", "description": "Controllo al Registro de la Propiedad rispetto all'inserzionista, ricerca inversa delle foto e confronto del prezzo, con un verdetto chiaro." } },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita di persona", "description": "Tutto quello della verifica online, più una visita di persona con report scritto, foto datate e analisi del prezzo." } },
+    { "@type": "Offer", "price": "99", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Visita in diretta", "description": "Tutto quello della visita di persona, più una videochiamata dal vivo dall'interno dell'appartamento." } }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root{
     --paper: #EEF1EF;
     --card: #FFFFFF;
@@ -98,8 +100,7 @@
   /* ---------- SCROLL REVEAL ---------- */
   html.has-reveal .section-head,
   html.has-reveal .step,
-  html.has-reveal .who-card,
-  html.has-reveal .check-item,
+  html.has-reveal .get-item,
   html.has-reveal .price-card,
   html.has-reveal .about-photo,
   html.has-reveal .faq-list details{
@@ -108,8 +109,7 @@
   }
   html.has-reveal .section-head.is-visible,
   html.has-reveal .step.is-visible,
-  html.has-reveal .who-card.is-visible,
-  html.has-reveal .check-item.is-visible,
+  html.has-reveal .get-item.is-visible,
   html.has-reveal .price-card.is-visible,
   html.has-reveal .about-photo.is-visible,
   html.has-reveal .faq-list details.is-visible{
@@ -117,12 +117,6 @@
   }
   html.has-reveal .step:nth-child(2){ transition-delay:.08s; }
   html.has-reveal .step:nth-child(3){ transition-delay:.16s; }
-  html.has-reveal .step:nth-child(4){ transition-delay:.24s; }
-  html.has-reveal .check-item:nth-child(2){ transition-delay:.06s; }
-  html.has-reveal .check-item:nth-child(3){ transition-delay:.12s; }
-  html.has-reveal .check-item:nth-child(4){ transition-delay:.18s; }
-  html.has-reveal .check-item:nth-child(5){ transition-delay:.24s; }
-  html.has-reveal .check-item:nth-child(6){ transition-delay:.3s; }
 
   /* ---------- NAV ---------- */
   header.site{
@@ -190,7 +184,7 @@
   }
 
   /* ---------- HERO ---------- */
-  .hero{ padding: 76px 0 88px; position:relative; overflow:hidden; }
+  .hero{ padding: 44px 0 56px; position:relative; overflow:hidden; }
   .hero::before, .hero::after{
     content:""; position:absolute; border-radius:50%; filter: blur(70px);
     z-index:0; pointer-events:none;
@@ -198,17 +192,15 @@
   .hero::before{ width:420px; height:420px; background: var(--stamp); opacity:0.22; top:-180px; right:-140px; }
   .hero::after{ width:340px; height:340px; background: var(--verified); opacity:0.18; bottom:-160px; left:-110px; }
   .hero-grid{
-    display:grid; grid-template-columns: 1fr; gap: 52px; align-items:center;
+    display:grid; grid-template-columns: 1fr; gap: 36px; align-items:center;
     position:relative; z-index:1;
   }
   @media (min-width: 900px){
     .hero-grid{ grid-template-columns: 1.05fr 0.95fr; gap: 40px; }
   }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.82rem; color: var(--stamp); font-weight:600;
-    margin-bottom: 18px;
-    background: rgba(47,93,69,0.1); padding: 6px 12px; border-radius: 999px;
+  .hero-audience{
+    font-family: var(--font-mono); font-size: 0.8rem; color: var(--stamp); font-weight:600;
+    margin-bottom: 14px; letter-spacing: 0.01em;
   }
   #report-sample{ animation: floatCard 5s ease-in-out infinite; }
   @keyframes floatCard{
@@ -216,21 +208,41 @@
     50%{ transform: translateY(-10px); }
   }
   @media (prefers-reduced-motion: reduce){ #report-sample{ animation:none; } }
+  @media (max-width: 899px){ #report-sample{ display:none; } }
   .hero h1{
-    font-size: clamp(2.9rem, 4.6vw, 3.5rem);
+    font-size: clamp(1.9rem, 6vw, 3.1rem);
     font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.15;
-    max-width: 16ch;
-    margin-bottom: 22px;
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+    max-width: 17ch;
+    margin-bottom: 16px;
   }
   .hero p.lede{
-    font-size: 1.05rem; max-width: 46ch; color: var(--ink-soft);
-    margin-bottom: 28px;
+    font-size: 1.02rem; max-width: 48ch; color: var(--ink-soft);
+    margin-bottom: 22px;
   }
-  .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 10px; }
+  .hero-ctas{ display:flex; flex-wrap:wrap; gap: 14px; margin-bottom: 12px; }
   .hero-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
-  .hero-note{ font-size: 0.85rem; color: var(--ink-faint); }
+  .hero-secondary-link{
+    display:block; font-size: 0.9rem; color: var(--ink-soft); text-decoration:none; margin-bottom: 18px;
+  }
+  .hero-secondary-link:hover{ color: var(--ink); }
+  .hero-secondary-link u{ color: var(--stamp); text-decoration: underline; }
+  .hero-trust{ font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 18px; line-height:1.5; }
+  .hero-founder{ display:flex; align-items:center; gap:10px; }
+  .hero-founder img{
+    width:40px; height:40px; border-radius:50%; object-fit:cover; flex:none;
+    border:1.5px solid var(--card); box-shadow: 0 0 0 1px var(--line);
+  }
+  .hero-founder span{ font-size: 0.86rem; color: var(--ink-soft); font-weight:500; }
+  .hero-sample-mobile{ display:block; margin-top: 18px; }
+  @media (min-width: 900px){ .hero-sample-mobile{ display:none; } }
+  .hero-sample-mobile a{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    border: 1.5px dashed var(--line); border-radius: 14px;
+    padding: 16px; font-size: 0.9rem; font-weight:600; color: var(--stamp);
+    text-decoration:none; background: rgba(47,93,69,0.05);
+  }
 
   /* ---------- REPORT CARD ---------- */
   .report{
@@ -322,197 +334,28 @@
   }
 
   /* ---------- SECTION SCAFFOLDING ---------- */
-  section{ padding: 72px 0; border-top: 1px solid var(--line); }
-  .section-head{ max-width: 640px; margin-bottom: 40px; }
+  section{ padding: 60px 0; border-top: 1px solid var(--line); }
+  .section-head{ max-width: 640px; margin-bottom: 36px; }
   .section-head h2{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 14px; line-height:1.3; }
-  #check{ background: #E6ECE8; }
-  #why{ background: #E6ECE8; }
+  #get{ background: #E6ECE8; }
 
-  /* ---------- EARLY ACCESS ---------- */
-  #risk{ background: var(--stamp); }
-  #risk .section-head h2{ color: #fff; }
-  #risk .section-head p{ color: #D6E6DC; }
-  #risk .risk-source{ font-size: 0.8rem; color: rgba(255,255,255,0.65); margin: -8px 0 18px; }
-  #risk .risk-source a{ color: rgba(255,255,255,0.9); text-decoration: underline; }
-  #risk .risk-source a:hover{ color: #fff; }
-  #risk .early-ctas{ display:flex; flex-wrap:wrap; gap:14px; }
-  #risk .early-ctas .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
-  #risk .stat-highlight{
-    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 14px; padding: 18px 22px; margin: -6px 0 28px; max-width: 560px;
-  }
-  #risk .stat-highlight p{ color:#fff; font-weight:600; margin:0; font-size: 1rem; }
-  .early-badge{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
-    background:#fff; color: var(--stamp-dark);
-    padding: 7px 14px; border-radius: 999px; margin-bottom: 16px;
-  }
-  .btn-invert{ background:#fff; color: var(--stamp); }
-  .btn-invert:hover{ background: var(--paper); }
-  .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
-  .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
-
-  /* ---------- FREE TOOL CALLOUT ---------- */
-  .free-tool-card{
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;
-    background: rgba(47,93,69,0.07); border: 1.5px solid var(--stamp);
-    border-radius: 20px; padding: 36px 40px;
-  }
-  .free-tool-text{ max-width: 620px; }
-  .free-tool-badge{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; letter-spacing:0.02em;
-    background: var(--stamp); color:#fff;
-    padding: 7px 14px; border-radius: 999px; margin-bottom: 14px;
-  }
-  .free-tool-text h2{ font-size: clamp(1.3rem, 2.2vw, 1.6rem); margin-bottom: 10px; }
-  .free-tool-text p{ margin-bottom:0; }
-  .free-tool-cta{ flex:none; }
-  @media (max-width: 700px){ .free-tool-card{ padding: 28px 24px; } }
-
-  /* ---------- ABOUT / FOUNDER ---------- */
-  #about{ background: #E6ECE8; }
-  .about-card{
-    display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;
-    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
-    padding: 40px 32px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
-  }
-  @media (min-width: 760px){ .about-card{ grid-template-columns: auto 1fr; gap: 44px; padding: 44px; } }
-  .about-avatar{
-    width:172px; height:172px; border-radius:50%; flex:none;
-    background: rgba(47,93,69,0.1); color: var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    margin: 0 auto; overflow:hidden;
-  }
-  .about-avatar svg{ width:72px; height:72px; }
-  .about-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .about-quote{
-    font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
-    margin-bottom: 18px;
-  }
-  .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
-  .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
-  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
-  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
-  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
-
-  /* ---------- DECORATIVE RING (used sparingly) ---------- */
-  .ring-deco{ position:relative; overflow:hidden; }
-  .ring-deco::before{
-    content:""; position:absolute; border-radius:50%; pointer-events:none;
-    width:300px; height:300px; border:26px solid var(--stamp); opacity:0.07;
-  }
-  #problem.ring-deco::before{ top:-120px; right:-110px; }
-  #check.ring-deco::before{ bottom:-140px; left:-100px; }
-  .ring-deco > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- STEPS TIMELINE ---------- */
-  #how{ position:relative; }
-  .steps{ position:relative; }
-  .steps::before{
-    content:""; position:absolute; left:0; right:0; top:41px;
-    border-top: 2px dashed var(--line); z-index:0;
-    display:none;
-  }
-  @media (min-width: 860px){ .steps::before{ display:block; } }
-
-  /* ---------- PRICING WATERMARK ---------- */
-  #pricing{ position:relative; overflow:hidden; }
-  #pricing::before{
-    content:""; position:absolute; top:-30px; right:-40px; width:260px; height:260px;
-    background: url('/confirmad-simbolo-sello.png') center/contain no-repeat;
-    opacity:0.05; pointer-events:none;
-  }
-  #pricing > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- FAQ WATERMARK ---------- */
-  #faq{ position:relative; overflow:hidden; }
-  #faq::before{
-    content:"?"; position:absolute; top:-10px; right:-6px; line-height:1;
-    font-family: Georgia, serif; font-weight:700; font-size:9rem; color: var(--ink);
-    opacity:0.07; pointer-events:none;
-  }
-  #faq > .wrap{ position:relative; z-index:1; }
-
-  /* ---------- PROBLEM ---------- */
-  .problem-grid{ display:grid; grid-template-columns: 1fr; gap: 36px; }
-  @media (min-width: 860px){ .problem-grid{ grid-template-columns: 1fr 1fr; gap: 56px; } }
-  .problem-grid p{ max-width: 54ch; font-size: 1.01rem; }
-  .problem-grid .callout{
-    position:relative;
-    font-family: var(--font-mono); font-size: 1.35rem; line-height: 1.4; font-weight: 700; color: var(--ink);
-    border-left: 3px solid var(--stamp); padding: 22px 22px 22px 26px;
-    background: rgba(47,93,69,0.06); border-radius: 0 14px 14px 0;
-  }
-
-  /* ---------- WHY CONFIRMAD ---------- */
-  .why-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 700px){ .why-grid{ grid-template-columns: 1fr 1fr; } }
-  .why-item{
+  /* ---------- WHAT YOU GET ---------- */
+  .get-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px){ .get-grid{ grid-template-columns: 1fr 1fr; } }
+  .get-item{
     padding: 18px 20px; border-radius: 12px;
     background: var(--card); border: 1px solid var(--line);
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .why-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .why-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
-  .why-item p{ font-size: 0.9rem; margin-bottom:0; }
-
-  /* ---------- COMPARISON TABLE ---------- */
-  #compare{ background: #E6ECE8; }
-  .compare-table{ display:flex; flex-direction:column; gap:10px; max-width:860px; }
-  .compare-row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
-  .compare-row-head{ display:none; }
-  .compare-label{ font-weight:700; color:var(--ink); font-size:0.92rem; grid-column: 1 / -1; align-self:center; }
-  @media (min-width:700px){
-    .compare-row{ grid-template-columns: 0.85fr 1fr 1fr; align-items:center; gap:14px; }
-    .compare-row-head{ display:grid; }
-    .compare-row-head .compare-cell{
-      background:transparent; border:none; padding:0 14px;
-      font-family:var(--font-mono); font-size:0.76rem; font-weight:700; color: var(--ink-faint);
-      text-transform:uppercase; letter-spacing:0.03em;
-    }
-    .compare-label{ grid-column:auto; }
-  }
-  .compare-cell{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:12px 14px; font-size:0.88rem; color:var(--ink-soft);
-  }
-  .compare-cell.compare-col2{ border-color: var(--stamp); background: rgba(47,93,69,0.07); color: var(--ink); font-weight:600; }
-  .compare-cell[data-label]::before{
-    content: attr(data-label); display:block; font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
-    color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em; margin-bottom:4px;
-  }
-  @media (min-width:700px){ .compare-cell[data-label]::before{ display:none; } }
-  .compare-closing{
-    font-family: var(--font-mono); font-weight:700; font-size:1.02rem; color:var(--ink); margin-top:20px;
-    border-left:3px solid var(--stamp); padding:14px 18px; background:rgba(47,93,69,0.06);
-    border-radius:0 12px 12px 0; max-width:640px;
-  }
-
-  /* ---------- WHO THIS IS FOR ---------- */
-  .who-grid{ display:grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 640px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1000px){ .who-grid{ grid-template-columns: repeat(4, 1fr); } }
-  .who-card{
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 24px 20px;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .who-card:hover{ transform: translateY(-3px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .who-icon{
-    width:44px; height:44px; border-radius:12px;
-    background: rgba(47,93,69,0.1); color: var(--stamp);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom: 14px;
-  }
-  .who-icon svg{ width:23px; height:23px; }
-  .who-card h3{ font-size: 1rem; margin-bottom: 6px; font-weight: 600; }
-  .who-card p{ font-size: 0.88rem; margin-bottom:0; }
+  .get-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
+  .get-item h3{ font-size: 0.98rem; margin-bottom: 6px; font-weight: 600; color: var(--stamp); }
+  .get-item p{ font-size: 0.9rem; margin-bottom:0; }
+  .get-cta{ margin-top: 28px; }
 
   /* ---------- STEPS ---------- */
-  .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; }
-  @media (min-width: 860px){ .steps{ grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+  #how{ position:relative; }
+  .steps{ display:grid; grid-template-columns: 1fr; gap: 18px; position:relative; }
+  @media (min-width: 860px){ .steps{ grid-template-columns: repeat(3, 1fr); gap: 20px; } }
   .step{
     position:relative; z-index:1;
     background: var(--card);
@@ -537,28 +380,32 @@
   .step h3{ font-size: 1.02rem; margin-bottom: 8px; font-weight: 600; }
   .step p{ font-size: 0.92rem; margin-bottom:0; }
 
-  /* ---------- CHECK LIST SECTION ---------- */
-  .check-group-label{
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight:700; color: var(--stamp);
-    text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 14px;
+  /* ---------- GUARANTEE CALLOUT ---------- */
+  .guarantee-box{
+    display:flex; align-items:flex-start; gap:10px;
+    background: rgba(47,93,69,0.07); border: 1px solid rgba(47,93,69,0.25);
+    border-radius: 12px; padding: 14px 18px; margin-top: 24px; max-width: 640px;
   }
-  .check-group-label:first-of-type{ margin-top: 0; }
-  .check-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; }
-  @media (min-width: 700px){ .check-grid{ grid-template-columns: 1fr 1fr; } }
-  .check-item{
-    display:flex; gap: 12px; align-items:flex-start;
-    padding: 16px 18px; border-radius: 12px;
-    background: var(--card); border: 1px solid var(--line);
-    transition: transform .15s ease, box-shadow .15s ease;
+  .guarantee-box svg{ flex:none; width:18px; height:18px; color: var(--stamp); margin-top:2px; }
+  .guarantee-box p{ margin:0; font-size: 0.88rem; color: var(--ink); font-weight:500; }
+
+  /* ---------- PRICING WATERMARK ---------- */
+  #pricing{ position:relative; overflow:hidden; }
+  #pricing::before{
+    content:""; position:absolute; top:-30px; right:-40px; width:260px; height:260px;
+    background: url('/confirmad-simbolo-sello.png') center/contain no-repeat;
+    opacity:0.05; pointer-events:none;
   }
-  .check-item:hover{ transform: translateY(-2px); box-shadow: 0 14px 26px -20px rgba(22,35,59,0.3); }
-  .check-item .tick{
-    flex:none; width:28px; height:28px; border-radius:50%;
-    background: var(--verified); color:#fff; font-size:12px;
-    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  #pricing > .wrap{ position:relative; z-index:1; }
+
+  /* ---------- FAQ WATERMARK ---------- */
+  #faq{ position:relative; overflow:hidden; }
+  #faq::before{
+    content:"?"; position:absolute; top:-10px; right:-6px; line-height:1;
+    font-family: Georgia, serif; font-weight:700; font-size:9rem; color: var(--ink);
+    opacity:0.07; pointer-events:none;
   }
-  .check-item .tick svg{ width:15px; height:15px; }
-  .check-item span.txt{ font-size: 0.95rem; color: var(--ink); }
+  #faq > .wrap{ position:relative; z-index:1; }
 
   /* ---------- PRICING ---------- */
   .price-grid{ display:grid; grid-template-columns: 1fr; gap: 20px; }
@@ -582,18 +429,44 @@
   .price-card ul{ margin:0 0 22px; padding-left: 18px; color: var(--ink-soft); font-size:0.92rem; }
   .price-card li{ margin-bottom: 6px; }
   .price-card .vat-note{ font-size: 0.7rem; font-weight:400; color: var(--ink-faint); vertical-align: middle; }
-  .price-card .price-desc{ font-size: 0.86rem; color: var(--ink-soft); margin: 2px 0 16px; }
-  .price-card .price-note{ font-size: 0.8rem; color: var(--ink-faint); margin: 12px 0 0; }
-  .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 22px; max-width: 60ch; }
+  .price-foot{ font-size: 0.88rem; color: var(--ink-faint); margin-top: 24px; max-width: 60ch; }
   .speed-note{
     font-size: 0.92rem; color: var(--ink-soft); margin: -10px 0 26px; max-width: 70ch;
     background: rgba(47,93,69,0.06); border-left: 3px solid var(--stamp); border-radius: 0 10px 10px 0;
     padding: 12px 16px;
   }
   .speed-note .speed-source{ display:block; font-size: 0.78rem; color: var(--ink-faint); margin-top: 4px; }
-  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 22px; }
+  .pricing-extras{ margin-top: 26px; display:flex; flex-direction:column; gap: 14px; }
+  .payment-methods{ font-size: 0.82rem; color: var(--ink-faint); }
+  .share-row-light{ display:flex; flex-wrap:wrap; gap: 12px; }
   .share-row-light .btn{ white-space: normal; line-height: 1.3; text-align: center; min-width: 0; max-width: 100%; }
+  .free-check-link{ font-size: 0.86rem; color: var(--ink-soft); text-decoration:underline; }
+  .free-check-link:hover{ color: var(--ink); }
 
+  /* ---------- ABOUT / FOUNDER ---------- */
+  #about{ background: #E6ECE8; }
+  .about-card{
+    display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 40px 32px; box-shadow: 0 20px 40px -28px rgba(22,35,59,0.25);
+  }
+  @media (min-width: 760px){ .about-card{ grid-template-columns: auto 1fr; gap: 44px; padding: 44px; } }
+  .about-avatar{
+    width:172px; height:172px; border-radius:50%; flex:none;
+    background: rgba(47,93,69,0.1); color: var(--stamp);
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto; overflow:hidden;
+  }
+  .about-avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-quote{
+    font-size: 1.3rem; line-height:1.5; color: var(--ink); font-weight:600;
+    margin-bottom: 18px;
+  }
+  .about-name{ font-size: 0.95rem; color: var(--ink); font-weight:700; }
+  .about-name span{ display:block; font-family: var(--font-mono); font-size:0.78rem; font-weight:500; color: var(--ink-faint); margin-top:2px; }
+  .about-trust{ list-style:none; margin: 14px 0 0; padding:0; display:flex; flex-direction:column; gap:4px; }
+  .about-trust li{ font-size: 0.86rem; color: var(--ink-soft); }
+  .about-linkedin{ display:inline-block; margin-top:10px; font-size:0.86rem; font-weight:600; color: var(--stamp); text-decoration:underline; }
 
   /* ---------- FAQ ---------- */
   .faq-list{ max-width: 720px; }
@@ -615,62 +488,17 @@
   details[open] summary .ind{ background: var(--stamp); border-color: var(--stamp); color:#fff; }
   details[open] summary .ind::before{ transform: rotate(45deg); }
   details p{ margin: 0 10px 14px; font-size: 0.95rem; }
+  .faq-source{ font-size: 0.8rem; color: var(--ink-faint); margin: -10px 10px 14px; }
+  .faq-source a{ color: var(--stamp); }
 
-  /* ---------- CTA FORM ---------- */
-  .cta-section{
-    background: var(--ink); color: var(--paper); border-top:none;
-  }
-  .cta-section .section-head h2{ color: #fff; }
-  .cta-section p{ color: #C7CFD8; }
-  .cta-grid{ display:grid; grid-template-columns: 1fr; gap: 40px; }
-  @media (min-width: 900px){ .cta-grid{ grid-template-columns: 1fr 1fr; gap: 60px; } }
-  form{ display:flex; flex-direction:column; gap: 14px; }
-  .field{ display:flex; flex-direction:column; gap:6px; }
-  .field label{ font-size: 0.82rem; color: #AEB8C4; font-family: var(--font-mono); }
-  .field input, .field textarea{
-    background: #1F2E48; border: 1px solid #34435F; color: #fff;
-    padding: 11px 13px; border-radius: 10px; font-family: var(--font-sans); font-size: 0.95rem;
-    transition: border-color .15s ease, box-shadow .15s ease;
-  }
-  .field input:focus, .field textarea:focus{
-    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.35);
-  }
-  .field input::placeholder, .field textarea::placeholder{ color: #7C8AA1; }
-  .field textarea{ resize: vertical; min-height: 84px; }
-  form .btn-primary{ align-self:flex-start; margin-top: 4px; }
-  .form-success{
-    display:none; background: #1F2E48; border: 1px solid var(--verified);
-    padding: 18px 20px; border-radius: 12px; font-size: 0.95rem;
-  }
-
-  /* ---------- BUSINESS / B2B ---------- */
-  #business{ background: #E6ECE8; }
-  #business .business-form{
-    max-width: 680px; margin-top: 28px; display:grid; grid-template-columns:1fr; gap:16px;
-  }
-  @media (min-width:640px){ #business .business-form{ grid-template-columns: 1fr 1fr; } }
-  #business .business-form .field{ display:flex; flex-direction:column; gap:6px; }
-  #business .business-form .field label{ font-size:0.85rem; font-weight:600; color: var(--ink); font-family: var(--font); }
-  #business .business-form input, #business .business-form select{
-    background:#fff; border:1px solid var(--line); color: var(--ink);
-    padding: 12px 13px; border-radius: 10px; font-family: var(--font); font-size:0.95rem;
-  }
-  #business .business-form input:focus, #business .business-form select:focus{
-    outline:none; border-color: var(--stamp); box-shadow: 0 0 0 3px rgba(47,93,69,0.18);
-  }
-  #business .business-form button{ grid-column: 1 / -1; justify-self:start; }
-  #business .form-success-light{
-    display:none; background: var(--card); border:1px solid var(--verified);
-    padding:16px 18px; border-radius:12px; font-size:0.9rem; margin-top:16px; max-width:680px;
-  }
-  #business .form-success-light.show{ display:block; }
-  #business .form-success-light strong{ color: var(--verified); }
-  .form-success.show{ display:block; animation: popIn .45s cubic-bezier(.2,1.4,.4,1) both; }
-  @keyframes popIn{
-    0%{ opacity:0; transform: scale(0.95) translateY(6px); }
-    100%{ opacity:1; transform: scale(1) translateY(0); }
-  }
-  .form-success strong{ font-weight: 700; color: #fff; }
+  /* ---------- CLOSING ---------- */
+  .closing-section{ background: var(--ink); color: var(--paper); border-top:none; text-align:center; }
+  .closing-section .section-head{ max-width: 640px; margin: 0 auto 28px; }
+  .closing-section .section-head h2{ color: #fff; }
+  .closing-ctas{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+  .closing-ctas .btn{ white-space: normal; line-height: 1.3; text-align:center; }
+  .btn-outline-invert{ background:transparent; color:#fff; border-color: rgba(255,255,255,0.55); }
+  .btn-outline-invert:hover{ background: rgba(255,255,255,0.12); }
 
   /* ---------- FOOTER ---------- */
   footer{ padding: 34px 0 50px; border-top: 1px solid #2B3A54; background: var(--ink); color: #8B96A8; }
@@ -685,7 +513,7 @@
   /* ---------- WHATSAPP FLOAT ---------- */
   .whatsapp-float{
     position:fixed; right:20px; bottom:20px; z-index:60;
-    width:56px; height:56px; border-radius:50%;
+    width:50px; height:50px; border-radius:50%;
     background: var(--stamp); color:#fff;
     display:flex; align-items:center; justify-content:center;
     box-shadow: 0 12px 24px -8px rgba(22,35,59,0.45);
@@ -694,10 +522,10 @@
   }
   .whatsapp-float:hover{ transform: translateY(-3px) scale(1.05); box-shadow: 0 16px 28px -8px rgba(22,35,59,0.55); }
   .whatsapp-float:active{ transform: scale(0.95); }
-  .whatsapp-float svg{ width:28px; height:28px; }
+  .whatsapp-float svg{ width:24px; height:24px; }
   @keyframes waFloatIn{ 0%{ opacity:0; transform: scale(0.5); } 100%{ opacity:1; transform: scale(1); } }
   @media (prefers-reduced-motion: reduce){ .whatsapp-float{ animation:none; } }
-  @media (max-width: 480px){ .whatsapp-float{ right:14px; bottom:14px; width:50px; height:50px; } .whatsapp-float svg{ width:24px; height:24px; } }
+  @media (max-width: 480px){ .whatsapp-float{ right:12px; bottom:12px; width:44px; height:44px; } .whatsapp-float svg{ width:21px; height:21px; } }
 </style>
 </head>
 <body>
@@ -713,7 +541,7 @@
     </ul>
     <div class="nav-right">
       <div class="lang-switch"><a href="https://confirmad.es/">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/" class="lang-current">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
-      <a href="#request" class="btn btn-primary nav-cta">Verifica un annuncio</a>
+      <a href="#pricing" class="btn btn-primary nav-cta">Prenota una verifica</a>
     </div>
   </nav>
 </header>
@@ -724,14 +552,21 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Verifiche di persona degli affitti · Madrid</div>
-        <h1>Prima di pagare qualsiasi cosa, andiamo a vedere l'appartamento e verifichiamo che sia davvero come promesso.</h1>
-        <p class="lede">Una terza parte imparziale controlla lo stato dell'appartamento e degli elettrodomestici, la luce, il rumore e la zona, e ti dice se il prezzo è giusto. E se qualcosa sembra una truffa, la scopriamo prima che tu perda soldi.</p>
+        <div class="hero-audience">Per studenti e chi arriva da fuori per affittare a Madrid</div>
+        <h1>Verifichiamo l'appartamento a Madrid per te prima che tu paghi.</h1>
+        <p class="lede">Una persona indipendente verifica che sia reale e che sia quello che ti è stato promesso — stato, luce, rumore, la strada e se il prezzo è giusto — e ti manda un report con foto datate. Se qualcosa sembra una truffa, te lo diciamo prima che tu invii soldi.</p>
         <div class="hero-ctas">
-           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta">Prenota una visita (59,99 €)</a>
-           <a href="/solicitar.html?plan=online" class="btn btn-ghost">Sospetti una truffa? Verdetto in poche ore (29,85 €)</a>
+           <a href="/solicitar.html?plan=visit" class="btn btn-primary nav-cta" data-plan="visit" data-position="hero">Prenota una visita · 59,99 €</a>
           </div>
-        <div class="hero-note">Indipendenti: nessun padrone di casa o agenzia ci paga. Visite entro 1 giorno. <a href="/sample-report.html" style="text-decoration:underline;">Guarda un report di esempio</a></div>
+        <a href="/solicitar.html?plan=online" class="hero-secondary-link" data-plan="online" data-position="hero_secondary">Ti serve solo una verifica veloce? Verifica online express · 29,85 € · in meno di 12 h</a>
+        <div class="hero-trust">Visita entro 24 h dalla conferma del padrone di casa · Non vi fa entrare? Secondo tentativo gratis o rimborso totale · Nessun padrone di casa o agenzia ci paga</div>
+        <div class="hero-founder">
+          <img src="/confirmad-founder-santiago.jpg" alt="" loading="lazy" decoding="async" width="40" height="40">
+          <span>Santiago Platas, fondatore · Madrid</span>
+        </div>
+        <div class="hero-sample-mobile">
+          <a href="/sample-report.html">Guarda un report di esempio →</a>
+        </div>
       </div>
 
       <div id="report-sample">
@@ -746,10 +581,16 @@
           </div>
           <div class="photo-row">
             <div class="photo">
-              <img src="/image1.jpg" alt="Facciata dell'edificio in C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <picture>
+                <source srcset="/image-salon.webp" type="image/webp">
+                <img src="/image-salon.jpg" alt="Salotto fotografato durante una visita ConfirMad" width="800" height="534" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </picture>
             </div>
             <div class="photo">
-              <img src="/image2.jpg" alt="Ingresso dell'edificio in C/ Fuencarral 45" style="width:100%;height:100%;object-fit:cover;display:block;">
+              <picture>
+                <source srcset="/image-dormitorio.webp" type="image/webp">
+                <img src="/image-dormitorio.jpg" alt="Camera da letto fotografata durante una visita ConfirMad" width="800" height="534" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </picture>
             </div>
           </div>
           <ul class="checklist">
@@ -768,130 +609,40 @@
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <!-- WHY CONFIRMAD -->
-  <section id="why">
+  <!-- WHAT YOU GET -->
+  <section id="get">
     <div class="wrap">
       <div class="section-head">
-        <h2>Perché ConfirMad?</h2>
-        <p>ConfirMad manda una persona reale a verificare un appartamento a Madrid prima che tu firmi qualcosa o invii una caparra. Controlliamo lo stato dell'appartamento, gli elettrodomestici, la zona e se il prezzo è giusto — e se ci sono anche segnali di truffa, li scopriamo anche quelli.</p>
+        <h2>Cosa include</h2>
       </div>
-      <div class="why-grid">
-        <div class="why-item">
-          <h3>Imparziali</h3>
-          <p>Lavoriamo per te, non per il padrone di casa. Non prendiamo commissioni da nessun proprietario o agenzia.</p>
+      <div class="get-grid">
+        <div class="get-item">
+          <h3>Che è reale</h3>
+          <p>Controllo al Registro de la Propiedad rispetto all'inserzionista, e ricerca inversa delle foto dell'annuncio.</p>
         </div>
-        <div class="why-item">
-          <h3>Vediamo quello che le foto non mostrano</h3>
-          <p>Luce, rumore, odori, umidità, lo stato reale dei mobili e degli elettrodomestici — tutto quello che una foto ben scelta può nascondere.</p>
+        <div class="get-item">
+          <h3>Che corrisponde all'annuncio</h3>
+          <p>Stanze, stato ed elettrodomestici verificati rispetto a quanto mostrato.</p>
         </div>
-        <div class="why-item">
-          <h3>Ti diciamo se il prezzo è giusto</h3>
-          <p>Confrontiamo l'affitto con appartamenti e stanze simili nella zona, e calcoliamo il costo mensile reale comprese le spese.</p>
+        <div class="get-item">
+          <h3>Quello che le foto non mostrano</h3>
+          <p>La luce, il rumore al momento della visita, l'umidità, l'ingresso e la strada.</p>
         </div>
-        <div class="why-item">
-          <h3>Prova scritta, con foto datate</h3>
-          <p>Un report chiaro che puoi conservare, rileggere e mostrare a chi paga la caparra con te.</p>
+        <div class="get-item">
+          <h3>Un prezzo giusto</h3>
+          <p>Confrontato con appartamenti simili nella zona, così sai se ti stanno facendo pagare troppo.</p>
         </div>
-        <div class="why-item">
-          <h3>E se è una truffa, la blocchiamo in tempo</h3>
-          <p>Se qualcosa non torna — il padrone di casa, l'indirizzo, le condizioni — te lo diciamo prima che tu invii qualsiasi cosa.</p>
+        <div class="get-item">
+          <h3>Segnali d'allarme nelle condizioni</h3>
+          <p>Qualsiasi cosa nel prezzo, nella caparra o nel metodo di pagamento che non torni.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARISON -->
-  <section id="compare">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Quello che non puoi verificare da casa</h2>
-        <p>Questo è quello che sappiamo dopo essere andati davvero sul posto — e quello che non potresti mai sapere solo con foto o una videochiamata.</p>
-      </div>
-      <div class="compare-table">
-        <div class="compare-row compare-row-head">
-          <div class="compare-cell compare-label"></div>
-          <div class="compare-cell">Con foto e videochiamata</div>
-          <div class="compare-cell compare-col2">Con ConfirMad</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Dimensioni</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Foto con grandangolo</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Misurate di persona</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Luce</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">L'ora e l'angolo scelti dal padrone di casa</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">La luce al momento della visita</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Rumore</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Non si sente dallo schermo</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Quello che si sente davvero lì</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Umidità e odori</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Non si vedono</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Vengono verificati</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Wifi</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che ti dicono</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Test reale</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Zona</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che mostra la videocamera</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">L'ingresso e la strada</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Condizioni</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Quello che ti dicono in chat</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Quello che il padrone di casa confermerà di persona</div>
-        </div>
-        <div class="compare-row">
-          <div class="compare-label">Chi guida la visita</div>
-          <div class="compare-cell" data-label="Con foto e videochiamata">Il padrone di casa, che mostra quello che vuole</div>
-          <div class="compare-cell compare-col2" data-label="Con ConfirMad">Qualcuno che lavora per te</div>
+        <div class="get-item">
+          <h3>Un verdetto chiaro</h3>
+          <p>Un report scritto con foto datate — non solo un'opinione.</p>
         </div>
       </div>
-      <p class="compare-closing">La videochiamata te la fa il padrone di casa. La visita, qualcuno che lavora per te.</p>
-    </div>
-  </section>
-
-  <!-- WHO THIS IS FOR -->
-  <section id="who">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Per chi è pensato</h2>
-        <p>Per chiunque stia per firmare un contratto d'affitto per un posto che non ha visto con i propri occhi.</p>
-      </div>
-      <div class="who-grid">
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.5 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg></div>
-          <h3>Studenti Erasmus</h3>
-          <p>Arrivano per un semestre e non possono volare in anticipo solo per vedere una stanza.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
-          <h3>Persone in trasferimento per lavoro</h3>
-          <p>Si trasferiscono per un nuovo lavoro con tempi stretti, senza tempo per rischiare su un indirizzo falso.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="10" rx="1"/><path d="M2 18h20"/></svg></div>
-          <h3>Nomadi digitali con visto</h3>
-          <p>Firmano un contratto da un altro paese prima ancora che le pratiche siano concluse.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/></svg></div>
-          <h3>Alla pair e soggiorni lunghi</h3>
-          <p>Si impegnano per mesi a casa di qualcun altro prima ancora di conoscerlo.</p>
-        </div>
-        <div class="who-card">
-          <div class="who-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg></div>
-          <h3>Chi paga l'affitto dall'estero</h3>
-          <p>Genitori o familiari che bonificano la caparra da un altro paese e vogliono sapere dove stanno mettendo i loro soldi.</p>
-        </div>
+      <div class="get-cta">
+        <a href="/sample-report.html" class="btn btn-ghost">Guarda un report di esempio</a>
       </div>
     </div>
   </section>
@@ -900,81 +651,28 @@
   <section id="how">
     <div class="wrap">
       <div class="section-head">
-        <h2>Come funziona una verifica</h2>
-        <p>Quattro passaggi, dall'inizio alla fine. Nessun account necessario, nessun modulo infinito.</p>
+        <h2>Come funziona</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="num">01</div>
-          <h3>Dicci cosa ti hanno promesso</h3>
-          <p>Mandaci l'annuncio, quello che ti ha detto il padrone di casa, e le tue domande.</p>
+          <h3>Mandaci il link dell'annuncio</h3>
+          <p>Ci vogliono 2 minuti.</p>
         </div>
         <div class="step">
           <div class="num">02</div>
-          <h3>Andiamo all'appartamento</h3>
-          <p>Entro 1 giorno se prenoti una visita. Sospetti una truffa? Ti diamo un verdetto online in poche ore.</p>
+          <h3>Lo verifichiamo</h3>
+          <p>Online in meno di 12 ore, o una visita entro 24 h dalla conferma dell'orario da parte del padrone di casa.</p>
         </div>
         <div class="step">
           <div class="num">03</div>
-          <h3>Ricevi il report</h3>
-          <p>Con foto datate: cosa corrisponde, cosa no, e se il prezzo è giusto.</p>
-        </div>
-        <div class="step">
-          <div class="num">04</div>
           <h3>Decidi tu</h3>
-          <p>Paga con fiducia, negozia, oppure rinuncia prima di perdere qualcosa.</p>
+          <p>Con il report in mano.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE CHECK -->
-  <section id="check" class="ring-deco">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Cosa verifichiamo davvero</h2>
-        <p>La Verifica online copre la legittimità. La Visita di persona aggiunge tutto il resto: l'appartamento, gli elettrodomestici, l'edificio, la zona e le condizioni promesse.</p>
-      </div>
-      <h3 class="check-group-label">Verifica online: la legittimità</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">L'indirizzo esiste e corrisponde all'annuncio</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Chi mostra l'appartamento ha accesso ad esso e il suo nome corrisponde all'inserzionista</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="txt">Non viene richiesto il pagamento completo prima di vedere l'appartamento</span></div>
-      </div>
-      <h3 class="check-group-label">La Visita aggiunge: l'appartamento e gli elettrodomestici</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">La dimensione reale della stanza, misurata di persona — non quella di una foto con grandangolo</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Luce naturale, ventilazione, e se la finestra dà sulla strada o su un cortile interno</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Stato di pareti, pavimenti e finestre, e segni visibili di umidità, muffa o odori</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5.5-5.5L9 17"/></svg></span><span class="txt">Se elettrodomestici, riscaldamento, acqua calda e wifi funzionano davvero (con test reale se il padrone di casa lo permette)</span></div>
-      </div>
-      <h3 class="check-group-label">L'edificio e la zona</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Ingresso, zone comuni, ascensore e accessibilità</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Quanto sono pulite e curate la strada e i dintorni</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Il rumore al momento della visita</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span><span class="txt">Supermercato, trasporti e tempo reale porta a porta fino alla tua università o al lavoro</span></div>
-      </div>
-      <h3 class="check-group-label">Le condizioni promesse</h3>
-      <div class="check-grid">
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Che prezzo, spese, caparra e data d'ingresso corrispondano a quanto promesso</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Il costo mensile totale reale, spese comprese</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Se l'appartamento permette di registrare la residenza lì (empadronamiento)</span></div>
-        <div class="check-item"><span class="tick"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29a2 2 0 0 0 2.82 0l6.58-6.58a2 2 0 0 0 0-2.82L12 2z"/><circle cx="7" cy="7" r="1.3"/></svg></span><span class="txt">Se la caparra o i pagamenti anticipati sono più alti del normale</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE TOOL CALLOUT -->
-  <section id="free-tool">
-    <div class="wrap">
-      <div class="free-tool-card">
-        <div class="free-tool-text">
-          <div class="free-tool-badge">100% gratuito · senza registrazione</div>
-          <h2>Non sei ancora pronto a prenotare? Verifica tu stesso un annuncio, gratis.</h2>
-          <p>Rispondi a poche domande rapide su un annuncio che stai guardando e ottieni subito una valutazione dei segnali d'allarme più comuni negli affitti a Madrid — direttamente nel tuo browser, senza inviare nulla da nessuna parte.</p>
-        </div>
-        <a href="check.html" class="btn btn-primary free-tool-cta">Prova la verifica gratuita</a>
+      <div class="guarantee-box">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <p>Se il padrone di casa non ci fa entrare, riproviamo gratis. Se fallisce anche quello, ti rimborsiamo al 100%.</p>
       </div>
     </div>
   </section>
@@ -986,66 +684,54 @@
         <h2>Prezzi</h2>
         <p>Una tariffa fissa, pagata in modo sicuro con carta al momento della prenotazione. IVA inclusa.</p>
       </div>
-      <p class="speed-note">I buoni appartamenti a Madrid vanno a ruba: l'11% viene affittato in meno di 24 ore. Per questo visitiamo entro 1 giorno. <span class="speed-source">Fonte: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">dati idealista, quarto trimestre 2025, via El Español</a></span></p>
+      <p class="speed-note">I buoni appartamenti a Madrid vanno a ruba: l'11% viene affittato in meno di 24 ore. Per questo visitiamo entro 24 h. <span class="speed-source">Fonte: <a href="https://www.elespanol.com/sociedad/20260321/cambio-mercado-ciudades-viviendas-alquilan-horas/1003744175890_0.html" target="_blank" rel="noopener">dati idealista, quarto trimestre 2025, via El Español</a></span></p>
       <div class="price-grid">
         <div class="price-card">
-          <div class="tag">Verifica antitruffa express</div>
+          <div class="tag">Verifica online express</div>
           <div class="amount">29,85 € <span class="vat-note">IVA inclusa</span></div>
-          <div class="turnaround">Consegnata in meno di 12 ore</div>
-          <p class="price-desc">Qualcosa non ti convince? Mandaci l'annuncio e la conversazione con il padrone di casa: ti diamo un verdetto consultando fonti ufficiali.</p>
+          <div class="turnaround">Risultato in meno di 12 ore</div>
           <ul>
-            <li>Controllo del Catasto rispetto all'annuncio</li>
+            <li>Registro de la Propiedad e Catasto rispetto all'annuncio</li>
             <li>Ricerca inversa delle foto e verifica dell'inserzionista</li>
-            <li>Verifica delle condizioni e del pagamento, con verdetto a semaforo</li>
+            <li>Confronto del prezzo e un verdetto chiaro</li>
           </ul>
-          <a href="/solicitar.html?plan=online" class="btn btn-ghost">Richiedi questo piano</a>
-          <p class="price-note">Questo piano non include vedere l'appartamento. Per lo stato, la zona e le condizioni c'è la Visita — se la prenoti entro 7 giorni, ti scontiamo questi 29,85 €.</p>
+          <a href="/solicitar.html?plan=online" class="btn btn-ghost" data-plan="online" data-position="pricing_card">Richiedi la verifica online · 29,85 €</a>
         </div>
         <div class="price-card featured">
           <span class="ribbon">Consigliato</span>
           <div class="tag">Visita di persona</div>
           <div class="amount">59,99 € <span class="vat-note">IVA inclusa</span></div>
-          <div class="turnaround">Entro 1 giorno: visitiamo entro 24 ore dalla conferma dell'orario da parte del padrone di casa</div>
+          <div class="turnaround">Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa</div>
           <ul>
-            <li>Tutto quello della Verifica antitruffa express</li>
-            <li>L'appartamento, gli elettrodomestici, l'edificio e la zona, di persona</li>
-            <li>Report con foto datate e analisi del prezzo</li>
+            <li>Tutto quello della verifica online</li>
+            <li>L'appartamento, il suo stato e la zona, di persona</li>
+            <li>Report scritto con foto datate e analisi del prezzo</li>
           </ul>
-          <a href="/solicitar.html?plan=visit" class="btn btn-primary">Richiedi questo piano</a>
+          <a href="/solicitar.html?plan=visit" class="btn btn-primary" data-plan="visit" data-position="pricing_card">Prenota una visita · 59,99 €</a>
         </div>
         <div class="price-card">
-          <div class="tag">Visita dal vivo</div>
+          <div class="tag">Visita in diretta</div>
           <div class="amount">99 € <span class="vat-note">IVA inclusa</span></div>
-          <div class="turnaround">Entro 1 giorno</div>
+          <div class="turnaround">Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa</div>
           <ul>
-            <li>Tutto quello della Visita di persona</li>
+            <li>Tutto quello della visita di persona</li>
             <li>Videochiamata dal vivo dall'interno dell'appartamento</li>
-            <li>Invita chi paga l'affitto con te alla videochiamata</li>
+            <li>Invita chi paga l'affitto con te alla chiamata</li>
           </ul>
-          <a href="/solicitar.html?plan=live" class="btn btn-ghost">Richiedi questo piano</a>
+          <a href="/solicitar.html?plan=live" class="btn btn-ghost" data-plan="live" data-position="pricing_card">Prenota la visita in diretta · 99 €</a>
         </div>
       </div>
-      <p class="price-foot">Se qualcosa non torna, ti diciamo esattamente cosa e perché — che sia il prezzo, lo stato dell'appartamento o la legittimità dell'annuncio.</p>
-      <div class="share-row-light">
-        <a href="https://wa.me/?text=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (WhatsApp)</a>
-        <a href="mailto:?subject=Un%20annuncio%20che%20sto%20verificando%20con%20ConfirMad&amp;body=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (Email)</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- EARLY ACCESS -->
-  <section id="risk">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="early-badge">Se qualcosa non ti torna</div>
-        <h2>Sospetti una truffa? Te lo diciamo prima che tu paghi.</h2>
-        <p>In un sondaggio europeo su circa 7.000 studenti Erasmus, 1 su 4 ha dichiarato di aver subito una truffa cercando casa — il 21% tra chi è venuto in Spagna.</p>
-        <p class="risk-source">Fonte: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023</a></p>
-      </div>
-      <div class="stat-highlight"><p>Una caparra più il primo mese a Madrid arriva facilmente a 900–2.000 €. Una verifica rapida ConfirMad parte da 29,85 €.</p></div>
-      <div class="early-ctas">
-        <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20verifica%20prima%20di%20inviare%20la%20caparra" class="btn btn-invert">Scrivici su WhatsApp</a>
-        <a href="/solicitar.html?plan=online" class="btn btn-outline-invert">Richiedi la verifica express (29,85 €)</a>
+      <div class="pricing-extras">
+        <div class="guarantee-box" style="margin-top:0;">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <p>Se il padrone di casa non ci fa entrare, riproviamo gratis. Se fallisce anche quello, ti rimborsiamo al 100%.</p>
+        </div>
+        <div class="payment-methods">Pagamento sicuro con carta tramite Stripe.</div>
+        <div class="share-row-light">
+          <a href="https://wa.me/?text=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" target="_blank" rel="noopener" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (WhatsApp)</a>
+          <a href="mailto:?subject=Un%20annuncio%20che%20sto%20verificando%20con%20ConfirMad&amp;body=Sto%20usando%20ConfirMad%20per%20verificare%20un%20appartamento%20a%20Madrid%20prima%20di%20pagare%20%E2%80%94%20ho%20pensato%20potesse%20interessarti%3A%20https%3A//confirmad.es" class="btn btn-ghost">Mandalo a chi ti paga l'affitto (Email)</a>
+        </div>
+        <a href="check.html" class="free-check-link">Non sei ancora pronto? Prova la verifica gratuita dei segnali d'allarme →</a>
       </div>
     </div>
   </section>
@@ -1056,19 +742,21 @@
     <div class="about-card">
       <div class="about-photo">
         <div class="about-avatar">
-          <img src="/confirmad-founder-santiago.jpg" alt="Santiago, founder of ConfirMad" loading="lazy" width="172" height="172">
+          <img src="/confirmad-founder-santiago.jpg" alt="Santiago, founder of ConfirMad" loading="lazy" decoding="async" width="172" height="172">
         </div>
       </div>
       <div>
         <div class="section-head" style="margin-bottom:16px;">
           <h2>Chi c'è dietro</h2>
         </div>
-        <p class="about-quote">"Mi sono trasferito a Madrid anch'io e ho visto quanto sia facile essere truffati su un affitto che non puoi vedere di persona. ConfirMad esiste perché qualcuno dovrebbe poter semplicemente andare a controllare — senza agenzia, senza intermediari, solo una persona vera sul posto di cui ti puoi fidare."</p>
+        <p class="about-quote">"Ho creato ConfirMad perché chiunque si trasferisca a Madrid abbia qualcuno di cui fidarsi che controlli un appartamento prima di pagarlo."</p>
         <div class="about-name">Santiago Antonio Platas Rengel<span>Fondatore, ConfirMad</span></div>
         <ul class="about-trust">
-          <li>Indipendente: nessun padrone di casa o agente ci paga per la tua verifica.</li>
+          <li>Indipendente: nessun padrone di casa o agenzia ci paga per la tua verifica.</li>
         </ul>
         <a href="https://www.linkedin.com/in/santiagoplatas/" target="_blank" rel="noopener" class="about-linkedin">LinkedIn ↗</a>
+        <!-- {{PENDIENTE: número real de verificaciones realizadas, para mostrar aquí cuando exista}} -->
+        <!-- {{PENDIENTE: reseñas verificadas de clientes, para mostrar aquí cuando existan}} -->
       </div>
     </div>
     </div>
@@ -1082,125 +770,43 @@
       </div>
       <div class="faq-list">
         <details>
-          <summary aria-expanded="false">E se ho già inviato una caparra?<span class="ind"></span></summary>
+          <summary aria-expanded="false">E se il padrone di casa non ci fa entrare?<span class="ind"></span></summary>
+          <p>Questo finisce direttamente nel report come segnale d'allarme. Se succede durante una visita di persona, riproviamo gratis — e se fallisce anche quello, ti rimborsiamo al 100%.</p>
+        </details>
+        <details>
+          <summary aria-expanded="false">Ho già pagato una caparra — potete aiutarmi comunque?<span class="ind"></span></summary>
           <p>Possiamo comunque andare a verificare se l'appartamento corrisponde a quello che hai pagato, ma non possiamo recuperare soldi già inviati. È sempre meglio prenotare una verifica prima di pagare qualsiasi cosa.</p>
         </details>
         <details>
           <summary aria-expanded="false">Verificate appartamenti fuori Madrid?<span class="ind"></span></summary>
-          <p>Visitiamo immobili all'interno del comune di Madrid — anche se la tua università è fuori, per esempio a Somosaguas, Getafe o Leganés, la maggior parte degli alloggi per studenti resta comunque in città. Se l'appartamento è davvero fuori Madrid, di solito la verifica online è comunque possibile — scrivici.</p>
+          <p>Visitiamo immobili all'interno del comune di Madrid. Se l'appartamento è davvero fuori Madrid, di solito la verifica online è comunque possibile — scrivici.</p>
         </details>
         <details>
-          <summary aria-expanded="false">E se il padrone di casa non vi fa entrare?<span class="ind"></span></summary>
-          <p>Questo finisce direttamente nel report come segnale d'allarme. Un padrone di casa con un appartamento reale e niente da nascondere raramente rifiuta una breve visita.</p>
+          <summary aria-expanded="false">È una consulenza legale?<span class="ind"></span></summary>
+          <p>No. Verifichiamo che quanto promesso corrisponda alla realtà. Non siamo avvocati e non revisioniamo i contratti per la loro validità legale.</p>
         </details>
         <details>
-          <summary aria-expanded="false">È una consulenza legale, o una revisione del contratto?<span class="ind"></span></summary>
-          <p>No. Continuiamo a non verificare la validità legale del contratto — non siamo avvocati. Ma controlliamo che quanto promesso corrisponda alla realtà, e segnaliamo le condizioni poco comuni prima che tu firmi.</p>
+          <summary aria-expanded="false">Quanto sono comuni le truffe sugli affitti?<span class="ind"></span></summary>
+          <p>Nell'International Student Housing Report di ESN/ESU (2023), circa 7.000 studenti Erasmus in tutta Europa hanno risposto a questa domanda: 1 su 4 ha dichiarato di aver subito una truffa sull'alloggio cercando casa; tra chi è venuto in Spagna, il 21%.</p>
+          <p class="faq-source">Fonte: <a href="https://esn.org/sites/default/files/news/international_student_housing_report.pdf" target="_blank" rel="noopener">ESU/ESN, International Student Housing Report, 2023</a></p>
         </details>
         <details>
-          <summary aria-expanded="false">Quanto siete veloci davvero?<span class="ind"></span></summary>
-          <p>La verifica online viene consegnata in meno di 12 ore. Le visite di persona e dal vivo avvengono entro 1 giorno dalla conferma dell'orario da parte del padrone di casa, in base alla disponibilità di quella settimana.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">E se l'appartamento va bene?<span class="ind"></span></summary>
-          <p>Paghi sapendo esattamente cosa stai pagando: ti mandiamo un report con foto datate dello stato in cui l'abbiamo trovato, così puoi prenotare con tranquillità.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">Come sapete se il prezzo è giusto?<span class="ind"></span></summary>
-          <p>Lo confrontiamo con appartamenti e stanze simili della zona, e calcoliamo il costo mensile reale comprese le spese.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">Verificate il rumore di notte?<span class="ind"></span></summary>
-          <p>Verifichiamo quello che si sente durante la visita. Se ti preoccupa un orario specifico, proviamo ad andare in quell'orario, se il padrone di casa può.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">E se il padrone di casa non fa provare qualcosa?<span class="ind"></span></summary>
-          <p>Lo annotiamo nel report. Anche questa è un'informazione.</p>
-        </details>
-        <details>
-          <summary aria-expanded="false">Posso chiedervi di controllare qualcosa in particolare?<span class="ind"></span></summary>
-          <p>Sì — mandaci le tue domande insieme alla richiesta e le verifichiamo durante la visita.</p>
+          <summary aria-expanded="false">Possono pagare i miei genitori?<span class="ind"></span></summary>
+          <p>Sì — usa i pulsanti per condividere nella sezione prezzi per mandargli il link, oppure possono prenotare direttamente con i tuoi dati.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- CTA / FORM -->
-  <section id="request" class="cta-section">
-    <div class="wrap cta-grid">
-      <div>
-        <div class="section-head">
-          <h2>Hai ancora dubbi? Parla con una persona vera</h2>
-          <p>Non sai bene come funziona una verifica, o vuoi chiedere qualcosa prima di prenotare? Scrivici direttamente — niente bot, niente call center.</p>
-        </div>
-        <p style="color:#8B96A8; font-size:0.88rem;">Di solito rispondiamo entro poche ore. Preferisci prenotare subito? <a href="#pricing" style="color:#fff; text-decoration:underline;">Guarda i prezzi</a>.</p>
-      </div>
-      <div>
-        <form id="checkForm">
-          <div class="field">
-            <label for="name">Il tuo nome</label>
-            <input id="name" type="text" placeholder="Jane Smith" required>
-          </div>
-          <div class="field">
-            <label for="email">La tua email</label>
-            <input id="email" type="email" placeholder="jane@email.com" required>
-          </div>
-          <div class="field">
-            <label for="phone">Telefono o WhatsApp (facoltativo)</label>
-            <input id="phone" type="tel" placeholder="+34 600 000 000">
-          </div>
-          <div class="field">
-            <label for="notes">La tua domanda</label>
-            <textarea id="notes" placeholder="Chiedici pure qualsiasi cosa su come funziona una verifica, i tempi, un indirizzo che stai valutando..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" id="sendBtn">Invia messaggio</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <strong>Messaggio inviato.</strong> Ti risponderemo entro poche ore.
-        </div>
-        <div class="form-success" id="formError" style="border-color:#A63A34;">
-          <strong>Qualcosa è andato storto.</strong> Scrivici direttamente a <a href="mailto:contacto@confirmad.es" style="color:#fff; text-decoration:underline;">contacto@confirmad.es</a> invece.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUSINESS / B2B -->
-  <section id="business">
+  <!-- CLOSING -->
+  <section id="closing" class="closing-section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Per agenzie di relocation, università e aziende</h2>
-        <p>Mandi a Madrid persone che non possono vedere un appartamento di persona? Offriamo verifiche online e visite di persona in base al volume, con prezzo per volume, per i tuoi studenti, dipendenti o clienti in arrivo.</p>
+        <h2>Hai trovato un appartamento che ti piace? Fallo controllare prima di pagare.</h2>
       </div>
-      <form id="businessForm" class="business-form">
-        <div class="field">
-          <label for="bizOrg">Nome dell'organizzazione</label>
-          <input id="bizOrg" type="text" required>
-        </div>
-        <div class="field">
-          <label for="bizType">Tipo di organizzazione</label>
-          <select id="bizType">
-            <option value="agency">Agenzia di relocation</option>
-            <option value="university">Università</option>
-            <option value="company">Azienda</option>
-            <option value="other">Altro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="bizVolume">Volume approssimativo (al mese o per semestre)</label>
-          <input id="bizVolume" type="text">
-        </div>
-        <div class="field">
-          <label for="bizEmail">La tua email</label>
-          <input id="bizEmail" type="email" placeholder="nome@organizzazione.com" required>
-        </div>
-        <button type="submit" class="btn btn-primary" id="bizSendBtn">Contattaci</button>
-      </form>
-      <div class="form-success-light" id="bizSuccess">
-        <strong>Messaggio inviato.</strong> Ti risponderemo entro poche ore.
-      </div>
-      <div class="form-success-light" id="bizError" style="border-color:#A63A34;">
-        <strong>Qualcosa è andato storto.</strong> Scrivici direttamente a <a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> invece.
+      <div class="closing-ctas">
+        <a href="/solicitar.html?plan=visit" class="btn btn-primary" data-plan="visit" data-position="closing">Prenota una visita · 59,99 €</a>
+        <a href="https://wa.me/34639589180?text=Ciao%2C%20vorrei%20prenotare%20una%20verifica%20prima%20di%20inviare%20la%20caparra" class="btn btn-outline-invert">Domande? Scrivici su WhatsApp</a>
       </div>
     </div>
   </section>
@@ -1212,7 +818,7 @@
     <div>ConfirMad · Madrid, Spain</div>
     <div><a href="mailto:contacto@confirmad.es">contacto@confirmad.es</a> · <a href="https://wa.me/34639589180">WhatsApp: +34 639 589 180</a></div>
     <div>Non siamo uno studio legale. Verifichiamo annunci, non contratti.</div>
-    <div><a href="/aviso-legal.html">Note legali</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookie</a> · <a href="/terminos.html">Termini</a> · <a href="#business">Per agenzie</a></div>
+    <div><a href="/aviso-legal.html">Note legali</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookie</a> · <a href="/terminos.html">Termini</a> · <a href="/empresas.html">Per agenzie, università e aziende</a></div>
     <div class="lang-switch"><a href="https://confirmad.es/">EN</a> · <a href="https://confirmad.es/es/">ES</a> · <a href="https://confirmad.es/it/" class="lang-current">IT</a> · <a href="https://confirmad.es/fr/">FR</a></div>
   </div>
 </footer>
@@ -1221,124 +827,10 @@
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.377 4 15.004c0 2.313.638 4.474 1.746 6.323L4 29l7.868-1.706A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.63 28 15.004 28 8.377 22.63 3 16.004 3zm0 21.6c-1.98 0-3.87-.52-5.52-1.5l-.396-.235-4.67 1.013 1.024-4.55-.258-.416A9.55 9.55 0 0 1 6.4 15.004C6.4 9.69 10.69 5.4 16.004 5.4S25.6 9.69 25.6 15.004 21.318 24.6 16.004 24.6zm5.36-7.19c-.294-.147-1.737-.858-2.006-.956-.27-.098-.466-.147-.663.147-.196.294-.76.956-.932 1.152-.172.196-.343.22-.637.073-.294-.147-1.24-.457-2.362-1.457-.873-.778-1.462-1.74-1.633-2.034-.172-.294-.018-.453.129-.6.132-.132.294-.343.44-.514.147-.172.196-.294.294-.49.098-.196.049-.368-.024-.514-.073-.147-.663-1.6-.909-2.19-.24-.577-.484-.5-.663-.51-.172-.008-.368-.01-.564-.01-.196 0-.514.073-.784.368-.27.294-1.03 1.007-1.03 2.457 0 1.45 1.055 2.85 1.202 3.046.147.196 2.077 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.737-.71 1.982-1.396.245-.686.245-1.274.172-1.396-.073-.122-.27-.196-.564-.343z"/></svg>
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-try { emailjs.init({ publicKey: 'wlIrQsmppxX9ENBen' }); } catch (e) { console.warn('EmailJS failed to load:', e); }
-
-var I18N_FORM = {"sending": "Invio…", "submit": "Invia messaggio"};
-
-const form = document.getElementById('checkForm');
-  const success = document.getElementById('formSuccess');
-  const errorMsg = document.getElementById('formError');
-  const sendBtn = document.getElementById('sendBtn');
-  const WEB3FORMS_KEY = 'e1ec2b34-f6bc-42d3-9f90-834f6ab579bc';
-
-  function isValidEmail(value){
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
-
-  function sendAutoReply(templateId, toEmail, toName){
-    if (!isValidEmail(toEmail)) return;
-    try {
-      emailjs.send('service_wa43yg8', templateId, {
-        to_email: toEmail, email: toEmail, reply_to: toEmail,
-        to_name: toName, name: toName
-      })
-        .catch(function(err){ console.warn('Auto-reply email failed:', err); });
-    } catch (e) { console.warn('Auto-reply email failed:', e); }
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var notes = document.getElementById('notes').value;
-
-    sendBtn.disabled = true;
-    sendBtn.textContent = I18N_FORM.sending;
-    errorMsg.classList.remove('show');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: 'Question from ' + name,
-        from_name: name,
-        name: name,
-        email: email,
-        phone: phone,
-        message: notes
-      })
-    })
-    .then(function(res){ return res.json(); })
-    .then(function(data){
-      if (data.success){
-        sendAutoReply('template_0i7xoyv', email, name);
-        form.style.display = 'none';
-        success.classList.add('show');
-      } else {
-        throw new Error(data.message || 'Web3Forms error');
-      }
-    })
-    .catch(function(){
-      sendBtn.disabled = false;
-      sendBtn.textContent = I18N_FORM.submit;
-      errorMsg.classList.add('show');
-    });
-  });
-
-  var I18N_BUSINESS = {"sending": "Invio…", "submit": "Contattaci"};
-  var bizForm = document.getElementById('businessForm');
-  var bizSuccess = document.getElementById('bizSuccess');
-  var bizError = document.getElementById('bizError');
-  var bizSendBtn = document.getElementById('bizSendBtn');
-
-  bizForm.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var org = document.getElementById('bizOrg').value;
-    var orgType = document.getElementById('bizType').value;
-    var volume = document.getElementById('bizVolume').value;
-    var email = document.getElementById('bizEmail').value;
-
-    bizSendBtn.disabled = true;
-    bizSendBtn.textContent = I18N_BUSINESS.sending;
-    bizError.classList.remove('show');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: 'B2B inquiry from ' + org,
-        from_name: org,
-        name: org,
-        email: email,
-        message: 'Organization: ' + org + '\nType: ' + orgType + '\nApprox. volume: ' + volume
-      })
-    })
-    .then(function(res){ return res.json(); })
-    .then(function(data){
-      if (data.success){
-        bizForm.style.display = 'none';
-        bizSuccess.classList.add('show');
-      } else {
-        throw new Error(data.message || 'Web3Forms error');
-      }
-    })
-    .catch(function(){
-      bizSendBtn.disabled = false;
-      bizSendBtn.textContent = I18N_BUSINESS.submit;
-      bizError.classList.add('show');
-    });
-  });
-
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
     document.documentElement.classList.add('has-reveal');
-    var revealTargets = document.querySelectorAll('.section-head, .step, .who-card, .check-item, .price-card, .about-photo, .faq-list details');
+    var revealTargets = document.querySelectorAll('.section-head, .step, .get-item, .price-card, .about-photo, .faq-list details');
     var revealObserver = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if (entry.isIntersecting){
@@ -1353,6 +845,23 @@ const form = document.getElementById('checkForm');
   document.querySelectorAll('.faq-list details').forEach(function(el){
     el.addEventListener('toggle', function(){
       el.querySelector('summary').setAttribute('aria-expanded', el.open ? 'true' : 'false');
+    });
+  });
+
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  function cmTrack(name, params){
+    if (typeof window.gtag === 'function'){
+      window.gtag('event', name, params || {});
+    }
+  }
+  document.querySelectorAll('[data-plan]').forEach(function(el){
+    el.addEventListener('click', function(){
+      cmTrack('select_plan', { plan: el.getAttribute('data-plan'), position: el.getAttribute('data-position') || '' });
+    });
+  });
+  document.querySelectorAll('.whatsapp-float, .closing-ctas a[href*="wa.me"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      cmTrack('whatsapp_click', { position: el.closest('.whatsapp-float') ? 'float' : 'closing' });
     });
   });
 </script>
