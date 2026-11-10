@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="e833927">
+<meta name="confirmad-build" content="36935c9">
 <title>Book a check · ConfirMad</title>
 <meta name="description" content="Book an independent check of a Madrid rental listing. Fill in the listing details, agree to the terms, and pay securely — we start as soon as payment and the details come through.">
 <meta name="robots" content="noindex, follow">
@@ -315,17 +315,14 @@ footer .lang-switch a.lang-current{ color: var(--stamp); }
   document.getElementById('planAmount').innerHTML = plan.price + ' <span class="vat-note">VAT included</span>';
   document.getElementById('planTurnaround').textContent = plan.turnaround;
 
-  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted)
+  // GA4 event tracking — only fires if gtag is loaded (i.e. cookies accepted).
+  // begin_checkout itself fires earlier, when the "Book a visit"/etc. button
+  // on the previous page was clicked — not again here on page load.
   function cmTrack(name, trackParams){
     if (typeof window.gtag === 'function'){
       window.gtag('event', name, trackParams || {});
     }
   }
-  var checkoutAmount = parseFloat(String(plan.price).replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
-  cmTrack('begin_checkout', {
-    currency: 'EUR', value: checkoutAmount,
-    items: [{ item_name: plan.name, price: checkoutAmount, quantity: 1 }]
-  });
   var waFloat = document.querySelector('.whatsapp-float');
   if (waFloat){
     waFloat.addEventListener('click', function(){

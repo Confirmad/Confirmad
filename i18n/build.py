@@ -46,6 +46,19 @@ BUILD_META_RE = re.compile(
     r'<meta name="confirmad-build" content="[^"]*">'
 )
 
+# Lets a hand-maintained static page (currently just gracias.html) embed the
+# canonical plans object for every language, without being pulled into the
+# per-language template/build loop. Keeps plan names/prices there sourced
+# from the same i18n/content/<lang>.json files as everywhere else, instead
+# of a hand-typed duplicate that can drift out of sync. The start/end
+# comment markers (rather than matching the JSON blob itself) are what make
+# this idempotent across rebuilds, the same way BUILD_META_RE is: every run
+# replaces whatever is currently between them, not just a pristine [] on
+# the first run, so a later price change still reaches this page.
+ALL_PLANS_RE = re.compile(
+    r"/\*ALL_PLANS_JSON_START\*/.*?/\*ALL_PLANS_JSON_END\*/", re.S
+)
+
 
 def get_build_id():
     try:
@@ -58,7 +71,7 @@ def get_build_id():
         return "unknown"
 
 
-def stamp_static_page(path, build_id):
+def stamp_static_page(path, build_id, content=None):
     if not path.exists():
         return
     text = path.read_text(encoding="utf-8")
@@ -72,6 +85,16 @@ def stamp_static_page(path, build_id):
         if marker not in text:
             return
         new_text = text.replace(marker, marker + "\n" + tag, 1)
+
+    if content and ALL_PLANS_RE.search(new_text):
+        all_plans = {lang: data.get("plans") for lang, data in content.items()}
+        replacement = (
+            "/*ALL_PLANS_JSON_START*/"
+            + json.dumps(all_plans, ensure_ascii=False)
+            + "/*ALL_PLANS_JSON_END*/"
+        )
+        new_text = ALL_PLANS_RE.sub(lambda m: replacement, new_text, count=1)
+
     if new_text != text:
         path.write_text(new_text, encoding="utf-8")
         print("Stamped {0}".format(path.relative_to(ROOT)))
@@ -265,7 +288,7 @@ def main():
             print("Wrote {0}".format(out_path.relative_to(ROOT)))
 
     for rel in STATIC_PAGES:
-        stamp_static_page(ROOT / rel, build_id)
+        stamp_static_page(ROOT / rel, build_id, content=content)
 
 
 if __name__ == "__main__":

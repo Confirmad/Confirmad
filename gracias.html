@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="confirmad-build" content="e833927">
+<meta name="confirmad-build" content="36935c9">
 <title>Thank you · ConfirMad</title>
 <meta name="description" content="Your ConfirMad request is confirmed.">
 <meta name="robots" content="noindex, nofollow">
@@ -242,6 +242,8 @@ footer a:hover{ color: var(--ink); }
     }
   };
 
+  var ALL_PLANS = /*ALL_PLANS_JSON_START*/{"en": {"online": {"name": "Express online check", "price": "€29.85", "turnaround": "Result in under 12 hours", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "In-person visit", "price": "€59.99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Live visit", "price": "€99", "turnaround": "Visit within 24 h of the landlord confirming a time", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}}, "es": {"online": {"name": "Verificación online exprés", "price": "29,85 €", "turnaround": "Resultado en menos de 12 h", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "Visita presencial", "price": "59,99 €", "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Visita en directo", "price": "99 €", "turnaround": "Visita en las 24 h siguientes a que el anunciante confirme la hora", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}}, "it": {"online": {"name": "Verifica online express", "price": "29,85 €", "turnaround": "Risultato in meno di 12 ore", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "Visita di persona", "price": "59,99 €", "turnaround": "Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Visita in diretta", "price": "99 €", "turnaround": "Visita entro 24 h dalla conferma dell'orario da parte del padrone di casa", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}}, "fr": {"online": {"name": "Vérification en ligne express", "price": "29,85 €", "turnaround": "Résultat en moins de 12 h", "stripe": "https://buy.stripe.com/3cI00d2ty5oB7JfgAaaZi07"}, "visit": {"name": "Visite sur place", "price": "59,99 €", "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire", "stripe": "https://buy.stripe.com/6oU9AN6JO3gte7DgAaaZi01"}, "live": {"name": "Visite en direct", "price": "99 €", "turnaround": "Visite sous 24 h après confirmation de l'horaire par le propriétaire", "stripe": "https://buy.stripe.com/4gM3cp6JOeZb9Rn3NoaZi04"}}}/*ALL_PLANS_JSON_END*/;
+
   var params = new URLSearchParams(window.location.search);
   var order = null;
   try {
@@ -279,18 +281,32 @@ footer a:hover{ color: var(--ink); }
   setText('footerTerms', t.footerTerms);
   setText('footerBusiness', t.footerBusiness);
 
-  var planKeyFromUrl = params.get('plan');
-  var planKey = (order && order.plan) || planKeyFromUrl || 'visit';
+  var planKey = (order && order.plan) || params.get('plan') || 'visit';
+  var planData = (ALL_PLANS[lang] && ALL_PLANS[lang][planKey]) || null;
+  var planName = (order && order.planName) || (planData && planData.name) || '';
+  var planAmount = (order && order.amount) || (planData && planData.price) || '';
   var step2Body = planKey === 'online' ? t.step2Online : t.step2Visit;
   setText('step2Body', step2Body);
 
-  var reference = (order && order.reference) || params.get('ref') || '';
+  // Stripe's Payment Link redirect carries session_id={CHECKOUT_SESSION_ID} —
+  // the authoritative, unique-per-payment id. order.reference (our own
+  // human-friendly CM-... number, saved to sessionStorage before leaving for
+  // Stripe) only survives when this is the same tab/device that checked out;
+  // sessionId works even for a customer who pays from a different device.
+  var sessionId = params.get('session_id') || '';
+  var reference = (order && order.reference) || '';
+  var hasConfirmation = !!(order || sessionId);
 
-  if (order) {
+  if (hasConfirmation) {
     setText('lede', t.lede);
     document.getElementById('refCard').style.display = 'block';
-    setText('refValue', order.reference || '—');
-    setText('refPlan', (order.planName || '') + (order.amount ? ' · ' + order.amount : ''));
+    if (reference) {
+      setText('refValue', reference);
+    } else {
+      document.getElementById('refLabel').style.display = 'none';
+      document.getElementById('refValue').style.display = 'none';
+    }
+    setText('refPlan', planName + (planAmount ? ' · ' + planAmount : ''));
   } else {
     setText('lede', t.noOrderLede);
   }
@@ -313,19 +329,28 @@ footer a:hover{ color: var(--ink); }
     cmTrack('whatsapp_click', { position: 'gracias_share' });
   });
 
-  // GA4 purchase event — only fires once consent has loaded gtag, and only once per order
+  // GA4 purchase event — only fires once consent has loaded gtag, and at
+  // most once per transaction. transaction_id prefers Stripe's own
+  // session_id (unique per checkout, present even on a fresh/cross-device
+  // landing) and falls back to our own reference when that's all we have.
+  // The "fired" flag lives in localStorage rather than sessionStorage so a
+  // reload — or closing and reopening the confirmation link — can never
+  // fire it twice for the same transaction_id.
   try {
-    if (order && typeof window.gtag === 'function'){
-      var firedKey = 'confirmad_purchase_fired_' + (order.reference || '');
-      if (!sessionStorage.getItem(firedKey)){
-        var amountNum = parseFloat(String(order.amount || '').replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
+    var ga4TransactionId = sessionId || reference || '';
+    if (hasConfirmation && ga4TransactionId && typeof window.gtag === 'function'){
+      var firedKey = 'confirmad_purchase_fired_' + ga4TransactionId;
+      var alreadyFired = false;
+      try { alreadyFired = !!localStorage.getItem(firedKey); } catch (e) {}
+      if (!alreadyFired){
+        var amountNum = parseFloat(String(planAmount || '').replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
         window.gtag('event', 'purchase', {
-          transaction_id: order.reference || '',
+          transaction_id: ga4TransactionId,
           value: amountNum,
           currency: 'EUR',
-          items: [{ item_name: order.planName || planKey, price: amountNum, quantity: 1 }]
+          items: [{ item_id: planKey, item_name: planName || planKey, price: amountNum, quantity: 1 }]
         });
-        sessionStorage.setItem(firedKey, '1');
+        try { localStorage.setItem(firedKey, '1'); } catch (e) {}
       }
     }
   } catch (e) { console.warn('GA4 purchase event failed:', e); }
